@@ -23,7 +23,8 @@ const schemas = [
   buildServiceSchema({
     name: service.h1,
     serviceType: service.serviceType,
-    description: service.opening
+    description: service.opening,
+    lang: 'en-CA'
   }),
   buildFAQSchema(service.faqs),
   buildBreadcrumbSchema([

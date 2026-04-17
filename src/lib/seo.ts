@@ -191,12 +191,16 @@ export function buildContactPageSchema({
 export function buildServiceSchema({
   name,
   serviceType,
-  description
+  description,
+  lang = 'fr-CA'
 }: {
   name: string;
   serviceType: string;
   description: string;
+  lang?: 'fr-CA' | 'en-CA';
 }) {
+  const isEnglish = lang === 'en-CA';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -205,9 +209,10 @@ export function buildServiceSchema({
     areaServed: [
       { '@type': 'City', name: 'Gatineau' },
       { '@type': 'City', name: 'Ottawa' },
-      { '@type': 'City', name: 'Québec' }
+      { '@type': 'City', name: isEnglish ? 'Quebec City' : 'Québec' }
     ],
     serviceType,
-    description
+    description,
+    inLanguage: lang
   };
 }
