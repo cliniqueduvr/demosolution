@@ -403,11 +403,12 @@
       ],
       "includedTitle": "Ce que nous pouvons échantillonner",
       "included": [
-        "Matériaux suspects dans un bâtiment",
-        "Ciments, isolants, plâtres, finis ou composés de construction",
-        "Prélèvements liés à l’air ambiant selon le dossier",
-        "Coordination de l’analyse en laboratoire",
-        "Retour clair sur les résultats et la suite possible"
+        "Matériaux suspects dans un bâtiment avant rénovation, démolition ou décontamination",
+        "Ciments, isolants, plâtres, finis, joints ou autres composés de construction",
+        "Échantillonnage de l’air pour l’amiante avant, pendant ou après les travaux selon le contexte",
+        "Échantillonnage pour moisissure, spores ou contamination fongique selon le dossier",
+        "Situations particulières comme la mérule pleureuse ou un doute sur un champignon destructeur du bois",
+        "Coordination de l’analyse en laboratoire et retour clair sur les résultats"
       ],
       "situationsTitle": "Quand demander un échantillonnage",
       "situations": [
