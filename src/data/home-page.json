@@ -16,7 +16,7 @@
     "items": [
       { "href": "/services/decontamination/", "icon": "fas fa-biohazard", "label": "Décontamination", "subLabel": "Amiante | Vermiculite | Moisissure | Mérule" },
       { "href": "/services/enlevement-vermiculite/", "icon": "fas fa-exclamation-triangle", "label": "Enlèvement vermiculite", "subLabel": "Propre | Contaminée" },
-      { "href": "/services/echantillonnage/", "icon": "fas fa-microscope", "label": "Échantillonnage", "subLabel": "Air | Matériaux | Surface" },
+      { "href": "/services/echantillonnage/", "icon": "fas fa-microscope", "label": "Échantillonnage", "subLabel": "Air amiante | Spores | Matériaux" },
       { "href": "/services/demolition-selective/", "icon": "fas fa-house-damage", "label": "Démolition", "subLabel": "Complète | Partiel | Vide sanitaire" }
     ]
   },
