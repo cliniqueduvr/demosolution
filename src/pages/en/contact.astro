@@ -8,7 +8,7 @@ import siteSettings from '../../data/site-settings.json';
 import contactPage from '../../data/contact-page-en.json';
 
 const isFormConfigured = Boolean(siteSettings.email?.trim());
-const successUrl = '/en/thank-you/';
+const successUrl = '/en/thank-you/?sent=1';
 const formName = 'contact-en-v2';
 const breadcrumbs = buildBreadcrumbSchema([
   { name: contactPage.breadcrumbs.home, path: '/en/' },
