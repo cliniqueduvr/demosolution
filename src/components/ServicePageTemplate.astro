@@ -149,46 +149,13 @@ const serviceAreas = isEnglish
         </div>
       </aside>
 
-      {service.pricing && service.pricing.layout === 'split' && (
+      {service.pricing && service.pricing.layout === 'split' && service.slug === 'echantillonnage' && (
         <section class="content-card pricing-card pricing-card-full">
           <h2>{service.pricing.title}</h2>
           {service.pricing.intro && <p class="section-copy">{service.pricing.intro}</p>}
-          <div class="pricing-split-grid">
-            <div class="pricing-split-panel pricing-split-left">
-              <div class="pricing-grid pricing-grid-stack">
-                {service.pricing.cards.map((item) => (
-                  <article class="price-item price-item-centered">
-                    <p class="price-item-value">{item.price}</p>
-                    <p class="price-item-summary">{item.title}</p>
-                  </article>
-                ))}
-              </div>
-              {service.pricing.notes && service.pricing.notes.length > 0 && (
-                <div class="pricing-notes">
-                  {service.pricing.notes.map((note) => (
-                    <p>{note}</p>
-                  ))}
-                </div>
-              )}
-              {service.pricing.ctaLabel && (
-                <a class="pricing-cta" href={quoteHref}>
-                  {service.pricing.ctaLabel}
-                </a>
-              )}
-            </div>
-            <div class="pricing-split-panel pricing-split-right">
-              {service.pricing.rightTitle && <h3>{service.pricing.rightTitle}</h3>}
-              {service.pricing.rightIntro && <p class="section-copy">{service.pricing.rightIntro}</p>}
-              {service.pricing.rightItems && service.pricing.rightItems.length > 0 && (
-                <ul class="pricing-benefit-list">
-                  {service.pricing.rightItems.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
-              <div class="pricing-split-panel pricing-split-third">
+          {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
+            <div class="pricing-self-panel">
+              <div class="pricing-split-panel pricing-split-third pricing-split-third-only">
                 {service.pricing.thirdTitle && <h3>{service.pricing.thirdTitle}</h3>}
                 {service.pricing.thirdIntro && <p class="section-copy">{service.pricing.thirdIntro}</p>}
                 {service.pricing.thirdItems && service.pricing.thirdItems.length > 0 && (
@@ -211,8 +178,8 @@ const serviceAreas = isEnglish
                   </div>
                 )}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -584,6 +551,11 @@ const serviceAreas = isEnglish
     align-items: start;
   }
 
+  .pricing-self-panel {
+    display: grid;
+    justify-items: start;
+  }
+
   .pricing-split-panel {
     height: 100%;
     padding: 1.4rem;
@@ -600,6 +572,10 @@ const serviceAreas = isEnglish
   .pricing-split-third h3 {
     margin-bottom: 0.85rem;
     color: var(--brand-navy-dark);
+  }
+
+  .pricing-split-third-only {
+    width: min(100%, 480px);
   }
 
   .pricing-benefit-list {
