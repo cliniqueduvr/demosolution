@@ -416,8 +416,8 @@
           "Download the asbestos / vermiculite sampling PDF form",
           "Complete it and attach the form to the samples."
         ],
-        "thirdLinkLabel": "Download the asbestos / vermiculite form (PDF)",
-        "thirdLinkHref": "/formulaire-amiante-vermiculite.pdf",
+        "thirdLinkLabel": "Download Sampling-client (PDF)",
+        "thirdLinkHref": "/echantillonnage-client.pdf",
         "thirdNotes": [
           "Price: $199 for the first sample and $90 for each additional analyzed sample",
           "Results: 48 to 72 hours following sample reception.",
