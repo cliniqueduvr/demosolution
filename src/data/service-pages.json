@@ -424,6 +424,16 @@
           "Confirmation de la présence ou de l’absence d’amiante pour les matériaux testés",
           "Recommandations utiles pour la suite du projet"
         ],
+        "thirdTitle": "Vous préférez échantillonner vous-même?",
+        "thirdItems": [
+          "Téléchargez le formulaire PDF Échantillonnage-client",
+          "Remplissez et joignez le formulaire aux échantillons."
+        ],
+        "thirdNotes": [
+          "Prix: 199 $ pour le premier échantillon et 90 $ par échantillon additionnel analysé",
+          "Résultats: 48 à 72 heures suivant la réception des échantillons.",
+          "Sedexlab ne garantit pas la provenance des échantillons et n’est pas responsable des méthodes d’échantillonnage utilisées."
+        ],
         "ctaLabel": "Prendre rendez-vous pour un échantillonnage",
         "cards": [
           {

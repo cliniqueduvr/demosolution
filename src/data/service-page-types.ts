@@ -20,6 +20,10 @@ export interface ServicePricing {
   rightTitle?: string;
   rightIntro?: string;
   rightItems?: string[];
+  thirdTitle?: string;
+  thirdIntro?: string;
+  thirdItems?: string[];
+  thirdNotes?: string[];
   ctaLabel?: string;
 }
 

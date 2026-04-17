@@ -144,6 +144,26 @@ const serviceAreas = isEnglish
                     </ul>
                   )}
                 </div>
+                {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
+                  <div class="pricing-split-panel pricing-split-third">
+                    {service.pricing.thirdTitle && <h3>{service.pricing.thirdTitle}</h3>}
+                    {service.pricing.thirdIntro && <p class="section-copy">{service.pricing.thirdIntro}</p>}
+                    {service.pricing.thirdItems && service.pricing.thirdItems.length > 0 && (
+                      <ol class="pricing-third-list">
+                        {service.pricing.thirdItems.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ol>
+                    )}
+                    {service.pricing.thirdNotes && service.pricing.thirdNotes.length > 0 && (
+                      <div class="pricing-third-notes">
+                        {service.pricing.thirdNotes.map((note) => (
+                          <p>{note}</p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             ) : (
               <>
@@ -543,7 +563,7 @@ const serviceAreas = isEnglish
 
   .pricing-split-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     gap: 1rem;
     align-items: start;
   }
@@ -560,7 +580,8 @@ const serviceAreas = isEnglish
     background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
   }
 
-  .pricing-split-right h3 {
+  .pricing-split-right h3,
+  .pricing-split-third h3 {
     margin-bottom: 0.85rem;
     color: var(--brand-navy-dark);
   }
@@ -574,6 +595,27 @@ const serviceAreas = isEnglish
   .pricing-benefit-list li::marker {
     color: #d64045;
     font-weight: 800;
+  }
+
+  .pricing-third-list {
+    display: grid;
+    gap: 0.9rem;
+    padding-left: 1.35rem;
+  }
+
+  .pricing-third-list li {
+    color: var(--brand-ink);
+  }
+
+  .pricing-third-notes {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .pricing-third-notes p {
+    margin: 0;
+    color: var(--brand-muted);
   }
 
   .pricing-cta {

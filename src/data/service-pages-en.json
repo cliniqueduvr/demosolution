@@ -411,6 +411,16 @@
           "Confirmation of the presence or absence of asbestos in the tested materials",
           "Useful recommendations for the next step of the project"
         ],
+        "thirdTitle": "Prefer to sample it yourself?",
+        "thirdItems": [
+          "Download the client sampling PDF form",
+          "Complete it and attach the form to the samples."
+        ],
+        "thirdNotes": [
+          "Price: $199 for the first sample and $90 for each additional analyzed sample",
+          "Results: 48 to 72 hours following sample reception.",
+          "Sedexlab does not guarantee the origin of the samples and is not responsible for the sampling methods used."
+        ],
         "ctaLabel": "Book a sampling appointment",
         "cards": [
           {
