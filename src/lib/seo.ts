@@ -59,14 +59,16 @@ export function buildWebSiteSchema() {
 export function buildLocalBusinessSchema({
   telephone = '+1-581-337-3366',
   email = 'info@demosolution.ca',
-  facebookUrl = 'https://www.facebook.com',
-  tiktokUrl = 'https://www.tiktok.com'
+  facebookUrl = '',
+  tiktokUrl = ''
 }: {
   telephone?: string;
   email?: string;
   facebookUrl?: string;
   tiktokUrl?: string;
 } = {}) {
+  const sameAs = [facebookUrl, tiktokUrl].filter((value) => Boolean(value?.trim()));
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Contractor',
@@ -98,7 +100,7 @@ export function buildLocalBusinessSchema({
     hasMap: 'https://www.google.com/maps/search/?api=1&query=11+rue+de+Granby+Unite+18+Gatineau+QC',
     priceRange: '$$',
     image: BRAND_IMAGE,
-    sameAs: [facebookUrl, tiktokUrl],
+    ...(sameAs.length > 0 ? { sameAs } : {}),
     knowsAbout: [
       'Décontamination',
       'Enlèvement de matières dangereuses',

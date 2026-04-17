@@ -389,6 +389,43 @@
         "Transfer to an independent laboratory",
         "Report, conclusions and recommendations"
       ],
+      "pricing": {
+        "title": "Sampling pricing",
+        "intro": "Indicative pricing block for material sampling requests. Final pricing may vary depending on the material type, number of samples, site access and the real scope of the mandate.",
+        "cards": [
+          {
+            "title": "Site visit, report and first sample",
+            "price": "Starting at $299",
+            "details": [
+              "Local travel and standard site visit",
+              "First sample analyzed by the laboratory",
+              "Clear feedback on results and next steps"
+            ]
+          },
+          {
+            "title": "Additional sample",
+            "price": "$90",
+            "details": [
+              "Used when an extra material needs confirmation",
+              "Laboratory analysis included",
+              "Added to the file report or conclusions"
+            ]
+          },
+          {
+            "title": "Additional flooring sample",
+            "price": "$200",
+            "details": [
+              "For vinyl tile, sheet flooring or similar materials",
+              "Separate rate based on the analytical method required",
+              "Used when the file needs a more specific type of analysis"
+            ]
+          }
+        ],
+        "notes": [
+          "Usual turnaround for results: about 48 to 72 hours after sampling.",
+          "Travel fees or additional charges may apply for remote, urgent or larger-scale projects."
+        ]
+      },
       "whyChooseTitle": "Why choose Demo Solution for sampling?",
       "whyChooseIntro": "Good sampling should be useful, clear and methodical so it supports real decision-making before work begins.",
       "whyChoose": [

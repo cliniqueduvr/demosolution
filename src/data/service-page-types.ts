@@ -5,6 +5,19 @@ export interface WhyChoosePoint {
   text: string;
 }
 
+export interface ServicePricingCard {
+  title: string;
+  price: string;
+  details: string[];
+}
+
+export interface ServicePricing {
+  title: string;
+  intro?: string;
+  cards: ServicePricingCard[];
+  notes?: string[];
+}
+
 export interface ServicePage {
   slug: string;
   alternateSlug: string;
@@ -30,6 +43,7 @@ export interface ServicePage {
   whyChooseTitle: string;
   whyChooseIntro: string;
   whyChoose: WhyChoosePoint[];
+  pricing?: ServicePricing;
   warningTitle?: string;
   warningBody?: string;
   warningCtaLabel?: string;

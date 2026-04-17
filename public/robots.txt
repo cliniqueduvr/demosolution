@@ -25,4 +25,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://cliniqueduvr.ca/sitemap.xml
+Sitemap: https://demosolution.ca/sitemap.xml

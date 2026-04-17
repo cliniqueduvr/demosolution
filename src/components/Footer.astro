@@ -10,6 +10,8 @@ const { lang = 'fr' } = Astro.props as Props;
 const isEnglish = lang === 'en';
 const pathname = Astro.url.pathname;
 const shouldShowCta = pathname !== '/contact/' && pathname !== '/en/contact/';
+const facebookUrl = siteSettings.facebookUrl?.trim();
+const tiktokUrl = siteSettings.tiktokUrl?.trim();
 ---
 
 {shouldShowCta && <CTABanner lang={isEnglish ? 'en' : 'fr'} />}
@@ -41,13 +43,19 @@ const shouldShowCta = pathname !== '/contact/' && pathname !== '/en/contact/';
     </div>
     <div class="footer-col">
       <h4>{isEnglish ? 'Follow Us' : 'Nous Suivre'}</h4>
-      <a href={siteSettings.facebookUrl} target="_blank" rel="noopener">
-        <i class="fab fa-facebook"></i> Facebook
-      </a>
-      <br />
-      <a href={siteSettings.tiktokUrl} target="_blank" rel="noopener">
-        <i class="fab fa-tiktok"></i> TikTok
-      </a>
+      {facebookUrl && (
+        <>
+          <a href={facebookUrl} target="_blank" rel="noopener">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+          <br />
+        </>
+      )}
+      {tiktokUrl && (
+        <a href={tiktokUrl} target="_blank" rel="noopener">
+          <i class="fab fa-tiktok"></i> TikTok
+        </a>
+      )}
       <p class="footer-legal">
         <a href={isEnglish ? '/en/privacy/' : '/privacy/'}>{isEnglish ? 'Privacy Policy' : 'Politique de confidentialité'}</a>
         {' · '}
@@ -72,7 +80,7 @@ const shouldShowCta = pathname !== '/contact/' && pathname !== '/en/contact/';
           <img src="/accreditation-iicrc.jpg" alt="IICRC" class="footer-accreditation-logo footer-accreditation-logo-iicrc" />
         </div>
         <div class="footer-accreditation-card">
-          <img src="/accreditation-apchq.png" alt="APCHQ" class="footer-accreditation-logo footer-accreditation-logo-apchq" />
+          <img src="/accreditation-apchq.avif" alt="APCHQ" class="footer-accreditation-logo footer-accreditation-logo-apchq" />
         </div>
       </div>
     </div>

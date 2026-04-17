@@ -59,6 +59,8 @@ const homeHref = isEnglish ? '/en/' : '/';
 const frHref = getAlternatePath(currentPath, 'fr');
 const enHref = getAlternatePath(currentPath, 'en');
 const smsHref = `sms:${siteSettings.phone.href}`;
+const facebookUrl = siteSettings.facebookUrl?.trim();
+const tiktokUrl = siteSettings.tiktokUrl?.trim();
 const isActivePath = (href: string) => {
   if (href === '/') return currentPath === '/';
   if (href === '/en/') return currentPath === '/en/';
@@ -111,12 +113,16 @@ const navItems = isEnglish
           <a href={frHref} class:list={['lang-pill', !isEnglish && 'active']}>FR</a>
           <a href={enHref} class:list={['lang-pill', isEnglish && 'active']}>EN</a>
         </div>
-        <a href={siteSettings.facebookUrl} target="_blank" rel="noopener" title="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href={siteSettings.tiktokUrl} target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
-          <i class="fab fa-tiktok"></i>
-        </a>
+        {facebookUrl && (
+          <a href={facebookUrl} target="_blank" rel="noopener" title="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+        )}
+        {tiktokUrl && (
+          <a href={tiktokUrl} target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        )}
       </div>
     </div>
   </div>

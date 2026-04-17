@@ -402,6 +402,43 @@
         "Transmission à un laboratoire indépendant",
         "Rapport, conclusions et recommandations"
       ],
+      "pricing": {
+        "title": "Prix pour l’échantillonnage",
+        "intro": "Bloc tarifaire indicatif pour les demandes d’échantillonnage de matériaux. Le prix exact peut varier selon le type de matériau, le nombre de prélèvements, l’accès au site et la portée réelle du mandat.",
+        "cards": [
+          {
+            "title": "Visite, rapport et premier échantillon",
+            "price": "À partir de 299 $",
+            "details": [
+              "Déplacement local et visite de base",
+              "Premier prélèvement analysé en laboratoire",
+              "Retour clair sur les résultats et la suite"
+            ]
+          },
+          {
+            "title": "Échantillon additionnel",
+            "price": "90 $",
+            "details": [
+              "Applicable lorsqu’un matériau supplémentaire doit être confirmé",
+              "Analyse en laboratoire incluse",
+              "Ajout au rapport ou au retour de dossier"
+            ]
+          },
+          {
+            "title": "Revêtement de sol additionnel",
+            "price": "200 $",
+            "details": [
+              "Pour tuile vinylique, prélart ou autre revêtement similaire",
+              "Tarif distinct selon la méthode analytique requise",
+              "Utilisé lorsque le dossier demande une analyse plus spécifique"
+            ]
+          }
+        ],
+        "notes": [
+          "Délai habituel pour les résultats: environ 48 à 72 heures après l’échantillonnage.",
+          "Des frais de déplacement ou des frais additionnels peuvent s’appliquer pour les projets plus éloignés, urgents ou de plus grande envergure."
+        ]
+      },
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour l’échantillonnage?",
       "whyChooseIntro": "Un bon échantillonnage doit être utile, clair et réalisé de façon méthodique pour soutenir une vraie prise de décision avant les travaux.",
       "whyChoose": [

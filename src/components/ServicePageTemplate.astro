@@ -93,6 +93,33 @@ const serviceAreas = isEnglish
           </ol>
         </section>
 
+        {service.pricing && (
+          <section class="content-card pricing-card">
+            <h2>{service.pricing.title}</h2>
+            {service.pricing.intro && <p class="section-copy">{service.pricing.intro}</p>}
+            <div class="pricing-grid">
+              {service.pricing.cards.map((item) => (
+                <article class="price-item">
+                  <p class="price-item-title">{item.title}</p>
+                  <p class="price-item-value">{item.price}</p>
+                  <ul class="price-item-list">
+                    {item.details.map((detail) => (
+                      <li>{detail}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+            {service.pricing.notes && service.pricing.notes.length > 0 && (
+              <div class="pricing-notes">
+                {service.pricing.notes.map((note) => (
+                  <p>{note}</p>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
+
         <section class="content-card alt">
           <h2>{service.whyChooseTitle}</h2>
           <p class="section-copy">{service.whyChooseIntro}</p>
@@ -370,6 +397,58 @@ const serviceAreas = isEnglish
     gap: 1rem;
   }
 
+  .pricing-card {
+    background: linear-gradient(180deg, #fffdf0 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.35);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+  }
+
+  .price-item {
+    background: var(--brand-surface);
+    border-radius: 18px;
+    padding: 1.15rem;
+  }
+
+  .price-item-title {
+    margin: 0 0 0.45rem;
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .price-item-value {
+    margin: 0 0 0.9rem;
+    color: var(--brand-gold-dark);
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .price-item-list {
+    display: grid;
+    gap: 0.7rem;
+    padding-left: 1.1rem;
+    color: var(--brand-muted);
+  }
+
+  .pricing-notes {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(31, 58, 95, 0.08);
+  }
+
+  .pricing-notes p {
+    margin: 0;
+    color: var(--brand-muted);
+    font-size: 0.97rem;
+  }
+
   .link-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -641,6 +720,10 @@ const serviceAreas = isEnglish
     .hero-card {
       border-radius: 18px;
       padding: 1.3rem;
+    }
+
+    .price-item-value {
+      font-size: 1.5rem;
     }
   }
 </style>
