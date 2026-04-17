@@ -188,7 +188,36 @@ const schemas = [
     };
 
     form.addEventListener('change', syncFields);
-    form.addEventListener('submit', syncFields);
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      syncFields();
+
+      const submitter = form.querySelector('button[type="submit"]');
+      if (submitter instanceof HTMLButtonElement) {
+        submitter.disabled = true;
+      }
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form) as any).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error(`Submission failed with ${response.status}`);
+        }
+
+        window.location.href = '/merci.html?sent=1';
+      } catch (error) {
+        console.error(error);
+        form.submit();
+      } finally {
+        if (submitter instanceof HTMLButtonElement) {
+          submitter.disabled = false;
+        }
+      }
+    });
     syncFields();
   }
 </script>

@@ -135,6 +135,42 @@ const meta = {
   <Footer />
 </Layout>
 
+<script>
+  const homeForm = document.querySelector('form[data-netlify-form][name="home-contact-fr-v2"]');
+
+  if (homeForm instanceof HTMLFormElement) {
+    homeForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const submitter = homeForm.querySelector('button[type="submit"]');
+      if (submitter instanceof HTMLButtonElement) {
+        submitter.disabled = true;
+      }
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(homeForm) as any).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error(`Submission failed with ${response.status}`);
+        }
+
+        window.location.href = '/merci.html?sent=1';
+      } catch (error) {
+        console.error(error);
+        homeForm.submit();
+      } finally {
+        if (submitter instanceof HTMLButtonElement) {
+          submitter.disabled = false;
+        }
+      }
+    });
+  }
+</script>
+
 <style>
   .hero {
     min-height: 640px;
