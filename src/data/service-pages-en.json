@@ -400,6 +400,18 @@
       "pricing": {
         "title": "Our pricing",
         "intro": "Pricing table for common material sampling requests before renovation, demolition or decontamination work. These rates are meant to frame the most common cases and may vary when the file requires a broader scope or a specific travel setup.",
+        "layout": "split",
+        "rightTitle": "What you get",
+        "rightIntro": "The goal is to give you an answer you can actually use before work begins, not just an isolated sample pickup.",
+        "rightItems": [
+          "Visual inspection of the targeted areas and materials",
+          "Safe sampling of the materials covered by the file",
+          "Laboratory analysis for the included samples",
+          "Clear written report with the test results",
+          "Confirmation of the presence or absence of asbestos in the tested materials",
+          "Useful recommendations for the next step of the project"
+        ],
+        "ctaLabel": "Book a sampling appointment",
         "cards": [
           {
             "title": "Inspection, report and first",

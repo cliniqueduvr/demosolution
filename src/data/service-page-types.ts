@@ -16,6 +16,11 @@ export interface ServicePricing {
   intro?: string;
   cards: ServicePricingCard[];
   notes?: string[];
+  layout?: 'default' | 'split';
+  rightTitle?: string;
+  rightIntro?: string;
+  rightItems?: string[];
+  ctaLabel?: string;
 }
 
 export interface ServiceInfoSection {

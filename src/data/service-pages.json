@@ -413,6 +413,18 @@
       "pricing": {
         "title": "Nos prix",
         "intro": "Tableau de prix pour les demandes d’échantillonnage de matériaux suspects avant des travaux. Ces tarifs servent à cadrer les demandes les plus courantes et peuvent varier si le dossier exige un mandat plus large ou un déplacement particulier.",
+        "layout": "split",
+        "rightTitle": "Voici ce que vous obtenez",
+        "rightIntro": "Le mandat vise surtout à vous donner une réponse exploitable avant les travaux, pas seulement un prélèvement isolé.",
+        "rightItems": [
+          "Inspection visuelle des zones et matériaux ciblés",
+          "Prélèvement sécuritaire des matériaux visés au dossier",
+          "Analyse en laboratoire pour les échantillons inclus",
+          "Rapport clair avec lecture des résultats obtenus",
+          "Confirmation de la présence ou de l’absence d’amiante pour les matériaux testés",
+          "Recommandations utiles pour la suite du projet"
+        ],
+        "ctaLabel": "Prendre rendez-vous pour un échantillonnage",
         "cards": [
           {
             "title": "Inspection, rapport et premier",
