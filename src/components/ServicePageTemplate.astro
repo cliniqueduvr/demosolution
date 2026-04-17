@@ -131,10 +131,14 @@ const serviceAreas = isEnglish
           <h2>{service.faqTitle}</h2>
           <div class="faq-list">
             {service.faqs.map((item) => (
-              <article class="faq-item">
-                <h3>{item.question}</h3>
-                <p>{item.answer}</p>
-              </article>
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <div class="accordion-content">
+                  <p>{item.answer}</p>
+                </div>
+              </details>
             ))}
           </div>
         </section>
@@ -463,6 +467,21 @@ const serviceAreas = isEnglish
   .faq-item {
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(31, 58, 95, 0.08);
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-content {
+    display: grid;
+    gap: 0.85rem;
+    padding-top: 1rem;
   }
 
   .faq-item:last-child {
