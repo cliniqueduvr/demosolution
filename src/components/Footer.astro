@@ -10,6 +10,7 @@ const { lang = 'fr' } = Astro.props as Props;
 const isEnglish = lang === 'en';
 const pathname = Astro.url.pathname;
 const shouldShowCta = pathname !== '/contact/' && pathname !== '/en/contact/';
+const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
 const facebookUrl = siteSettings.facebookUrl?.trim();
 const tiktokUrl = siteSettings.tiktokUrl?.trim();
 ---
@@ -26,7 +27,7 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
       <h4>{isEnglish ? 'Contact' : 'Contact'}</h4>
       <p>
         <strong>{isEnglish ? 'Phone:' : 'Téléphone:'}</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a><br>
-        <a href={siteSettings.squareBookingUrl} target="_blank" rel="noopener" class="footer-square-link">{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a><br>
+        <a href={quoteHref} class="footer-square-link">{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a><br>
         <strong>Email:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a><br>
         <strong>{isEnglish ? 'Insurance:' : 'Assurance:'}</strong> {isEnglish ? '$2M garage and liability' : 'Garage et civile 2 millions'}
       </p>
@@ -79,7 +80,7 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
         <div class="footer-accreditation-card">
           <img src="/accreditation-rbq.png" alt="RBQ" class="footer-accreditation-logo footer-accreditation-logo-rbq" />
         </div>
-        <div class="footer-accreditation-card">
+        <div class="footer-accreditation-card footer-accreditation-card--text">
           <span>ASP Construction</span>
         </div>
         <div class="footer-accreditation-card">
@@ -209,6 +210,22 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
     font-size: 1.05rem;
     font-weight: 800;
     letter-spacing: 0.03em;
+  }
+
+  .footer-accreditation-card--text {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
+  }
+
+  .footer-accreditation-card--text span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 92px;
+    min-height: 42px;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.16);
   }
 
   .footer-accreditation-logo {

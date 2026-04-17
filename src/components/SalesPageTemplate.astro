@@ -56,6 +56,7 @@ interface Props {
 
 const { data, lang = 'fr' } = Astro.props as Props;
 const isEnglish = lang === 'en';
+const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
 ---
 
 <main>
@@ -212,7 +213,7 @@ const isEnglish = lang === 'en';
           <p>{data.contactCard.body}</p>
           <a class="contact-button" href={`tel:${siteSettings.phone.href}`}>{data.contactCard.phoneLabel}</a>
           <a class="contact-link" href={`mailto:${siteSettings.email}`}>{data.contactCard.emailLabel}</a>
-          <a class="contact-link contact-square" href={siteSettings.squareBookingUrl} target="_blank" rel="noopener">{data.contactCard.squareLabel}</a>
+          <a class="contact-link contact-square" href={quoteHref}>{data.contactCard.squareLabel}</a>
         </div>
       </aside>
     </div>

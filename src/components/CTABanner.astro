@@ -18,6 +18,7 @@ const {
   squareLabel = lang === 'fr' ? 'Demander une soumission' : 'Request a quote',
   smsLabel = lang === 'fr' ? 'Message texte' : 'Text us'
 } = Astro.props as Props;
+const quoteHref = lang === 'fr' ? '/contact/' : '/en/contact/';
 ---
 
 <section class="cta-banner">
@@ -31,7 +32,7 @@ const {
       <a href={`sms:${siteSettings.phone.href}`} class="sms-button">
         <i class="fas fa-comment-dots"></i> {smsLabel}
       </a>
-      <a href={siteSettings.squareBookingUrl} target="_blank" rel="noopener" class="square-button">
+      <a href={quoteHref} class="square-button">
         <i class="fas fa-calendar-check"></i> {squareLabel}
       </a>
     </div>

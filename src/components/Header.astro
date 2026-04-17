@@ -66,6 +66,7 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
 const homeHref = isEnglish ? '/en/' : '/';
 const frHref = getAlternatePath(currentPath, 'fr');
 const enHref = getAlternatePath(currentPath, 'en');
+const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
 const smsHref = `sms:${siteSettings.phone.href}`;
 const facebookUrl = siteSettings.facebookUrl?.trim();
 const tiktokUrl = siteSettings.tiktokUrl?.trim();
@@ -91,16 +92,14 @@ const navItems = isEnglish
       { label: 'Services', href: '/en/services/' },
       { label: 'FAQ', href: '/en/faq/' },
       { label: 'Quote', href: '/en/contact/' },
-      { label: 'About', href: '/en/about/' },
-      { label: 'Contact', href: '/en/contact/' }
+      { label: 'About', href: '/en/about/' }
     ]
   : [
       { label: 'Accueil', href: '/' },
       { label: 'Services', href: '/services/' },
       { label: 'FAQ', href: '/faq/' },
       { label: 'Soumission', href: '/contact/' },
-      { label: 'À Propos', href: '/about/' },
-      { label: 'Contact', href: '/contact/' }
+      { label: 'À Propos', href: '/about/' }
     ];
 ---
 
@@ -110,7 +109,7 @@ const navItems = isEnglish
       <div class="topbar-left">
         <a href={`tel:${siteSettings.phone.href}`} class="topbar-phone">{siteSettings.phone.display}</a>
         <a href={smsHref} class="sms-link">{isEnglish ? 'Text us' : 'Message texte'}</a>
-        <a href={siteSettings.squareBookingUrl} target="_blank" rel="noopener" class="square-link">{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
+        <a href={quoteHref} class="square-link">{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
       </div>
       <div class="topbar-right">
         <div class="topbar-credentials">

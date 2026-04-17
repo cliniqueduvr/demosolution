@@ -12,6 +12,7 @@ const { service, allServices, lang = 'fr' } = Astro.props as Props;
 const otherServices = allServices.filter((item) => item.slug !== service.slug);
 const isEnglish = lang === 'en';
 const contactHref = isEnglish ? '/en/contact/' : '/contact/';
+const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
 const serviceHref = (slug: string) => isEnglish ? `/en/services/${slug}/` : `/services/${slug}/`;
 const serviceAreas = isEnglish
   ? ['Gatineau', 'Ottawa', 'Quebec City']
@@ -111,7 +112,7 @@ const serviceAreas = isEnglish
           <h3>{isEnglish ? 'Need a quick opinion?' : "Besoin d'un avis rapide?"}</h3>
           <p>{isEnglish ? 'We can point you toward the right intervention based on the actual condition of the property.' : "On peut vous orienter vers la bonne intervention selon l'état réel de la propriété."}</p>
           <a class="side-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-          <a class="side-link" href={siteSettings.squareBookingUrl} target="_blank" rel="noopener">{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
+          <a class="side-link" href={quoteHref}>{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
         </div>
 
         <div class="side-card">
@@ -170,7 +171,7 @@ const serviceAreas = isEnglish
                 </div>
               )}
               {service.pricing.ctaLabel && (
-                <a class="pricing-cta" href={siteSettings.squareBookingUrl} target="_blank" rel="noopener">
+                <a class="pricing-cta" href={quoteHref}>
                   {service.pricing.ctaLabel}
                 </a>
               )}
