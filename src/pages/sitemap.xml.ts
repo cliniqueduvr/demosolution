@@ -38,6 +38,8 @@ const staticEntries: UrlEntry[] = [
   { path: '/services/', lastmod: defaultLastmod, alternatePaths: ['/en/services/'] },
   { path: '/contact/', lastmod: defaultLastmod, alternatePaths: ['/en/contact/'] },
   { path: '/amiante/', lastmod: defaultLastmod },
+  { path: '/gatineau/', lastmod: defaultLastmod },
+  { path: '/ville-de-quebec/', lastmod: defaultLastmod },
   { path: '/faq/', lastmod: defaultLastmod, alternatePaths: ['/en/faq/'] },
   { path: '/tarifs-moisissure/', lastmod: defaultLastmod, alternatePaths: ['/en/mould-pricing/'] },
   { path: '/tarifs-vermiculite/', lastmod: defaultLastmod, alternatePaths: ['/en/vermiculite-pricing/'] },
