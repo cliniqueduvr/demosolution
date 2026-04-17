@@ -4,12 +4,12 @@
       "slug": "decontamination",
       "alternateSlug": "decontamination",
       "title": "Décontamination",
-      "h1": "Décontamination de matières dangereuses à Gatineau, Ottawa et Québec",
+      "h1": "Décontamination d’amiante et de matières dangereuses à Gatineau, Ottawa et Québec",
       "navLabel": "Décontamination",
-      "icon": "fas fa-hard-hat",
+      "icon": "fas fa-biohazard",
       "serviceType": "Décontamination et retrait sécuritaire de matières dangereuses",
-      "seoTitle": "Décontamination à Gatineau | Amiante, vermiculite et matières dangereuses",
-      "seoDescription": "Service de décontamination à Gatineau, Ottawa et Québec pour amiante, vermiculite et autres matières dangereuses, avec approche sécuritaire et conforme.",
+      "seoTitle": "Décontamination d’amiante à Gatineau | Vermiculite et matières dangereuses",
+      "seoDescription": "Service de décontamination d’amiante à Gatineau, Ottawa et Québec pour vermiculite et autres matières dangereuses, avec approche sécuritaire et conforme.",
       "eyebrow": "Amiante, vermiculite et matières dangereuses",
       "opening": "Demo Solution prend en charge les travaux de décontamination avec une approche sécuritaire, conforme et structurée pour limiter les risques sur le chantier.",
       "lead": "Nous intervenons pour le retrait de matériaux dangereux ou contaminés dans des projets résidentiels, locatifs et commerciaux, avec un focus particulier sur l’amiante et la vermiculite.",
@@ -101,55 +101,62 @@
       "navLabel": "Moisissures",
       "icon": "fas fa-shield-virus",
       "serviceType": "Décontamination de moisissures",
-      "seoTitle": "Décontamination de moisissures à Gatineau | Intervention rapide",
-      "seoDescription": "Décontamination de moisissures à Gatineau, Ottawa et Québec pour bâtiments résidentiels et commerciaux.",
+      "seoTitle": "Décontamination de moisissures à Gatineau | Inspection, confinement et retrait",
+      "seoDescription": "Décontamination de moisissures à Gatineau, Ottawa et Québec pour bâtiments résidentiels et commerciaux, avec inspection, confinement et retrait des matériaux touchés.",
       "eyebrow": "Moisissure et assainissement",
-      "opening": "Nous intervenons lorsque des matériaux, surfaces ou zones fermées ont été touchés par la moisissure à la suite d’humidité, d’infiltration ou d’un sinistre.",
-      "lead": "L’objectif est de retirer les matériaux touchés, de contrôler la contamination et de préparer le bâtiment pour la remise en état.",
-      "intro": "Une décontamination utile commence par une bonne lecture de la source du problème et de l’ampleur réelle des zones affectées.",
-      "detailIntro": "La moisissure est rarement un problème isolé. Il faut traiter à la fois les matériaux atteints, la propagation possible et la cause du dommage pour éviter un retour rapide du problème.",
+      "opening": "Nous intervenons lorsque des matériaux, surfaces ou zones fermées ont été touchés par la moisissure à la suite d’humidité, d’infiltration, de condensation, d’un dégât d’eau ou d’un problème de ventilation.",
+      "lead": "L’objectif est de retirer les matériaux touchés, de contrôler la contamination fongique et de préparer le bâtiment pour une remise en état propre et durable.",
+      "intro": "Une décontamination utile commence par une bonne lecture de la source du problème, de l’ampleur réelle des zones affectées et du risque pour les occupants.",
+      "detailIntro": "La moisissure est rarement un problème isolé. Elle peut se développer derrière les finis, dans les cavités, dans un sous-sol, dans une salle de bain, dans un entretoit ou après un sinistre. Une intervention efficace doit traiter à la fois les matériaux atteints, la propagation possible et la cause du dommage pour éviter un retour rapide du problème.",
       "highlights": [
-        "Évaluation de la zone touchée",
-        "Confinement et retrait ciblé",
-        "Travaux après infiltration ou sinistre",
-        "Préparation à la suite des travaux"
+        "Inspection des zones touchées et des sources d'humidité",
+        "Confinement et retrait ciblé des matériaux contaminés",
+        "Travaux après infiltration, dégât d'eau ou sinistre",
+        "Préparation à la remise en état et à la prévention du retour"
       ],
       "includedTitle": "Ce que comprend le service",
       "included": [
-        "Évaluation des matériaux touchés",
-        "Confinement de la zone au besoin",
-        "Retrait des matériaux contaminés",
-        "Nettoyage et assainissement",
-        "Préparation de la zone pour les travaux suivants"
+        "Inspection visuelle des zones touchées et lecture de la situation",
+        "Repérage des matériaux atteints et des conditions favorables à la moisissure",
+        "Confinement de la zone au besoin pour limiter la dispersion",
+        "Retrait ciblé des matériaux contaminés ou irrécupérables",
+        "Nettoyage technique et assainissement des surfaces conservées",
+        "Préparation de la zone pour les réparations, finitions ou travaux suivants"
       ],
       "situationsTitle": "Signes qui demandent une intervention",
       "situations": [
-        "Odeur persistante d'humidité ou de moisissure",
-        "Matériaux tachés ou détériorés",
-        "Dommages après infiltration d'eau",
-        "Sinistre ayant laissé de l'humidité dans le bâtiment"
+        "Odeur persistante d'humidité ou de moisi",
+        "Taches, auréoles ou noircissement sur les murs, plafonds ou sols",
+        "Matériaux gonflés, friables ou détériorés par l'eau",
+        "Sous-sol, salle de bain, entretoit ou cavité ayant mal séché",
+        "Dommages après infiltration d'eau, fuite ou dégât d'eau",
+        "Symptômes d'irritation ou inconfort dans un espace fermé et humide"
       ],
-      "processIntro": "Nous validons d’abord la portée du problème avant d’isoler, retirer et assainir les zones touchées.",
+      "processIntro": "Nous validons d’abord la portée du problème avant d’isoler, retirer et assainir les zones touchées, puis de préparer la suite du dossier.",
       "process": [
-        "Évaluation de la contamination",
-        "Planification des mesures de protection",
-        "Retrait et nettoyage des zones affectées",
-        "Préparation aux travaux suivants ou aux finitions"
+        "Inspection de la zone et validation des causes probables d'humidité",
+        "Planification des mesures de protection, du confinement et de l'accès au chantier",
+        "Retrait contrôlé des matériaux contaminés et nettoyage des surfaces à conserver",
+        "Assainissement de la zone et préparation pour les réparations ou la reconstruction"
       ],
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour la moisissure?",
-      "whyChooseIntro": "Une intervention efficace repose sur la vitesse d’action, la propreté du chantier et la capacité de préparer correctement la suite.",
+      "whyChooseIntro": "Une intervention efficace repose sur la vitesse d’action, la propreté du chantier, le contrôle de la contamination et la capacité de préparer correctement la suite.",
       "whyChoose": [
         {
           "title": "Intervention ciblée",
-          "text": "Nous allons directement aux zones touchées et aux matériaux à risque pour limiter la propagation."
+          "text": "Nous allons directement aux zones touchées et aux matériaux à risque pour limiter la propagation de la contamination."
         },
         {
           "title": "Travaux bien encadrés",
-          "text": "Le chantier reste structuré du début à la fin avec une attention particulière à la sécurité et à la propreté."
+          "text": "Le chantier reste structuré du début à la fin avec une attention particulière à la sécurité, à la propreté et au confinement."
+        },
+        {
+          "title": "Vision cause et suite",
+          "text": "Nous traitons la zone atteinte tout en gardant en tête la source du problème et la prochaine étape utile pour votre bâtiment."
         },
         {
           "title": "Suite des travaux possible",
-          "text": "Nous pouvons enchaîner avec la démolition sélective ou d’autres travaux préparatoires selon le dossier."
+          "text": "Nous pouvons enchaîner avec la démolition sélective, l'échantillonnage ou d’autres travaux préparatoires selon le dossier."
         }
       ],
       "faqTitle": "Questions fréquentes sur la décontamination de moisissures",
@@ -159,8 +166,20 @@
           "answer": "Oui. Les dossiers de moisissures sont souvent liés à une infiltration, à un dégât d'eau ou à un sinistre qui a laissé de l'humidité dans le bâtiment."
         },
         {
+          "question": "Quels sont les signes typiques d'un problème de moisissure?",
+          "answer": "Les signes fréquents sont une odeur de moisi, des taches sur les murs ou plafonds, des matériaux détériorés par l'humidité et des zones qui ont mal séché après une infiltration ou une fuite."
+        },
+        {
+          "question": "Pouvez-vous intervenir dans un entretoit, un sous-sol ou une salle de bain?",
+          "answer": "Oui. Ce sont des endroits où la moisissure apparaît souvent à cause de l'humidité, de la condensation, d'une ventilation déficiente ou d'une infiltration d'eau."
+        },
+        {
           "question": "Pouvez-vous retirer les matériaux touchés?",
           "answer": "Oui. Nous retirons les matériaux contaminés et préparons la zone pour les réparations suivantes."
+        },
+        {
+          "question": "Faut-il parfois faire un échantillonnage ou un test d'air?",
+          "answer": "Oui, selon le dossier. Quand la contamination est peu visible, douteuse ou qu'il faut mieux documenter la situation, l'échantillonnage peut aider à confirmer la bonne séquence d'intervention."
         },
         {
           "question": "Couvrez-vous Gatineau, Ottawa et Québec?",
@@ -174,7 +193,7 @@
       "title": "Démolition sélective",
       "h1": "Démolition sélective à Gatineau, Ottawa et Québec",
       "navLabel": "Démolition",
-      "icon": "fas fa-hammer",
+      "icon": "fas fa-house-damage",
       "serviceType": "Démolition sélective intérieure et préparatoire",
       "seoTitle": "Démolition sélective à Gatineau | Travaux préparatoires",
       "seoDescription": "Démolition sélective à Gatineau, Ottawa et Québec pour projets résidentiels et commerciaux.",
@@ -251,39 +270,45 @@
       "navLabel": "Vermiculite",
       "icon": "fas fa-exclamation-triangle",
       "serviceType": "Enlèvement de vermiculite et matériaux contaminants",
-      "seoTitle": "Enlèvement de vermiculite à Gatineau | Vermiculite propre ou contaminée",
-      "seoDescription": "Service d’enlèvement de vermiculite à Gatineau, Ottawa et Québec pour vermiculite propre ou potentiellement contaminée.",
+      "seoTitle": "Enlèvement de vermiculite à Gatineau | Entretoit, zonolite et matériaux à risque",
+      "seoDescription": "Service d’enlèvement de vermiculite à Gatineau, Ottawa et Québec pour entretoits, murs, cavités et zonolite potentiellement contaminée, avec approche sécuritaire et structurée.",
       "eyebrow": "Vermiculite propre ou contaminée",
-      "opening": "Demo Solution offre un service d’enlèvement de vermiculite pour les bâtiments résidentiels et commerciaux, avec une approche sécuritaire, méthodique et adaptée à la réalité du chantier.",
-      "lead": "Que la vermiculite soit présumée propre ou potentiellement contaminée, les travaux doivent être réalisés avec prudence et selon une séquence claire afin de protéger le bâtiment et ses occupants.",
-      "intro": "Ce service est particulièrement utile avant des rénovations, lors de l’ouverture d’un entretoit ou lorsqu’une présence de vermiculite soulève un doute sur la sécurité des matériaux en place.",
-      "detailIntro": "L’enlèvement de vermiculite demande une bonne planification du chantier, des méthodes de travail propres et un contrôle rigoureux des matériaux retirés. L’objectif est d’enlever la matière visée sans contaminer inutilement le reste du bâtiment.",
+      "opening": "Demo Solution offre un service d’enlèvement de vermiculite pour les bâtiments résidentiels, locatifs et commerciaux, avec une approche sécuritaire, méthodique et adaptée à la réalité du chantier.",
+      "lead": "Que la vermiculite soit présumée propre ou potentiellement contaminée, les travaux doivent être réalisés avec prudence et selon une séquence claire afin de protéger le bâtiment, la ventilation et ses occupants.",
+      "intro": "Ce service est particulièrement utile après une inspection, avant des rénovations, lors de l’ouverture d’un entretoit ou lorsqu’une présence de vermiculite ou de zonolite soulève un doute sur la sécurité des matériaux en place.",
+      "detailIntro": "La vermiculite se trouve souvent dans les entretoits, les murs, les plafonds ou d’autres cavités et ne devrait pas être déplacée sans évaluation préalable. Certaines formes, comme la zonolite, peuvent être associées à un risque d’amiante. L’enlèvement de vermiculite demande donc une bonne planification du chantier, des méthodes de travail propres et un contrôle rigoureux des matériaux retirés afin d’éviter une dispersion inutile de poussières dans le bâtiment.",
       "highlights": [
         "Retrait sécuritaire de vermiculite",
-        "Travaux résidentiels et commerciaux",
+        "Travaux résidentiels, locatifs et commerciaux",
         "Approche propre et structurée",
         "Préparation avant rénovation ou remise en état"
       ],
       "includedTitle": "Ce que comprend le service",
       "included": [
         "Évaluation de la zone contenant la vermiculite",
+        "Lecture du risque selon l’emplacement, l’accès et le type de bâtiment",
+        "Coordination avec l’échantillonnage ou les tests pertinents lorsque le dossier l’exige",
         "Protection et préparation du chantier",
+        "Mesures de confinement pour limiter la propagation de poussières",
         "Retrait de la vermiculite selon la portée du projet",
         "Gestion sécuritaire des matériaux retirés",
         "Nettoyage de la zone après intervention"
       ],
       "situationsTitle": "Quand prévoir un enlèvement de vermiculite",
       "situations": [
+        "Après une inspection révélant la présence de vermiculite ou de zonolite",
         "Avant des travaux de rénovation ou de démolition",
-        "Quand la vermiculite est visible dans un entretoit ou une cavité",
+        "Quand la vermiculite est visible dans un entretoit, un mur ou une cavité",
+        "Quand il faut éviter de contaminer les conduits ou les autres zones du bâtiment",
         "Quand vous voulez clarifier le risque avant d’ouvrir des matériaux",
         "Quand un chantier doit être préparé proprement avant la suite"
       ],
       "processIntro": "Notre approche consiste d’abord à confirmer la portée du retrait, puis à organiser le chantier pour intervenir de manière propre, sécuritaire et conforme au besoin du projet.",
       "process": [
-        "Évaluation de la zone et du contexte des travaux",
-        "Mise en place des protections nécessaires",
-        "Retrait de la vermiculite et gestion des matériaux",
+        "Évaluation de la zone, du contexte des travaux et du niveau de précaution requis",
+        "Validation ou échantillonnage au besoin avant l’ouverture complète du chantier",
+        "Mise en place des protections et du confinement nécessaires",
+        "Retrait contrôlé de la vermiculite et gestion des matériaux",
         "Nettoyage final et préparation de la prochaine étape"
       ],
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour la vermiculite?",
@@ -300,6 +325,14 @@
         {
           "title": "Vision terrain",
           "text": "Nous adaptons l’intervention à la portée réelle du projet, qu’il soit résidentiel ou commercial."
+        },
+        {
+          "title": "Intervention après inspection",
+          "text": "Nous intervenons régulièrement quand de la vermiculite est découverte dans un entretoit ou une cavité avant des travaux."
+        },
+        {
+          "title": "Coordination du diagnostic",
+          "text": "Lorsque requis, nous pouvons arrimer l’enlèvement avec l’échantillonnage ou d’autres validations utiles avant l’ouverture complète du chantier."
         }
       ],
       "faqTitle": "Questions fréquentes sur l’enlèvement de vermiculite",
@@ -311,6 +344,14 @@
         {
           "question": "Intervenez-vous pour de la vermiculite présumée contaminée?",
           "answer": "Oui. Nous pouvons intervenir lorsque la vermiculite est présumée contaminée ou lorsqu’une approche prudente est nécessaire avant les travaux."
+        },
+        {
+          "question": "La vermiculite peut-elle se trouver ailleurs que dans l’entretoit?",
+          "answer": "Oui. On la retrouve souvent dans les entretoits, mais aussi dans certaines cavités, plafonds ou murs selon le bâtiment et l’époque de construction."
+        },
+        {
+          "question": "Faut-il déplacer soi-même la vermiculite trouvée dans un entretoit?",
+          "answer": "Non. Lorsque de la vermiculite est visible dans un entretoit ou une cavité, il est préférable d’éviter de la déplacer avant une évaluation afin de limiter le risque de dispersion de poussières."
         },
         {
           "question": "Desserviez-vous Gatineau, Ottawa et Québec pour ce service?",

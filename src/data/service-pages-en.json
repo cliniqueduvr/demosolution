@@ -4,12 +4,12 @@
       "slug": "decontamination",
       "alternateSlug": "decontamination",
       "title": "Decontamination",
-      "h1": "Hazardous material decontamination in Gatineau, Ottawa and Quebec City",
+      "h1": "Asbestos and hazardous material decontamination in Gatineau, Ottawa and Quebec City",
       "navLabel": "Decontamination",
       "icon": "fas fa-biohazard",
       "serviceType": "Decontamination and hazardous material removal",
-      "seoTitle": "Decontamination in Gatineau | Asbestos, vermiculite and hazardous materials",
-      "seoDescription": "Decontamination service in Gatineau, Ottawa and Quebec City for asbestos, vermiculite and other hazardous materials, with a safe and compliant approach.",
+      "seoTitle": "Asbestos decontamination in Gatineau | Vermiculite and hazardous materials",
+      "seoDescription": "Asbestos decontamination service in Gatineau, Ottawa and Quebec City for vermiculite and other hazardous materials, with a safe and compliant approach.",
       "eyebrow": "Asbestos, vermiculite and hazardous materials",
       "opening": "Demo Solution handles decontamination work with a safe, compliant and structured approach designed to limit risk on site.",
       "lead": "We intervene for the removal of hazardous or contaminated materials in residential, rental and commercial projects, with a strong focus on asbestos and vermiculite.",
@@ -101,55 +101,62 @@
       "navLabel": "Mould",
       "icon": "fas fa-shield-virus",
       "serviceType": "Mould remediation",
-      "seoTitle": "Mould remediation in Gatineau | Fast intervention",
-      "seoDescription": "Mould remediation in Gatineau, Ottawa and Quebec City for residential and commercial buildings.",
+      "seoTitle": "Mould remediation in Gatineau | Inspection, containment and removal",
+      "seoDescription": "Mould remediation in Gatineau, Ottawa and Quebec City for residential and commercial buildings, including inspection, containment and removal of affected materials.",
       "eyebrow": "Mould and site sanitation",
-      "opening": "We intervene when materials, surfaces or enclosed areas have been affected by mould following humidity, infiltration or a loss event.",
-      "lead": "The goal is to remove affected materials, control contamination and prepare the building for the next stage of work.",
-      "intro": "Useful mould remediation starts with a proper reading of the source of the problem and the real extent of the affected areas.",
-      "detailIntro": "Mould is rarely an isolated issue. You have to address the affected materials, possible spread and the underlying cause to avoid a rapid recurrence.",
+      "opening": "We intervene when materials, surfaces or enclosed areas have been affected by mould following humidity, infiltration, condensation, water damage or a ventilation issue.",
+      "lead": "The goal is to remove affected materials, control fungal contamination and prepare the building for a clean, durable restoration path.",
+      "intro": "Useful mould remediation starts with a proper reading of the source of the problem, the true extent of the affected areas and the risk for occupants.",
+      "detailIntro": "Mould is rarely an isolated issue. It can develop behind finishes, inside cavities, in basements, bathrooms, attics or after a loss event. Effective remediation has to address the affected materials, possible spread and the underlying cause to avoid a quick recurrence.",
       "highlights": [
-        "Assessment of the affected area",
-        "Containment and targeted removal",
-        "Work after infiltration or humidity damage",
-        "Preparation for the next phase"
+        "Inspection of affected areas and moisture sources",
+        "Containment and targeted removal of contaminated materials",
+        "Work after infiltration, water damage or a loss event",
+        "Preparation for restoration and recurrence prevention"
       ],
       "includedTitle": "What the service includes",
       "included": [
-        "Assessment of affected materials",
-        "Containment of the area when required",
-        "Removal of contaminated materials",
-        "Cleaning and sanitation",
-        "Preparation of the area for the next stage"
+        "Visual inspection of affected areas and reading of the overall situation",
+        "Identification of affected materials and conditions that support mould growth",
+        "Containment of the area when required to limit spread",
+        "Targeted removal of contaminated or non-salvageable materials",
+        "Technical cleaning and sanitation of retained surfaces",
+        "Preparation of the area for repairs, finishing work or follow-up trades"
       ],
       "situationsTitle": "Signs that call for an intervention",
       "situations": [
         "Persistent musty or mould odour",
-        "Stained or deteriorated materials",
-        "Damage after water infiltration",
-        "Humidity left inside the building after a loss"
+        "Staining, dark spotting or water marks on walls, ceilings or floors",
+        "Swollen, soft or deteriorated materials after moisture exposure",
+        "A basement, bathroom, attic or cavity that did not dry properly",
+        "Damage after infiltration, leakage or water damage",
+        "Irritation or discomfort inside an enclosed humid space"
       ],
-      "processIntro": "We first confirm the scope of the issue, then isolate, remove and sanitize the affected areas.",
+      "processIntro": "We first confirm the scope of the issue, then isolate, remove and sanitize the affected areas before preparing the next stage of the file.",
       "process": [
-        "Assessment of the contamination",
-        "Planning of protective measures",
-        "Removal and cleaning of affected areas",
-        "Preparation for the next stage or finishing work"
+        "Inspection of the area and validation of likely moisture causes",
+        "Planning of protective measures, containment and site access",
+        "Controlled removal of contaminated materials and cleaning of retained surfaces",
+        "Sanitation of the area and preparation for repairs or reconstruction"
       ],
       "whyChooseTitle": "Why choose Demo Solution for mould remediation?",
-      "whyChooseIntro": "Effective remediation depends on speed of action, clean execution and proper preparation for what comes next.",
+      "whyChooseIntro": "Effective remediation depends on speed of action, clean execution, control of contamination and proper preparation for what comes next.",
       "whyChoose": [
         {
           "title": "Targeted intervention",
-          "text": "We go directly to the affected areas and risky materials to limit spread."
+          "text": "We go directly to the affected areas and risky materials to limit the spread of contamination."
         },
         {
           "title": "Controlled work",
-          "text": "The site stays structured from start to finish with close attention to safety and cleanliness."
+          "text": "The site stays structured from start to finish with close attention to safety, cleanliness and containment."
+        },
+        {
+          "title": "Cause-aware approach",
+          "text": "We address the affected zone while keeping the likely source of the problem and the next useful step in view."
         },
         {
           "title": "Next-step readiness",
-          "text": "We can prepare the site properly for selective demolition or other follow-up work."
+          "text": "We can prepare the site properly for selective demolition, sampling or other follow-up work."
         }
       ],
       "faqTitle": "Frequently asked questions about mould remediation",
@@ -159,8 +166,20 @@
           "answer": "Yes. Mould files are often related to infiltration, water damage or residual humidity left in the building."
         },
         {
+          "question": "What are the typical signs of a mould problem?",
+          "answer": "Common signs include a musty odour, staining on walls or ceilings, moisture-damaged materials and areas that did not dry properly after a leak or infiltration."
+        },
+        {
+          "question": "Can you work in attics, basements or bathrooms?",
+          "answer": "Yes. These are common mould-prone areas because of humidity, condensation, ventilation issues or water infiltration."
+        },
+        {
           "question": "Can you remove the affected materials?",
           "answer": "Yes. We remove contaminated materials and prepare the area for the next stage of work."
+        },
+        {
+          "question": "Do some files require sampling or air testing?",
+          "answer": "Yes, depending on the situation. When contamination is not fully visible, uncertain or needs better documentation, sampling can help confirm the right sequence of intervention."
         },
         {
           "question": "Do you cover Gatineau, Ottawa and Quebec City?",
@@ -252,12 +271,12 @@
       "icon": "fas fa-exclamation-triangle",
       "serviceType": "Vermiculite removal and hazardous material handling",
       "seoTitle": "Vermiculite Removal in Gatineau | Clean or contaminated vermiculite",
-      "seoDescription": "Vermiculite removal service in Gatineau, Ottawa and Quebec City for clean or potentially contaminated vermiculite.",
+      "seoDescription": "Vermiculite removal service in Gatineau, Ottawa and Quebec City for attics, walls, cavities and potentially contaminated zonolite, with a safe and structured approach.",
       "eyebrow": "Clean or contaminated vermiculite",
       "opening": "Demo Solution provides vermiculite removal for residential and commercial buildings with a safe, methodical approach adapted to the real conditions of the site.",
       "lead": "Whether the vermiculite is presumed clean or potentially contaminated, the work has to be handled carefully and in a clear sequence to protect the property and its occupants.",
-      "intro": "This service is especially useful before renovations, when opening an attic or cavity, or when visible vermiculite raises concerns about the safety of existing materials.",
-      "detailIntro": "Removing vermiculite requires proper job planning, clean work methods and tight control over the materials being removed. The goal is to remove the target material without unnecessarily affecting the rest of the building.",
+      "intro": "This service is especially useful after an inspection, before renovations, when opening an attic, or when visible vermiculite or zonolite raises concerns about the safety of existing materials.",
+      "detailIntro": "Vermiculite is often found in attics, walls, ceilings and other cavities and should not be disturbed without proper evaluation. Some forms, including zonolite, may be associated with asbestos risk. Removing vermiculite therefore requires solid job planning, clean work methods and tight control over the materials being removed to avoid unnecessary dust spread inside the building.",
       "highlights": [
         "Safe vermiculite removal",
         "Residential and commercial work",
@@ -268,6 +287,7 @@
       "included": [
         "Assessment of the area containing vermiculite",
         "Protection and setup of the work zone",
+        "Coordination with sampling or other validation when the file requires it",
         "Removal of vermiculite based on project scope",
         "Safe handling of removed materials",
         "Cleaning of the area after the work"
@@ -275,7 +295,7 @@
       "situationsTitle": "When vermiculite removal makes sense",
       "situations": [
         "Before renovation or demolition work",
-        "When vermiculite is visible in an attic or cavity",
+        "When vermiculite is visible in an attic, wall or cavity",
         "When you want to clarify risk before opening materials",
         "When a project needs to be prepared properly before the next step"
       ],
@@ -300,6 +320,10 @@
         {
           "title": "Field-based execution",
           "text": "We adapt the intervention to the real scope of the project, whether residential or commercial."
+        },
+        {
+          "title": "Diagnosis coordination",
+          "text": "When needed, we can align the removal with sampling or other useful validation before the full opening of the site."
         }
       ],
       "faqTitle": "Frequently asked questions about vermiculite removal",
@@ -311,6 +335,10 @@
         {
           "question": "Do you handle potentially contaminated vermiculite?",
           "answer": "Yes. We can intervene when vermiculite is presumed contaminated or when a cautious approach is required before work begins."
+        },
+        {
+          "question": "Can vermiculite be found somewhere other than the attic?",
+          "answer": "Yes. It is often found in attics, but it can also be present in certain walls, ceilings or other cavities depending on the building and period of construction."
         },
         {
           "question": "Do you cover Gatineau, Ottawa and Quebec City for this service?",
