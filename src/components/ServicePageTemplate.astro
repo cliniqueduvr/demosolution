@@ -155,6 +155,11 @@ const serviceAreas = isEnglish
                         ))}
                       </ol>
                     )}
+                    {service.pricing.thirdLinkLabel && service.pricing.thirdLinkHref && (
+                      <a class="pricing-third-link" href={service.pricing.thirdLinkHref} target="_blank" rel="noopener">
+                        {service.pricing.thirdLinkLabel}
+                      </a>
+                    )}
                     {service.pricing.thirdNotes && service.pricing.thirdNotes.length > 0 && (
                       <div class="pricing-third-notes">
                         {service.pricing.thirdNotes.map((note) => (
@@ -611,6 +616,17 @@ const serviceAreas = isEnglish
     display: grid;
     gap: 0.8rem;
     margin-top: 1rem;
+  }
+
+  .pricing-third-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.85rem;
+    color: var(--brand-navy);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
   }
 
   .pricing-third-notes p {

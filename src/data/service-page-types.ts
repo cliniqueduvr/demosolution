@@ -24,6 +24,8 @@ export interface ServicePricing {
   thirdIntro?: string;
   thirdItems?: string[];
   thirdNotes?: string[];
+  thirdLinkLabel?: string;
+  thirdLinkHref?: string;
   ctaLabel?: string;
 }
 

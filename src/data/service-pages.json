@@ -426,9 +426,11 @@
         ],
         "thirdTitle": "Vous préférez échantillonner vous-même?",
         "thirdItems": [
-          "Téléchargez le formulaire PDF Échantillonnage-client",
+          "Téléchargez le formulaire PDF d’échantillonnage",
           "Remplissez et joignez le formulaire aux échantillons."
         ],
+        "thirdLinkLabel": "Télécharger le formulaire amiante / vermiculite (PDF)",
+        "thirdLinkHref": "/formulaire-amiante-vermiculite.pdf",
         "thirdNotes": [
           "Prix: 199 $ pour le premier échantillon et 90 $ par échantillon additionnel analysé",
           "Résultats: 48 à 72 heures suivant la réception des échantillons.",
