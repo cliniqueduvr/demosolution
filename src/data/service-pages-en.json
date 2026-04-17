@@ -2,14 +2,14 @@
   "items": [
     {
       "slug": "decontamination",
-      "alternateSlug": "desamiantage",
+      "alternateSlug": "decontamination",
       "title": "Decontamination",
-      "h1": "Hazardous material decontamination in Gatineau, Ottawa, Montreal and Quebec City",
+      "h1": "Hazardous material decontamination in Gatineau, Ottawa and Quebec City",
       "navLabel": "Decontamination",
       "icon": "fas fa-biohazard",
       "serviceType": "Decontamination and hazardous material removal",
       "seoTitle": "Decontamination in Gatineau | Asbestos, vermiculite and hazardous materials",
-      "seoDescription": "Decontamination service in Gatineau, Ottawa, Greater Montreal and Quebec City for asbestos, vermiculite and other hazardous materials, with a safe and compliant approach.",
+      "seoDescription": "Decontamination service in Gatineau, Ottawa and Quebec City for asbestos, vermiculite and other hazardous materials, with a safe and compliant approach.",
       "eyebrow": "Asbestos, vermiculite and hazardous materials",
       "opening": "Demo Solution handles decontamination work with a safe, compliant and structured approach designed to limit risk on site.",
       "lead": "We intervene for the removal of hazardous or contaminated materials in residential and commercial projects, with a strong focus on asbestos and vermiculite.",
@@ -83,12 +83,12 @@
       "slug": "mould-removal",
       "alternateSlug": "moisissure",
       "title": "Mould Remediation",
-      "h1": "Mould remediation in Gatineau, Ottawa, Montreal and Quebec City",
+      "h1": "Mould remediation in Gatineau, Ottawa and Quebec City",
       "navLabel": "Mould",
       "icon": "fas fa-shield-virus",
       "serviceType": "Mould remediation",
       "seoTitle": "Mould remediation in Gatineau | Fast intervention",
-      "seoDescription": "Mould remediation in Gatineau, Ottawa, Greater Montreal and Quebec City for residential and commercial buildings.",
+      "seoDescription": "Mould remediation in Gatineau, Ottawa and Quebec City for residential and commercial buildings.",
       "eyebrow": "Mould and site sanitation",
       "opening": "We intervene when materials, surfaces or enclosed areas have been affected by mould following humidity, infiltration or a loss event.",
       "lead": "The goal is to remove affected materials, control contamination and prepare the building for the next stage of work.",
@@ -149,8 +149,8 @@
           "answer": "Yes. We remove contaminated materials and prepare the area for the next stage of work."
         },
         {
-          "question": "Do you cover Gatineau, Ottawa, Greater Montreal and Quebec City?",
-          "answer": "Yes. We serve Gatineau, Ottawa, Greater Montreal and Quebec City depending on the project."
+          "question": "Do you cover Gatineau, Ottawa and Quebec City?",
+          "answer": "Yes. We serve Gatineau, Ottawa and Quebec City depending on the project."
         }
       ]
     },
@@ -158,12 +158,12 @@
       "slug": "selective-demolition",
       "alternateSlug": "demolition-selective",
       "title": "Selective Demolition",
-      "h1": "Selective demolition in Gatineau, Ottawa, Montreal and Quebec City",
+      "h1": "Selective demolition in Gatineau, Ottawa and Quebec City",
       "navLabel": "Demolition",
       "icon": "fas fa-house-damage",
       "serviceType": "Interior and preparatory selective demolition",
       "seoTitle": "Selective demolition in Gatineau | Preparatory work",
-      "seoDescription": "Selective demolition in Gatineau, Ottawa, Greater Montreal and Quebec City for residential and commercial projects.",
+      "seoDescription": "Selective demolition in Gatineau, Ottawa and Quebec City for residential and commercial projects.",
       "eyebrow": "Structured site preparation",
       "opening": "We carry out selective demolition to cleanly remove affected or outdated sections without unnecessarily disturbing the rest of the building.",
       "lead": "This service is useful before rebuilding work, when opening targeted areas, or when contaminated materials have to be removed in a controlled way.",
@@ -224,7 +224,7 @@
           "answer": "Yes. Depending on the project, selective demolition can follow sampling or decontamination in a coherent work sequence."
         },
         {
-          "question": "Do you cover Gatineau, Ottawa, Greater Montreal and Quebec City?",
+          "question": "Do you cover Gatineau, Ottawa and Quebec City?",
           "answer": "Yes. We provide this service across those markets depending on the scope and type of site."
         }
       ]
@@ -233,12 +233,12 @@
       "slug": "vermiculite-removal",
       "alternateSlug": "enlevement-vermiculite",
       "title": "Vermiculite Removal",
-      "h1": "Vermiculite Removal in Gatineau, Ottawa, Montreal and Quebec City",
+      "h1": "Vermiculite Removal in Gatineau, Ottawa and Quebec City",
       "navLabel": "Vermiculite",
       "icon": "fas fa-exclamation-triangle",
       "serviceType": "Vermiculite removal and hazardous material handling",
       "seoTitle": "Vermiculite Removal in Gatineau | Clean or contaminated vermiculite",
-      "seoDescription": "Vermiculite removal service in Gatineau, Ottawa, Greater Montreal and Quebec City for clean or potentially contaminated vermiculite.",
+      "seoDescription": "Vermiculite removal service in Gatineau, Ottawa and Quebec City for clean or potentially contaminated vermiculite.",
       "eyebrow": "Clean or contaminated vermiculite",
       "opening": "Demo Solution provides vermiculite removal for residential and commercial buildings with a safe, methodical approach adapted to the real conditions of the site.",
       "lead": "Whether the vermiculite is presumed clean or potentially contaminated, the work has to be handled carefully and in a clear sequence to protect the property and its occupants.",
@@ -299,8 +299,8 @@
           "answer": "Yes. We can intervene when vermiculite is presumed contaminated or when a cautious approach is required before work begins."
         },
         {
-          "question": "Do you cover Gatineau, Ottawa, Montreal and Quebec City for this service?",
-          "answer": "Yes. We offer this service in Gatineau, Ottawa, Greater Montreal and Quebec City depending on the project."
+          "question": "Do you cover Gatineau, Ottawa and Quebec City for this service?",
+          "answer": "Yes. We offer this service in Gatineau, Ottawa and Quebec City depending on the project."
         }
       ]
     },
@@ -308,12 +308,12 @@
       "slug": "sampling",
       "alternateSlug": "echantillonnage",
       "title": "Sampling",
-      "h1": "Asbestos and material sampling in Gatineau, Ottawa, Montreal and Quebec City",
+      "h1": "Asbestos and material sampling in Gatineau, Ottawa and Quebec City",
       "navLabel": "Sampling",
       "icon": "fas fa-microscope",
       "serviceType": "Material and air sampling",
       "seoTitle": "Asbestos Sampling in Gatineau | Air, materials and surfaces",
-      "seoDescription": "Sampling service in Gatineau, Ottawa, Greater Montreal and Quebec City for air, materials and surfaces before work begins.",
+      "seoDescription": "Sampling service in Gatineau, Ottawa and Quebec City for air, materials and surfaces before work begins.",
       "eyebrow": "Air, materials and surfaces",
       "opening": "Demo Solution offers sampling services to help confirm the presence of hazardous materials before decontamination, renovation or demolition work begins.",
       "lead": "Sampling helps clarify the real situation before intervention, reduce uncertainty on site and guide the next decisions properly.",

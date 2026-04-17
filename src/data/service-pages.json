@@ -1,15 +1,15 @@
 {
   "items": [
     {
-      "slug": "desamiantage",
-      "alternateSlug": "asbestos-removal",
+      "slug": "decontamination",
+      "alternateSlug": "decontamination",
       "title": "Décontamination",
-      "h1": "Décontamination de matières dangereuses à Gatineau, Ottawa, Montréal et Québec",
+      "h1": "Décontamination de matières dangereuses à Gatineau, Ottawa et Québec",
       "navLabel": "Décontamination",
       "icon": "fas fa-hard-hat",
       "serviceType": "Décontamination et retrait sécuritaire de matières dangereuses",
       "seoTitle": "Décontamination à Gatineau | Amiante, vermiculite et matières dangereuses",
-      "seoDescription": "Service de décontamination à Gatineau, Ottawa, dans la grande région de Montréal et à Québec pour amiante, vermiculite et autres matières dangereuses, avec approche sécuritaire et conforme.",
+      "seoDescription": "Service de décontamination à Gatineau, Ottawa et Québec pour amiante, vermiculite et autres matières dangereuses, avec approche sécuritaire et conforme.",
       "eyebrow": "Amiante, vermiculite et matières dangereuses",
       "opening": "Demo Solution prend en charge les travaux de décontamination avec une approche sécuritaire, conforme et structurée pour limiter les risques sur le chantier.",
       "lead": "Nous intervenons pour le retrait de matériaux dangereux ou contaminés dans des projets résidentiels et commerciaux, avec un focus particulier sur l’amiante et la vermiculite.",
@@ -88,7 +88,7 @@
       "icon": "fas fa-shield-virus",
       "serviceType": "Décontamination de moisissures",
       "seoTitle": "Décontamination de moisissures à Gatineau | Intervention rapide",
-      "seoDescription": "Décontamination de moisissures à Gatineau, Ottawa et partout au Québec pour bâtiments résidentiels et commerciaux.",
+      "seoDescription": "Décontamination de moisissures à Gatineau, Ottawa et Québec pour bâtiments résidentiels et commerciaux.",
       "eyebrow": "Moisissure et assainissement",
       "opening": "Nous intervenons lorsque des matériaux, surfaces ou zones fermées ont été touchés par la moisissure à la suite d’humidité, d’infiltration ou d’un sinistre.",
       "lead": "L’objectif est de retirer les matériaux touchés, de contrôler la contamination et de préparer le bâtiment pour la remise en état.",
@@ -163,7 +163,7 @@
       "icon": "fas fa-hammer",
       "serviceType": "Démolition sélective intérieure et préparatoire",
       "seoTitle": "Démolition sélective à Gatineau | Travaux préparatoires",
-      "seoDescription": "Démolition sélective à Gatineau, Ottawa et partout au Québec pour projets résidentiels et commerciaux.",
+      "seoDescription": "Démolition sélective à Gatineau, Ottawa et Québec pour projets résidentiels et commerciaux.",
       "eyebrow": "Préparation structurée du chantier",
       "opening": "Nous réalisons des travaux de démolition sélective pour retirer proprement les sections touchées ou à refaire sans perturber inutilement le reste du bâtiment.",
       "lead": "Ce service est utile avant des travaux intérieurs, après un dégât ou lorsqu’il faut ouvrir des zones précises pour corriger un problème.",
@@ -233,12 +233,12 @@
       "slug": "enlevement-vermiculite",
       "alternateSlug": "vermiculite-removal",
       "title": "Enlèvement de vermiculite",
-      "h1": "Enlèvement de vermiculite à Gatineau, Ottawa, Montréal et Québec",
+      "h1": "Enlèvement de vermiculite à Gatineau, Ottawa et Québec",
       "navLabel": "Vermiculite",
       "icon": "fas fa-exclamation-triangle",
       "serviceType": "Enlèvement de vermiculite et matériaux contaminants",
       "seoTitle": "Enlèvement de vermiculite à Gatineau | Vermiculite propre ou contaminée",
-      "seoDescription": "Service d’enlèvement de vermiculite à Gatineau, Ottawa, dans la grande région de Montréal et à Québec pour vermiculite propre ou potentiellement contaminée.",
+      "seoDescription": "Service d’enlèvement de vermiculite à Gatineau, Ottawa et Québec pour vermiculite propre ou potentiellement contaminée.",
       "eyebrow": "Vermiculite propre ou contaminée",
       "opening": "Demo Solution offre un service d’enlèvement de vermiculite pour les bâtiments résidentiels et commerciaux, avec une approche sécuritaire, méthodique et adaptée à la réalité du chantier.",
       "lead": "Que la vermiculite soit présumée propre ou potentiellement contaminée, les travaux doivent être réalisés avec prudence et selon une séquence claire afin de protéger le bâtiment et ses occupants.",
@@ -299,8 +299,8 @@
           "answer": "Oui. Nous pouvons intervenir lorsque la vermiculite est présumée contaminée ou lorsqu’une approche prudente est nécessaire avant les travaux."
         },
         {
-          "question": "Desserviez-vous Gatineau, Ottawa, Montréal et Québec pour ce service?",
-          "answer": "Oui. Nous offrons ce service à Gatineau, Ottawa, dans la grande région de Montréal et à Québec selon le type de projet."
+          "question": "Desserviez-vous Gatineau, Ottawa et Québec pour ce service?",
+          "answer": "Oui. Nous offrons ce service à Gatineau, Ottawa et Québec selon le type de projet."
         }
       ]
     },
@@ -308,12 +308,12 @@
       "slug": "echantillonnage",
       "alternateSlug": "sampling",
       "title": "Échantillonnage",
-      "h1": "Échantillonnage d’amiante et de matériaux à Gatineau, Ottawa, Montréal et Québec",
+      "h1": "Échantillonnage d’amiante et de matériaux à Gatineau, Ottawa et Québec",
       "navLabel": "Échantillonnage",
       "icon": "fas fa-microscope",
       "serviceType": "Échantillonnage et analyse de matériaux ou d’air",
       "seoTitle": "Échantillonnage amiante à Gatineau | Air, matériaux et surfaces",
-      "seoDescription": "Service d’échantillonnage à Gatineau, Ottawa, dans la grande région de Montréal et à Québec pour l’air, les matériaux et les surfaces à risque.",
+      "seoDescription": "Service d’échantillonnage à Gatineau, Ottawa et Québec pour l’air, les matériaux et les surfaces à risque.",
       "eyebrow": "Air, matériaux et surfaces",
       "opening": "Demo Solution offre un service d’échantillonnage pour aider à confirmer la présence de matériaux à risque avant des travaux de décontamination, de rénovation ou de démolition.",
       "lead": "L’échantillonnage permet de mieux comprendre la situation avant d’intervenir, de réduire l’incertitude sur le chantier et d’orienter les prochaines décisions.",

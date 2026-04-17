@@ -72,7 +72,7 @@ export function buildLocalBusinessSchema({
     '@type': 'Contractor',
     '@id': `${SITE_URL}/#demo-solution`,
     name: 'Demo Solution',
-    description: 'Décontamination, enlèvement de matières dangereuses, désamiantage, enlèvement de vermiculite, échantillonnage et démolition à Gatineau, Ottawa, Montréal et Québec',
+    description: 'Décontamination, enlèvement de matières dangereuses, désamiantage, enlèvement de vermiculite, échantillonnage et démolition à Gatineau, Ottawa et Québec',
     telephone,
     email,
     url: SITE_URL,
@@ -80,7 +80,6 @@ export function buildLocalBusinessSchema({
     areaServed: [
       { '@type': 'City', name: 'Gatineau' },
       { '@type': 'City', name: 'Ottawa' },
-      { '@type': 'AdministrativeArea', name: 'Grand Montréal' },
       { '@type': 'City', name: 'Québec' }
     ],
     address: {
@@ -185,7 +184,6 @@ export function buildServiceSchema({
     areaServed: [
       { '@type': 'City', name: 'Gatineau' },
       { '@type': 'City', name: 'Ottawa' },
-      { '@type': 'AdministrativeArea', name: 'Grand Montréal' },
       { '@type': 'City', name: 'Québec' }
     ],
     serviceType,

@@ -21,9 +21,9 @@ const serviceAreas = [
     body: "Interventions ciblées pour projets résidentiels et commerciaux selon la portée des travaux."
   },
   {
-    name: 'Montréal et Québec',
+    name: 'Québec',
     href: '/contact/',
-    body: "Accompagnement pour la grande région de Montréal et Québec selon le type de chantier."
+    body: "Accompagnement pour des projets à Québec selon le type de chantier."
   }
 ];
 const serviceFaqs = [
@@ -33,7 +33,7 @@ const serviceFaqs = [
   },
   {
     question: 'Travaillez-vous seulement à Gatineau?',
-    answer: "Non. Nous desservons Gatineau, Ottawa, la grande région de Montréal et Québec selon le type de dossier."
+    answer: "Non. Nous desservons Gatineau, Ottawa et Québec selon le type de dossier."
   },
   {
     question: 'Pouvez-vous faire plusieurs étapes du chantier?',
@@ -51,7 +51,7 @@ const breadcrumbs = buildBreadcrumbSchema([
 ]);
 ---
 
-<Layout title="Services Demo Solution | Décontamination, échantillonnage et démolition" description="Services de décontamination, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa, dans la grande région de Montréal et à Québec." canonicalPath="/services/" frPath="/services/" enPath="/en/services/" schemas={[breadcrumbs, buildFAQSchema(serviceFaqs)]}>
+<Layout title="Services Demo Solution | Décontamination, moisissures et échantillonnage" description="Services de décontamination, moisissures, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa et Québec." canonicalPath="/services/" frPath="/services/" enPath="/en/services/" schemas={[breadcrumbs, buildFAQSchema(serviceFaqs)]}>
   <Header />
 
   <main>
@@ -106,14 +106,14 @@ const breadcrumbs = buildBreadcrumbSchema([
           <section class="service-areas-section">
             <div class="section-header">
               <h2>Zones desservies</h2>
-              <p class="section-intro">Nous recevons des demandes de Gatineau, d’Ottawa, de la grande région de Montréal et de Québec selon le type de service et la portée du projet.</p>
+              <p class="section-intro">Nous recevons des demandes de Gatineau, d’Ottawa et de Québec selon le type de service et la portée du projet.</p>
             </div>
             <div class="area-grid">
               {serviceAreas.map((area) => (
                 <a class="area-card" href={area.href}>
                   <h3>{area.name}</h3>
                   <p>{area.body}</p>
-                  <span>Voir la page locale</span>
+                  <span>Nous contacter</span>
                 </a>
               ))}
             </div>

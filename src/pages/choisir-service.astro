@@ -8,7 +8,7 @@ const symptomCards = [
   {
     title: 'Matériau suspect ou poussière à risque',
     copy: "Si le bâtiment contient des matériaux suspects ou de la poussière potentiellement dangereuse, la décontamination est souvent le bon premier service pour cadrer l’intervention.",
-    href: '/services/desamiantage/',
+    href: '/services/decontamination/',
     linkLabel: "Voir la décontamination"
   },
   {
@@ -46,7 +46,6 @@ const symptomCards = [
 const serviceAreas = [
   { name: 'Gatineau', href: '/contact/' },
   { name: 'Ottawa', href: '/contact/' },
-  { name: 'Grand Montréal', href: '/contact/' },
   { name: 'Québec', href: '/contact/' }
 ];
 const faqs = [
@@ -111,7 +110,7 @@ const breadcrumbs = buildBreadcrumbSchema([
     <section class="areas-section">
       <div class="container">
         <h2>Zones desservies</h2>
-        <p class="section-copy">Nous recevons des demandes provenant de Gatineau, d’Ottawa, de la grande région de Montréal et de Québec selon le type de besoin et la situation du chantier.</p>
+        <p class="section-copy">Nous recevons des demandes provenant de Gatineau, d’Ottawa et de Québec selon le type de besoin et la situation du chantier.</p>
         <div class="card-grid areas-grid">
           {serviceAreas.map((area) => (
             <a class="info-card choice-card" href={area.href}>

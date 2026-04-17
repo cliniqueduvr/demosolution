@@ -22,8 +22,8 @@
     "mapQuery": "Demo Solution, 11 rue de Granby, Unite 18, Gatineau, Quebec"
   },
   "serviceArea": {
-    "fr": "Gatineau, Ottawa, la grande région de Montréal et Québec",
-    "en": "Gatineau, Ottawa, Greater Montreal and Quebec City"
+    "fr": "Gatineau, Ottawa et Québec",
+    "en": "Gatineau, Ottawa and Quebec City"
   },
   "sinceYear": "2013",
   "footerDescription": {

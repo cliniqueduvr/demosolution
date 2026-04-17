@@ -14,8 +14,8 @@ const isEnglish = lang === 'en';
 const contactHref = isEnglish ? '/en/contact/' : '/contact/';
 const serviceHref = (slug: string) => isEnglish ? `/en/services/${slug}/` : `/services/${slug}/`;
 const serviceAreas = isEnglish
-  ? ['Gatineau', 'Ottawa', 'Greater Montreal', 'Quebec City']
-  : ['Gatineau', 'Ottawa', 'Grand Montréal', 'Québec'];
+  ? ['Gatineau', 'Ottawa', 'Quebec City']
+  : ['Gatineau', 'Ottawa', 'Québec'];
 ---
 
 <main>
@@ -24,8 +24,8 @@ const serviceAreas = isEnglish
       <div class="hero-copy">
         <p class="eyebrow">{service.eyebrow}</p>
         <h1 class:list={[
-          (service.slug === 'desamiantage' || service.slug === 'decontamination' || service.slug === 'demolition-selective' || service.slug === 'selective-demolition') && 'hero-title-wide',
-          (service.slug === 'desamiantage' || service.slug === 'decontamination') && 'hero-title-wider'
+          (service.slug === 'decontamination' || service.slug === 'demolition-selective' || service.slug === 'selective-demolition') && 'hero-title-wide',
+          service.slug === 'decontamination' && 'hero-title-wider'
         ]}>{service.h1}</h1>
         <p class="opening">{service.opening}</p>
         <p class="lead">{service.lead}</p>
@@ -98,8 +98,8 @@ const serviceAreas = isEnglish
           <h2>{isEnglish ? 'Areas served for this service' : 'Zones desservies pour ce service'}</h2>
           <p class="section-copy">
             {isEnglish
-              ? 'This service is offered from Gatineau and, depending on the type of work, may also extend to Ottawa, Greater Montreal and Quebec City.'
-              : 'Ce service est offert à partir de Gatineau et, selon le type d’intervention, peut aussi inclure Ottawa, la grande région de Montréal et Québec.'}
+              ? 'This service is offered from Gatineau and, depending on the type of work, may also extend to Ottawa and Quebec City.'
+              : 'Ce service est offert à partir de Gatineau et, selon le type d’intervention, peut aussi inclure Ottawa et Québec.'}
           </p>
           <div class="link-card-grid">
             {serviceAreas.map((area) => (
