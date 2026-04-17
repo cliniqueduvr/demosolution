@@ -130,7 +130,8 @@
         "Matériaux gonflés, friables ou détériorés par l'eau",
         "Sous-sol, salle de bain, entretoit ou cavité ayant mal séché",
         "Dommages après infiltration d'eau, fuite ou dégât d'eau",
-        "Symptômes d'irritation ou inconfort dans un espace fermé et humide"
+        "Symptômes d'irritation ou inconfort dans un espace fermé et humide",
+        "Présence suspecte de mérule pleureuse ou de champignon destructeur du bois"
       ],
       "processIntro": "Nous validons d’abord la portée du problème avant d’isoler, retirer et assainir les zones touchées, puis de préparer la suite du dossier.",
       "process": [
@@ -139,6 +140,17 @@
         "Retrait contrôlé des matériaux contaminés et nettoyage des surfaces à conserver",
         "Assainissement de la zone et préparation pour les réparations ou la reconstruction"
       ],
+      "commonMaterials": {
+        "title": "Cas particuliers comme la mérule pleureuse",
+        "intro": "Certaines contaminations demandent une attention plus rapide ou une lecture plus poussée qu’une moisissure de surface. C’est notamment le cas de la mérule pleureuse et des situations de forte humidité chronique.",
+        "items": [
+          "Mérule pleureuse ou champignon qui attaque le bois et les matériaux organiques",
+          "Contamination liée à une maison de cannabis ou à une humidité anormalement élevée",
+          "Entretoit, sous-sol, cavité ou zone fermée où l’air circule mal et où le séchage a été insuffisant",
+          "Matériaux touchés derrière les finis, sous les revêtements ou dans des sections peu visibles",
+          "Dossier où un échantillonnage ou une validation supplémentaire peut être utile avant d’ouvrir davantage"
+        ]
+      },
       "pricingPageTitle": "Voir les tarifs de moisissure",
       "pricingPageBody": "Si vous voulez situer votre dossier avant une visite, nous avons préparé une page de tarifs indicatifs pour mieux comprendre ce qui influence le prix d’une décontamination de moisissure.",
       "pricingPageHref": "/tarifs-moisissure/",
