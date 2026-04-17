@@ -398,20 +398,20 @@
         "Report, conclusions and recommendations"
       ],
       "pricing": {
-        "title": "Sampling pricing",
-        "intro": "Indicative pricing block for material sampling requests. Final pricing may vary depending on the material type, number of samples, site access and the real scope of the mandate.",
+        "title": "Our pricing",
+        "intro": "Pricing table for common material sampling requests before renovation, demolition or decontamination work. These rates are meant to frame the most common cases and may vary when the file requires a broader scope or a specific travel setup.",
         "cards": [
           {
-            "title": "Site visit, report and first sample",
-            "price": "Starting at $299",
+            "title": "Inspection, report and first analyzed sample",
+            "price": "$299",
             "details": [
-              "Local travel and standard site visit",
+              "Visual inspection and first reading of the situation",
               "First sample analyzed by the laboratory",
-              "Clear feedback on results and next steps"
+              "Clear report with conclusions and next steps"
             ]
           },
           {
-            "title": "Additional sample",
+            "title": "Additional analyzed sample",
             "price": "$90",
             "details": [
               "Used when an extra material needs confirmation",
@@ -430,7 +430,8 @@
           }
         ],
         "notes": [
-          "Usual turnaround for results: about 48 to 72 hours after sampling.",
+          "Usual timing: appointments with 1 to 2 days of notice, sooner when scheduling allows.",
+          "Results: about 48 to 72 hours after sampling.",
           "Travel fees or additional charges may apply for remote, urgent or larger-scale projects."
         ]
       },
