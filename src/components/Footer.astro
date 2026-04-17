@@ -74,20 +74,20 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
     <div class="container">
       <p class="footer-accreditations-title">{isEnglish ? 'Accreditations and compliance' : 'Accréditations et conformité'}</p>
       <div class="footer-accreditations-grid">
-        <div class="footer-accreditation-card">
-          <img src="/accreditation-cnesst.png" alt="CNESST" class="footer-accreditation-logo footer-accreditation-logo-cnesst" />
+        <div class="footer-accreditation-card footer-accreditation-card--text">
+          <span>CNESST</span>
         </div>
-        <div class="footer-accreditation-card">
-          <img src="/accreditation-rbq.png" alt="RBQ" class="footer-accreditation-logo footer-accreditation-logo-rbq" />
+        <div class="footer-accreditation-card footer-accreditation-card--text">
+          <span>RBQ</span>
         </div>
         <div class="footer-accreditation-card footer-accreditation-card--text">
           <span>ASP Construction</span>
         </div>
-        <div class="footer-accreditation-card">
-          <img src="/accreditation-iicrc.jpg" alt="IICRC" class="footer-accreditation-logo footer-accreditation-logo-iicrc" />
+        <div class="footer-accreditation-card footer-accreditation-card--text">
+          <span>IICRC</span>
         </div>
-        <div class="footer-accreditation-card">
-          <img src="/accreditation-apchq.avif" alt="APCHQ" class="footer-accreditation-logo footer-accreditation-logo-apchq" />
+        <div class="footer-accreditation-card footer-accreditation-card--text">
+          <span>APCHQ</span>
         </div>
       </div>
     </div>
@@ -205,13 +205,6 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
     text-align: center;
   }
 
-  .footer-accreditation-card span {
-    color: white;
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-  }
-
   .footer-accreditation-card--text {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
   }
@@ -226,29 +219,10 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.16);
-  }
-
-  .footer-accreditation-logo {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .footer-accreditation-logo-iicrc {
-    max-height: 48px;
-  }
-
-  .footer-accreditation-logo-rbq {
-    max-height: 50px;
-  }
-
-  .footer-accreditation-logo-apchq {
-    max-height: 46px;
-  }
-
-  .footer-accreditation-logo-cnesst {
-    max-height: 42px;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
   }
 
   .footer-bottom a {
