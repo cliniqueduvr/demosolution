@@ -12,18 +12,19 @@
       "seoDescription": "Decontamination service in Gatineau, Ottawa and Quebec City for asbestos, vermiculite and other hazardous materials, with a safe and compliant approach.",
       "eyebrow": "Asbestos, vermiculite and hazardous materials",
       "opening": "Demo Solution handles decontamination work with a safe, compliant and structured approach designed to limit risk on site.",
-      "lead": "We intervene for the removal of hazardous or contaminated materials in residential and commercial projects, with a strong focus on asbestos and vermiculite.",
-      "intro": "Every project starts with a clear reading of the situation, the affected areas and the containment measures required before work begins.",
-      "detailIntro": "Effective decontamination requires a rigorous method, clean execution and good coordination between containment, removal, disposal and restoration.",
+      "lead": "We intervene for the removal of hazardous or contaminated materials in residential, rental and commercial projects, with a strong focus on asbestos and vermiculite.",
+      "intro": "Every project starts with a clear reading of the situation, the affected areas, the building type and the containment measures required before work begins.",
+      "detailIntro": "Effective decontamination requires a rigorous method, clean execution and good coordination between sampling, containment, removal, disposal and restoration. This approach is suited to houses, rental properties, apartment buildings, condos and commercial spaces alike.",
       "highlights": [
         "Safe containment",
         "Removal of hazardous materials",
-        "Residential and commercial work",
+        "Residential, rental and commercial work",
         "Structured and compliant approach"
       ],
       "includedTitle": "What we handle",
       "included": [
-        "Assessment of the area to be treated",
+        "Assessment of the area to be treated and the actual level of risk",
+        "Review of suspect materials such as plaster, insulation, tiles, vermiculite and other risky finishes",
         "Protection and containment of the work zone",
         "Removal of hazardous or contaminated materials",
         "Safe handling and disposal of debris",
@@ -31,17 +32,19 @@
       ],
       "situationsTitle": "When this service is useful",
       "situations": [
-        "Before renovation or demolition",
+        "Before renovation, demolition or opening walls and ceilings",
         "When a suspect material must be removed",
+        "In houses, rental buildings, apartment units or commercial spaces with hazardous materials",
         "After a loss exposing contaminated materials",
         "When a site must be brought back into compliance"
       ],
-      "processIntro": "We follow a simple sequence: assess, protect, remove, clean and prepare the next stage of the project.",
+      "processIntro": "We follow a simple sequence: assess, confirm, protect, remove, clean and prepare the next stage of the project.",
       "process": [
-        "Review of the need and affected area",
+        "Review of the need, the building and the affected area",
+        "Sampling or upfront validation when required",
         "Installation of the required safety measures",
         "Controlled removal of materials",
-        "Cleaning and turnover of the site"
+        "Cleaning, validation and turnover of the site"
       ],
       "whyChooseTitle": "Why choose Demo Solution for decontamination?",
       "whyChooseIntro": "This type of work demands rigor, a consistent method and clear communication before, during and after the intervention.",
@@ -57,6 +60,10 @@
         {
           "title": "Broader vision",
           "text": "We can coordinate the next stages of the project with selective demolition or other preparatory work when needed."
+        },
+        {
+          "title": "Built for occupied properties",
+          "text": "Our approach takes the realities of residential, rental and commercial occupancy into account to reduce disruption and keep the project moving."
         }
       ],
       "faqTitle": "Frequently asked questions about decontamination",
@@ -67,11 +74,15 @@
         },
         {
           "question": "Do you work on commercial projects?",
-          "answer": "Yes. We handle both residential and commercial projects depending on the nature of the site."
+          "answer": "Yes. We handle residential, rental and commercial projects depending on the nature of the site."
         },
         {
           "question": "Can you handle asbestos and vermiculite?",
           "answer": "Yes. We regularly intervene on projects involving asbestos, vermiculite and other hazardous materials depending on the scope of work."
+        },
+        {
+          "question": "Do you perform sampling before decontamination?",
+          "answer": "Yes, when the file requires it. Sampling helps confirm the presence of a contaminant before the containment and removal work is organized."
         },
         {
           "question": "Can you handle the next stage after decontamination?",
