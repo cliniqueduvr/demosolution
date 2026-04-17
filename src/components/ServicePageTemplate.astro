@@ -51,6 +51,19 @@ const serviceAreas = isEnglish
 
   <section class="service-body">
     <div class="container body-grid">
+      {service.warningTitle && service.warningBody && (
+        <section class="warning-band">
+          <div class="warning-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="warning-copy">
+            <h2>{service.warningTitle}</h2>
+            <p>{service.warningBody}</p>
+          </div>
+          <a class="warning-button" href={contactHref}>{service.warningCtaLabel ?? (isEnglish ? 'Request a quote' : 'Demander une soumission')}</a>
+        </section>
+      )}
+
       <article class="service-main">
         <section class="content-card">
           <h2>{service.includedTitle}</h2>
@@ -93,19 +106,6 @@ const serviceAreas = isEnglish
             ))}
           </div>
         </section>
-
-        {service.warningTitle && service.warningBody && (
-          <section class="warning-band">
-            <div class="warning-icon">
-              <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <div class="warning-copy">
-              <h2>{service.warningTitle}</h2>
-              <p>{service.warningBody}</p>
-            </div>
-            <a class="warning-button" href={contactHref}>{service.warningCtaLabel ?? (isEnglish ? 'Request a quote' : 'Demander une soumission')}</a>
-          </section>
-        )}
 
         <section class="content-card">
           <h2>{isEnglish ? 'Areas served for this service' : 'Zones desservies pour ce service'}</h2>
@@ -382,6 +382,7 @@ const serviceAreas = isEnglish
   .warning-band {
     display: grid;
     grid-template-columns: auto 1fr auto;
+    grid-column: 1 / -1;
     gap: 1.25rem;
     align-items: center;
     padding: 1.75rem;
