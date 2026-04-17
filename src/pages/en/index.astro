@@ -85,7 +85,7 @@ const meta = {
           {!isFormConfigured && (
             <p class="form-note">{homePage.contactForm.unconfiguredNote}</p>
           )}
-          <form name={formName} action={isFormConfigured ? successUrl : undefined} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-form>
+          <form name={formName} action={isFormConfigured ? successUrl : undefined} method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" data-netlify-form>
             <input type="hidden" name="form-name" value={formName} />
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="Page" value="Home EN" />
