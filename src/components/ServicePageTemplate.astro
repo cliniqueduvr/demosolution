@@ -106,27 +106,6 @@ const serviceAreas = isEnglish
           </div>
         </section>
 
-        <section class="content-card">
-          <h2>{isEnglish ? 'Areas served for this service' : 'Zones desservies pour ce service'}</h2>
-          <p class="section-copy">
-            {isEnglish
-              ? 'This service is offered from Gatineau and, depending on the type of work, may also extend to Ottawa and Quebec City.'
-              : 'Ce service est offert à partir de Gatineau et, selon le type d’intervention, peut aussi inclure Ottawa et Québec.'}
-          </p>
-          <div class="link-card-grid">
-            {serviceAreas.map((area) => (
-              <article class="link-card">
-                <h3>{area}</h3>
-                <p>
-                  {isEnglish
-                    ? `Support available for ${service.navLabel.toLowerCase()} requests in and around ${area}.`
-                    : `Accompagnement offert pour les demandes de ${service.navLabel.toLowerCase()} à ${area} et dans les environs.`}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section class="content-card faq-section">
           <h2>{service.faqTitle}</h2>
           <div class="faq-list">
@@ -162,6 +141,27 @@ const serviceAreas = isEnglish
               </a>
             ))}
           </nav>
+        </div>
+
+        <div class="side-card">
+          <h3>{isEnglish ? 'Areas served' : 'Zones desservies'}</h3>
+          <p class="side-copy">
+            {isEnglish
+              ? 'This service is offered from Gatineau and may also extend to Ottawa and Quebec City.'
+              : 'Ce service est offert à partir de Gatineau et peut aussi inclure Ottawa et Québec.'}
+          </p>
+          <div class="service-area-side-list">
+            {serviceAreas.map((area) => (
+              <article class="service-area-side-card">
+                <h4>{area}</h4>
+                <p>
+                  {isEnglish
+                    ? `Support available for ${service.navLabel.toLowerCase()} requests in and around ${area}.`
+                    : `Accompagnement offert pour les demandes de ${service.navLabel.toLowerCase()} à ${area} et dans les environs.`}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </aside>
     </div>
@@ -544,6 +544,11 @@ const serviceAreas = isEnglish
     border-color: #e1c317;
   }
 
+  .side-copy {
+    color: var(--brand-muted);
+    margin-bottom: 1rem;
+  }
+
   .service-nav {
     display: grid;
     gap: 0.7rem;
@@ -569,6 +574,28 @@ const serviceAreas = isEnglish
 
   .service-nav i {
     color: var(--brand-green);
+  }
+
+  .service-area-side-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .service-area-side-card {
+    background: var(--brand-surface);
+    border-radius: 16px;
+    padding: 1rem;
+  }
+
+  .service-area-side-card h4 {
+    margin: 0 0 0.45rem;
+    color: var(--brand-navy);
+    font-size: 1rem;
+  }
+
+  .service-area-side-card p {
+    margin: 0;
+    color: var(--brand-muted);
   }
 
   @media (max-width: 920px) {
