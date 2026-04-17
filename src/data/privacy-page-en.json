@@ -1,0 +1,34 @@
+{
+  "metaTitle": "Privacy Policy | Demo Solution",
+  "metaDescription": "Demo Solution privacy policy for quote requests, project evaluations and customer communications.",
+  "breadcrumbs": {
+    "home": "Home",
+    "current": "Privacy Policy"
+  },
+  "hero": {
+    "title": "Privacy Policy",
+    "body": "Demo Solution protects the information voluntarily shared by email, phone, contact form or quote request."
+  },
+  "sections": [
+    {
+      "heading": "Information collected",
+      "body": "When you contact us, we may collect your name, email address, phone number, details about your property or project, and any information useful to your service request."
+    },
+    {
+      "heading": "Use of information",
+      "body": "This information is used to respond to your request, prepare an estimate, or follow up on a file related to decontamination, sampling, vermiculite removal, mould remediation or selective demolition."
+    },
+    {
+      "heading": "Compliance and retention",
+      "body": "The site is designed to support a minimal approach to personal information handling and to comply with the applicable requirements of Law 25 in Quebec. We do not sell your personal information, and we only use the information needed to process your request."
+    },
+    {
+      "heading": "Cookies, tracking and navigation",
+      "body": "The site does not use Google Ads, Google Analytics, or other advertising or analytics tracking tools. No advertising cookies are placed and no browsing information is kept to profile users."
+    },
+    {
+      "heading": "Questions",
+      "body": "For any question related to privacy or your information, email info@demosolution.ca or call (581) 337-3366."
+    }
+  ]
+}

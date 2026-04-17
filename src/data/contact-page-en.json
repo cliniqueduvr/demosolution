@@ -1,0 +1,59 @@
+{
+  "metaTitle": "Contact Demo Solution | Quote and project evaluation",
+  "metaDescription": "Contact Demo Solution for a quote or project evaluation in decontamination, sampling, vermiculite removal, mould remediation or selective demolition in Gatineau, Ottawa, Greater Montreal and Quebec City.",
+  "breadcrumbs": {
+    "home": "Home",
+    "current": "Contact"
+  },
+  "formSection": {
+    "title": "Contact us",
+    "intro": "You can contact us for decontamination, sampling, vermiculite removal, mould remediation, selective demolition or a request for project evaluation. The more precise your message is, the more useful our reply will be.",
+    "unconfiguredNote": "The form is not available at the moment. In the meantime, call us or request a quote.",
+    "fields": {
+      "name": "Full name *",
+      "email": "Email *",
+      "phone": "Phone",
+      "services": "Requested service",
+      "serviceOptions": [
+        "Decontamination",
+        "Sampling",
+        "Vermiculite removal",
+        "Mould remediation",
+        "Selective demolition"
+      ],
+      "workType": "Type of intervention",
+      "workshopOption": "At the property",
+      "mobileOption": "Remote evaluation / site visit",
+      "workAddress": "Work address",
+      "vehicleInfo": "Building / project details",
+      "serialNumber": "Unit or file reference (if applicable)",
+      "attachments": "Attach files",
+      "subject": "Subject *",
+      "message": "Message *"
+    },
+    "submitLabel": "Send"
+  },
+  "infoSection": {
+    "title": "Contact information",
+    "phoneTitle": "Phone",
+    "squareLabel": "Request a quote",
+    "emailTitle": "Email",
+    "locationTitle": "Location",
+    "identityTitle": "Business identity",
+    "identityBody": "<strong>Insurance:</strong> $2M garage and liability<br><strong>Professionals since 2013</strong>",
+    "valuesTitle": "Key values",
+    "valuesBody": "Speed • Transparency • Regulatory compliance • Certified professionals",
+    "ctaBody": "Request your <strong>free estimate</strong> by phone or through the form."
+  },
+  "seoSections": [
+    {
+      "heading": "Demo Solution in Gatineau",
+      "body": "Demo Solution serves Gatineau, Ottawa, Greater Montreal and Quebec City for residential and commercial requests related to decontamination, sampling, vermiculite removal, mould remediation and selective demolition."
+    },
+    {
+      "heading": "Before you send a message",
+      "body": "If you have photos, lab reports, suspicious material descriptions or notes about affected areas, include them in your message. That helps guide the request more quickly toward sampling, decontamination or the right next step."
+    }
+  ],
+  "mapTitle": "Demo Solution - 11 rue de Granby, Unit 18, Gatineau, QC"
+}

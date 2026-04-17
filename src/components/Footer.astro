@@ -1,0 +1,177 @@
+---
+import CTABanner from './CTABanner.astro';
+import siteSettings from '../data/site-settings.json';
+
+export interface Props {
+  lang?: 'fr' | 'en';
+}
+
+const { lang = 'fr' } = Astro.props as Props;
+const isEnglish = lang === 'en';
+const pathname = Astro.url.pathname;
+const shouldShowCta = pathname !== '/contact/' && pathname !== '/en/contact/';
+---
+
+{shouldShowCta && <CTABanner lang={isEnglish ? 'en' : 'fr'} />}
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-col">
+      <img class="footer-brand" src={siteSettings.brandImage} alt={siteSettings.brandName} />
+      <p>{isEnglish ? siteSettings.footerDescription.en : siteSettings.footerDescription.fr}</p>
+    </div>
+    <div class="footer-col">
+      <h4>{isEnglish ? 'Contact' : 'Contact'}</h4>
+      <p>
+        <strong>{isEnglish ? 'Phone:' : 'Téléphone:'}</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a><br>
+        <a href={siteSettings.squareBookingUrl} target="_blank" rel="noopener" class="footer-square-link">{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a><br>
+        <strong>Email:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a><br>
+        <strong>{isEnglish ? 'Insurance:' : 'Assurance:'}</strong> {isEnglish ? '$2M garage and liability' : 'Garage et civile 2 millions'}
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>{isEnglish ? 'Services' : 'Services'}</h4>
+      <ul>
+        <li><a href={isEnglish ? '/en/services/decontamination/' : '/services/desamiantage/'}>{isEnglish ? 'Decontamination' : 'Décontamination'}</a></li>
+        <li><a href={isEnglish ? '/en/services/mould-removal/' : '/services/moisissure/'}>{isEnglish ? 'Mould removal' : 'Moisissures'}</a></li>
+        <li><a href={isEnglish ? '/en/services/vermiculite-removal/' : '/services/enlevement-vermiculite/'}>{isEnglish ? 'Vermiculite removal' : 'Enlèvement de vermiculite'}</a></li>
+        <li><a href={isEnglish ? '/en/services/sampling/' : '/services/echantillonnage/'}>{isEnglish ? 'Sampling' : 'Échantillonnage'}</a></li>
+        <li><a href={isEnglish ? '/en/services/selective-demolition/' : '/services/demolition-selective/'}>{isEnglish ? 'Selective demolition' : 'Démolition'}</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>{isEnglish ? 'Follow Us' : 'Nous Suivre'}</h4>
+      <a href={siteSettings.facebookUrl} target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      <br />
+      <a href={siteSettings.tiktokUrl} target="_blank" rel="noopener">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+      <p class="footer-legal">
+        <a href={isEnglish ? '/en/privacy/' : '/privacy/'}>{isEnglish ? 'Privacy Policy' : 'Politique de confidentialité'}</a>
+        {' · '}
+        <a href={isEnglish ? '/en/site-map/' : '/plan-du-site/'}>{isEnglish ? 'Site Map' : 'Plan du site'}</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 {siteSettings.brandName}. {isEnglish ? 'All rights reserved.' : 'Tous droits réservés.'}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--brand-navy);
+    color: white;
+    padding: 3rem 0 0;
+    margin-top: 0;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .footer-brand {
+    height: 68px;
+    width: auto;
+    display: block;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 10px;
+    padding: 0.35rem;
+  }
+
+  .footer-col h4 {
+    color: var(--brand-gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col a {
+    color: white;
+  }
+
+  .footer-square-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin: 0.35rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark) !important;
+    border: 2px solid var(--brand-gold);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .footer-square-link:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .footer-legal {
+    margin-top: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin: 0.5rem 0;
+  }
+
+  .footer-bottom {
+    background: var(--brand-navy-dark);
+    padding: 1rem;
+    text-align: center;
+    border-top: 3px solid var(--brand-green);
+  }
+
+  .footer-bottom a {
+    color: var(--brand-gold);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      padding: 1.5rem 1rem;
+    }
+
+    .footer {
+      padding-top: 2rem;
+    }
+
+    .footer-brand {
+      height: 58px;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col ul li {
+      margin: 0.35rem 0;
+    }
+
+    .footer-square-link {
+      width: 100%;
+      padding: 0.75rem 1rem;
+    }
+
+    .footer-bottom {
+      padding: 0.85rem 1rem;
+    }
+  }
+</style>

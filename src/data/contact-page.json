@@ -1,0 +1,59 @@
+{
+  "metaTitle": "Contact Demo Solution | Soumission et service à Gatineau",
+  "metaDescription": "Contactez Demo Solution pour une soumission en décontamination, désamiantage, moisissure, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa, dans la grande région de Montréal et à Québec.",
+  "breadcrumbs": {
+    "home": "Accueil",
+    "current": "Contact"
+  },
+  "formSection": {
+    "title": "Contactez-nous",
+    "intro": "Vous pouvez nous joindre pour un projet de décontamination, de désamiantage, d’enlèvement de vermiculite, d’échantillonnage, de moisissures ou de démolition sélective. Plus votre message est précis, plus le retour sera utile.",
+    "unconfiguredNote": "Le formulaire n'est pas disponible pour le moment. En attendant, appelez-nous ou écrivez-nous par courriel.",
+    "fields": {
+      "name": "Nom complet *",
+      "email": "Courriel *",
+      "phone": "Téléphone",
+      "services": "Service désiré",
+      "serviceOptions": [
+        "Désamiantage",
+        "Décontamination de moisissures",
+        "Démolition sélective",
+        "Enlèvement de vermiculite",
+        "Échantillonnage"
+      ],
+      "workType": "Type d'intervention",
+      "workshopOption": "Résidentiel",
+      "mobileOption": "Commercial",
+      "workAddress": "Adresse des travaux",
+      "vehicleInfo": "Type de bâtiment ou de projet",
+      "serialNumber": "Détails complémentaires",
+      "attachments": "Joindre des fichiers",
+      "subject": "Sujet *",
+      "message": "Message *"
+    },
+    "submitLabel": "Envoyer"
+  },
+  "infoSection": {
+    "title": "Informations de contact",
+    "phoneTitle": "Téléphone",
+    "squareLabel": "Demander une soumission",
+    "emailTitle": "Courriel",
+    "locationTitle": "Localisation",
+    "identityTitle": "Identité d'entreprise",
+    "identityBody": "<strong>Assurance:</strong> Garage et civile 2 millions<br><strong>Professionnels depuis 2013</strong>",
+    "valuesTitle": "Valeurs clés",
+    "valuesBody": "Rapidité • Sécurité • Conformité • Rigueur d'exécution",
+    "ctaBody": "Demandez votre <strong>soumission gratuite</strong> par téléphone, courriel ou formulaire."
+  },
+  "seoSections": [
+    {
+      "heading": "Interventions à Gatineau, Ottawa, Montréal et Québec",
+      "body": "Demo Solution dessert Gatineau, Ottawa, la grande région de Montréal et Québec pour des projets résidentiels et commerciaux liés à la décontamination, à l’enlèvement de vermiculite, à l’échantillonnage et à la démolition sélective."
+    },
+    {
+      "heading": "Avant de nous écrire",
+      "body": "Si vous avez des photos, un rapport, une description du sinistre ou une idée des matériaux touchés, ajoutez ces détails à votre message. Cela nous aide à orienter plus rapidement l’évaluation."
+    }
+  ],
+  "mapTitle": "Demo Solution - 11 rue de Granby, Unité 18, Gatineau, QC"
+}

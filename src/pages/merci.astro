@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { buildBreadcrumbSchema } from '../lib/seo';
+import siteSettings from '../data/site-settings.json';
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Merci' }
+]);
+---
+
+<Layout
+  title="Merci | Demo Solution"
+  description="Nous avons bien reçu votre demande. Nous vous répondrons dans un délai de 24 heures."
+  canonicalPath="/merci/"
+  frPath="/merci/"
+  enPath="/en/thank-you/"
+  schemas={[breadcrumbs]}
+>
+  <Header />
+
+  <main>
+    <section class="thanks-hero">
+      <div class="container">
+        <p class="eyebrow">Demande envoyée</p>
+        <h1>Merci, nous avons bien reçu votre demande.</h1>
+        <p>Nous vous répondrons dans un délai de 24 heures. Pour toute urgence, contactez-nous par téléphone.</p>
+        <div class="actions">
+          <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
+          <a class="link-button" href="/contact/">Retour au formulaire</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .thanks-hero {
+    padding: 5rem 0 5.5rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .thanks-hero h1 {
+    max-width: 15ch;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .thanks-hero p {
+    max-width: 58ch;
+    color: #e7edf4;
+    font-size: 1.08rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.75rem;
+  }
+
+  .phone-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+    border-radius: 999px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+  }
+
+  .phone-button:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .link-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-weight: 700;
+  }
+
+  .link-button:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .thanks-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 4rem 0 4.5rem;
+    }
+  }
+</style>

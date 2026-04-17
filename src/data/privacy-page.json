@@ -1,0 +1,34 @@
+{
+  "metaTitle": "Politique de confidentialité | Demo Solution",
+  "metaDescription": "Politique de confidentialité de Demo Solution pour les demandes de soumission, les évaluations de projet et les communications clients.",
+  "breadcrumbs": {
+    "home": "Accueil",
+    "current": "Politique de confidentialité"
+  },
+  "hero": {
+    "title": "Politique de confidentialité",
+    "body": "Demo Solution protège les renseignements partagés volontairement par courriel, téléphone, formulaire de contact ou demande de soumission."
+  },
+  "sections": [
+    {
+      "heading": "Renseignements recueillis",
+      "body": "Lorsque vous nous contactez, nous pouvons recueillir votre nom, votre courriel, votre numéro de téléphone, des détails sur votre propriété ou votre projet et toute information utile à votre demande de service."
+    },
+    {
+      "heading": "Utilisation des renseignements",
+      "body": "Ces informations servent à répondre à votre demande, à préparer une soumission ou à assurer le suivi d'un dossier lié à la décontamination, à l’échantillonnage, à l’enlèvement de vermiculite, aux moisissures ou à la démolition sélective."
+    },
+    {
+      "heading": "Conformité et conservation",
+      "body": "Le site est conçu pour soutenir une gestion sobre des renseignements personnels et pour respecter les exigences applicables de la Loi 25 au Québec. Nous ne vendons pas vos renseignements personnels et nous utilisons seulement les informations nécessaires au traitement de votre demande."
+    },
+    {
+      "heading": "Témoins, suivi et navigation",
+      "body": "Le site n'utilise pas Google Ads, Google Analytics ni d'autres outils de suivi publicitaire ou analytique. Aucun témoin publicitaire n'est déposé et aucune information de navigation n'est conservée pour profiler l'usager."
+    },
+    {
+      "heading": "Questions",
+      "body": "Pour toute question liée à la confidentialité ou à vos renseignements, écrivez à info@demosolution.ca ou appelez au (581) 337-3366."
+    }
+  ]
+}

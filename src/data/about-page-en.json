@@ -1,0 +1,28 @@
+{
+  "metaTitle": "About Demo Solution | Decontamination and environmental services",
+  "metaDescription": "About Demo Solution, a decontamination, demolition and environmental services company serving Gatineau, Ottawa, Greater Montreal and Quebec City.",
+  "hero": {
+    "title": "About Demo Solution",
+    "body": "Demo Solution is a decontamination, demolition and environmental services company serving residential and commercial clients with a clear, practical and safety-focused approach.",
+    "imageAlt": "Demo Solution — decontamination and environmental services",
+    "caption": "Demo Solution — decontamination and environmental services"
+  },
+  "sections": [
+    {
+      "heading": "Vision and experience",
+      "body": "Demo Solution supports property owners, businesses and project managers with a practical, attentive approach focused on clear communication, safe methods and useful decision-making before work starts."
+    },
+    {
+      "heading": "Insurance and compliance",
+      "body": "Demo Solution carries $2 million in liability coverage and pollution insurance, which adds another level of confidence when hazardous materials, contaminated areas or controlled demolition work are involved."
+    },
+    {
+      "heading": "Service area",
+      "body": "Demo Solution serves Gatineau, Ottawa, Greater Montreal and Quebec City depending on the type of file. This regional coverage is useful for decontamination, vermiculite removal, sampling, mould remediation and selective demolition."
+    },
+    {
+      "heading": "Company mission",
+      "body": "The mission is simple: help clients understand the actual condition of the site, prioritize the right work and move forward with a clean, structured and compliant intervention plan."
+    }
+  ]
+}

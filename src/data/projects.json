@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Décontamination de matériau suspect",
+      "location": "Gatineau",
+      "category": "Décontamination",
+      "beforeImage": "/images/project-1-before.jpg",
+      "afterImage": "/images/project-1-after.jpg",
+      "beforeAlt": "Avant: zone de bâtiment à ouvrir avec matériaux suspects et contamination potentielle",
+      "afterAlt": "Après: zone traitée proprement et préparée pour la suite des travaux",
+      "description": "Intervention de décontamination avec confinement, retrait ciblé des matériaux et remise en état de la zone pour permettre la suite du chantier."
+    },
+    {
+      "id": 2,
+      "title": "Remise en état après moisissure",
+      "location": "Ottawa",
+      "category": "Moisissures",
+      "beforeImage": "/images/project-2-before.jpg",
+      "afterImage": "/images/project-2-after.jpg",
+      "beforeAlt": "Avant: intérieur touché par l’humidité et les moisissures avec surfaces détériorées",
+      "afterAlt": "Après: surfaces assainies, retirées au besoin et zone prête pour les travaux suivants",
+      "description": "Retrait des sections touchées, contrôle de la contamination et préparation de la zone pour une suite de chantier propre et structurée."
+    },
+    {
+      "id": 3,
+      "title": "Échantillonnage avant travaux",
+      "location": "Ottawa",
+      "category": "Échantillonnage",
+      "beforeImage": "/images/project-3-before.jpg",
+      "afterImage": "/images/project-3-after.jpg",
+      "beforeAlt": "Avant: matériaux suspects à confirmer avant le lancement du chantier",
+      "afterAlt": "Après: rapport clair avec résultats d’analyse et prochaines étapes recommandées",
+      "description": "Prélèvements de matériaux et coordination d’analyse pour confirmer la présence ou l’absence de contaminants avant une décontamination ou une démolition."
+    },
+    {
+      "id": 4,
+      "title": "Démolition sélective intérieure",
+      "location": "Gatineau",
+      "category": "Démolition",
+      "beforeImage": "/images/project-4-before.jpg",
+      "afterImage": "/images/project-4-after.jpg",
+      "beforeAlt": "Avant: sections intérieures à retirer de façon ciblée avant la suite des travaux",
+      "afterAlt": "Après: zone ouverte proprement et préparée pour l’intervention suivante",
+      "description": "Retrait ciblé des matériaux visés, protection des zones à conserver et nettoyage du chantier avant la prochaine étape."
+    },
+    {
+      "id": 5,
+      "title": "Enlèvement de vermiculite",
+      "location": "Gatineau",
+      "category": "Vermiculite",
+      "beforeImage": "/images/project-5-before.jpg",
+      "afterImage": "/images/project-5-after.jpg",
+      "beforeAlt": "Avant: vermiculite visible dans une zone de bâtiment à traiter",
+      "afterAlt": "Après: vermiculite retirée et zone nettoyée proprement",
+      "description": "Retrait sécuritaire de vermiculite dans une zone ciblée avec gestion propre des matériaux et préparation pour la suite du projet."
+    },
+    {
+      "id": 6,
+      "title": "Diagnostic de matériaux à risque",
+      "location": "Ottawa",
+      "category": "Évaluation",
+      "beforeImage": "/images/project-6-before.jpg",
+      "afterImage": "/images/project-6-after.jpg",
+      "beforeAlt": "Avant: situation à clarifier avant intervention sur le bâtiment",
+      "afterAlt": "Après: bilan clair des zones à traiter et des priorités de chantier",
+      "description": "Lecture du dossier, validation des matériaux à risque et orientation vers l’échantillonnage, la décontamination ou la démolition selon le besoin."
+    }
+  ]
+}

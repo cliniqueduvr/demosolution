@@ -1,0 +1,69 @@
+{
+  "metaTitle": "Demo Solution | Decontamination and hazardous materials in Gatineau, Ottawa, Montreal and Quebec City",
+  "metaDescription": "Demo Solution provides decontamination, hazardous material removal, asbestos removal, vermiculite removal and sampling services in Gatineau, Ottawa, Greater Montreal and Quebec City.",
+  "hero": {
+    "logoAlt": "Demo Solution logo",
+    "title": "Specialists in decontamination and hazardous material removal",
+    "tagline": "Asbestos | Vermiculite | Mold | Dry rot"
+  },
+  "introCard": {
+    "icon": "",
+    "heading": "Why choose Demo Solution?",
+    "body": "<strong>Fast, safe and professional service</strong> for decontamination and hazardous material removal, with a strong focus on asbestos and vermiculite removal. We also handle sampling, demolition and odour control when the project requires it."
+  },
+  "servicesOverview": {
+    "title": "Our Services",
+    "items": [
+      { "href": "/en/services/decontamination/", "icon": "fas fa-biohazard", "label": "Decontamination", "subLabel": "Asbestos | Vermiculite | Mold | Dry rot" },
+      { "href": "/en/services/vermiculite-removal/", "icon": "fas fa-exclamation-triangle", "label": "Vermiculite removal", "subLabel": "Clean | Contaminated" },
+      { "href": "/en/services/sampling/", "icon": "fas fa-microscope", "label": "Sampling", "subLabel": "Air | Materials | Surface" },
+      { "href": "/en/services/selective-demolition/", "icon": "fas fa-house-damage", "label": "Demolition", "subLabel": "Full | Partial | Crawl space" }
+    ]
+  },
+  "seoSections": [
+    {
+      "heading": "Decontamination, asbestos and vermiculite in Gatineau, Ottawa, Montreal and Quebec City",
+      "body": "Demo Solution supports property owners, managers and contractors with decontamination and hazardous material removal, with a strong focus on asbestos, vermiculite, mold and contaminated materials. We serve residential and commercial projects in Gatineau, Ottawa, Greater Montreal and Quebec City."
+    },
+    {
+      "heading": "A clear approach before work begins",
+      "body": "When a building contains asbestos, vermiculite, mold or other contaminated materials, the priority is to assess the situation properly and choose the right intervention sequence. Sampling then helps confirm the scope before work starts."
+    }
+  ],
+  "cta": {
+    "heading": "Request your free estimate today",
+    "subheading": "Fast estimates for decontamination, hazardous materials, sampling and demolition",
+    "squareLabel": "Request a quote"
+  },
+  "contactForm": {
+    "heading": "Contact us",
+    "unconfiguredNote": "The contact form is not available at the moment. Please use the phone number or email in the meantime.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Your message",
+    "submitLabel": "Send"
+  },
+  "contactPanel": {
+    "heading": "Contact Information",
+    "squareLabel": "Request a quote",
+    "ctaText": "Free and confidential estimate. Call us or fill out the form to discuss your project."
+  },
+  "reviews": {
+    "heading": "Google Reviews",
+    "items": [
+      {
+        "quote": "Professional and courteous service.",
+        "author": "Stephane Desgagne"
+      },
+      {
+        "quote": "Efficient company, easy to communicate with. Professional work, nothing but positive!",
+        "author": "Philippe Albert"
+      },
+      {
+        "quote": "Cedric was on time, explained everything in detail and results were the next day as promised. Two thumbs up! Thanks!",
+        "author": "Jesse Brook"
+      }
+    ]
+  }
+}

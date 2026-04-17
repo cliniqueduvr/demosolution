@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+
+const symptomCards = [
+  {
+    title: 'Matériau suspect ou poussière à risque',
+    copy: "Si le bâtiment contient des matériaux suspects ou de la poussière potentiellement dangereuse, la décontamination est souvent le bon premier service pour cadrer l’intervention.",
+    href: '/services/desamiantage/',
+    linkLabel: "Voir la décontamination"
+  },
+  {
+    title: 'Besoin de confirmer avant d’intervenir',
+    copy: "Quand le matériau est encore incertain, l’échantillonnage est souvent la meilleure première étape pour confirmer la présence ou l’absence d’amiante ou d’un autre contaminant.",
+    href: '/services/echantillonnage/',
+    linkLabel: "Voir l’échantillonnage"
+  },
+  {
+    title: 'Vermiculite visible dans un entretoit ou une cavité',
+    copy: "Si de la vermiculite est présente et doit être retirée avant la suite des travaux, commencez par le service dédié d’enlèvement de vermiculite.",
+    href: '/services/enlevement-vermiculite/',
+    linkLabel: "Voir l’enlèvement de vermiculite"
+  },
+  {
+    title: 'Moisissure, humidité ou matériaux contaminés',
+    copy: "Si la priorité concerne une contamination liée à l’humidité, la décontamination de moisissures peut être la meilleure première intervention avant la suite du chantier.",
+    href: '/services/moisissure/',
+    linkLabel: "Voir les moisissures"
+  },
+  {
+    title: 'Des sections doivent être ouvertes ou retirées',
+    copy: "Si des parties du bâtiment doivent être retirées proprement avant la prochaine étape, la démolition sélective est souvent le bon service de suivi.",
+    href: '/services/demolition-selective/',
+    linkLabel: "Voir la démolition"
+  },
+  {
+    title: 'Vous hésitez entre deux services',
+    copy: "Quand la situation n'est pas claire, contactez-nous avec des photos et une courte description du problème. Nous pourrons vous orienter vers la bonne première étape.",
+    href: '/contact/',
+    linkLabel: "Contacter l'atelier"
+  }
+];
+
+const serviceAreas = [
+  { name: 'Gatineau', href: '/contact/' },
+  { name: 'Ottawa', href: '/contact/' },
+  { name: 'Grand Montréal', href: '/contact/' },
+  { name: 'Québec', href: '/contact/' }
+];
+const faqs = [
+  {
+    question: 'Quelle est la meilleure première étape si je ne suis pas certain du problème?',
+    answer: "Quand le matériau ou la portée du problème n'est pas clair, l’échantillonnage est souvent le meilleur point de départ. Il permet de confirmer la situation réelle et d’éviter de partir dans la mauvaise direction."
+  },
+  {
+    question: 'Quand choisir la décontamination au lieu de la démolition?',
+    answer: "La décontamination convient surtout quand la priorité est la présence de matériaux dangereux ou contaminés. La démolition sélective est plus appropriée quand des sections du bâtiment doivent être ouvertes ou retirées de façon contrôlée."
+  },
+  {
+    question: 'L’échantillonnage est-il utile avant une décontamination?',
+    answer: "Oui. L’échantillonnage est souvent la meilleure façon de confirmer la présence ou l’absence d’amiante ou d’un autre contaminant avant de lancer la décontamination ou la démolition."
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Quel service choisir ?' }
+]);
+---
+
+<Layout
+  title="Quel service choisir | Demo Solution"
+  description="Choisissez le bon service Demo Solution selon les matériaux suspects, la vermiculite, les moisissures, le besoin d’échantillonnage ou la démolition sélective."
+  canonicalPath="/choisir-service/"
+  frPath="/choisir-service/"
+  enPath="/en/choose-service/"
+  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+>
+  <Header />
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Orientation pratique</p>
+        <h1>Quel service choisir pour votre propriété?</h1>
+        <p>Utilisez cette page pour repérer le bon point de départ selon les matériaux suspects, les signes de contamination et l’état réel du chantier.</p>
+      </div>
+    </section>
+
+    <section class="chooser-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Commencer par le bon service</h2>
+          <p>Quand un bâtiment présente plusieurs signes en même temps, il n'est pas toujours évident de savoir s'il faut commencer par l’échantillonnage, la décontamination, les moisissures, l’enlèvement de vermiculite ou la démolition. Les cartes ci-dessous vous aident à choisir la prochaine étape la plus utile.</p>
+        </div>
+
+        <div class="card-grid">
+          {symptomCards.map((item) => (
+            <a class="choice-card" href={item.href}>
+              <h2>{item.title}</h2>
+              <p>{item.copy}</p>
+              <span>{item.linkLabel}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="areas-section">
+      <div class="container">
+        <h2>Zones desservies</h2>
+        <p class="section-copy">Nous recevons des demandes provenant de Gatineau, d’Ottawa, de la grande région de Montréal et de Québec selon le type de besoin et la situation du chantier.</p>
+        <div class="card-grid areas-grid">
+          {serviceAreas.map((area) => (
+            <a class="info-card choice-card" href={area.href}>
+              <h3>{area.name}</h3>
+              <p>Demandes fréquentes en décontamination, échantillonnage, vermiculite, moisissures et démolition sélective.</p>
+              <span>Demander une soumission</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          {faqs.map((item) => (
+            <article class="faq-card">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+    padding: 4.5rem 0 3.8rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    max-width: 14ch;
+  }
+
+  .page-header p:last-child {
+    margin: 0;
+    max-width: 55ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .chooser-section,
+  .areas-section,
+  .faq-section {
+    padding: 4rem 0;
+    background: #f3f5f8;
+  }
+
+  .areas-section,
+  .faq-section {
+    padding-top: 0;
+  }
+
+  .section-intro {
+    max-width: 64ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-intro p,
+  .section-copy,
+  .info-card p,
+  .faq-card p,
+  .choice-card p {
+    color: var(--brand-muted);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .choice-card,
+  .info-card,
+  .faq-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 34px rgba(21, 38, 58, 0.08);
+  }
+
+  .choice-card {
+    display: grid;
+    gap: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .choice-card:hover {
+    text-decoration: none;
+    transform: translateY(-4px);
+    box-shadow: 0 24px 44px rgba(21, 38, 58, 0.14);
+  }
+
+  .choice-card h2,
+  .info-card h3,
+  .faq-card h3 {
+    margin: 0;
+    color: var(--brand-navy);
+  }
+
+  .choice-card span {
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      max-width: none;
+    }
+
+    .chooser-section,
+    .areas-section,
+    .faq-section {
+      padding: 3rem 0;
+      background: #f3f5f8;
+    }
+
+    .areas-section,
+    .faq-section {
+      padding-top: 0;
+    }
+  }
+</style>

@@ -1,0 +1,276 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { buildBreadcrumbSchema, buildFAQSchema } from '../../lib/seo';
+
+const symptomCards = [
+  {
+    title: 'Suspicious material or hazardous dust',
+    copy: 'If the building contains suspicious materials or dust that may be hazardous, decontamination is often the right first service to frame the intervention.',
+    href: '/en/services/decontamination/',
+    linkLabel: 'View decontamination service'
+  },
+  {
+    title: 'You need lab confirmation first',
+    copy: 'When the material is still uncertain, sampling is often the best starting point to confirm the presence or absence of asbestos or other contaminants.',
+    href: '/en/services/sampling/',
+    linkLabel: 'View sampling service'
+  },
+  {
+    title: 'Visible vermiculite in an attic or cavity',
+    copy: 'If vermiculite is present and must be removed before work continues, start with the dedicated vermiculite removal service.',
+    href: '/en/services/vermiculite-removal/',
+    linkLabel: 'View vermiculite removal'
+  },
+  {
+    title: 'Mould, humidity or contaminated materials',
+    copy: 'If the priority is contamination caused by moisture, mould remediation may be the best first intervention before further work.',
+    href: '/en/services/mould-removal/',
+    linkLabel: 'View mould remediation'
+  },
+  {
+    title: 'Parts of the building must be opened or removed',
+    copy: 'If materials need to be taken out cleanly before the next phase, selective demolition is usually the right follow-up service.',
+    href: '/en/services/selective-demolition/',
+    linkLabel: 'View selective demolition'
+  },
+  {
+    title: 'You are hesitating between two services',
+    copy: 'When the situation is not clear, contact us with photos and a short description of the issue. We can point you to the most useful first step.',
+    href: '/en/contact/',
+    linkLabel: 'Contact the workshop'
+  }
+];
+
+const serviceAreas = [
+  { name: 'Gatineau', href: '/en/contact/' },
+  { name: 'Ottawa', href: '/en/contact/' },
+  { name: 'Greater Montreal', href: '/en/contact/' },
+  { name: 'Quebec City', href: '/en/contact/' }
+];
+const faqs = [
+  {
+    question: 'What is the best first step if I am not sure what the material is?',
+    answer: 'When the material is still uncertain, sampling is often the best starting point. It helps confirm the real condition of the site and avoids moving in the wrong direction.'
+  },
+  {
+    question: 'When should I choose decontamination instead of selective demolition?',
+    answer: 'Decontamination is generally the right fit when the priority is hazardous or contaminated materials. Selective demolition is the better fit when sections of the building must be opened or removed in a controlled way.'
+  },
+  {
+    question: 'Can sampling help before decontamination work starts?',
+    answer: 'Yes. Sampling is often the best way to confirm the presence or absence of asbestos or other contaminants before decontamination or demolition begins.'
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Home', path: '/en/' },
+  { name: 'Which service should you choose?' }
+]);
+---
+
+<Layout
+  title="Which service should you choose | Demo Solution"
+  description="Choose the right Demo Solution service based on suspicious materials, vermiculite, mould, sampling needs or selective demolition."
+  lang="en-CA"
+  canonicalPath="/en/choose-service/"
+  frPath="/choisir-service/"
+  enPath="/en/choose-service/"
+  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+>
+  <Header lang="en" />
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Practical guidance</p>
+        <h1>Which service should you choose for your property?</h1>
+        <p>Use this page to identify the right starting point based on suspicious materials, contamination signs and the real condition of the site.</p>
+      </div>
+    </section>
+
+    <section class="chooser-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Start with the right service</h2>
+          <p>When a building shows more than one issue at the same time, it is not always obvious whether you should begin with sampling, decontamination, mould remediation, vermiculite removal or selective demolition. The cards below help point you to the most useful next step.</p>
+        </div>
+
+        <div class="card-grid">
+          {symptomCards.map((item) => (
+            <a class="choice-card" href={item.href}>
+              <h2>{item.title}</h2>
+              <p>{item.copy}</p>
+              <span>{item.linkLabel}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="areas-section">
+      <div class="container">
+        <h2>Areas served</h2>
+        <p class="section-copy">We receive requests from Gatineau, Ottawa, Greater Montreal and Quebec City depending on the type of need and the site conditions.</p>
+        <div class="card-grid areas-grid">
+          {serviceAreas.map((area) => (
+            <a class="info-card choice-card" href={area.href}>
+              <h3>{area.name}</h3>
+              <p>Common requests include decontamination, vermiculite removal, sampling, mould remediation and selective demolition.</p>
+              <span>Contact us</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          {faqs.map((item) => (
+            <article class="faq-card">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .page-header {
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+    padding: 4.5rem 0 3.8rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    max-width: 14ch;
+  }
+
+  .page-header p:last-child {
+    margin: 0;
+    max-width: 55ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .chooser-section,
+  .areas-section,
+  .faq-section {
+    padding: 4rem 0;
+    background: #f3f5f8;
+  }
+
+  .areas-section,
+  .faq-section {
+    padding-top: 0;
+  }
+
+  .section-intro {
+    max-width: 64ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-intro p,
+  .section-copy,
+  .info-card p,
+  .faq-card p,
+  .choice-card p {
+    color: var(--brand-muted);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .choice-card,
+  .info-card,
+  .faq-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 34px rgba(21, 38, 58, 0.08);
+  }
+
+  .choice-card {
+    display: grid;
+    gap: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .choice-card:hover {
+    text-decoration: none;
+    transform: translateY(-4px);
+    box-shadow: 0 24px 44px rgba(21, 38, 58, 0.14);
+  }
+
+  .choice-card h2,
+  .info-card h3,
+  .faq-card h3 {
+    margin: 0;
+    color: var(--brand-navy);
+  }
+
+  .choice-card span {
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      max-width: none;
+    }
+
+    .chooser-section,
+    .areas-section,
+    .faq-section {
+      padding: 3rem 0;
+      background: #f3f5f8;
+    }
+
+    .areas-section,
+    .faq-section {
+      padding-top: 0;
+    }
+  }
+</style>

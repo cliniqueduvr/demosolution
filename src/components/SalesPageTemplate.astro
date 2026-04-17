@@ -1,0 +1,690 @@
+---
+import siteSettings from '../data/site-settings.json';
+
+interface SaleItem {
+  id: string;
+  title: string;
+  price: string;
+  summary?: string;
+  description: string[];
+  status?: string;
+  type?: string;
+  category?: string;
+  specs?: { label: string; value: string }[];
+  options?: string[];
+  image1?: string;
+  image2?: string;
+  image3?: string;
+  image4?: string;
+  image5?: string;
+}
+
+interface SalesPageData {
+  hero: {
+    title: string;
+    body: string;
+  };
+  intro: {
+    title: string;
+    body: string;
+    cards?: {
+      title: string;
+      body: string;
+    }[];
+  };
+  listTitle: string;
+  expandLabel: string;
+  collapseLabel: string;
+  specsTitle: string;
+  descriptionTitle: string;
+  optionsTitle: string;
+  emptyState: string;
+  contactCard: {
+    title: string;
+    body: string;
+    phoneLabel: string;
+    emailLabel: string;
+    squareLabel: string;
+  };
+  items: SaleItem[];
+}
+
+interface Props {
+  data: SalesPageData;
+  lang?: 'fr' | 'en';
+}
+
+const { data, lang = 'fr' } = Astro.props as Props;
+const isEnglish = lang === 'en';
+---
+
+<main>
+  <section class="sales-hero">
+    <div class="container">
+      <p class="eyebrow">{isEnglish ? 'Units available' : 'Unités disponibles'}</p>
+      <h1>{data.hero.title}</h1>
+      <p class="hero-copy">{data.hero.body}</p>
+    </div>
+  </section>
+
+  <section class="sales-content">
+    <div class="container sales-layout">
+      <div class="sales-main">
+        <section class="sales-intro">
+          <div class="sales-intro-copy">
+            <h2>{data.intro.title}</h2>
+            <p>{data.intro.body}</p>
+          </div>
+          {data.intro.cards && data.intro.cards.length > 0 && (
+            <div class="sales-intro-cards">
+              {data.intro.cards.map((card) => (
+                <article class="sales-intro-card">
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <section class="sales-list">
+          <h2>{data.listTitle}</h2>
+
+          {data.items.length === 0 ? (
+            <div class="empty-state">
+              <p>{data.emptyState}</p>
+            </div>
+          ) : (
+            <div class="sale-grid">
+              {data.items.map((item, index) => {
+                const images = [item.image1, item.image2, item.image3, item.image4, item.image5].filter(Boolean);
+                const carouselId = `sale-carousel-${index}`;
+                return (
+                  <article class="sale-card" data-sale-card>
+                    <div class="sale-carousel" data-carousel data-carousel-id={carouselId}>
+                      <div class="sale-track" data-carousel-track>
+                        {images.length > 0 ? (
+                          images.map((image, imageIndex) => (
+                            <figure class="sale-slide" data-carousel-slide aria-hidden={imageIndex === 0 ? 'false' : 'true'}>
+                              <img src={image} alt={`${item.title} ${imageIndex + 1}`} loading="lazy" />
+                            </figure>
+                          ))
+                        ) : (
+                          <div class="sale-placeholder">
+                            <span>{isEnglish ? 'Photos coming soon' : 'Photos à venir'}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {images.length > 1 && (
+                        <>
+                          <button type="button" class="carousel-button prev" data-carousel-prev aria-label={isEnglish ? 'Previous photo' : 'Photo précédente'}>
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                          </button>
+                          <button type="button" class="carousel-button next" data-carousel-next aria-label={isEnglish ? 'Next photo' : 'Photo suivante'}>
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                          </button>
+                          <div class="carousel-dots" aria-label={isEnglish ? 'Photo selection' : 'Sélection de photo'}>
+                            {images.map((_, imageIndex) => (
+                              <button
+                                type="button"
+                                class:list={['carousel-dot', imageIndex === 0 && 'active']}
+                                data-carousel-dot
+                                data-carousel-index={String(imageIndex)}
+                                aria-label={isEnglish ? `Show photo ${imageIndex + 1}` : `Afficher la photo ${imageIndex + 1}`}
+                              ></button>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+
+                    <div class="sale-copy">
+                      <div class="sale-header">
+                        <h3>{item.title}</h3>
+                        <p class="sale-price">{item.price}</p>
+                      </div>
+                      <div class="sale-meta">
+                        {item.status && <p class="sale-status">{item.status}</p>}
+                        {item.type && <p class="sale-tag">{item.type}</p>}
+                        {item.category && <p class="sale-tag">{item.category}</p>}
+                      </div>
+                      {item.summary && <p>{item.summary}</p>}
+                      <button
+                        type="button"
+                        class="sale-toggle"
+                        data-sale-toggle
+                        data-expand-label={data.expandLabel}
+                        data-collapse-label={data.collapseLabel}
+                        aria-expanded="false"
+                      >
+                        <span data-sale-toggle-label>{data.expandLabel}</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                      </button>
+
+                      <div class="sale-details" data-sale-details hidden>
+                        {item.specs && item.specs.length > 0 && (
+                          <section class="detail-block">
+                            <h4>{data.specsTitle}</h4>
+                            <dl class="spec-list">
+                              {item.specs.map((spec) => (
+                                <>
+                                  <dt>{spec.label}</dt>
+                                  <dd>{spec.value}</dd>
+                                </>
+                              ))}
+                            </dl>
+                          </section>
+                        )}
+
+                        <section class="detail-block">
+                          <h4>{data.descriptionTitle}</h4>
+                          <div class="description-copy">
+                            {item.description.map((paragraph) => (
+                              <p>{paragraph}</p>
+                            ))}
+                          </div>
+                        </section>
+
+                        {item.options && item.options.length > 0 && (
+                          <section class="detail-block">
+                            <h4>{data.optionsTitle}</h4>
+                            <ul class="option-list">
+                              {item.options.map((option) => (
+                                <li>{option}</li>
+                              ))}
+                            </ul>
+                          </section>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
+        </section>
+      </div>
+
+      <aside class="sales-side">
+        <div class="contact-card">
+          <h2>{data.contactCard.title}</h2>
+          <p>{data.contactCard.body}</p>
+          <a class="contact-button" href={`tel:${siteSettings.phone.href}`}>{data.contactCard.phoneLabel}</a>
+          <a class="contact-link" href={`mailto:${siteSettings.email}`}>{data.contactCard.emailLabel}</a>
+          <a class="contact-link contact-square" href={siteSettings.squareBookingUrl} target="_blank" rel="noopener">{data.contactCard.squareLabel}</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const track = carousel.querySelector('[data-carousel-track]');
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      const dots = Array.from(carousel.querySelectorAll('[data-carousel-dot]'));
+      const prevButton = carousel.querySelector('[data-carousel-prev]');
+      const nextButton = carousel.querySelector('[data-carousel-next]');
+
+      if (!(track instanceof HTMLElement) || slides.length <= 1) return;
+
+      let currentIndex = 0;
+
+      const updateCarousel = (index) => {
+        currentIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        slides.forEach((slide, slideIndex) => {
+          slide.setAttribute('aria-hidden', slideIndex === currentIndex ? 'false' : 'true');
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === currentIndex);
+        });
+      };
+
+      prevButton?.addEventListener('click', () => updateCarousel(currentIndex - 1));
+      nextButton?.addEventListener('click', () => updateCarousel(currentIndex + 1));
+
+      dots.forEach((dot, dotIndex) => {
+        dot.addEventListener('click', () => updateCarousel(dotIndex));
+      });
+
+      updateCarousel(0);
+    });
+
+    document.querySelectorAll('[data-sale-card]').forEach((card) => {
+      const toggle = card.querySelector('[data-sale-toggle]');
+      const details = card.querySelector('[data-sale-details]');
+      const label = card.querySelector('[data-sale-toggle-label]');
+      if (!(toggle instanceof HTMLButtonElement) || !(details instanceof HTMLElement) || !(label instanceof HTMLElement)) return;
+
+      const expandLabel = toggle.dataset.expandLabel || label.textContent || '';
+      const collapseLabel = toggle.dataset.collapseLabel || '';
+
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        details.hidden = isOpen;
+        if (collapseLabel) {
+          label.textContent = isOpen ? expandLabel : collapseLabel;
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  .sales-hero {
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 28%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    padding: 4.5rem 0 3.8rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .sales-hero h1 {
+    max-width: 15ch;
+    color: white;
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-copy {
+    max-width: 58ch;
+    color: #e7edf4;
+    font-size: 1.08rem;
+  }
+
+  .sales-content {
+    padding: 4rem 0;
+    background: #eef3f7;
+  }
+
+  .sales-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.82fr) minmax(280px, 0.72fr);
+    gap: 2.4rem;
+    align-items: start;
+  }
+
+  .sales-main {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .contact-card,
+  .sale-card,
+  .empty-state {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 18px 36px rgba(21, 38, 58, 0.08);
+  }
+
+  .contact-card,
+  .empty-state {
+    padding: 1.8rem;
+  }
+
+  .sales-intro p,
+  .contact-card p,
+  .sale-copy p,
+  .empty-state p {
+    color: var(--brand-muted);
+  }
+
+  .sales-intro-copy {
+    margin-bottom: 1rem;
+  }
+
+  .sales-intro-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .sales-intro-card {
+    min-height: 0;
+    padding: 2rem;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 18px 36px rgba(21, 38, 58, 0.08);
+  }
+
+  .sales-intro-card h3 {
+    margin-bottom: 0.8rem;
+    color: var(--brand-navy);
+    font-size: 1.45rem;
+    line-height: 1.05;
+    font-weight: 800;
+  }
+
+  .sales-intro-card p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .sale-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .sale-card {
+    overflow: hidden;
+  }
+
+  .sale-carousel {
+    position: relative;
+    background: #d9e1e9;
+  }
+
+  .sale-track {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .sale-slide,
+  .sale-placeholder {
+    flex: 0 0 100%;
+    min-height: 320px;
+  }
+
+  .sale-slide img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sale-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-muted);
+    font-weight: 700;
+    background:
+      linear-gradient(135deg, rgba(31, 58, 95, 0.08), rgba(58, 141, 47, 0.08)),
+      #f4f6f8;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(23, 48, 79, 0.88);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .carousel-button.prev {
+    left: 1rem;
+  }
+
+  .carousel-button.next {
+    right: 1rem;
+  }
+
+  .carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.45rem;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .carousel-dot.active {
+    background: var(--brand-gold);
+  }
+
+  .sale-copy {
+    padding: 1.6rem;
+  }
+
+  .sale-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .sale-header h3 {
+    color: var(--brand-navy);
+  }
+
+  .sale-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: var(--brand-green-dark);
+    white-space: nowrap;
+  }
+
+  .sale-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .sale-status {
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .sale-tag,
+  .sale-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(31, 58, 95, 0.08);
+    color: var(--brand-navy);
+    font-size: 0.9rem;
+  }
+
+  .sale-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    background: transparent;
+    color: var(--brand-navy);
+    border: 1px solid rgba(31, 58, 95, 0.14);
+    font-weight: 700;
+  }
+
+  .sale-toggle[aria-expanded='true'] i {
+    transform: rotate(180deg);
+  }
+
+  .sale-toggle i {
+    transition: transform 0.2s ease;
+  }
+
+  .sale-details {
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(31, 58, 95, 0.12);
+  }
+
+  .detail-block + .detail-block {
+    margin-top: 1.4rem;
+  }
+
+  .detail-block h4 {
+    margin-bottom: 0.85rem;
+    color: var(--brand-navy);
+    font-size: 1.05rem;
+  }
+
+  .spec-list {
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
+    gap: 0.65rem 1rem;
+  }
+
+  .spec-list dt {
+    color: var(--brand-muted);
+    font-weight: 700;
+  }
+
+  .spec-list dd {
+    margin: 0;
+    color: var(--brand-ink);
+  }
+
+  .description-copy {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .option-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.6rem 1rem;
+    padding-left: 1.15rem;
+  }
+
+  .sales-side {
+    position: sticky;
+    top: 7rem;
+  }
+
+  .contact-card {
+    display: grid;
+    gap: 0.9rem;
+    max-width: 360px;
+    margin-left: auto;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(31, 58, 95, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 10px 24px rgba(21, 38, 58, 0.06);
+  }
+
+  .contact-card h2 {
+    max-width: 10ch;
+    margin-bottom: 0.15rem;
+    color: var(--brand-navy);
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .contact-card p {
+    margin: 0 0 0.35rem;
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .contact-button,
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .contact-button {
+    background: var(--brand-green);
+    color: white;
+  }
+
+  .contact-link {
+    border: 1px solid rgba(31, 58, 95, 0.14);
+    color: var(--brand-navy);
+    background: white;
+  }
+
+  .contact-square {
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+  }
+
+  .contact-button:hover,
+  .contact-link:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .contact-square:hover {
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  @media (max-width: 768px) {
+    .sales-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.4rem 0 3rem;
+    }
+
+    .sales-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .sales-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sales-side {
+      position: static;
+    }
+
+    .contact-card {
+      max-width: none;
+      margin-left: 0;
+      padding: 1.7rem 1.4rem;
+    }
+
+    .sale-slide,
+    .sale-placeholder,
+    .sale-slide img {
+      min-height: 240px;
+      height: 240px;
+    }
+
+    .sale-header {
+      flex-direction: column;
+    }
+
+    .spec-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

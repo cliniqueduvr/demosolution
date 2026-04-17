@@ -1,0 +1,69 @@
+{
+  "metaTitle": "Demo Solution | Décontamination et matières dangereuses à Gatineau, Ottawa, Montréal et Québec",
+  "metaDescription": "Demo Solution offre des services de décontamination, d’enlèvement de matières dangereuses, de désamiantage, d’enlèvement de vermiculite et d’échantillonnage à Gatineau, Ottawa, dans la grande région de Montréal et à Québec.",
+  "hero": {
+    "logoAlt": "Logo Demo Solution",
+    "title": "Spécialiste en décontamination et en enlèvement de matières dangereuses",
+    "tagline": "Amiante | Vermiculite | Moisissure | Mérule pleureuse"
+  },
+  "introCard": {
+    "icon": "",
+    "heading": "Pourquoi choisir Demo Solution?",
+    "body": "<strong>Service rapide, sécuritaire et professionnel</strong> pour la décontamination et l’enlèvement de matières dangereuses, avec un focus particulier sur l’amiante et l’enlèvement de vermiculite. Nous prenons aussi en charge l’échantillonnage, la démolition et le contrôle des odeurs lorsque le projet le demande."
+  },
+  "servicesOverview": {
+    "title": "Nos Services",
+    "items": [
+      { "href": "/services/desamiantage/", "icon": "fas fa-biohazard", "label": "Décontamination", "subLabel": "Amiante | Vermiculite | Moisissure | Mérule" },
+      { "href": "/services/enlevement-vermiculite/", "icon": "fas fa-exclamation-triangle", "label": "Enlèvement vermiculite", "subLabel": "Propre | Contaminée" },
+      { "href": "/services/echantillonnage/", "icon": "fas fa-microscope", "label": "Échantillonnage", "subLabel": "Air | Matériaux | Surface" },
+      { "href": "/services/demolition-selective/", "icon": "fas fa-house-damage", "label": "Démolition", "subLabel": "Complète | Partiel | Vide sanitaire" }
+    ]
+  },
+  "seoSections": [
+    {
+      "heading": "Décontamination, désamiantage et vermiculite à Gatineau, Ottawa, Montréal et Québec",
+      "body": "Demo Solution accompagne les propriétaires, gestionnaires et entrepreneurs pour les travaux de décontamination et d’enlèvement de matières dangereuses, avec un focus particulier sur l’amiante, la vermiculite, la moisissure et les matériaux contaminés. Nous intervenons sur des projets résidentiels et commerciaux à Gatineau, Ottawa, dans la grande région de Montréal et à Québec."
+    },
+    {
+      "heading": "Une approche claire avant les travaux",
+      "body": "Quand un bâtiment présente de l’amiante, de la vermiculite, de la moisissure ou d’autres matériaux contaminés, la priorité est d’évaluer correctement la situation et de choisir la bonne séquence d’intervention. L’échantillonnage permet ensuite de mieux confirmer le besoin avant de lancer les travaux."
+    }
+  ],
+  "cta": {
+    "heading": "Demandez votre soumission gratuite dès aujourd’hui",
+    "subheading": "Estimation rapide pour décontamination, matières dangereuses, échantillonnage et démolition",
+    "squareLabel": "Demander une soumission"
+  },
+  "contactForm": {
+    "heading": "Contactez-nous",
+    "unconfiguredNote": "Le formulaire de contact n'est pas disponible pour le moment. Utilisez le téléphone ou le courriel en attendant.",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre courriel",
+    "subjectPlaceholder": "Sujet",
+    "messagePlaceholder": "Votre message",
+    "submitLabel": "Envoyer"
+  },
+  "contactPanel": {
+    "heading": "Informations de contact",
+    "squareLabel": "Demander une soumission",
+    "ctaText": "Soumission gratuite et confidentielle. Appelez-nous ou remplissez le formulaire pour discuter de votre projet."
+  },
+  "reviews": {
+    "heading": "Avis Google",
+    "items": [
+      {
+        "quote": "Service professionnel et courtois.",
+        "author": "Stéphane Desgagné"
+      },
+      {
+        "quote": "Compagnie efficace, facile de communiquer avec eux. Travail professionnel, que du positif!",
+        "author": "Philippe Albert"
+      },
+      {
+        "quote": "Cedric was on time, explained everything in detail and results were the next day as promised. Two thumbs up! Thanks!",
+        "author": "Jesse Brook"
+      }
+    ]
+  }
+}

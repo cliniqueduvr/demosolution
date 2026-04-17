@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { buildBreadcrumbSchema } from '../../lib/seo';
+
+const sections = [
+  {
+    title: 'Main pages',
+    links: [
+      { href: '/en/', label: 'Home' },
+      { href: '/en/services/', label: 'Services' },
+      { href: '/en/choose-service/', label: 'Which service should you choose?' },
+      { href: '/en/realisations/', label: 'Projects' },
+      { href: '/en/about/', label: 'About' },
+      { href: '/en/contact/', label: 'Contact' },
+      { href: '/en/privacy/', label: 'Privacy Policy' }
+    ]
+  },
+  {
+    title: 'Services',
+    links: [
+      { href: '/en/services/decontamination/', label: 'Decontamination' },
+      { href: '/en/services/mould-removal/', label: 'Mould remediation' },
+      { href: '/en/services/vermiculite-removal/', label: 'Vermiculite removal' },
+      { href: '/en/services/sampling/', label: 'Sampling' },
+      { href: '/en/services/selective-demolition/', label: 'Selective demolition' }
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { href: '/en/contact/', label: 'Request a quote' },
+      { href: '/en/realisations/', label: 'Case studies' },
+      { href: '/en/about/', label: 'About Demo Solution' }
+    ]
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Home', path: '/en/' },
+  { name: 'Site map' }
+]);
+---
+
+<Layout
+  title="Site map | Demo Solution"
+  description="Site map for Demo Solution with the main pages, services and local pages."
+  lang="en-CA"
+  canonicalPath="/en/site-map/"
+  frPath="/plan-du-site/"
+  enPath="/en/site-map/"
+  schemas={[breadcrumbs]}
+>
+  <Header lang="en" />
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Navigation</p>
+        <h1>Site map</h1>
+        <p>Find the site’s main pages, the available services, and the local pages related to the areas we serve.</p>
+      </div>
+    </section>
+
+    <section class="sitemap-section">
+      <div class="container sitemap-grid">
+        {sections.map((section) => (
+          <article class="sitemap-card">
+            <h2>{section.title}</h2>
+            <ul>
+              {section.links.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .page-header {
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+    padding: 4.5rem 0 3.8rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .page-header p:last-child {
+    margin: 0;
+    max-width: 55ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .sitemap-section {
+    padding: 4rem 0;
+    background: #f3f5f8;
+  }
+
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .sitemap-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 34px rgba(21, 38, 58, 0.08);
+  }
+
+  .sitemap-card h2 {
+    margin-bottom: 1rem;
+  }
+
+  .sitemap-card ul {
+    display: grid;
+    gap: 0.75rem;
+    padding-left: 1.2rem;
+  }
+
+  .sitemap-card a {
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+    }
+  }
+</style>

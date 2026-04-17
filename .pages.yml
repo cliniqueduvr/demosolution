@@ -1,0 +1,1293 @@
+media:
+  - name: project_images
+    label: Project Images
+    input: public/images
+    output: /images
+    categories: [image]
+    rename: true
+
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "content: create {path}"
+      update: "content: update {path}"
+      delete: "content: delete {path}"
+      rename: "content: rename {oldPath} to {newPath}"
+
+content:
+  - name: service_pages_fr
+    label: Service Pages FR
+    type: file
+    path: src/data/service-pages.json
+    fields:
+      - name: items
+        label: Service pages
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+          - name: alternateSlug
+            label: Alternate slug
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: h1
+            label: H1
+            type: string
+          - name: navLabel
+            label: Nav label
+            type: string
+          - name: icon
+            label: Icon
+            type: string
+          - name: serviceType
+            label: Service type
+            type: string
+          - name: seoTitle
+            label: SEO title
+            type: string
+          - name: seoDescription
+            label: SEO description
+            type: text
+          - name: eyebrow
+            label: Eyebrow
+            type: string
+          - name: opening
+            label: Opening
+            type: text
+          - name: lead
+            label: Lead
+            type: text
+          - name: intro
+            label: Intro
+            type: text
+          - name: detailIntro
+            label: Detail intro
+            type: text
+          - name: highlights
+            label: Highlights
+            type: string
+            list: true
+          - name: includedTitle
+            label: Included title
+            type: string
+          - name: included
+            label: Included items
+            type: string
+            list: true
+          - name: situationsTitle
+            label: Situations title
+            type: string
+          - name: situations
+            label: Situations
+            type: string
+            list: true
+          - name: processIntro
+            label: Process intro
+            type: text
+          - name: process
+            label: Process steps
+            type: string
+            list: true
+          - name: whyChooseTitle
+            label: Why choose title
+            type: string
+          - name: whyChooseIntro
+            label: Why choose intro
+            type: text
+          - name: whyChoose
+            label: Why choose cards
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: text
+                label: Text
+                type: text
+          - name: faqTitle
+            label: FAQ title
+            type: string
+          - name: faqs
+            label: FAQs
+            type: object
+            list: true
+            fields:
+              - name: question
+                label: Question
+                type: string
+              - name: answer
+                label: Answer
+                type: text
+
+  - name: service_pages_en
+    label: Service Pages EN
+    type: file
+    path: src/data/service-pages-en.json
+    fields:
+      - name: items
+        label: Service pages
+        type: object
+        list: true
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+          - name: alternateSlug
+            label: Alternate slug
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: h1
+            label: H1
+            type: string
+          - name: navLabel
+            label: Nav label
+            type: string
+          - name: icon
+            label: Icon
+            type: string
+          - name: serviceType
+            label: Service type
+            type: string
+          - name: seoTitle
+            label: SEO title
+            type: string
+          - name: seoDescription
+            label: SEO description
+            type: text
+          - name: eyebrow
+            label: Eyebrow
+            type: string
+          - name: opening
+            label: Opening
+            type: text
+          - name: lead
+            label: Lead
+            type: text
+          - name: intro
+            label: Intro
+            type: text
+          - name: detailIntro
+            label: Detail intro
+            type: text
+          - name: highlights
+            label: Highlights
+            type: string
+            list: true
+          - name: includedTitle
+            label: Included title
+            type: string
+          - name: included
+            label: Included items
+            type: string
+            list: true
+          - name: situationsTitle
+            label: Situations title
+            type: string
+          - name: situations
+            label: Situations
+            type: string
+            list: true
+          - name: processIntro
+            label: Process intro
+            type: text
+          - name: process
+            label: Process steps
+            type: string
+            list: true
+          - name: whyChooseTitle
+            label: Why choose title
+            type: string
+          - name: whyChooseIntro
+            label: Why choose intro
+            type: text
+          - name: whyChoose
+            label: Why choose cards
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: text
+                label: Text
+                type: text
+          - name: faqTitle
+            label: FAQ title
+            type: string
+          - name: faqs
+            label: FAQs
+            type: object
+            list: true
+            fields:
+              - name: question
+                label: Question
+                type: string
+              - name: answer
+                label: Answer
+                type: text
+
+  - name: projects_fr
+    label: Projects FR
+    type: file
+    path: src/data/projects.json
+    fields:
+      - name: items
+        label: Réalisations
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: number
+          - name: title
+            label: Titre
+            type: string
+          - name: location
+            label: Ville
+            type: string
+          - name: category
+            label: Catégorie
+            type: string
+          - name: beforeImage
+            label: Image avant
+            type: image
+            options:
+              media: project_images
+          - name: afterImage
+            label: Image après
+            type: image
+            options:
+              media: project_images
+          - name: beforeAlt
+            label: Alt image avant
+            type: text
+          - name: afterAlt
+            label: Alt image après
+            type: text
+          - name: description
+            label: Description
+            type: text
+
+  - name: projects_en
+    label: Projects EN
+    type: file
+    path: src/data/projects-en.json
+    fields:
+      - name: items
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: number
+          - name: title
+            label: Title
+            type: string
+          - name: location
+            label: Location
+            type: string
+          - name: category
+            label: Category
+            type: string
+          - name: beforeImage
+            label: Before image
+            type: image
+            options:
+              media: project_images
+          - name: afterImage
+            label: After image
+            type: image
+            options:
+              media: project_images
+          - name: beforeAlt
+            label: Before image alt
+            type: text
+          - name: afterAlt
+            label: After image alt
+            type: text
+          - name: description
+            label: Description
+            type: text
+
+  - name: site_settings
+    label: Site Settings
+    type: file
+    path: src/data/site-settings.json
+    fields:
+      - name: brandName
+        label: Brand name
+        type: string
+      - name: brandImage
+        label: Brand image
+        type: image
+        options:
+          media: project_images
+      - name: phone
+        label: Phone
+        type: object
+        fields:
+          - name: display
+            label: Display
+            type: string
+          - name: href
+            label: Dial value
+            type: string
+      - name: email
+        label: Email
+        type: string
+      - name: googleAdsId
+        label: Google Ads ID
+        type: string
+      - name: squareBookingUrl
+        label: Square booking URL
+        type: string
+      - name: facebookUrl
+        label: Facebook URL
+        type: string
+      - name: address
+        label: Address
+        type: object
+        fields:
+          - name: fr
+            label: Address FR
+            type: string
+          - name: en
+            label: Address EN
+            type: string
+          - name: mapQuery
+            label: Google Maps query
+            type: string
+      - name: serviceArea
+        label: Service area
+        type: object
+        fields:
+          - name: fr
+            label: Service area FR
+            type: text
+          - name: en
+            label: Service area EN
+            type: text
+      - name: rbq
+        label: RBQ
+        type: string
+      - name: sinceYear
+        label: Since year
+        type: string
+      - name: footerDescription
+        label: Footer description
+        type: object
+        fields:
+          - name: fr
+            label: Footer description FR
+            type: text
+          - name: en
+            label: Footer description EN
+            type: text
+
+  - name: home_fr
+    label: Home FR
+    type: file
+    path: src/data/home-page.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: logoAlt
+            label: Logo alt
+            type: string
+          - name: title
+            label: Title
+            type: text
+          - name: tagline
+            label: Tagline
+            type: string
+      - name: introCard
+        label: Intro card
+        type: object
+        fields:
+          - name: icon
+            label: Icon
+            type: string
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: servicesOverview
+        label: Services overview
+        type: object
+        fields:
+          - name: title
+            label: Section title
+            type: string
+          - name: items
+            label: Service links
+            type: object
+            list: true
+            fields:
+              - name: href
+                label: Link
+                type: string
+              - name: icon
+                label: Icon
+                type: string
+              - name: label
+                label: Label
+                type: string
+      - name: seoSections
+        label: SEO sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: cta
+        label: CTA banner
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: subheading
+            label: Subheading
+            type: string
+          - name: squareLabel
+            label: Square button label
+            type: string
+      - name: contactForm
+        label: Contact form
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: unconfiguredNote
+            label: Unconfigured note
+            type: text
+          - name: namePlaceholder
+            label: Name placeholder
+            type: string
+          - name: emailPlaceholder
+            label: Email placeholder
+            type: string
+          - name: subjectPlaceholder
+            label: Subject placeholder
+            type: string
+          - name: messagePlaceholder
+            label: Message placeholder
+            type: string
+          - name: submitLabel
+            label: Submit label
+            type: string
+      - name: contactPanel
+        label: Contact panel
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: squareLabel
+            label: Square label
+            type: string
+          - name: ctaText
+            label: CTA text
+            type: text
+      - name: reviews
+        label: Reviews
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: items
+            label: Review items
+            type: object
+            list: true
+            fields:
+              - name: quote
+                label: Quote
+                type: text
+              - name: author
+                label: Author
+                type: string
+
+  - name: home_en
+    label: Home EN
+    type: file
+    path: src/data/home-page-en.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: logoAlt
+            label: Logo alt
+            type: string
+          - name: title
+            label: Title
+            type: text
+          - name: tagline
+            label: Tagline
+            type: string
+      - name: introCards
+        label: Intro cards
+        type: object
+        list: true
+        fields:
+          - name: icon
+            label: Icon
+            type: string
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: servicesOverview
+        label: Services overview
+        type: object
+        fields:
+          - name: title
+            label: Section title
+            type: string
+          - name: items
+            label: Service links
+            type: object
+            list: true
+            fields:
+              - name: href
+                label: Link
+                type: string
+              - name: icon
+                label: Icon
+                type: string
+              - name: label
+                label: Label
+                type: string
+      - name: seoSections
+        label: SEO sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: cta
+        label: CTA banner
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: subheading
+            label: Subheading
+            type: string
+          - name: squareLabel
+            label: Square button label
+            type: string
+      - name: contactForm
+        label: Contact form
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: unconfiguredNote
+            label: Unconfigured note
+            type: text
+          - name: namePlaceholder
+            label: Name placeholder
+            type: string
+          - name: emailPlaceholder
+            label: Email placeholder
+            type: string
+          - name: subjectPlaceholder
+            label: Subject placeholder
+            type: string
+          - name: messagePlaceholder
+            label: Message placeholder
+            type: string
+          - name: submitLabel
+            label: Submit label
+            type: string
+      - name: contactPanel
+        label: Contact panel
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: squareLabel
+            label: Square label
+            type: string
+          - name: ctaText
+            label: CTA text
+            type: text
+      - name: reviews
+        label: Reviews
+        type: object
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: items
+            label: Review items
+            type: object
+            list: true
+            fields:
+              - name: quote
+                label: Quote
+                type: text
+              - name: author
+                label: Author
+                type: string
+
+  - name: about_fr
+    label: About FR
+    type: file
+    path: src/data/about-page.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+          - name: imageAlt
+            label: Image alt
+            type: string
+          - name: caption
+            label: Caption
+            type: text
+      - name: sections
+        label: Sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+
+  - name: about_en
+    label: About EN
+    type: file
+    path: src/data/about-page-en.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+          - name: imageAlt
+            label: Image alt
+            type: string
+          - name: caption
+            label: Caption
+            type: text
+      - name: sections
+        label: Sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+
+  - name: contact_fr
+    label: Contact FR
+    type: file
+    path: src/data/contact-page.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: formSection
+        label: Form section
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: intro
+            label: Intro
+            type: text
+          - name: unconfiguredNote
+            label: Unconfigured note
+            type: text
+          - name: fields
+            label: Field labels
+            type: object
+            fields:
+              - name: name
+                label: Name label
+                type: string
+              - name: email
+                label: Email label
+                type: string
+              - name: phone
+                label: Phone label
+                type: string
+              - name: subject
+                label: Subject label
+                type: string
+              - name: message
+                label: Message label
+                type: string
+          - name: submitLabel
+            label: Submit label
+            type: string
+      - name: infoSection
+        label: Info section
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: phoneTitle
+            label: Phone title
+            type: string
+          - name: squareLabel
+            label: Square label
+            type: string
+          - name: emailTitle
+            label: Email title
+            type: string
+          - name: locationTitle
+            label: Location title
+            type: string
+          - name: identityTitle
+            label: Identity title
+            type: string
+          - name: identityBody
+            label: Identity body
+            type: text
+          - name: valuesTitle
+            label: Values title
+            type: string
+          - name: valuesBody
+            label: Values body
+            type: text
+          - name: ctaBody
+            label: CTA body
+            type: text
+      - name: seoSections
+        label: SEO sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: mapTitle
+        label: Map title
+        type: string
+
+  - name: contact_en
+    label: Contact EN
+    type: file
+    path: src/data/contact-page-en.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: formSection
+        label: Form section
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: intro
+            label: Intro
+            type: text
+          - name: unconfiguredNote
+            label: Unconfigured note
+            type: text
+          - name: fields
+            label: Field labels
+            type: object
+            fields:
+              - name: name
+                label: Name label
+                type: string
+              - name: email
+                label: Email label
+                type: string
+              - name: phone
+                label: Phone label
+                type: string
+              - name: subject
+                label: Subject label
+                type: string
+              - name: message
+                label: Message label
+                type: string
+          - name: submitLabel
+            label: Submit label
+            type: string
+      - name: infoSection
+        label: Info section
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: phoneTitle
+            label: Phone title
+            type: string
+          - name: squareLabel
+            label: Square label
+            type: string
+          - name: emailTitle
+            label: Email title
+            type: string
+          - name: locationTitle
+            label: Location title
+            type: string
+          - name: identityTitle
+            label: Identity title
+            type: string
+          - name: identityBody
+            label: Identity body
+            type: text
+          - name: valuesTitle
+            label: Values title
+            type: string
+          - name: valuesBody
+            label: Values body
+            type: text
+          - name: ctaBody
+            label: CTA body
+            type: text
+      - name: seoSections
+        label: SEO sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: mapTitle
+        label: Map title
+        type: string
+
+  - name: privacy_fr
+    label: Privacy FR
+    type: file
+    path: src/data/privacy-page.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: sections
+        label: Sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+
+  - name: privacy_en
+    label: Privacy EN
+    type: file
+    path: src/data/privacy-page-en.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: sections
+        label: Sections
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: body
+            label: Body
+            type: text
+
+  - name: sales_fr
+    label: Sales FR
+    type: file
+    path: src/data/sales-page.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: intro
+        label: Intro
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: listTitle
+        label: List title
+        type: string
+      - name: expandLabel
+        label: Expand label
+        type: string
+      - name: collapseLabel
+        label: Collapse label
+        type: string
+      - name: specsTitle
+        label: Specs title
+        type: string
+      - name: descriptionTitle
+        label: Description title
+        type: string
+      - name: optionsTitle
+        label: Options title
+        type: string
+      - name: emptyState
+        label: Empty state
+        type: text
+      - name: contactCard
+        label: Contact card
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+          - name: phoneLabel
+            label: Phone label
+            type: string
+          - name: emailLabel
+            label: Email label
+            type: string
+          - name: squareLabel
+            label: Square label
+            type: string
+      - name: items
+        label: Sale items
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: price
+            label: Price
+            type: string
+          - name: summary
+            label: Summary
+            type: text
+          - name: status
+            label: Status
+            type: string
+          - name: type
+            label: Type
+            type: string
+          - name: category
+            label: Category
+            type: string
+          - name: description
+            label: Description
+            type: text
+            list: true
+          - name: specs
+            label: Specifications
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Label
+                type: string
+              - name: value
+                label: Value
+                type: string
+          - name: options
+            label: Options
+            type: string
+            list: true
+          - name: image1
+            label: Photo 1
+            type: image
+            options:
+              media: project_images
+          - name: image2
+            label: Photo 2
+            type: image
+            options:
+              media: project_images
+          - name: image3
+            label: Photo 3
+            type: image
+            options:
+              media: project_images
+          - name: image4
+            label: Photo 4
+            type: image
+            options:
+              media: project_images
+          - name: image5
+            label: Photo 5
+            type: image
+            options:
+              media: project_images
+
+  - name: sales_en
+    label: Sales EN
+    type: file
+    path: src/data/sales-page-en.json
+    fields:
+      - name: metaTitle
+        label: Meta title
+        type: string
+      - name: metaDescription
+        label: Meta description
+        type: text
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: intro
+        label: Intro
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+      - name: listTitle
+        label: List title
+        type: string
+      - name: expandLabel
+        label: Expand label
+        type: string
+      - name: collapseLabel
+        label: Collapse label
+        type: string
+      - name: specsTitle
+        label: Specs title
+        type: string
+      - name: descriptionTitle
+        label: Description title
+        type: string
+      - name: optionsTitle
+        label: Options title
+        type: string
+      - name: emptyState
+        label: Empty state
+        type: text
+      - name: contactCard
+        label: Contact card
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: body
+            label: Body
+            type: text
+          - name: phoneLabel
+            label: Phone label
+            type: string
+          - name: emailLabel
+            label: Email label
+            type: string
+          - name: squareLabel
+            label: Square label
+            type: string
+      - name: items
+        label: Sale items
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: price
+            label: Price
+            type: string
+          - name: summary
+            label: Summary
+            type: text
+          - name: status
+            label: Status
+            type: string
+          - name: type
+            label: Type
+            type: string
+          - name: category
+            label: Category
+            type: string
+          - name: description
+            label: Description
+            type: text
+            list: true
+          - name: specs
+            label: Specifications
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Label
+                type: string
+              - name: value
+                label: Value
+                type: string
+          - name: options
+            label: Options
+            type: string
+            list: true
+          - name: image1
+            label: Photo 1
+            type: image
+            options:
+              media: project_images
+          - name: image2
+            label: Photo 2
+            type: image
+            options:
+              media: project_images
+          - name: image3
+            label: Photo 3
+            type: image
+            options:
+              media: project_images
+          - name: image4
+            label: Photo 4
+            type: image
+            options:
+              media: project_images
+          - name: image5
+            label: Photo 5
+            type: image
+            options:
+              media: project_images

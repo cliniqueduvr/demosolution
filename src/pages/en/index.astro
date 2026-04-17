@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { buildLocalBusinessSchema } from '../../lib/seo';
+import siteSettings from '../../data/site-settings.json';
+import homePage from '../../data/home-page-en.json';
+
+const isFormConfigured = Boolean(siteSettings.email?.trim());
+const successUrl = '/en/thank-you/';
+const formName = 'home-contact-en-v2';
+const schemas = [buildLocalBusinessSchema({
+  telephone: siteSettings.phone.href,
+  email: siteSettings.email,
+  facebookUrl: siteSettings.facebookUrl,
+  tiktokUrl: siteSettings.tiktokUrl
+})];
+
+const meta = {
+  title: homePage.metaTitle,
+  description: homePage.metaDescription
+};
+---
+
+<Layout title={meta.title} description={meta.description} lang="en-CA" canonicalPath="/en/" frPath="/" enPath="/en/" schemas={schemas}>
+  <Header lang="en" />
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img class="hero-logo" src={siteSettings.brandImage} alt={homePage.hero.logoAlt} />
+        <h1>{homePage.hero.title}</h1>
+        <p class="hero-tagline">{homePage.hero.tagline}</p>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container intro-grid">
+        <div class="intro-card">
+          {homePage.introCard.icon && (
+            <div class="card-icon">
+              <i class={homePage.introCard.icon}></i>
+            </div>
+          )}
+          <h2>{homePage.introCard.heading}</h2>
+          <p set:html={homePage.introCard.body} />
+        </div>
+      </div>
+    </section>
+
+    <section class="services-overview">
+      <div class="container">
+        <h2>{homePage.servicesOverview.title}</h2>
+        <div class="services-grid">
+          {homePage.servicesOverview.items.map((item) => (
+            <a href={item.href} class:list={['service-item', !item.icon && 'service-item--no-icon']}>
+              {item.icon && <i class={item.icon}></i>}
+              <span>{item.label}</span>
+              {'subLabel' in item && item.subLabel && <small class="service-sub-label">{item.subLabel}</small>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seo-copy">
+      <div class="container seo-grid">
+        {homePage.seoSections.map((section) => (
+          <div>
+            <h2>{section.heading}</h2>
+            <p>{section.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <div class="contact-form-wrapper">
+          <h2>{homePage.contactForm.heading}</h2>
+          {!isFormConfigured && (
+            <p class="form-note">{homePage.contactForm.unconfiguredNote}</p>
+          )}
+          <form name={formName} action={isFormConfigured ? successUrl : undefined} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-form>
+            <input type="hidden" name="form-name" value={formName} />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="Page" value="Home EN" />
+            <input type="text" name="Full name" placeholder={homePage.contactForm.namePlaceholder} required />
+            <input type="email" name="Email" placeholder={homePage.contactForm.emailPlaceholder} required />
+            <input type="text" name="Subject" placeholder={homePage.contactForm.subjectPlaceholder} required />
+            <textarea name="Message" placeholder={homePage.contactForm.messagePlaceholder} rows="5" required></textarea>
+            <button type="submit" disabled={!isFormConfigured}>{homePage.contactForm.submitLabel}</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>{homePage.contactPanel.heading}</h3>
+          <p><strong>Phone:</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a></p>
+          <p><a href={siteSettings.squareBookingUrl} target="_blank" rel="noopener" class="contact-booking-link">{homePage.contactPanel.squareLabel}</a></p>
+          <p><strong>Email:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a></p>
+          <p><strong>Address:</strong> {siteSettings.address.en}</p>
+          <p><strong>Service area:</strong> {siteSettings.serviceArea.en}</p>
+          <p><strong>Insurance:</strong> <strong>Pollution</strong> and $2M liability | <strong>Since:</strong> {siteSettings.sinceYear}</p>
+          <p class="cta-text">{homePage.contactPanel.ctaText}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section">
+      <div class="container">
+        <h2>{homePage.reviews.heading}</h2>
+        <div class="reviews-grid">
+          {homePage.reviews.items.map((review) => (
+            <article class="review-card">
+              <p class="review-text">"{review.quote}"</p>
+              <p class="review-author">{review.author}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .hero { min-height: 640px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: linear-gradient(rgba(18, 34, 55, 0.72), rgba(18, 34, 55, 0.58)), radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 28%), url('/hero-bg.jpg') center/cover no-repeat; padding: 5.5rem 1.5rem 4.5rem; }
+  .hero-logo { width: min(760px, 88vw); height: auto; display: block; margin: 0 auto 2rem; border-radius: 24px; filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.25)); }
+  .hero-content { width: min(980px, 100%); }
+  .hero-content h1 { color: white; max-width: 26ch; margin: 0 auto; line-height: 1.12; }
+  .hero-tagline { font-size: 1.2rem; letter-spacing: 2px; margin-top: 1rem; line-height: 1.5; }
+  .intro-section { padding: 4rem 0; background: white; }
+  .intro-grid { display: flex; justify-content: center; }
+  .intro-card { text-align: center; max-width: 720px; }
+  .card-icon { font-size: 3rem; color: var(--brand-green); margin-bottom: 1rem; }
+  .services-overview { padding: 4rem 0; background: var(--brand-surface); }
+  .seo-copy { padding: 4rem 0; background: white; }
+  .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .seo-grid p { margin-top: 0.75rem; color: var(--brand-muted); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 2rem; }
+  .service-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 2rem; background: white; border-radius: 8px; transition: all 0.3s; border: 2px solid transparent; }
+  .service-item:hover { border-color: var(--brand-gold); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(242, 210, 27, 0.2); }
+  .service-item i { font-size: 2.5rem; color: var(--brand-navy); }
+  .service-item--no-icon { gap: 0; }
+  .service-sub-label { display: block; margin-top: 0.15rem; font-size: 0.78rem; line-height: 1.35; color: var(--brand-muted); text-align: center; }
+  .contact-section { padding: 4rem 0; background: var(--brand-navy); color: white; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .contact-form-wrapper h2 { color: white; margin-bottom: 1.5rem; }
+  .contact-form-wrapper form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-note { margin-bottom: 1rem; color: #d9e6d1; }
+  .contact-form-wrapper input, .contact-form-wrapper textarea { padding: 12px; border: none; border-radius: 4px; font-family: inherit; }
+  .contact-info h3 { color: var(--brand-gold); margin-bottom: 1rem; }
+  .contact-info p { margin-bottom: 0.75rem; }
+  .contact-info a { color: white; font-weight: 700; }
+  .contact-info a:hover { color: var(--brand-gold); }
+  .contact-info .contact-booking-link { display: inline-block; background: var(--brand-gold); color: var(--brand-navy-dark); padding: 0.7rem 1.1rem; border-radius: 999px; border: 2px solid var(--brand-gold); text-decoration: none; }
+  .contact-info .contact-booking-link:hover { color: var(--brand-navy-dark); background: #e1c317; border-color: #e1c317; text-decoration: none; }
+  .cta-text { margin-top: 1.5rem; font-style: italic; color: #d9e6d1; }
+  .reviews-section { padding: 4rem 0; background: #f4f6f8; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .review-card { background: white; border-radius: 18px; padding: 1.5rem; box-shadow: 0 14px 28px rgba(20, 36, 55, 0.08); }
+  .review-text { color: var(--brand-ink); font-weight: 600; }
+  .review-author { margin-top: 1rem; color: var(--brand-muted); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  @media (max-width: 768px) {
+    .hero { min-height: 0; padding: 4.25rem 1rem 3.25rem; align-items: center; }
+    .hero-logo { width: min(520px, 88vw); margin: 0 auto 1.35rem; border-radius: 18px; }
+    .hero-content h1 { font-size: 1.95rem; max-width: 12ch; }
+    .hero-tagline { font-size: 0.98rem; margin-top: 0.85rem; letter-spacing: 1.2px; }
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1.4rem; }
+    .service-item { padding: 1.15rem 0.8rem; min-height: 116px; border-radius: 14px; }
+    .service-item i { font-size: 2rem; }
+    .service-item span { font-size: 0.95rem; text-align: center; line-height: 1.25; }
+    .service-sub-label { font-size: 0.68rem; line-height: 1.3; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>

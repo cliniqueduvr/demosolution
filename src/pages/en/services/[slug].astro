@@ -1,0 +1,49 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import ServicePageTemplate from '../../../components/ServicePageTemplate.astro';
+import servicePagesData from '../../../data/service-pages-en.json';
+import type { ServicePage } from '../../../data/service-page-types';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../../../lib/seo';
+const allowedServiceSlugs = ['decontamination', 'mould-removal', 'selective-demolition', 'vermiculite-removal', 'sampling'];
+const servicePagesEn = (servicePagesData.items as ServicePage[]).filter((service) => allowedServiceSlugs.includes(service.slug));
+
+export function getStaticPaths() {
+  return (servicePagesData.items as ServicePage[])
+    .filter((service) => ['decontamination', 'mould-removal', 'selective-demolition', 'vermiculite-removal', 'sampling'].includes(service.slug))
+    .map((service) => ({
+    params: { slug: service.slug },
+    props: { service }
+  }));
+}
+
+const { service } = Astro.props as { service: ServicePage };
+const schemas = [
+  buildServiceSchema({
+    name: service.h1,
+    serviceType: service.serviceType,
+    description: service.opening
+  }),
+  buildFAQSchema(service.faqs),
+  buildBreadcrumbSchema([
+    { name: 'Home', path: '/en/' },
+    { name: 'Services', path: '/en/services/' },
+    { name: service.navLabel }
+  ])
+];
+---
+
+<Layout
+  title={service.seoTitle}
+  description={service.seoDescription}
+  lang="en-CA"
+  canonicalPath={`/en/services/${service.slug}/`}
+  frPath={`/services/${service.alternateSlug}/`}
+  enPath={`/en/services/${service.slug}/`}
+  schemas={schemas}
+>
+  <Header lang="en" />
+  <ServicePageTemplate service={service} allServices={servicePagesEn} lang="en" />
+  <Footer lang="en" />
+</Layout>

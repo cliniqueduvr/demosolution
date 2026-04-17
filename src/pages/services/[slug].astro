@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServicePageTemplate from '../../components/ServicePageTemplate.astro';
+import servicePagesData from '../../data/service-pages.json';
+import type { ServicePage } from '../../data/service-page-types';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../../lib/seo';
+const servicePages = servicePagesData.items as ServicePage[];
+
+export function getStaticPaths() {
+  return (servicePagesData.items as ServicePage[])
+    .map((service) => ({
+    params: { slug: service.slug },
+    props: { service }
+  }));
+}
+
+const { service } = Astro.props as { service: ServicePage };
+const schemas = [
+  buildServiceSchema({
+    name: service.h1,
+    serviceType: service.serviceType,
+    description: service.opening
+  }),
+  buildFAQSchema(service.faqs),
+  buildBreadcrumbSchema([
+    { name: 'Accueil', path: '/' },
+    { name: 'Services', path: '/services/' },
+    { name: service.navLabel }
+  ])
+];
+---
+
+<Layout
+  title={service.seoTitle}
+  description={service.seoDescription}
+  canonicalPath={`/services/${service.slug}/`}
+  frPath={`/services/${service.slug}/`}
+  enPath={`/en/services/${service.alternateSlug}/`}
+  schemas={schemas}
+>
+  <Header />
+  <ServicePageTemplate service={service} allServices={servicePages} />
+  <Footer />
+</Layout>

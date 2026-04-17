@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Suspicious material decontamination",
+      "location": "Gatineau",
+      "category": "Decontamination",
+      "beforeImage": "/images/project-1-before.jpg",
+      "afterImage": "/images/project-1-after.jpg",
+      "beforeAlt": "Before: building area with suspicious materials and potential contamination",
+      "afterAlt": "After: area treated cleanly and prepared for the next phase of work",
+      "description": "Decontamination work with containment, targeted material removal and proper preparation of the area so the project can move forward."
+    },
+    {
+      "id": 2,
+      "title": "Cleanup after mould contamination",
+      "location": "Ottawa",
+      "category": "Mould",
+      "beforeImage": "/images/project-2-before.jpg",
+      "afterImage": "/images/project-2-after.jpg",
+      "beforeAlt": "Before: interior affected by humidity and mould with deteriorated surfaces",
+      "afterAlt": "After: sanitized surfaces and area prepared for the next stage of work",
+      "description": "Removal of affected sections, control of contamination and preparation of the area for a clean and structured continuation of the project."
+    },
+    {
+      "id": 3,
+      "title": "Sampling before work begins",
+      "location": "Ottawa",
+      "category": "Sampling",
+      "beforeImage": "/images/project-3-before.jpg",
+      "afterImage": "/images/project-3-after.jpg",
+      "beforeAlt": "Before: suspicious materials that need confirmation before work starts",
+      "afterAlt": "After: clear report with analysis results and recommended next steps",
+      "description": "Material sampling and laboratory coordination to confirm the presence or absence of contaminants before decontamination or demolition."
+    },
+    {
+      "id": 4,
+      "title": "Interior selective demolition",
+      "location": "Gatineau",
+      "category": "Demolition",
+      "beforeImage": "/images/project-4-before.jpg",
+      "afterImage": "/images/project-4-after.jpg",
+      "beforeAlt": "Before: interior sections that must be removed in a controlled way before the next stage",
+      "afterAlt": "After: area opened cleanly and prepared for the next intervention",
+      "description": "Targeted removal of selected materials, protection of areas to keep and cleanup of the work zone before the next phase."
+    },
+    {
+      "id": 5,
+      "title": "Vermiculite removal",
+      "location": "Gatineau",
+      "category": "Vermiculite",
+      "beforeImage": "/images/project-5-before.jpg",
+      "afterImage": "/images/project-5-after.jpg",
+      "beforeAlt": "Before: visible vermiculite in a building area that must be treated",
+      "afterAlt": "After: vermiculite removed and area cleaned properly",
+      "description": "Safe vermiculite removal in a targeted area with clean handling of materials and preparation for the next stage of the project."
+    },
+    {
+      "id": 6,
+      "title": "Hazardous material assessment",
+      "location": "Ottawa",
+      "category": "Assessment",
+      "beforeImage": "/images/project-6-before.jpg",
+      "afterImage": "/images/project-6-after.jpg",
+      "beforeAlt": "Before: situation that must be clarified before intervention on the property",
+      "afterAlt": "After: clear summary of affected areas and site priorities",
+      "description": "Review of the file, validation of suspicious materials and direction toward sampling, decontamination or demolition depending on the need."
+    }
+  ]
+}

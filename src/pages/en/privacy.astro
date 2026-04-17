@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { buildBreadcrumbSchema } from '../../lib/seo';
+import siteSettings from '../../data/site-settings.json';
+import privacyPage from '../../data/privacy-page-en.json';
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: privacyPage.breadcrumbs.home, path: '/en/' },
+  { name: privacyPage.breadcrumbs.current }
+]);
+---
+
+<Layout title={privacyPage.metaTitle} description={privacyPage.metaDescription} lang="en-CA" canonicalPath="/en/privacy/" frPath="/privacy/" enPath="/en/privacy/" schemas={[breadcrumbs]}>
+  <Header lang="en" />
+
+  <main>
+    <section class="policy-hero">
+      <div class="container">
+        <p class="eyebrow">Privacy and protection</p>
+        <h1>{privacyPage.hero.title}</h1>
+        <p>{privacyPage.hero.body}</p>
+      </div>
+    </section>
+
+    <section class="policy-body">
+      <div class="container policy-grid">
+        {privacyPage.sections.map((section) => (
+          <article class="policy-card">
+            <h2>{section.heading}</h2>
+            {section.heading === 'Questions' ? (
+              <p>
+                For privacy questions or requests related to your information, email <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a> or call <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>.
+              </p>
+            ) : (
+              <p>{section.body}</p>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .policy-hero {
+    padding: 4.5rem 0 3.8rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .policy-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .policy-hero p {
+    margin: 0;
+    max-width: 55ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .policy-body {
+    padding: 3rem 0 4rem;
+    background: #f4f6f8;
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .policy-card {
+    background: white;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 14px 28px rgba(20, 36, 55, 0.08);
+  }
+
+  .policy-card h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.45rem;
+  }
+
+  @media (max-width: 768px) {
+    .policy-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .policy-hero h1 {
+      font-size: 2rem;
+    }
+
+    .policy-hero p {
+      font-size: 1rem;
+    }
+  }
+</style>

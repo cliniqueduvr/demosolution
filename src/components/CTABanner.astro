@@ -1,0 +1,179 @@
+---
+import siteSettings from '../data/site-settings.json';
+
+export interface Props {
+  heading?: string;
+  subheading?: string;
+  phoneNumber?: string;
+  lang?: 'fr' | 'en';
+  squareLabel?: string;
+  smsLabel?: string;
+}
+
+const {
+  heading = "Demandez votre soumission gratuite",
+  subheading = "Décontamination, vermiculite, échantillonnage et démolition",
+  phoneNumber = siteSettings.phone.display,
+  lang = 'fr',
+  squareLabel = lang === 'fr' ? 'Demander une soumission' : 'Request a quote',
+  smsLabel = lang === 'fr' ? 'Message texte' : 'Text us'
+} = Astro.props as Props;
+---
+
+<section class="cta-banner">
+  <div class="container cta-content">
+    <h2>{heading}</h2>
+    <p>{subheading}</p>
+    <div class="cta-actions">
+      <a href={`tel:${siteSettings.phone.href}`} class="cta-button">
+        <i class="fas fa-phone"></i> {phoneNumber}
+      </a>
+      <a href={`sms:${siteSettings.phone.href}`} class="sms-button">
+        <i class="fas fa-comment-dots"></i> {smsLabel}
+      </a>
+      <a href={siteSettings.squareBookingUrl} target="_blank" rel="noopener" class="square-button">
+        <i class="fas fa-calendar-check"></i> {squareLabel}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    background: var(--brand-green);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: white;
+  }
+
+  .cta-content p {
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem 0;
+    color: #ffffff;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--brand-gold);
+  }
+
+  .cta-button:hover {
+    background: #e1c317;
+    color: var(--brand-navy-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-button i {
+    margin-right: 8px;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  .square-button {
+    display: inline-block;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--brand-gold);
+  }
+
+  .square-button:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .square-button i {
+    margin-right: 8px;
+  }
+
+  .sms-button {
+    display: inline-block;
+    background: var(--brand-navy-dark);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--brand-navy-dark);
+  }
+
+  .sms-button:hover {
+    text-decoration: none;
+    background: #163049;
+    border-color: #163049;
+  }
+
+  .sms-button i {
+    margin-right: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .cta-banner {
+      padding: 1.7rem 1rem;
+    }
+
+    .cta-content h2 {
+      font-size: 1.3rem;
+      line-height: 1.1;
+    }
+
+    .cta-content p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .cta-button,
+    .sms-button,
+    .square-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 0.98rem;
+    }
+  }
+</style>

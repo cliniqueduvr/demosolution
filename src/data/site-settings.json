@@ -1,0 +1,33 @@
+{
+  "brandName": "Demo Solution",
+  "brandImage": "/demo-solution-brand.png",
+  "phone": {
+    "display": "(581) 337-3366",
+    "href": "+15813373366"
+  },
+  "email": "info@demosolution.ca",
+  "googleAdsId": "AW-18077296713",
+  "googleAdsConversions": {
+    "phone": "zqGWCLeb-pwcEMnQ9qtD",
+    "email": "uJj_CI2n-pwcEMnQ9qtD",
+    "booking": "11xoCIK34zwcEMnQ9qtD",
+    "form": "aG84CMLN4zwcEMnQ9qtD"
+  },
+  "squareBookingUrl": "mailto:info@demosolution.ca?subject=Soumission%20Demo%20Solution",
+  "facebookUrl": "https://www.facebook.com",
+  "tiktokUrl": "https://www.tiktok.com",
+  "address": {
+    "fr": "11 rue de Granby, Unité 18, Gatineau, QC",
+    "en": "11 Granby Street, Unit 18, Gatineau, QC",
+    "mapQuery": "Demo Solution, 11 rue de Granby, Unite 18, Gatineau, Quebec"
+  },
+  "serviceArea": {
+    "fr": "Gatineau, Ottawa, la grande région de Montréal et Québec",
+    "en": "Gatineau, Ottawa, Greater Montreal and Quebec City"
+  },
+  "sinceYear": "2013",
+  "footerDescription": {
+    "fr": "Décontamination, désamiantage, enlèvement de vermiculite, échantillonnage et démolition sélective avec une approche claire, rapide et rigoureuse.",
+    "en": "Decontamination, asbestos removal, vermiculite removal, sampling and selective demolition with a clear and rigorous approach."
+  }
+}

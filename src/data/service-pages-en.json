@@ -1,0 +1,383 @@
+{
+  "items": [
+    {
+      "slug": "decontamination",
+      "alternateSlug": "desamiantage",
+      "title": "Decontamination",
+      "h1": "Hazardous material decontamination in Gatineau, Ottawa, Montreal and Quebec City",
+      "navLabel": "Decontamination",
+      "icon": "fas fa-biohazard",
+      "serviceType": "Decontamination and hazardous material removal",
+      "seoTitle": "Decontamination in Gatineau | Asbestos, vermiculite and hazardous materials",
+      "seoDescription": "Decontamination service in Gatineau, Ottawa, Greater Montreal and Quebec City for asbestos, vermiculite and other hazardous materials, with a safe and compliant approach.",
+      "eyebrow": "Asbestos, vermiculite and hazardous materials",
+      "opening": "Demo Solution handles decontamination work with a safe, compliant and structured approach designed to limit risk on site.",
+      "lead": "We intervene for the removal of hazardous or contaminated materials in residential and commercial projects, with a strong focus on asbestos and vermiculite.",
+      "intro": "Every project starts with a clear reading of the situation, the affected areas and the containment measures required before work begins.",
+      "detailIntro": "Effective decontamination requires a rigorous method, clean execution and good coordination between containment, removal, disposal and restoration.",
+      "highlights": [
+        "Safe containment",
+        "Removal of hazardous materials",
+        "Residential and commercial work",
+        "Structured and compliant approach"
+      ],
+      "includedTitle": "What we handle",
+      "included": [
+        "Assessment of the area to be treated",
+        "Protection and containment of the work zone",
+        "Removal of hazardous or contaminated materials",
+        "Safe handling and disposal of debris",
+        "Final cleaning of the intervention area"
+      ],
+      "situationsTitle": "When this service is useful",
+      "situations": [
+        "Before renovation or demolition",
+        "When a suspect material must be removed",
+        "After a loss exposing contaminated materials",
+        "When a site must be brought back into compliance"
+      ],
+      "processIntro": "We follow a simple sequence: assess, protect, remove, clean and prepare the next stage of the project.",
+      "process": [
+        "Review of the need and affected area",
+        "Installation of the required safety measures",
+        "Controlled removal of materials",
+        "Cleaning and turnover of the site"
+      ],
+      "whyChooseTitle": "Why choose Demo Solution for decontamination?",
+      "whyChooseIntro": "This type of work demands rigor, a consistent method and clear communication before, during and after the intervention.",
+      "whyChoose": [
+        {
+          "title": "Safe approach",
+          "text": "We prioritize the safety of the site, occupants and workers at every stage."
+        },
+        {
+          "title": "Structured execution",
+          "text": "The work is planned clearly to avoid improvisation and unnecessary delays."
+        },
+        {
+          "title": "Broader vision",
+          "text": "We can coordinate the next stages of the project with selective demolition or other preparatory work when needed."
+        }
+      ],
+      "faqTitle": "Frequently asked questions about decontamination",
+      "faqs": [
+        {
+          "question": "Can you intervene before renovations?",
+          "answer": "Yes. Decontamination is often an essential step before renovation or demolition work."
+        },
+        {
+          "question": "Do you work on commercial projects?",
+          "answer": "Yes. We handle both residential and commercial projects depending on the nature of the site."
+        },
+        {
+          "question": "Can you handle asbestos and vermiculite?",
+          "answer": "Yes. We regularly intervene on projects involving asbestos, vermiculite and other hazardous materials depending on the scope of work."
+        },
+        {
+          "question": "Can you handle the next stage after decontamination?",
+          "answer": "Yes. When needed, we can continue with selective demolition or other preparatory work."
+        }
+      ]
+    },
+    {
+      "slug": "mould-removal",
+      "alternateSlug": "moisissure",
+      "title": "Mould Remediation",
+      "h1": "Mould remediation in Gatineau, Ottawa, Montreal and Quebec City",
+      "navLabel": "Mould",
+      "icon": "fas fa-shield-virus",
+      "serviceType": "Mould remediation",
+      "seoTitle": "Mould remediation in Gatineau | Fast intervention",
+      "seoDescription": "Mould remediation in Gatineau, Ottawa, Greater Montreal and Quebec City for residential and commercial buildings.",
+      "eyebrow": "Mould and site sanitation",
+      "opening": "We intervene when materials, surfaces or enclosed areas have been affected by mould following humidity, infiltration or a loss event.",
+      "lead": "The goal is to remove affected materials, control contamination and prepare the building for the next stage of work.",
+      "intro": "Useful mould remediation starts with a proper reading of the source of the problem and the real extent of the affected areas.",
+      "detailIntro": "Mould is rarely an isolated issue. You have to address the affected materials, possible spread and the underlying cause to avoid a rapid recurrence.",
+      "highlights": [
+        "Assessment of the affected area",
+        "Containment and targeted removal",
+        "Work after infiltration or humidity damage",
+        "Preparation for the next phase"
+      ],
+      "includedTitle": "What the service includes",
+      "included": [
+        "Assessment of affected materials",
+        "Containment of the area when required",
+        "Removal of contaminated materials",
+        "Cleaning and sanitation",
+        "Preparation of the area for the next stage"
+      ],
+      "situationsTitle": "Signs that call for an intervention",
+      "situations": [
+        "Persistent musty or mould odour",
+        "Stained or deteriorated materials",
+        "Damage after water infiltration",
+        "Humidity left inside the building after a loss"
+      ],
+      "processIntro": "We first confirm the scope of the issue, then isolate, remove and sanitize the affected areas.",
+      "process": [
+        "Assessment of the contamination",
+        "Planning of protective measures",
+        "Removal and cleaning of affected areas",
+        "Preparation for the next stage or finishing work"
+      ],
+      "whyChooseTitle": "Why choose Demo Solution for mould remediation?",
+      "whyChooseIntro": "Effective remediation depends on speed of action, clean execution and proper preparation for what comes next.",
+      "whyChoose": [
+        {
+          "title": "Targeted intervention",
+          "text": "We go directly to the affected areas and risky materials to limit spread."
+        },
+        {
+          "title": "Controlled work",
+          "text": "The site stays structured from start to finish with close attention to safety and cleanliness."
+        },
+        {
+          "title": "Next-step readiness",
+          "text": "We can prepare the site properly for selective demolition or other follow-up work."
+        }
+      ],
+      "faqTitle": "Frequently asked questions about mould remediation",
+      "faqs": [
+        {
+          "question": "Do you intervene after water damage?",
+          "answer": "Yes. Mould files are often related to infiltration, water damage or residual humidity left in the building."
+        },
+        {
+          "question": "Can you remove the affected materials?",
+          "answer": "Yes. We remove contaminated materials and prepare the area for the next stage of work."
+        },
+        {
+          "question": "Do you cover Gatineau, Ottawa, Greater Montreal and Quebec City?",
+          "answer": "Yes. We serve Gatineau, Ottawa, Greater Montreal and Quebec City depending on the project."
+        }
+      ]
+    },
+    {
+      "slug": "selective-demolition",
+      "alternateSlug": "demolition-selective",
+      "title": "Selective Demolition",
+      "h1": "Selective demolition in Gatineau, Ottawa, Montreal and Quebec City",
+      "navLabel": "Demolition",
+      "icon": "fas fa-house-damage",
+      "serviceType": "Interior and preparatory selective demolition",
+      "seoTitle": "Selective demolition in Gatineau | Preparatory work",
+      "seoDescription": "Selective demolition in Gatineau, Ottawa, Greater Montreal and Quebec City for residential and commercial projects.",
+      "eyebrow": "Structured site preparation",
+      "opening": "We carry out selective demolition to cleanly remove affected or outdated sections without unnecessarily disturbing the rest of the building.",
+      "lead": "This service is useful before rebuilding work, when opening targeted areas, or when contaminated materials have to be removed in a controlled way.",
+      "intro": "The goal is to remove what has to go, protect what stays in place and prepare the next phase of the project efficiently.",
+      "detailIntro": "Good selective demolition reduces surprises, speeds up the next stage of work and improves coordination with decontamination or sampling needs.",
+      "highlights": [
+        "Targeted removal of affected sections",
+        "Protection of the remaining building",
+        "Preparation for the next stage",
+        "Residential and commercial work"
+      ],
+      "includedTitle": "What we demolish",
+      "included": [
+        "Affected walls, ceilings or floors",
+        "Materials damaged by contamination or humidity",
+        "Sections to be opened for correction or access",
+        "Preparatory removal before follow-up work",
+        "Orderly debris handling"
+      ],
+      "situationsTitle": "When this service is relevant",
+      "situations": [
+        "Before interior work continues",
+        "After contamination or moisture damage",
+        "When materials must be opened or removed cleanly",
+        "To speed up site preparation"
+      ],
+      "processIntro": "We first confirm which sections stay and which sections must be removed so the intervention can move forward without unnecessary damage.",
+      "process": [
+        "Validation of the work perimeter",
+        "Protection of areas to keep",
+        "Targeted demolition of the selected materials",
+        "Cleanup and preparation for the next stage"
+      ],
+      "whyChooseTitle": "Why choose Demo Solution for selective demolition?",
+      "whyChooseIntro": "The quality of a selective demolition job shows in the cleanliness of the site, the respect of preserved areas and the smooth transition to the next phase.",
+      "whyChoose": [
+        {
+          "title": "Clean execution",
+          "text": "We remove what is necessary without unnecessarily disrupting the rest of the building."
+        },
+        {
+          "title": "Strong coordination",
+          "text": "We prepare the site for what comes next, whether that is decontamination, sampling or finishing work."
+        },
+        {
+          "title": "Field-based planning",
+          "text": "We adapt the intervention to the real site conditions, access and work sequence."
+        }
+      ],
+      "faqTitle": "Frequently asked questions about selective demolition",
+      "faqs": [
+        {
+          "question": "Do you only handle small openings or larger removals too?",
+          "answer": "We adapt the scope to the project, from small targeted openings to broader preparatory demolition."
+        },
+        {
+          "question": "Can selective demolition be combined with decontamination?",
+          "answer": "Yes. Depending on the project, selective demolition can follow sampling or decontamination in a coherent work sequence."
+        },
+        {
+          "question": "Do you cover Gatineau, Ottawa, Greater Montreal and Quebec City?",
+          "answer": "Yes. We provide this service across those markets depending on the scope and type of site."
+        }
+      ]
+    },
+    {
+      "slug": "vermiculite-removal",
+      "alternateSlug": "enlevement-vermiculite",
+      "title": "Vermiculite Removal",
+      "h1": "Vermiculite Removal in Gatineau, Ottawa, Montreal and Quebec City",
+      "navLabel": "Vermiculite",
+      "icon": "fas fa-exclamation-triangle",
+      "serviceType": "Vermiculite removal and hazardous material handling",
+      "seoTitle": "Vermiculite Removal in Gatineau | Clean or contaminated vermiculite",
+      "seoDescription": "Vermiculite removal service in Gatineau, Ottawa, Greater Montreal and Quebec City for clean or potentially contaminated vermiculite.",
+      "eyebrow": "Clean or contaminated vermiculite",
+      "opening": "Demo Solution provides vermiculite removal for residential and commercial buildings with a safe, methodical approach adapted to the real conditions of the site.",
+      "lead": "Whether the vermiculite is presumed clean or potentially contaminated, the work has to be handled carefully and in a clear sequence to protect the property and its occupants.",
+      "intro": "This service is especially useful before renovations, when opening an attic or cavity, or when visible vermiculite raises concerns about the safety of existing materials.",
+      "detailIntro": "Removing vermiculite requires proper job planning, clean work methods and tight control over the materials being removed. The goal is to remove the target material without unnecessarily affecting the rest of the building.",
+      "highlights": [
+        "Safe vermiculite removal",
+        "Residential and commercial work",
+        "Clean and structured execution",
+        "Preparation before renovation or restoration"
+      ],
+      "includedTitle": "What the service includes",
+      "included": [
+        "Assessment of the area containing vermiculite",
+        "Protection and setup of the work zone",
+        "Removal of vermiculite based on project scope",
+        "Safe handling of removed materials",
+        "Cleaning of the area after the work"
+      ],
+      "situationsTitle": "When vermiculite removal makes sense",
+      "situations": [
+        "Before renovation or demolition work",
+        "When vermiculite is visible in an attic or cavity",
+        "When you want to clarify risk before opening materials",
+        "When a project needs to be prepared properly before the next step"
+      ],
+      "processIntro": "Our approach starts by confirming the scope of the removal, then organizing the site to work in a clean, safe and practical way based on the project.",
+      "process": [
+        "Assessment of the area and project context",
+        "Installation of the necessary protections",
+        "Removal of vermiculite and handling of materials",
+        "Final cleanup and preparation for the next stage"
+      ],
+      "whyChooseTitle": "Why choose Demo Solution for vermiculite removal?",
+      "whyChooseIntro": "Vermiculite removal has to be done with method, caution and consistency to reduce risk and allow the project to move forward properly.",
+      "whyChoose": [
+        {
+          "title": "Safety first",
+          "text": "We handle vermiculite work with the level of caution required by the actual site conditions."
+        },
+        {
+          "title": "Strong preparation",
+          "text": "The work zone is organized to limit unnecessary dust spread and make the next phase easier."
+        },
+        {
+          "title": "Field-based execution",
+          "text": "We adapt the intervention to the real scope of the project, whether residential or commercial."
+        }
+      ],
+      "faqTitle": "Frequently asked questions about vermiculite removal",
+      "faqs": [
+        {
+          "question": "Can you remove vermiculite before renovations?",
+          "answer": "Yes. Vermiculite removal is often planned before renovation, structural opening or demolition work so the project can move forward properly."
+        },
+        {
+          "question": "Do you handle potentially contaminated vermiculite?",
+          "answer": "Yes. We can intervene when vermiculite is presumed contaminated or when a cautious approach is required before work begins."
+        },
+        {
+          "question": "Do you cover Gatineau, Ottawa, Montreal and Quebec City for this service?",
+          "answer": "Yes. We offer this service in Gatineau, Ottawa, Greater Montreal and Quebec City depending on the project."
+        }
+      ]
+    },
+    {
+      "slug": "sampling",
+      "alternateSlug": "echantillonnage",
+      "title": "Sampling",
+      "h1": "Asbestos and material sampling in Gatineau, Ottawa, Montreal and Quebec City",
+      "navLabel": "Sampling",
+      "icon": "fas fa-microscope",
+      "serviceType": "Material and air sampling",
+      "seoTitle": "Asbestos Sampling in Gatineau | Air, materials and surfaces",
+      "seoDescription": "Sampling service in Gatineau, Ottawa, Greater Montreal and Quebec City for air, materials and surfaces before work begins.",
+      "eyebrow": "Air, materials and surfaces",
+      "opening": "Demo Solution offers sampling services to help confirm the presence of hazardous materials before decontamination, renovation or demolition work begins.",
+      "lead": "Sampling helps clarify the real situation before intervention, reduce uncertainty on site and guide the next decisions properly.",
+      "intro": "We handle sampling of materials that may contain asbestos as well as certain air-related sampling needs depending on the file and site conditions.",
+      "detailIntro": "When a building contains suspicious materials, the right process is to assess, sample safely and have the sample analyzed by a recognized laboratory. This helps confirm the presence or absence of a contaminant before work starts.",
+      "highlights": [
+        "Material sampling",
+        "Air sampling when needed",
+        "Clear reporting and structured results",
+        "Useful first step before work"
+      ],
+      "includedTitle": "What we can sample",
+      "included": [
+        "Suspicious building materials",
+        "Cement, insulation, plaster and construction components",
+        "Air-related sampling when the file requires it",
+        "Coordination of laboratory analysis",
+        "Clear feedback on results and next steps"
+      ],
+      "situationsTitle": "When to request sampling",
+      "situations": [
+        "Before renovation or demolition",
+        "When a material appears suspicious",
+        "When you want to confirm the presence or absence of asbestos",
+        "When a site needs to be framed properly before intervention"
+      ],
+      "processIntro": "The process is simple: identify the target material or area, sample it safely, send it to the lab and provide you with clear conclusions on the results.",
+      "process": [
+        "Initial discussion and validation of the need",
+        "Safe sampling of the material or air",
+        "Transfer to an independent laboratory",
+        "Report, conclusions and recommendations"
+      ],
+      "whyChooseTitle": "Why choose Demo Solution for sampling?",
+      "whyChooseIntro": "Good sampling should be useful, clear and methodical so it supports real decision-making before work begins.",
+      "whyChoose": [
+        {
+          "title": "Structured approach",
+          "text": "We frame the sampling process to get an answer that is actually useful for the site."
+        },
+        {
+          "title": "Actionable results",
+          "text": "The goal is not only to sample, but also to help you understand the logical next step."
+        },
+        {
+          "title": "Strong starting point",
+          "text": "Sampling is often the best first step before decontamination or demolition."
+        }
+      ],
+      "faqTitle": "Frequently asked questions about sampling",
+      "faqs": [
+        {
+          "question": "Can you sample suspicious materials before work starts?",
+          "answer": "Yes. We can sample suspicious materials before renovation, demolition or decontamination work in order to clarify the situation."
+        },
+        {
+          "question": "Do you also perform air sampling?",
+          "answer": "Yes, depending on the file. Some projects also require ambient-air sampling before, during or after an intervention."
+        },
+        {
+          "question": "Do we receive a report or conclusions?",
+          "answer": "Yes. The service is meant to provide a clear reading of the results along with practical recommendations for the next step."
+        }
+      ]
+    }
+  ]
+}

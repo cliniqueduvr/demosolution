@@ -1,0 +1,323 @@
+---
+import siteSettings from '../data/site-settings.json';
+import CookieConsent from '../components/CookieConsent.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: 'fr-CA' | 'en-CA';
+  canonicalPath?: string;
+  frPath?: string;
+  enPath?: string;
+  schemas?: object[];
+  ogType?: 'website' | 'article';
+}
+
+import { absoluteUrl, BRAND_IMAGE } from '../lib/seo';
+
+const {
+  title,
+  description,
+  lang = 'fr-CA',
+  canonicalPath = Astro.url.pathname,
+  frPath,
+  enPath,
+  schemas = [],
+  ogType = 'website'
+} = Astro.props as Props;
+
+const canonicalUrl = absoluteUrl(canonicalPath);
+const ogLocale = lang === 'fr-CA' ? 'fr_CA' : 'en_CA';
+const alternateFr = frPath ? absoluteUrl(frPath) : undefined;
+const alternateEn = enPath ? absoluteUrl(enPath) : undefined;
+const isEnglish = lang === 'en-CA';
+const googleAdsId = siteSettings.googleAdsId?.trim() || '';
+const googleAdsConversions = {
+  phone: siteSettings.googleAdsConversions?.phone?.trim() || '',
+  email: siteSettings.googleAdsConversions?.email?.trim() || '',
+  booking: siteSettings.googleAdsConversions?.booking?.trim() || '',
+  form: siteSettings.googleAdsConversions?.form?.trim() || ''
+};
+const hasGoogleAds = googleAdsId.length > 0;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    {alternateFr && <link rel="alternate" hreflang="fr-CA" href={alternateFr} />}
+    {alternateEn && <link rel="alternate" hreflang="en-CA" href={alternateEn} />}
+    {alternateFr && <link rel="alternate" hreflang="x-default" href={alternateFr} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={BRAND_IMAGE} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={BRAND_IMAGE} />
+    {hasGoogleAds && (
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleAdsId)}`}></script>
+    )}
+    {hasGoogleAds && (
+      <script is:inline define:vars={{ googleAdsId, googleAdsConversions, squareBookingUrl: siteSettings.squareBookingUrl }}>
+        (() => {
+          const storageKey = 'cliniqueduvr-cookie-consent';
+          let hasConsent = false;
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || gtag;
+
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+          });
+          gtag('js', new Date());
+          gtag('config', googleAdsId);
+
+          function grantConsent() {
+            if (hasConsent) return;
+            hasConsent = true;
+            window.gtag('consent', 'update', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+              analytics_storage: 'granted'
+            });
+          }
+
+          function trackConversion(type) {
+            if (typeof window.gtag !== 'function') return;
+
+            const label = googleAdsConversions?.[type];
+            window.gtag('event', `${type}_contact`, {
+              event_category: 'engagement',
+              event_label: type
+            });
+
+            if (label) {
+              window.gtag('event', 'conversion', {
+                send_to: `${googleAdsId}/${label}`
+              });
+            }
+          }
+
+          function installTracking() {
+            if (window.__cliniqueduvrAdsTrackingInstalled) return;
+            window.__cliniqueduvrAdsTrackingInstalled = true;
+            window.cliniqueTrackConversion = trackConversion;
+
+            document.addEventListener('click', (event) => {
+              const target = event.target;
+              if (!(target instanceof Element)) return;
+              const link = target.closest('a[href]');
+              if (!(link instanceof HTMLAnchorElement)) return;
+
+              const href = link.getAttribute('href') || '';
+
+              if (href.startsWith('tel:')) {
+                trackConversion('phone');
+                return;
+              }
+
+              if (href.startsWith('mailto:')) {
+                trackConversion('email');
+                return;
+              }
+
+              if (href === squareBookingUrl) {
+                trackConversion('booking');
+              }
+            });
+
+            const url = new URL(window.location.href);
+            const isContactSuccess =
+              url.searchParams.get('sent') === '1' &&
+              (url.pathname === '/contact/' || url.pathname === '/en/contact/');
+            const isThankYouPage = url.pathname === '/merci/' || url.pathname === '/en/thank-you/';
+
+            if (isContactSuccess || isThankYouPage) {
+              trackConversion('form');
+            }
+          }
+
+          try {
+            if (window.localStorage.getItem(storageKey) === 'accepted') {
+              grantConsent();
+              installTracking();
+            } else {
+              window.addEventListener('cliniqueduvr:cookie-consent-accepted', () => {
+                grantConsent();
+                installTracking();
+              }, { once: true });
+            }
+          } catch {
+            window.addEventListener('cliniqueduvr:cookie-consent-accepted', () => {
+              grantConsent();
+              installTracking();
+            }, { once: true });
+          }
+        })();
+      </script>
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+    <style is:global>
+      :root {
+        --brand-navy: #1f3a5f;
+        --brand-navy-dark: #17304f;
+        --brand-green: #3a8d2f;
+        --brand-green-dark: #2f7426;
+        --brand-gold: #f2d21b;
+        --brand-ink: #2b2b2b;
+        --brand-muted: #5f6872;
+        --brand-surface: #f4f6f8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Lato', sans-serif;
+        line-height: 1.6;
+        color: var(--brand-ink);
+        background: white;
+      }
+
+      .mobile-action-bar {
+        display: none;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: var(--brand-navy);
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      a {
+        color: var(--brand-navy);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      button, .btn {
+        background: var(--brand-navy);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      button:hover, .btn:hover {
+        background: var(--brand-navy-dark);
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+        }
+
+        .mobile-action-bar {
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 120;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          background: rgba(255, 255, 255, 0.96);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 -12px 30px rgba(18, 39, 61, 0.18);
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        .mobile-action {
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 1.2rem;
+        }
+
+        .mobile-action:hover {
+          text-decoration: none;
+        }
+
+        .mobile-action-email {
+          background: #cb5a46;
+        }
+
+        .mobile-action-phone {
+          background: #5fcf83;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+    {hasGoogleAds && <CookieConsent lang={isEnglish ? 'en' : 'fr'} hasGoogleAds={hasGoogleAds} />}
+    <div class="mobile-action-bar" aria-label={isEnglish ? 'Quick contact actions' : 'Actions de contact rapide'}>
+      <a
+        class="mobile-action mobile-action-email"
+        href={`mailto:${siteSettings.email}`}
+        aria-label={isEnglish ? 'Send an email' : 'Envoyer un courriel'}
+      >
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+      </a>
+      <a
+        class="mobile-action mobile-action-phone"
+        href={`tel:${siteSettings.phone.href}`}
+        aria-label={isEnglish ? 'Call now' : 'Appeler maintenant'}
+      >
+        <i class="fas fa-phone" aria-hidden="true"></i>
+      </a>
+    </div>
+  </body>
+</html>

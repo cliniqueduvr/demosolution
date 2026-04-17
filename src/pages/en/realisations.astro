@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import projectsData from '../../data/projects-en.json';
+import { buildBreadcrumbSchema } from '../../lib/seo';
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Home', path: '/en/' },
+  { name: 'Projects' }
+]);
+---
+
+<Layout title="Demo Solution projects | Decontamination case studies" description="Demo Solution projects in decontamination, vermiculite removal, sampling and selective demolition in Gatineau, Ottawa, Greater Montreal and Quebec City." lang="en-CA" canonicalPath="/en/realisations/" frPath="/realisations/" enPath="/en/realisations/" schemas={[breadcrumbs]}>
+  <Header lang="en" />
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Complete interventions</p>
+        <h1>Our Projects</h1>
+        <p>Examples of real decontamination and preparatory interventions</p>
+      </div>
+    </section>
+
+    <section class="realisations-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Before and after and real interventions</h2>
+          <p>These projects show examples of work carried out on residential and commercial buildings: decontamination, mould remediation, vermiculite removal, sampling and selective demolition. This section reinforces proof of work and helps place your own project in context.</p>
+        </div>
+        <div class="projects-grid">
+          {projectsData.items.map((project) => (
+            <ProjectCard
+              id={project.id}
+              title={project.title}
+              location={project.location}
+              category={project.category}
+              beforeImage={project.beforeImage}
+              afterImage={project.afterImage}
+              beforeAlt={project.beforeAlt}
+              afterAlt={project.afterAlt}
+              description={project.description}
+              lang="en"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="seo-copy">
+      <div class="container seo-columns">
+        <div>
+          <h2>Why these projects matter</h2>
+          <p>A before-and-after helps explain the type of problem treated, the nature of the materials involved and the level of intervention required depending on the building. It is also a good way to show the difference between sampling, decontamination and preparatory demolition.</p>
+        </div>
+        <div>
+          <h2>Frequent work in the workshop</h2>
+          <p>Among the most common requests are asbestos, vermiculite, mould, suspicious materials and sections that must be removed cleanly before the next phase of work. If your situation resembles one of these cases, we can direct you to the right service.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .page-header { background: radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%), linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%); color: white; padding: 4.5rem 0 3.8rem; }
+  .eyebrow { display: inline-flex; margin-bottom: 1rem; padding: 0.45rem 0.85rem; border-radius: 999px; background: rgba(255,255,255,0.12); color: var(--brand-gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .page-header h1 { color: white; margin-bottom: 0.75rem; font-size: 3rem; }
+  .page-header p:last-child { margin: 0; max-width: 55ch; font-size: 1.08rem; color: #e7edf4; }
+  .realisations-section { padding: 4rem 0; background: white; }
+  .section-intro { max-width: 850px; margin-bottom: 2rem; }
+  .section-intro p { margin-top: 0.75rem; color: var(--brand-muted); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+  .seo-copy { padding: 0 0 4rem; background: white; }
+  .seo-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .seo-columns p { margin-top: 0.75rem; color: var(--brand-muted); }
+  @media (max-width: 768px) { .page-header { background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%); padding: 3.6rem 1.5rem 3rem; } .page-header h1 { font-size: 2rem; } .page-header p { font-size: 1rem; } .realisations-section { padding: 2rem 0; } .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+</style>

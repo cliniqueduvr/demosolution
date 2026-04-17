@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { buildAboutPageSchema, buildBreadcrumbSchema, buildWebSiteSchema } from '../../lib/seo';
+import siteSettings from '../../data/site-settings.json';
+import aboutPage from '../../data/about-page-en.json';
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Home', path: '/en/' },
+  { name: 'About' }
+]);
+const schemas = [
+  buildWebSiteSchema(),
+  buildAboutPageSchema({
+    name: aboutPage.metaTitle,
+    description: aboutPage.metaDescription,
+    path: '/en/about/'
+  }),
+  breadcrumbs
+];
+---
+
+<Layout
+  title={aboutPage.metaTitle}
+  description={aboutPage.metaDescription}
+  lang="en-CA"
+  canonicalPath="/en/about/"
+  frPath="/about/"
+  enPath="/en/about/"
+  schemas={schemas}
+>
+  <Header lang="en" />
+
+  <main>
+    <section class="about-hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Demo Solution</p>
+          <h1>{aboutPage.hero.title}</h1>
+          <p>{aboutPage.hero.body}</p>
+        </div>
+        <figure class="brand-card">
+          <img src={siteSettings.brandImage} alt={aboutPage.hero.imageAlt} />
+          <figcaption>{aboutPage.hero.caption}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="about-body">
+      <div class="container about-grid">
+        {aboutPage.sections.map((section) => (
+          <article class="about-card">
+            <h2>{section.heading}</h2>
+            <p>{section.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .about-hero {
+    padding: 4.5rem 0 3.8rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .about-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .about-hero .hero-grid > div > p {
+    color: #e7edf4;
+    max-width: 55ch;
+    font-size: 1.08rem;
+  }
+
+  .brand-card {
+    margin: 0;
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 16px 30px rgba(18, 35, 54, 0.18);
+  }
+
+  .brand-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .brand-card figcaption {
+    margin-top: 1rem;
+    color: var(--brand-muted);
+    font-size: 0.95rem;
+  }
+
+  .about-body {
+    padding: 4rem 0;
+    background: #f4f6f8;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .about-card {
+    background: white;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 14px 28px rgba(20, 36, 55, 0.08);
+  }
+
+  .about-card p {
+    margin-top: 0.75rem;
+    color: var(--brand-muted);
+  }
+
+  @media (max-width: 900px) {
+    .about-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

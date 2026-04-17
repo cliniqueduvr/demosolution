@@ -1,0 +1,157 @@
+---
+export interface Props {
+  lang?: 'fr' | 'en';
+  hasGoogleAds?: boolean;
+}
+
+const { lang = 'fr', hasGoogleAds = false } = Astro.props as Props;
+const isEnglish = lang === 'en';
+const privacyHref = isEnglish ? '/en/privacy/' : '/privacy/';
+---
+
+<div
+  id="cookie-consent"
+  class="cookie-consent"
+  data-visible="false"
+  aria-live="polite"
+  aria-label={isEnglish ? 'Cookie consent notice' : 'Avis de consentement des témoins'}
+>
+  <div class="cookie-consent__inner">
+    <div class="cookie-consent__copy">
+      <strong>{isEnglish ? 'Privacy and cookies' : 'Confidentialité et témoins'}</strong>
+      <p>
+        {hasGoogleAds
+          ? isEnglish
+            ? 'This site uses essential technologies and Google Ads measurement tools after consent. Your choice is stored locally so the banner does not reappear on every visit.'
+            : 'Ce site utilise des technologies essentielles et les outils de mesure Google Ads après consentement. Votre choix est conservé localement pour ne pas afficher l’avis à chaque visite.'
+          : isEnglish
+            ? 'This site only uses essential technologies needed for basic operation and to remember your consent choice. No advertising or analytics cookies are active at this time.'
+            : 'Ce site utilise seulement les technologies essentielles au bon fonctionnement et pour mémoriser votre choix de consentement. Aucun témoin publicitaire ou d’analyse n’est actif pour le moment.'}
+      </p>
+    </div>
+    <div class="cookie-consent__actions">
+      <a href={privacyHref} class="cookie-consent__link">
+        {isEnglish ? 'Privacy policy' : 'Politique de confidentialité'}
+      </a>
+      <button type="button" class="cookie-consent__button" data-cookie-accept>
+        {isEnglish ? 'Understood' : 'J’ai compris'}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const storageKey = 'cliniqueduvr-cookie-consent';
+    const banner = document.getElementById('cookie-consent');
+    if (!banner) return;
+
+    let hasConsent = false;
+    try {
+      hasConsent = window.localStorage.getItem(storageKey) === 'accepted';
+    } catch {}
+
+    if (!hasConsent) {
+      banner.dataset.visible = 'true';
+    }
+
+    const acceptButton = banner.querySelector('[data-cookie-accept]');
+    acceptButton?.addEventListener('click', () => {
+      try {
+        window.localStorage.setItem(storageKey, 'accepted');
+      } catch {}
+      window.dispatchEvent(new CustomEvent('cliniqueduvr:cookie-consent-accepted'));
+      banner.dataset.visible = 'false';
+    });
+  })();
+</script>
+
+<style>
+  .cookie-consent {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 130;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .cookie-consent[data-visible='true'] {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .cookie-consent__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.1rem;
+    border-radius: 18px;
+    background: rgba(23, 48, 79, 0.96);
+    color: white;
+    box-shadow: 0 18px 40px rgba(14, 31, 49, 0.28);
+    backdrop-filter: blur(10px);
+  }
+
+  .cookie-consent__copy strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--brand-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.82rem;
+  }
+
+  .cookie-consent__copy p {
+    margin: 0;
+    color: #eef4fb;
+    font-size: 0.96rem;
+  }
+
+  .cookie-consent__actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .cookie-consent__link {
+    color: white;
+    font-weight: 700;
+  }
+
+  .cookie-consent__button {
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    font-weight: 700;
+  }
+
+  .cookie-consent__button:hover {
+    background: #e1c317;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-consent {
+      bottom: calc(1rem + 72px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .cookie-consent__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .cookie-consent__actions {
+      justify-content: flex-start;
+    }
+  }
+</style>
