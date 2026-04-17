@@ -415,7 +415,7 @@
         "intro": "Tableau de prix pour les demandes d’échantillonnage de matériaux suspects avant des travaux. Ces tarifs servent à cadrer les demandes les plus courantes et peuvent varier si le dossier exige un mandat plus large ou un déplacement particulier.",
         "cards": [
           {
-            "title": "Inspection, rapport et premier échantillon analysé",
+            "title": "Inspection, rapport et premier",
             "price": "299 $",
             "details": [
               "Inspection visuelle et lecture de base de la situation",
@@ -443,8 +443,6 @@
           }
         ],
         "notes": [
-          "Délais habituels: rendez-vous avec 1 à 2 jours de préavis, plus rapidement si l’horaire le permet.",
-          "Résultats: environ 48 à 72 heures après l’échantillonnage.",
           "Des frais de déplacement ou des frais additionnels peuvent s’appliquer pour les projets plus éloignés, urgents ou de plus grande envergure."
         ]
       },

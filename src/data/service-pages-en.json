@@ -402,7 +402,7 @@
         "intro": "Pricing table for common material sampling requests before renovation, demolition or decontamination work. These rates are meant to frame the most common cases and may vary when the file requires a broader scope or a specific travel setup.",
         "cards": [
           {
-            "title": "Inspection, report and first analyzed sample",
+            "title": "Inspection, report and first",
             "price": "$299",
             "details": [
               "Visual inspection and first reading of the situation",
@@ -430,8 +430,6 @@
           }
         ],
         "notes": [
-          "Usual timing: appointments with 1 to 2 days of notice, sooner when scheduling allows.",
-          "Results: about 48 to 72 hours after sampling.",
           "Travel fees or additional charges may apply for remote, urgent or larger-scale projects."
         ]
       },
