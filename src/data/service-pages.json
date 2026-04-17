@@ -448,6 +448,27 @@
           "Des frais de déplacement ou des frais additionnels peuvent s’appliquer pour les projets plus éloignés, urgents ou de plus grande envergure."
         ]
       },
+      "timing": {
+        "title": "Nos délais",
+        "intro": "Les délais ci-dessous représentent le cadre le plus courant pour les demandes standard d’échantillonnage.",
+        "items": [
+          "Rendez-vous: généralement avec 1 à 2 jours de préavis",
+          "Urgence: possible plus rapidement selon la disponibilité",
+          "Résultats: environ 48 à 72 heures après l’échantillonnage",
+          "Déplacement: des frais peuvent s’appliquer selon le secteur"
+        ]
+      },
+      "commonMaterials": {
+        "title": "Matériaux souvent testés",
+        "intro": "Voici les matériaux les plus souvent visés lorsqu’un client veut confirmer la présence ou l’absence d’amiante avant des travaux.",
+        "items": [
+          "Plâtre, joints de gypse et composés de finition",
+          "Revêtements de sol comme tuiles vinyliques et prélart",
+          "Panneaux, isolants et matériaux d’entretoit",
+          "Carreaux de plafond et matériaux manufacturés",
+          "Autres matériaux suspects ciblés avant rénovation ou démolition"
+        ]
+      },
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour l’échantillonnage?",
       "whyChooseIntro": "Un bon échantillonnage doit être utile, clair et réalisé de façon méthodique pour soutenir une vraie prise de décision avant les travaux.",
       "whyChoose": [

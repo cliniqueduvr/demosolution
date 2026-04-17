@@ -435,6 +435,27 @@
           "Travel fees or additional charges may apply for remote, urgent or larger-scale projects."
         ]
       },
+      "timing": {
+        "title": "Our timelines",
+        "intro": "The timeline below reflects the most common setup for standard sampling requests.",
+        "items": [
+          "Appointments: usually with 1 to 2 days of notice",
+          "Urgent requests: sometimes possible sooner depending on availability",
+          "Results: about 48 to 72 hours after sampling",
+          "Travel: fees may apply depending on the area"
+        ]
+      },
+      "commonMaterials": {
+        "title": "Materials often tested",
+        "intro": "These are the materials most often targeted when a client wants to confirm the presence or absence of asbestos before work begins.",
+        "items": [
+          "Plaster, drywall joints and finishing compounds",
+          "Flooring materials such as vinyl tile and sheet flooring",
+          "Panels, insulation and attic-related materials",
+          "Ceiling tiles and manufactured products",
+          "Other suspicious materials identified before renovation or demolition"
+        ]
+      },
       "whyChooseTitle": "Why choose Demo Solution for sampling?",
       "whyChooseIntro": "Good sampling should be useful, clear and methodical so it supports real decision-making before work begins.",
       "whyChoose": [

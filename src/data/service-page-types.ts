@@ -18,6 +18,12 @@ export interface ServicePricing {
   notes?: string[];
 }
 
+export interface ServiceInfoSection {
+  title: string;
+  intro?: string;
+  items: string[];
+}
+
 export interface ServicePage {
   slug: string;
   alternateSlug: string;
@@ -44,6 +50,8 @@ export interface ServicePage {
   pricingPageBody?: string;
   pricingPageHref?: string;
   pricingPageLabel?: string;
+  timing?: ServiceInfoSection;
+  commonMaterials?: ServiceInfoSection;
   whyChooseTitle: string;
   whyChooseIntro: string;
   whyChoose: WhyChoosePoint[];

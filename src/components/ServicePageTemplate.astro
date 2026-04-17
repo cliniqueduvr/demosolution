@@ -120,6 +120,30 @@ const serviceAreas = isEnglish
           </section>
         )}
 
+        {service.timing && (
+          <section class="content-card alt">
+            <h2>{service.timing.title}</h2>
+            {service.timing.intro && <p class="section-copy">{service.timing.intro}</p>}
+            <ul>
+              {service.timing.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {service.commonMaterials && (
+          <section class="content-card">
+            <h2>{service.commonMaterials.title}</h2>
+            {service.commonMaterials.intro && <p class="section-copy">{service.commonMaterials.intro}</p>}
+            <ul>
+              {service.commonMaterials.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {service.pricingPageTitle && service.pricingPageBody && service.pricingPageHref && service.pricingPageLabel && (
           <section class="content-card alt pricing-link-card">
             <h2>{service.pricingPageTitle}</h2>
