@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteSettings from '../data/site-settings.json';
+import faqPage from '../data/faq-page.json';
+import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+
+const faqItems = faqPage.categories.flatMap((category) => category.items);
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: faqPage.breadcrumbs.home, path: '/' },
+  { name: faqPage.breadcrumbs.current }
+]);
+---
+
+<Layout
+  title={faqPage.metaTitle}
+  description={faqPage.metaDescription}
+  canonicalPath="/faq/"
+  frPath="/faq/"
+  enPath="/en/faq/"
+  schemas={[breadcrumbs, buildFAQSchema(faqItems)]}
+>
+  <Header />
+
+  <main>
+    <section class="faq-hero">
+      <div class="container">
+        <p class="eyebrow">{faqPage.hero.eyebrow}</p>
+        <h1>{faqPage.hero.title}</h1>
+        <p>{faqPage.hero.body}</p>
+      </div>
+    </section>
+
+    <section class="faq-body">
+      <div class="container faq-layout">
+        <div class="faq-main">
+          <section class="intro-card">
+            <h2>{faqPage.intro.title}</h2>
+            <p>{faqPage.intro.body}</p>
+          </section>
+
+          {faqPage.categories.map((category) => (
+            <section class="faq-section">
+              <h2>{category.title}</h2>
+              <div class="faq-list">
+                {category.items.map((item) => (
+                  <details class="faq-item">
+                    <summary>
+                      <h3>{item.question}</h3>
+                    </summary>
+                    <div class="accordion-content">
+                      <p>{item.answer}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <aside class="faq-side">
+          <div class="cta-card">
+            <h2>{faqPage.cta.title}</h2>
+            <p>{faqPage.cta.body}</p>
+            <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
+            <a class="contact-link" href="/contact/">{faqPage.cta.contactLabel}</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .faq-hero {
+    padding: 4.5rem 0 3.8rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .faq-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .faq-hero p:last-child {
+    margin: 0;
+    max-width: 58ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .faq-body {
+    padding: 4rem 0;
+    background: #f3f5f8;
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .faq-main,
+  .faq-side {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .intro-card,
+  .faq-section,
+  .cta-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.75rem;
+    box-shadow: 0 16px 34px rgba(24, 40, 61, 0.08);
+  }
+
+  .faq-section h2,
+  .intro-card h2,
+  .cta-card h2 {
+    margin-bottom: 1rem;
+  }
+
+  .intro-card p,
+  .cta-card p,
+  .accordion-content p {
+    color: var(--brand-muted);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(31, 58, 95, 0.08);
+  }
+
+  .faq-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .accordion-content {
+    padding-top: 1rem;
+  }
+
+  .cta-card {
+    position: sticky;
+    top: 7rem;
+    background: var(--brand-navy-dark);
+    color: white;
+  }
+
+  .cta-card h2 {
+    color: white;
+  }
+
+  .cta-card p {
+    color: #dbe4ee;
+  }
+
+  .phone-button,
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .phone-button {
+    margin: 0.4rem 0 0.8rem;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+  }
+
+  .phone-button:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .contact-link {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+  }
+
+  .contact-link:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 920px) {
+    .faq-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-card {
+      position: static;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .faq-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .intro-card,
+    .faq-section,
+    .cta-card {
+      border-radius: 18px;
+      padding: 1.3rem;
+    }
+  }
+</style>

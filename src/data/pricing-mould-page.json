@@ -1,0 +1,87 @@
+{
+  "metaTitle": "Tarifs moisissure | Demo Solution",
+  "metaDescription": "Tarifs indicatifs pour la décontamination de moisissure à Gatineau, Ottawa et Québec, avec facteurs de prix, inclusions et prochaines étapes.",
+  "breadcrumbs": {
+    "home": "Accueil",
+    "current": "Tarifs moisissure"
+  },
+  "hero": {
+    "eyebrow": "Prix indicatifs",
+    "title": "Tarifs de décontamination de moisissure",
+    "body": "Nous n’affichons pas de prix fixes pour la moisissure, parce qu’un dossier peut changer rapidement selon la surface touchée, la cause du problème, l’accès et le niveau de confinement nécessaire."
+  },
+  "overview": {
+    "title": "Avant de comparer les prix",
+    "body": "Une décontamination de moisissure ne se limite pas à enlever une tache visible. Le coût dépend souvent de ce qui se passe derrière les matériaux, de l’humidité encore présente, du type de surfaces à retirer et du niveau de protection requis pour éviter la propagation."
+  },
+  "pricing": {
+    "title": "Comment nous cadrons le budget",
+    "intro": "Pour la moisissure, nous travaillons avec des estimations sur évaluation plutôt qu’avec des prix affichés publiquement. Une petite zone visible, une contamination derrière les murs ou un dossier après dégât d’eau ne demandent pas du tout le même niveau d’intervention.",
+    "cards": [
+      {
+        "title": "Intervention ciblée sur petite zone",
+        "price": "Sur évaluation",
+        "details": [
+          "Petite zone localisée",
+          "Confinement léger ou modéré selon le cas",
+          "Retrait ciblé et assainissement de base"
+        ]
+      },
+      {
+        "title": "Zone moyenne avec retrait de matériaux",
+        "price": "Sur évaluation",
+        "details": [
+          "Plusieurs matériaux ou surfaces touchés",
+          "Confinement plus structuré",
+          "Préparation à la remise en état"
+        ]
+      },
+      {
+        "title": "Dossier plus lourd ou propagation étendue",
+        "price": "Sur soumission",
+        "details": [
+          "Propagation dans plusieurs pièces ou cavités",
+          "Accès difficile ou contamination importante",
+          "Portée à confirmer après inspection"
+        ]
+      }
+    ],
+    "notes": [
+      "Le budget final varie selon le nombre de zones touchées, l’humidité résiduelle, les matériaux à retirer et la logistique du chantier.",
+      "Des photos, une visite ou un échantillonnage peuvent être nécessaires pour confirmer la bonne approche avant de chiffrer le dossier."
+    ]
+  },
+  "factors": {
+    "title": "Ce qui influence le tarif",
+    "items": [
+      {
+        "title": "Surface et profondeur du problème",
+        "body": "Une petite zone visible ne coûte pas la même chose qu’une contamination qui s’étend derrière les murs, dans un plafond, un sous-sol ou un entretoit."
+      },
+      {
+        "title": "Cause d’humidité à traiter",
+        "body": "Infiltration, dégât d’eau, condensation ou ventilation déficiente peuvent modifier la portée réelle du travail et les mesures à prendre."
+      },
+      {
+        "title": "Confinement et accès",
+        "body": "L’accès au chantier, la présence d’occupants et le niveau de confinement requis influencent directement le temps et les coûts."
+      }
+    ]
+  },
+  "included": {
+    "title": "Ce qui peut être inclus selon le dossier",
+    "items": [
+      "Lecture du problème et de la zone touchée",
+      "Confinement adapté à la situation",
+      "Retrait ciblé des matériaux contaminés",
+      "Nettoyage et assainissement des surfaces conservées",
+      "Préparation pour la réparation ou la remise en état"
+    ]
+  },
+  "cta": {
+    "title": "Besoin d’un prix plus juste?",
+    "body": "Envoyez des photos, l’adresse et une courte description du problème. Nous pourrons vous orienter vers la prochaine étape utile ou préparer une soumission.",
+    "phoneLabel": "Appeler maintenant",
+    "contactLabel": "Demander une soumission"
+  }
+}

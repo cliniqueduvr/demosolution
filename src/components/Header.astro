@@ -21,6 +21,7 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
     '/about/': '/en/about/',
     '/choisir-service/': '/en/choose-service/',
     '/contact/': '/en/contact/',
+    '/faq/': '/en/faq/',
     '/plan-du-site/': '/en/site-map/',
     '/privacy/': '/en/privacy/',
     '/realisations/': '/en/realisations/',
@@ -32,6 +33,7 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
     '/en/about/': '/about/',
     '/en/choose-service/': '/choisir-service/',
     '/en/contact/': '/contact/',
+    '/en/faq/': '/faq/',
     '/en/site-map/': '/plan-du-site/',
     '/en/privacy/': '/privacy/',
     '/en/realisations/': '/realisations/',
@@ -82,6 +84,7 @@ const navItems = isEnglish
       { label: 'Home', href: '/en/' },
       { label: 'Services', href: '/en/services/' },
       { label: 'Projects', href: '/en/realisations/' },
+      { label: 'FAQ', href: '/en/faq/' },
       { label: 'Quote', href: '/en/contact/' },
       { label: 'About', href: '/en/about/' },
       { label: 'Contact', href: '/en/contact/' }
@@ -90,6 +93,7 @@ const navItems = isEnglish
       { label: 'Accueil', href: '/' },
       { label: 'Services', href: '/services/' },
       { label: 'Réalisations', href: '/realisations/' },
+      { label: 'FAQ', href: '/faq/' },
       { label: 'Soumission', href: '/contact/' },
       { label: 'À Propos', href: '/about/' },
       { label: 'Contact', href: '/contact/' }

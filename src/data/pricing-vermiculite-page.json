@@ -1,0 +1,87 @@
+{
+  "metaTitle": "Tarifs vermiculite | Demo Solution",
+  "metaDescription": "Tarifs indicatifs pour l’enlèvement de vermiculite à Gatineau, Ottawa et Québec, avec facteurs de prix, inclusions et logistique du chantier.",
+  "breadcrumbs": {
+    "home": "Accueil",
+    "current": "Tarifs vermiculite"
+  },
+  "hero": {
+    "eyebrow": "Prix indicatifs",
+    "title": "Tarifs d’enlèvement de vermiculite",
+    "body": "Nous n’affichons pas de prix fermes pour la vermiculite. Comme point de repère, un projet peut souvent se situer entre 8 $ et 25 $ / pi², mais la fourchette réelle dépend de la complexité, du volume, de l’accès et du niveau de précaution requis."
+  },
+  "overview": {
+    "title": "Pourquoi les prix varient autant",
+    "body": "Un dossier de vermiculite peut aller d’un entretoit accessible avec une portée bien cadrée à un chantier plus complexe avec cavités, protections particulières, accès restreint et coordination d’échantillonnage. Le prix reflète surtout la logistique et le niveau de contrôle requis."
+  },
+  "pricing": {
+    "title": "Fourchette de référence",
+    "intro": "Pour la vermiculite, nous préférons parler d’une fourchette de référence plutôt que d’afficher des prix fixes. Le coût réel peut monter ou descendre selon la portée, l’accès et les protections à mettre en place.",
+    "cards": [
+      {
+        "title": "Fourchette générale observée",
+        "price": "8 $ à 25 $ / pi²",
+        "details": [
+          "Repère général seulement, non une promesse de prix ferme",
+          "Peut varier fortement selon le volume, l’accès et le confinement",
+          "Toujours à confirmer selon la lecture réelle du chantier"
+        ]
+      },
+      {
+        "title": "Projet simple à modéré",
+        "price": "Selon complexité",
+        "details": [
+          "Accès plus simple et portée mieux cadrée",
+          "Moins de contraintes logistiques",
+          "Confinement et protections adaptés au dossier"
+        ]
+      },
+      {
+        "title": "Projet plus complexe",
+        "price": "Sur évaluation",
+        "details": [
+          "Grand volume, plusieurs zones ou accès difficiles",
+          "Risque plus élevé ou coordination supplémentaire",
+          "Portée à confirmer selon inspection et validations"
+        ]
+      }
+    ],
+    "notes": [
+      "La fourchette de 8 $ à 25 $ / pi² sert uniquement à situer un projet avant une lecture plus précise.",
+      "Le prix final varie selon le volume réel, l’emplacement de la vermiculite, les accès, les protections requises et les besoins de coordination."
+    ]
+  },
+  "factors": {
+    "title": "Ce qui influence le tarif",
+    "items": [
+      {
+        "title": "Volume et emplacement",
+        "body": "La quantité de vermiculite et son emplacement dans un entretoit, un mur, un plafond ou une cavité changent fortement la portée des travaux."
+      },
+      {
+        "title": "Accès et protections",
+        "body": "Un accès étroit, un chantier occupé, une ventilation à protéger ou un besoin de confinement plus élevé peuvent augmenter le coût."
+      },
+      {
+        "title": "Coordination du diagnostic",
+        "body": "Dans certains dossiers, il faut arrimer le retrait avec de l’échantillonnage, une inspection ou d’autres validations avant d’aller plus loin."
+      }
+    ]
+  },
+  "included": {
+    "title": "Ce qui peut être inclus selon le dossier",
+    "items": [
+      "Lecture de la portée et du niveau de précaution requis",
+      "Protection et préparation du chantier",
+      "Confinement ou mesures de contrôle selon la situation",
+      "Retrait de la vermiculite selon la portée confirmée",
+      "Gestion des matériaux retirés et nettoyage final"
+    ]
+  },
+  "cta": {
+    "title": "Vous voulez cadrer votre budget?",
+    "body": "Envoyez des photos de l’entretoit ou de la zone visée, avec l’adresse et le contexte des travaux. Nous pourrons mieux situer la portée du retrait.",
+    "phoneLabel": "Appeler maintenant",
+    "contactLabel": "Demander une soumission"
+  }
+}

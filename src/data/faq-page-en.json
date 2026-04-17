@@ -1,0 +1,110 @@
+{
+  "metaTitle": "FAQ | Demo Solution",
+  "metaDescription": "Frequently asked questions about decontamination, vermiculite, mould, sampling, timelines, pricing and service areas at Demo Solution.",
+  "breadcrumbs": {
+    "home": "Home",
+    "current": "FAQ"
+  },
+  "hero": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Demo Solution FAQ",
+    "body": "Quick answers to the most common questions about our services, timelines, pricing, sampling, residential and commercial work, and the next steps after a request."
+  },
+  "intro": {
+    "title": "Before you request a quote",
+    "body": "This page brings together the most useful answers for understanding our approach, the signs to watch for, what affects pricing, and how a decontamination, vermiculite, mould or sampling file usually moves forward."
+  },
+  "categories": [
+    {
+      "title": "Pricing and estimates",
+      "items": [
+        {
+          "question": "How is the price of an intervention calculated?",
+          "answer": "Pricing mainly depends on the contaminant or material involved, the affected surface area, site access, the level of containment required, the number of samples or materials to remove, and the overall complexity of the job."
+        },
+        {
+          "question": "Can you provide pricing before a site visit?",
+          "answer": "Yes, in some cases we can give an initial range based on photos, the information provided and the type of project. When the file is more complex, a visit or sampling step may be needed before confirming a more accurate price."
+        },
+        {
+          "question": "Can there be additional charges?",
+          "answer": "Yes, depending on the project. Additional charges may apply for remote travel, urgent scheduling, difficult access, extra analysis, or a job that turns out to be larger than initially expected."
+        }
+      ]
+    },
+    {
+      "title": "Sampling and diagnosis",
+      "items": [
+        {
+          "question": "When should sampling be done?",
+          "answer": "Sampling is useful before renovation, demolition, or any intervention involving a suspicious material. It helps confirm or rule out the presence of a contaminant before materials are opened or removed."
+        },
+        {
+          "question": "Do you also perform air testing?",
+          "answer": "Yes, depending on the file. Some projects require air sampling before, during or after the work, especially when the situation needs to be documented more clearly or the next step must be confirmed properly."
+        },
+        {
+          "question": "How long does it take to get results?",
+          "answer": "The timeline varies depending on the lab and the type of analysis, but for many material sampling requests, results are typically available within about 48 to 72 hours."
+        }
+      ]
+    },
+    {
+      "title": "Mould, vermiculite and decontamination",
+      "items": [
+        {
+          "question": "What are the common signs of a mould problem?",
+          "answer": "Common signs include a persistent musty odour, staining on walls or ceilings, moisture-damaged materials, a basement or bathroom that did not dry properly, or an area affected after infiltration or water damage."
+        },
+        {
+          "question": "Is vermiculite always dangerous?",
+          "answer": "Not necessarily, but it should not be moved without evaluation. Some vermiculite products, including certain zonolite materials, may be associated with asbestos risk, so the right approach is to confirm the file before opening or handling the material."
+        },
+        {
+          "question": "Can you remove the affected materials and prepare the next phase?",
+          "answer": "Yes. Depending on the file, we can remove contaminated materials, sanitize the area, coordinate sampling when needed, and prepare the site for repairs, restoration or selective demolition."
+        }
+      ]
+    },
+    {
+      "title": "Timelines, logistics and service areas",
+      "items": [
+        {
+          "question": "Which areas do you serve?",
+          "answer": "We serve Gatineau, Ottawa and Quebec City depending on the project type and the real scope of the work."
+        },
+        {
+          "question": "Do you work on both residential and commercial projects?",
+          "answer": "Yes. We work on houses, duplexes, rental buildings and condos, as well as commercial properties or files that require a more complex execution plan."
+        },
+        {
+          "question": "How long does it take to receive a reply after submitting a request?",
+          "answer": "We aim to respond quickly to incoming requests. The exact delay may vary depending on workload, urgency and the type of file, but the contact and thank-you pages generally refer to a turnaround of about 24 hours."
+        }
+      ]
+    },
+    {
+      "title": "Before our visit",
+      "items": [
+        {
+          "question": "What should be prepared before a visit or quote request?",
+          "answer": "Photos, the job-site address, a clear description of the issue, the location of the affected materials, and any information about infiltration, water damage or upcoming work all help us orient the file more efficiently from the start."
+        },
+        {
+          "question": "Do occupants need to leave the property during the work?",
+          "answer": "It depends on the type of intervention, the affected area and the level of containment required. Some files allow partial occupancy, while others require stronger separation measures or stricter controls."
+        },
+        {
+          "question": "Do you provide proof or a compliance framework after the work?",
+          "answer": "Depending on the file, we work with a structured and compliant approach adapted to the real conditions of the site. When relevant, we can also guide clients on the useful validation steps, analysis or documentation to keep for the next stage."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Still need an answer?",
+    "body": "Tell us about your project and we will point you toward the right next step, whether it involves sampling, decontamination, mould, vermiculite or selective demolition.",
+    "phoneLabel": "Call now",
+    "contactLabel": "Request a quote"
+  }
+}

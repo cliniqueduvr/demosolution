@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PricingPageTemplate from '../components/PricingPageTemplate.astro';
+import pricingPage from '../data/pricing-vermiculite-page.json';
+import { buildBreadcrumbSchema } from '../lib/seo';
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: pricingPage.breadcrumbs.home, path: '/' },
+  { name: pricingPage.breadcrumbs.current }
+]);
+---
+
+<Layout title={pricingPage.metaTitle} description={pricingPage.metaDescription} canonicalPath="/tarifs-vermiculite/" frPath="/tarifs-vermiculite/" enPath="/en/vermiculite-pricing/" schemas={[breadcrumbs]}>
+  <Header />
+  <PricingPageTemplate data={pricingPage} />
+  <Footer />
+</Layout>

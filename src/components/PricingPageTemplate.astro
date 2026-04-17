@@ -1,0 +1,332 @@
+---
+import siteSettings from '../data/site-settings.json';
+
+interface PricingCard {
+  title: string;
+  price: string;
+  details: string[];
+}
+
+interface PricingPoint {
+  title: string;
+  body: string;
+}
+
+interface PricingPageData {
+  hero: {
+    eyebrow: string;
+    title: string;
+    body: string;
+  };
+  overview: {
+    title: string;
+    body: string;
+  };
+  pricing: {
+    title: string;
+    intro: string;
+    cards: PricingCard[];
+    notes: string[];
+  };
+  factors: {
+    title: string;
+    items: PricingPoint[];
+  };
+  included: {
+    title: string;
+    items: string[];
+  };
+  cta: {
+    title: string;
+    body: string;
+    phoneLabel: string;
+    contactLabel: string;
+  };
+}
+
+interface Props {
+  data: PricingPageData;
+  lang?: 'fr' | 'en';
+}
+
+const { data, lang = 'fr' } = Astro.props as Props;
+const isEnglish = lang === 'en';
+const contactHref = isEnglish ? '/en/contact/' : '/contact/';
+---
+
+<main>
+  <section class="pricing-hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{data.hero.eyebrow}</p>
+        <h1>{data.hero.title}</h1>
+        <p>{data.hero.body}</p>
+      </div>
+      <aside class="hero-card">
+        <h2>{data.cta.title}</h2>
+        <p>{data.cta.body}</p>
+        <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
+        <a class="contact-link" href={contactHref}>{data.cta.contactLabel}</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="pricing-body">
+    <div class="container body-grid">
+      <section class="content-card overview-card">
+        <h2>{data.overview.title}</h2>
+        <p>{data.overview.body}</p>
+      </section>
+
+      <section class="content-card pricing-card">
+        <h2>{data.pricing.title}</h2>
+        <p class="section-copy">{data.pricing.intro}</p>
+        <div class="pricing-grid">
+          {data.pricing.cards.map((item) => (
+            <article class="price-item">
+              <p class="price-item-title">{item.title}</p>
+              <p class="price-item-value">{item.price}</p>
+              <ul class="price-item-list">
+                {item.details.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <div class="pricing-notes">
+          {data.pricing.notes.map((note) => (
+            <p>{note}</p>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>{data.factors.title}</h2>
+        <div class="factor-grid">
+          {data.factors.items.map((item) => (
+            <article class="factor-card">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-card alt">
+        <h2>{data.included.title}</h2>
+        <ul>
+          {data.included.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </section>
+</main>
+
+<style>
+  .pricing-hero {
+    padding: 4.5rem 0 3.8rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-copy h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .hero-copy p:last-child {
+    max-width: 58ch;
+    color: #e7edf4;
+    font-size: 1.08rem;
+  }
+
+  .hero-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.75rem;
+    box-shadow: 0 16px 30px rgba(18, 35, 54, 0.18);
+  }
+
+  .hero-card h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-card p {
+    color: var(--brand-muted);
+    margin-bottom: 1rem;
+  }
+
+  .phone-button,
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .phone-button {
+    margin-bottom: 0.8rem;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+  }
+
+  .phone-button:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .contact-link {
+    background: var(--brand-navy);
+    color: white;
+  }
+
+  .contact-link:hover {
+    text-decoration: none;
+    background: var(--brand-navy-dark);
+  }
+
+  .pricing-body {
+    padding: 4rem 0;
+    background: #f3f5f8;
+  }
+
+  .body-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .content-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.75rem;
+    box-shadow: 0 16px 34px rgba(24, 40, 61, 0.08);
+  }
+
+  .content-card.alt {
+    background: linear-gradient(180deg, #f8fbf5 0%, #ffffff 100%);
+  }
+
+  .content-card h2 {
+    margin-bottom: 1rem;
+  }
+
+  .overview-card p,
+  .section-copy,
+  .factor-card p,
+  .pricing-notes p {
+    color: var(--brand-muted);
+  }
+
+  .pricing-card {
+    background: linear-gradient(180deg, #fffdf0 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.35);
+  }
+
+  .pricing-grid,
+  .factor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .price-item,
+  .factor-card {
+    background: var(--brand-surface);
+    border-radius: 18px;
+    padding: 1.15rem;
+  }
+
+  .price-item-title {
+    margin: 0 0 0.45rem;
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .price-item-value {
+    margin: 0 0 0.9rem;
+    color: var(--brand-gold-dark);
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .price-item-list,
+  .content-card ul {
+    display: grid;
+    gap: 0.7rem;
+    padding-left: 1.1rem;
+  }
+
+  .content-card li::marker,
+  .price-item-list li::marker {
+    color: var(--brand-green);
+    font-weight: 700;
+  }
+
+  .pricing-notes {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(31, 58, 95, 0.08);
+  }
+
+  @media (max-width: 900px) {
+    .pricing-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-copy h1 {
+      font-size: 2.2rem;
+    }
+
+    .content-card,
+    .hero-card {
+      border-radius: 18px;
+      padding: 1.3rem;
+    }
+
+    .price-item-value {
+      font-size: 1.5rem;
+    }
+  }
+</style>

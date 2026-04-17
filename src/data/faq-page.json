@@ -1,0 +1,110 @@
+{
+  "metaTitle": "FAQ | Demo Solution",
+  "metaDescription": "Questions fréquentes sur la décontamination, la vermiculite, les moisissures, l’échantillonnage, les délais, les prix et les secteurs desservis par Demo Solution.",
+  "breadcrumbs": {
+    "home": "Accueil",
+    "current": "FAQ"
+  },
+  "hero": {
+    "eyebrow": "Questions fréquentes",
+    "title": "FAQ Demo Solution",
+    "body": "Réponses rapides aux questions les plus courantes sur nos services, les délais, les prix, l’échantillonnage, les travaux résidentiels et commerciaux, ainsi que les prochaines étapes après une demande."
+  },
+  "intro": {
+    "title": "Avant de demander une soumission",
+    "body": "Cette page regroupe les réponses les plus utiles pour comprendre notre approche, les signes à surveiller, ce qui influence un prix et comment se déroule généralement un dossier de décontamination, de vermiculite, de moisissure ou d’échantillonnage."
+  },
+  "categories": [
+    {
+      "title": "Tarifs et soumissions",
+      "items": [
+        {
+          "question": "Comment est calculé le prix d’une intervention?",
+          "answer": "Le prix dépend surtout du type de contaminant ou de matériau, de la surface touchée, de l’accès, du niveau de confinement requis, du nombre d’échantillons ou de matériaux à retirer et de la complexité générale du chantier."
+        },
+        {
+          "question": "Pouvez-vous donner un prix avant une visite?",
+          "answer": "Oui, dans certains cas, nous pouvons donner une première indication selon les photos, les informations fournies et le type de projet. Quand le dossier est plus complexe, une visite ou un échantillonnage peut être nécessaire avant d’établir un prix plus juste."
+        },
+        {
+          "question": "Y a-t-il des frais additionnels possibles?",
+          "answer": "Oui, selon le projet. Des frais supplémentaires peuvent s’ajouter pour les déplacements plus éloignés, l’urgence, l’accès difficile, des analyses supplémentaires ou un chantier plus vaste que prévu au départ."
+        }
+      ]
+    },
+    {
+      "title": "Échantillonnage et diagnostic",
+      "items": [
+        {
+          "question": "Quand faut-il faire un échantillonnage?",
+          "answer": "L’échantillonnage est utile avant des rénovations, une démolition ou toute intervention sur un matériau suspect. Il permet de confirmer ou d’écarter la présence d’un contaminant avant d’ouvrir ou de retirer les matériaux."
+        },
+        {
+          "question": "Faites-vous aussi des tests d’air?",
+          "answer": "Oui, selon le dossier. Certains projets exigent des prélèvements d’air avant, pendant ou après les travaux, notamment pour mieux documenter la situation ou confirmer la suite logique du chantier."
+        },
+        {
+          "question": "Combien de temps faut-il pour avoir les résultats?",
+          "answer": "Le délai varie selon le laboratoire et le type d’analyse, mais pour plusieurs demandes d’échantillonnage de matériaux, le retour se fait généralement dans un délai d’environ 48 à 72 heures."
+        }
+      ]
+    },
+    {
+      "title": "Moisissure, vermiculite et décontamination",
+      "items": [
+        {
+          "question": "Quels sont les signes fréquents d’un problème de moisissure?",
+          "answer": "Les signes fréquents sont une odeur persistante de moisi, des taches sur les murs ou plafonds, des matériaux détériorés par l’humidité, une salle de bain ou un sous-sol qui a mal séché, ou une zone touchée après une infiltration ou un dégât d’eau."
+        },
+        {
+          "question": "La vermiculite est-elle toujours dangereuse?",
+          "answer": "Pas nécessairement, mais elle ne devrait pas être déplacée sans évaluation. Certaines vermiculites, dont certaines zonolites, peuvent être associées à un risque d’amiante. La bonne approche est donc de confirmer le dossier avant d’ouvrir ou de manipuler les matériaux."
+        },
+        {
+          "question": "Pouvez-vous retirer les matériaux touchés et préparer la suite?",
+          "answer": "Oui. Selon le dossier, nous pouvons retirer les matériaux contaminés, assainir la zone, coordonner l’échantillonnage lorsque requis et préparer le chantier pour la réparation, la remise en état ou la démolition sélective."
+        }
+      ]
+    },
+    {
+      "title": "Délais, logistique et zones desservies",
+      "items": [
+        {
+          "question": "Dans quels secteurs intervenez-vous?",
+          "answer": "Nous desservons Gatineau, Ottawa et Québec, selon le type de projet et la portée réelle du chantier."
+        },
+        {
+          "question": "Travaillez-vous sur des projets résidentiels et commerciaux?",
+          "answer": "Oui. Nous intervenons autant pour des maisons, plex, immeubles locatifs et condos que pour des commerces ou des bâtiments ayant des besoins plus complexes."
+        },
+        {
+          "question": "Combien de temps faut-il pour obtenir un retour après une demande?",
+          "answer": "Nous visons un retour rapide sur les demandes reçues. Les délais exacts peuvent varier selon la charge, le type de dossier et l’urgence, mais la page contact et les pages de remerciement annoncent généralement un délai d’environ 24 heures."
+        }
+      ]
+    },
+    {
+      "title": "Avant notre visite",
+      "items": [
+        {
+          "question": "Que faut-il préparer avant une visite ou une soumission?",
+          "answer": "Des photos, l’adresse du chantier, une description claire du problème, l’emplacement des matériaux touchés et toute information sur une infiltration, un dégât d’eau ou des travaux prévus nous aident à mieux orienter le dossier dès le départ."
+        },
+        {
+          "question": "Faut-il quitter les lieux pendant les travaux?",
+          "answer": "Cela dépend du type d’intervention, de la zone touchée et du niveau de confinement requis. Certains dossiers permettent une occupation partielle, tandis que d’autres exigent une meilleure séparation des zones ou des mesures plus strictes."
+        },
+        {
+          "question": "Offrez-vous une preuve ou un cadre de conformité à la fin des travaux?",
+          "answer": "Selon le dossier, nous travaillons avec une approche structurée et conforme à la réalité du chantier. Lorsque pertinent, nous pouvons aussi orienter le client sur les validations utiles, les analyses ou la documentation à conserver pour la suite."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Vous ne trouvez pas votre réponse?",
+    "body": "Parlez-nous de votre projet et nous vous orienterons vers la bonne prochaine étape, qu’il s’agisse d’échantillonnage, de décontamination, de moisissure, de vermiculite ou de démolition sélective.",
+    "phoneLabel": "Appeler maintenant",
+    "contactLabel": "Demander une soumission"
+  }
+}

@@ -139,6 +139,10 @@
         "Retrait contrôlé des matériaux contaminés et nettoyage des surfaces à conserver",
         "Assainissement de la zone et préparation pour les réparations ou la reconstruction"
       ],
+      "pricingPageTitle": "Voir les tarifs de moisissure",
+      "pricingPageBody": "Si vous voulez situer votre dossier avant une visite, nous avons préparé une page de tarifs indicatifs pour mieux comprendre ce qui influence le prix d’une décontamination de moisissure.",
+      "pricingPageHref": "/tarifs-moisissure/",
+      "pricingPageLabel": "Consulter les tarifs moisissure",
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour la moisissure?",
       "whyChooseIntro": "Une intervention efficace repose sur la vitesse d’action, la propreté du chantier, le contrôle de la contamination et la capacité de préparer correctement la suite.",
       "whyChoose": [
@@ -311,6 +315,10 @@
         "Retrait contrôlé de la vermiculite et gestion des matériaux",
         "Nettoyage final et préparation de la prochaine étape"
       ],
+      "pricingPageTitle": "Voir les tarifs de vermiculite",
+      "pricingPageBody": "Nous avons préparé une page de tarifs indicatifs pour aider à situer les projets d’enlèvement de vermiculite selon le volume, l’accès et la complexité réelle du chantier.",
+      "pricingPageHref": "/tarifs-vermiculite/",
+      "pricingPageLabel": "Consulter les tarifs vermiculite",
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour la vermiculite?",
       "whyChooseIntro": "L’enlèvement de vermiculite doit être fait avec méthode, prudence et rigueur pour limiter les risques et permettre au projet d’avancer proprement.",
       "whyChoose": [

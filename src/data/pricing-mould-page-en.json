@@ -1,0 +1,87 @@
+{
+  "metaTitle": "Mould pricing | Demo Solution",
+  "metaDescription": "Indicative pricing for mould remediation in Gatineau, Ottawa and Quebec City, including pricing factors, inclusions and next steps.",
+  "breadcrumbs": {
+    "home": "Home",
+    "current": "Mould pricing"
+  },
+  "hero": {
+    "eyebrow": "Indicative pricing",
+    "title": "Mould remediation pricing",
+    "body": "We do not publish fixed mould prices because a file can change quickly depending on the affected area, the source of the issue, site access and the level of containment required."
+  },
+  "overview": {
+    "title": "Before comparing prices",
+    "body": "Mould remediation is not limited to removing a visible stain. Pricing often depends on what is happening behind the materials, the remaining moisture, the surfaces that must be removed and the level of protection required to avoid spread."
+  },
+  "pricing": {
+    "title": "How we frame the budget",
+    "intro": "For mould files, we work with estimates based on evaluation rather than posted flat pricing. A small visible area, contamination behind walls, or a file after water damage do not require the same level of intervention.",
+    "cards": [
+      {
+        "title": "Targeted intervention on a small area",
+        "price": "Quoted after evaluation",
+        "details": [
+          "Small localized area",
+          "Light to moderate containment depending on the file",
+          "Targeted removal and basic sanitation"
+        ]
+      },
+      {
+        "title": "Medium area with material removal",
+        "price": "Quoted after evaluation",
+        "details": [
+          "Several affected materials or surfaces",
+          "More structured containment",
+          "Preparation for restoration work"
+        ]
+      },
+      {
+        "title": "Heavier or more widespread file",
+        "price": "Quoted case by case",
+        "details": [
+          "Spread across several rooms or cavities",
+          "Difficult access or significant contamination",
+          "Scope to be confirmed after inspection"
+        ]
+      }
+    ],
+    "notes": [
+      "Final budgeting varies depending on the number of affected areas, residual moisture, materials to remove and overall site logistics.",
+      "Photos, a visit or sampling may be required to confirm the right approach before quoting the file."
+    ]
+  },
+  "factors": {
+    "title": "What affects the price",
+    "items": [
+      {
+        "title": "Surface area and depth of the issue",
+        "body": "A small visible area does not carry the same pricing as contamination spreading behind walls, inside a ceiling, a basement or an attic."
+      },
+      {
+        "title": "Moisture source to address",
+        "body": "Infiltration, water damage, condensation or poor ventilation can change the actual scope of work and the measures required."
+      },
+      {
+        "title": "Containment and access",
+        "body": "Site access, occupancy and the required level of containment have a direct effect on labour time and pricing."
+      }
+    ]
+  },
+  "included": {
+    "title": "What may be included depending on the file",
+    "items": [
+      "Reading of the issue and affected area",
+      "Containment adapted to the situation",
+      "Targeted removal of contaminated materials",
+      "Cleaning and sanitation of retained surfaces",
+      "Preparation for repair or restoration"
+    ]
+  },
+  "cta": {
+    "title": "Need a more accurate price?",
+    "body": "Send us photos, the address and a short description of the issue. We can point you to the next useful step or prepare a quote.",
+    "phoneLabel": "Call now",
+    "contactLabel": "Request a quote"
+  }
+}

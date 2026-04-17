@@ -120,6 +120,14 @@ const serviceAreas = isEnglish
           </section>
         )}
 
+        {service.pricingPageTitle && service.pricingPageBody && service.pricingPageHref && service.pricingPageLabel && (
+          <section class="content-card alt pricing-link-card">
+            <h2>{service.pricingPageTitle}</h2>
+            <p class="section-copy">{service.pricingPageBody}</p>
+            <a class="pricing-page-link" href={service.pricingPageHref}>{service.pricingPageLabel}</a>
+          </section>
+        )}
+
         <section class="content-card alt">
           <h2>{service.whyChooseTitle}</h2>
           <p class="section-copy">{service.whyChooseIntro}</p>
@@ -447,6 +455,24 @@ const serviceAreas = isEnglish
     margin: 0;
     color: var(--brand-muted);
     font-size: 0.97rem;
+  }
+
+  .pricing-page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.8rem 1.1rem;
+    border-radius: 999px;
+    background: var(--brand-navy);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .pricing-page-link:hover {
+    text-decoration: none;
+    background: var(--brand-navy-dark);
   }
 
   .link-card-grid {

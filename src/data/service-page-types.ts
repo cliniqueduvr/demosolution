@@ -40,6 +40,10 @@ export interface ServicePage {
   situations: string[];
   processIntro: string;
   process: string[];
+  pricingPageTitle?: string;
+  pricingPageBody?: string;
+  pricingPageHref?: string;
+  pricingPageLabel?: string;
   whyChooseTitle: string;
   whyChooseIntro: string;
   whyChoose: WhyChoosePoint[];

@@ -1,0 +1,87 @@
+{
+  "metaTitle": "Vermiculite pricing | Demo Solution",
+  "metaDescription": "Indicative pricing for vermiculite removal in Gatineau, Ottawa and Quebec City, with pricing factors, inclusions and site logistics.",
+  "breadcrumbs": {
+    "home": "Home",
+    "current": "Vermiculite pricing"
+  },
+  "hero": {
+    "eyebrow": "Indicative pricing",
+    "title": "Vermiculite removal pricing",
+    "body": "We do not publish firm vermiculite prices. As a practical benchmark, a project may often fall between $8 and $25 / sq ft, but the real range depends on complexity, volume, access and the level of precaution required."
+  },
+  "overview": {
+    "title": "Why pricing varies so much",
+    "body": "A vermiculite file can range from an accessible attic with a clearly defined scope to a more complex project involving cavities, additional protections, restricted access and sampling coordination. Pricing mainly reflects the logistics and control level required."
+  },
+  "pricing": {
+    "title": "Reference range",
+    "intro": "For vermiculite, we prefer to speak in terms of a reference range rather than fixed public pricing. The real cost can move up or down depending on scope, access and the protection measures required.",
+    "cards": [
+      {
+        "title": "General range we may see",
+        "price": "$8 to $25 / sq ft",
+        "details": [
+          "General benchmark only, not a firm posted rate",
+          "Can vary significantly based on volume, access and containment",
+          "Always confirmed after reading the actual site conditions"
+        ]
+      },
+      {
+        "title": "Simple to moderate project",
+        "price": "Depends on complexity",
+        "details": [
+          "More straightforward access and clearer scope",
+          "Fewer logistical constraints",
+          "Containment and protections adapted to the file"
+        ]
+      },
+      {
+        "title": "More complex project",
+        "price": "Quoted after evaluation",
+        "details": [
+          "Large volume, several areas or difficult access",
+          "Higher risk level or additional coordination",
+          "Scope to be confirmed after inspection and validation"
+        ]
+      }
+    ],
+    "notes": [
+      "The $8 to $25 / sq ft range is meant only to help position a project before a more precise review.",
+      "Final pricing varies based on actual volume, vermiculite location, access, required protections and coordination needs."
+    ]
+  },
+  "factors": {
+    "title": "What affects the price",
+    "items": [
+      {
+        "title": "Volume and location",
+        "body": "The quantity of vermiculite and whether it is in an attic, wall, ceiling or cavity strongly affects the scope of work."
+      },
+      {
+        "title": "Access and protections",
+        "body": "Tight access, an occupied building, ventilation to protect or a higher containment requirement can increase pricing."
+      },
+      {
+        "title": "Diagnosis coordination",
+        "body": "Some files require the removal plan to be coordinated with sampling, inspection or other validation before moving forward."
+      }
+    ]
+  },
+  "included": {
+    "title": "What may be included depending on the file",
+    "items": [
+      "Reading of the scope and required level of precaution",
+      "Protection and preparation of the site",
+      "Containment or control measures based on the situation",
+      "Removal of vermiculite according to the confirmed scope",
+      "Handling of removed materials and final cleanup"
+    ]
+  },
+  "cta": {
+    "title": "Need to frame your budget?",
+    "body": "Send us photos of the attic or target area, along with the address and project context. We can better position the likely removal scope.",
+    "phoneLabel": "Call now",
+    "contactLabel": "Request a quote"
+  }
+}
