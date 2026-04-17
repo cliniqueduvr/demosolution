@@ -30,6 +30,9 @@ export interface ServicePage {
   whyChooseTitle: string;
   whyChooseIntro: string;
   whyChoose: WhyChoosePoint[];
+  warningTitle?: string;
+  warningBody?: string;
+  warningCtaLabel?: string;
   faqTitle: string;
   faqs: FAQItem[];
 }
