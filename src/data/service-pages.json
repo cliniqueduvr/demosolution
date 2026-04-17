@@ -497,19 +497,6 @@
           "Déplacement: des frais peuvent s’appliquer selon le secteur"
         ]
       },
-      "commonMaterials": {
-        "title": "Matériaux souvent testés",
-        "intro": "Voici les matériaux les plus souvent visés lorsqu’un client veut confirmer la présence ou l’absence d’amiante avant des travaux. Nous offrons aussi l’échantillonnage pour moisissure selon le dossier.",
-        "items": [
-          "Plâtre, joints de gypse et composés de finition",
-          "Revêtements de sol comme tuiles vinyliques et prélart",
-          "Panneaux, isolants et matériaux d’entretoit",
-          "Carreaux de plafond et matériaux manufacturés",
-          "Autres matériaux suspects ciblés avant rénovation ou démolition",
-          "Prélèvements liés à la moisissure ou à une contamination fongique lorsque la situation l’exige",
-          "Échantillonnage de l’air pour l’amiante avant, pendant ou après les travaux selon le contexte"
-        ]
-      },
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour l’échantillonnage?",
       "whyChooseIntro": "Un bon échantillonnage doit être utile, clair et réalisé de façon méthodique pour soutenir une vraie prise de décision avant les travaux.",
       "whyChoose": [
