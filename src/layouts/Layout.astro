@@ -11,6 +11,7 @@ interface Props {
   enPath?: string;
   schemas?: object[];
   ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
 
 import { absoluteUrl, BRAND_IMAGE } from '../lib/seo';
@@ -23,7 +24,8 @@ const {
   frPath,
   enPath,
   schemas = [],
-  ogType = 'website'
+  ogType = 'website',
+  noindex = false
 } = Astro.props as Props;
 
 const canonicalUrl = absoluteUrl(canonicalPath);
@@ -47,6 +49,7 @@ const hasGoogleAds = googleAdsId.length > 0;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="google-site-verification" content="G0zNky0QtxjzQkcL5TGY6svEMEQR-Wn9cZv00LDYnhg" />
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />
@@ -67,7 +70,7 @@ const hasGoogleAds = googleAdsId.length > 0;
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleAdsId)}`}></script>
     )}
     {hasGoogleAds && (
-      <script is:inline define:vars={{ googleAdsId, googleAdsConversions, squareBookingUrl: siteSettings.squareBookingUrl }}>
+      <script is:inline define:vars={{ googleAdsId, googleAdsConversions }}>
         (() => {
           const storageKey = 'cliniqueduvr-cookie-consent';
           let hasConsent = false;
@@ -136,7 +139,12 @@ const hasGoogleAds = googleAdsId.length > 0;
                 return;
               }
 
-              if (href === squareBookingUrl) {
+              if (
+                href === '/contact/' ||
+                href === '/en/contact/' ||
+                href === '/merci.html?sent=1' ||
+                href === '/en/thank-you.html?sent=1'
+              ) {
                 trackConversion('booking');
               }
             });
@@ -145,7 +153,11 @@ const hasGoogleAds = googleAdsId.length > 0;
             const isContactSuccess =
               url.searchParams.get('sent') === '1' &&
               (url.pathname === '/contact/' || url.pathname === '/en/contact/');
-            const isThankYouPage = url.pathname === '/merci/' || url.pathname === '/en/thank-you/';
+            const isThankYouPage =
+              url.pathname === '/merci/' ||
+              url.pathname === '/en/thank-you/' ||
+              url.pathname === '/merci.html' ||
+              url.pathname === '/en/thank-you.html';
 
             if (isContactSuccess || isThankYouPage) {
               trackConversion('form');
