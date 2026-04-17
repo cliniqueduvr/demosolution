@@ -93,6 +93,18 @@ const serviceAreas = isEnglish
           </ol>
         </section>
 
+        {service.commonMaterials && (
+          <section class="content-card">
+            <h2>{service.commonMaterials.title}</h2>
+            {service.commonMaterials.intro && <p class="section-copy">{service.commonMaterials.intro}</p>}
+            <ul>
+              {service.commonMaterials.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {service.pricing && (
           <section class="content-card pricing-card">
             <h2>{service.pricing.title}</h2>
@@ -171,18 +183,6 @@ const serviceAreas = isEnglish
             {service.timing.intro && <p class="section-copy">{service.timing.intro}</p>}
             <ul>
               {service.timing.items.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {service.commonMaterials && (
-          <section class="content-card">
-            <h2>{service.commonMaterials.title}</h2>
-            {service.commonMaterials.intro && <p class="section-copy">{service.commonMaterials.intro}</p>}
-            <ul>
-              {service.commonMaterials.items.map((item) => (
                 <li>{item}</li>
               ))}
             </ul>
@@ -536,7 +536,7 @@ const serviceAreas = isEnglish
 
   .pricing-split-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
     gap: 1rem;
     align-items: start;
   }
