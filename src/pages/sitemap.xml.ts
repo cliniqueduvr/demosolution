@@ -13,13 +13,23 @@ type ServiceSlug = {
 };
 
 const baseUrl = 'https://demosolution.ca';
-const defaultLastmod = '2026-04-12';
+const defaultLastmod = '2026-04-17';
 
 const pageLastmods = new Map<string, string>([
   ['/choisir-service/', '2026-04-15'],
   ['/en/choose-service/', '2026-04-15'],
-  ['/plan-du-site/', '2026-04-15'],
-  ['/en/site-map/', '2026-04-15']
+  ['/plan-du-site/', '2026-04-17'],
+  ['/en/site-map/', '2026-04-17'],
+  ['/faq/', '2026-04-17'],
+  ['/en/faq/', '2026-04-17'],
+  ['/tarifs-moisissure/', '2026-04-17'],
+  ['/en/mould-pricing/', '2026-04-17'],
+  ['/tarifs-vermiculite/', '2026-04-17'],
+  ['/en/vermiculite-pricing/', '2026-04-17'],
+  ['/services/echantillonnage/', '2026-04-17'],
+  ['/en/services/sampling/', '2026-04-17'],
+  ['/privacy/', '2026-04-17'],
+  ['/en/privacy/', '2026-04-17']
 ]);
 
 const staticEntries: UrlEntry[] = [

@@ -1,21 +1,27 @@
-# Clinique du VR
+# Demo Solution
 
-> Inspection, entretien, reparation et esthetique de vehicules recreatifs (VR) a Gatineau, Ottawa, Outaouais et Laurentides.
+> Décontamination, désamiantage, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa et Québec.
 
 ## Services
-- [Inspection de VR](https://www.cliniqueduvr.ca/services/inspection/)
-- [Entretien de VR](https://www.cliniqueduvr.ca/services/entretien/)
-- [Reparation de VR](https://www.cliniqueduvr.ca/services/reparation/)
-- [Esthetique de VR](https://www.cliniqueduvr.ca/services/esthetique/)
-- [Vente et achat de VR](https://www.cliniqueduvr.ca/services/vente-achat/)
+- [Décontamination](https://demosolution.ca/services/decontamination/)
+- [Moisissures](https://demosolution.ca/services/moisissure/)
+- [Enlèvement de vermiculite](https://demosolution.ca/services/enlevement-vermiculite/)
+- [Échantillonnage](https://demosolution.ca/services/echantillonnage/)
+- [Démolition sélective](https://demosolution.ca/services/demolition-selective/)
+
+## Ressources
+- [FAQ](https://demosolution.ca/faq/)
+- [Tarifs moisissure](https://demosolution.ca/tarifs-moisissure/)
+- [Tarifs vermiculite](https://demosolution.ca/tarifs-vermiculite/)
 
 ## Contact
-- Telephone: (581) 337-3366
-- Email: info@cliniqueduvr.ca
-- Region: Gatineau, Ottawa, Outaouais, Laurentides
+- Téléphone: (581) 337-3366
+- Email: info@demosolution.ca
+- Région: Gatineau, Ottawa et Québec
+- Adresse: 11 rue de Granby, Unité 18, Gatineau, QC
 - RBQ: 5824-9764-01
 
 ## About
-- [A Propos](https://www.cliniqueduvr.ca/about/)
-- [Contact](https://www.cliniqueduvr.ca/contact/)
-- [Realisations](https://www.cliniqueduvr.ca/realisations/)
+- [À propos](https://demosolution.ca/about/)
+- [Contact](https://demosolution.ca/contact/)
+- [Plan du site](https://demosolution.ca/plan-du-site/)

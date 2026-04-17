@@ -60,21 +60,26 @@ export function buildLocalBusinessSchema({
   telephone = '+1-581-337-3366',
   email = 'info@demosolution.ca',
   facebookUrl = '',
-  tiktokUrl = ''
+  tiktokUrl = '',
+  lang = 'fr-CA'
 }: {
   telephone?: string;
   email?: string;
   facebookUrl?: string;
   tiktokUrl?: string;
+  lang?: 'fr-CA' | 'en-CA';
 } = {}) {
   const sameAs = [facebookUrl, tiktokUrl].filter((value) => Boolean(value?.trim()));
+  const isEnglish = lang === 'en-CA';
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Contractor',
     '@id': `${SITE_URL}/#demo-solution`,
     name: 'Demo Solution',
-    description: 'Décontamination, enlèvement de matières dangereuses, désamiantage, enlèvement de vermiculite, échantillonnage et démolition à Gatineau, Ottawa et Québec',
+    description: isEnglish
+      ? 'Decontamination, hazardous material removal, asbestos removal, vermiculite removal, sampling and demolition in Gatineau, Ottawa and Quebec City'
+      : 'Décontamination, enlèvement de matières dangereuses, désamiantage, enlèvement de vermiculite, échantillonnage et démolition à Gatineau, Ottawa et Québec',
     telephone,
     email,
     url: SITE_URL,
@@ -82,11 +87,11 @@ export function buildLocalBusinessSchema({
     areaServed: [
       { '@type': 'City', name: 'Gatineau' },
       { '@type': 'City', name: 'Ottawa' },
-      { '@type': 'City', name: 'Québec' }
+      { '@type': 'City', name: isEnglish ? 'Quebec City' : 'Québec' }
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '11 rue de Granby, Unité 18',
+      streetAddress: isEnglish ? '11 Granby Street, Unit 18' : '11 rue de Granby, Unité 18',
       addressLocality: 'Gatineau',
       addressRegion: 'QC',
       postalCode: 'J8T 8R7',
@@ -102,24 +107,38 @@ export function buildLocalBusinessSchema({
     image: BRAND_IMAGE,
     ...(sameAs.length > 0 ? { sameAs } : {}),
     knowsAbout: [
-      'Décontamination',
-      'Enlèvement de matières dangereuses',
-      'Désamiantage',
-      'Enlèvement de vermiculite',
-      'Échantillonnage',
-      'Contrôle des odeurs',
-      'Démolition sélective',
-      'Moisissure',
-      'Mérule pleureuse'
+      ...(isEnglish
+        ? [
+            'Decontamination',
+            'Hazardous material removal',
+            'Asbestos removal',
+            'Vermiculite removal',
+            'Sampling',
+            'Odour control',
+            'Selective demolition',
+            'Mould remediation',
+            'Dry rot'
+          ]
+        : [
+            'Décontamination',
+            'Enlèvement de matières dangereuses',
+            'Désamiantage',
+            'Enlèvement de vermiculite',
+            'Échantillonnage',
+            'Contrôle des odeurs',
+            'Démolition sélective',
+            'Moisissure',
+            'Mérule pleureuse'
+          ])
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Services Demo Solution',
+      name: isEnglish ? 'Demo Solution services' : 'Services Demo Solution',
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Décontamination' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Enlèvement de vermiculite' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Échantillonnage' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Démolition' } }
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: isEnglish ? 'Decontamination' : 'Décontamination' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: isEnglish ? 'Vermiculite removal' : 'Enlèvement de vermiculite' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: isEnglish ? 'Sampling' : 'Échantillonnage' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: isEnglish ? 'Demolition' : 'Démolition' } }
       ]
     }
   };

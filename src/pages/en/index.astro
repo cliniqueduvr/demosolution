@@ -2,19 +2,23 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { buildLocalBusinessSchema } from '../../lib/seo';
+import { buildLocalBusinessSchema, buildWebSiteSchema } from '../../lib/seo';
 import siteSettings from '../../data/site-settings.json';
 import homePage from '../../data/home-page-en.json';
 
 const isFormConfigured = Boolean(siteSettings.email?.trim());
 const successUrl = '/en/thank-you/';
 const formName = 'home-contact-en-v2';
-const schemas = [buildLocalBusinessSchema({
-  telephone: siteSettings.phone.href,
-  email: siteSettings.email,
-  facebookUrl: siteSettings.facebookUrl,
-  tiktokUrl: siteSettings.tiktokUrl
-})];
+const schemas = [
+  buildWebSiteSchema(),
+  buildLocalBusinessSchema({
+    telephone: siteSettings.phone.href,
+    email: siteSettings.email,
+    facebookUrl: siteSettings.facebookUrl,
+    tiktokUrl: siteSettings.tiktokUrl,
+    lang: 'en-CA'
+  })
+];
 
 const meta = {
   title: homePage.metaTitle,
