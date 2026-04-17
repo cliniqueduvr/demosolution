@@ -115,13 +115,8 @@ const serviceAreas = isEnglish
                   <div class="pricing-grid pricing-grid-stack">
                     {service.pricing.cards.map((item) => (
                       <article class="price-item price-item-centered">
-                        <p class="price-item-title">{item.title}</p>
                         <p class="price-item-value">{item.price}</p>
-                        <ul class="price-item-list">
-                          {item.details.map((detail) => (
-                            <li>{detail}</li>
-                          ))}
-                        </ul>
+                        <p class="price-item-summary">{item.title}</p>
                       </article>
                     ))}
                   </div>
@@ -499,6 +494,10 @@ const serviceAreas = isEnglish
     text-align: center;
   }
 
+  .price-item-centered + .price-item-centered {
+    border-top: 1px solid rgba(72, 163, 255, 0.28);
+  }
+
   .price-item-title {
     margin: 0 0 0.45rem;
     color: var(--brand-navy);
@@ -511,6 +510,13 @@ const serviceAreas = isEnglish
     font-size: 1.7rem;
     font-weight: 800;
     line-height: 1;
+  }
+
+  .price-item-summary {
+    margin: 0;
+    color: var(--brand-navy-dark);
+    font-weight: 700;
+    line-height: 1.45;
   }
 
   .price-item-list {
@@ -536,7 +542,7 @@ const serviceAreas = isEnglish
 
   .pricing-split-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1rem;
     align-items: start;
   }
