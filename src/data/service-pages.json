@@ -397,6 +397,7 @@
       "highlights": [
         "Prélèvements de matériaux",
         "Échantillonnage d’air selon le besoin",
+        "Échantillonnage aussi offert pour moisissure",
         "Rapport clair et résultats structurés",
         "Point de départ utile avant travaux"
       ],
@@ -497,13 +498,15 @@
       },
       "commonMaterials": {
         "title": "Matériaux souvent testés",
-        "intro": "Voici les matériaux les plus souvent visés lorsqu’un client veut confirmer la présence ou l’absence d’amiante avant des travaux.",
+        "intro": "Voici les matériaux les plus souvent visés lorsqu’un client veut confirmer la présence ou l’absence d’amiante avant des travaux. Nous offrons aussi l’échantillonnage pour moisissure selon le dossier.",
         "items": [
           "Plâtre, joints de gypse et composés de finition",
           "Revêtements de sol comme tuiles vinyliques et prélart",
           "Panneaux, isolants et matériaux d’entretoit",
           "Carreaux de plafond et matériaux manufacturés",
-          "Autres matériaux suspects ciblés avant rénovation ou démolition"
+          "Autres matériaux suspects ciblés avant rénovation ou démolition",
+          "Prélèvements liés à la moisissure ou à une contamination fongique lorsque la situation l’exige",
+          "Échantillonnage de l’air pour l’amiante avant, pendant ou après les travaux selon le contexte"
         ]
       },
       "whyChooseTitle": "Pourquoi choisir Demo Solution pour l’échantillonnage?",
@@ -530,7 +533,11 @@
         },
         {
           "question": "Faites-vous aussi l’échantillonnage de l’air?",
-          "answer": "Oui, selon le dossier. Certains projets exigent aussi des prélèvements liés à l’air ambiant avant, pendant ou après une intervention."
+          "answer": "Oui, selon le dossier. Certains projets exigent aussi des prélèvements liés à l’air ambiant avant, pendant ou après une intervention, y compris pour l’air amiante selon le contexte des travaux."
+        },
+        {
+          "question": "Offrez-vous aussi l’échantillonnage pour moisissure?",
+          "answer": "Oui. Selon la situation, nous pouvons aussi offrir l’échantillonnage pour moisissure afin de mieux cadrer la contamination et la prochaine étape utile avant les travaux."
         },
         {
           "question": "Recevons-nous un rapport ou des conclusions?",
