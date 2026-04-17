@@ -1,0 +1,486 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteSettings from '../data/site-settings.json';
+import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+
+const faqs = [
+  {
+    question: "À partir de quelle période faut-il être vigilant au Québec?",
+    answer:
+      "Par prudence, tout bâtiment résidentiel construit ou rénové avant 1990 mérite une attention particulière. Au Québec, les règles de repérage visent notamment les flocages dans les bâtiments construits avant le 15 février 1990 et les calorifuges dans les bâtiments construits avant le 20 mai 1999."
+  },
+  {
+    question: "Est-ce dangereux si le matériau est intact?",
+    answer:
+      "Le risque est surtout lié à la libération de fibres dans l’air. Un matériau contenant de l’amiante qui demeure intact, stable et non perturbé présente généralement moins de risque qu’un matériau cassé, friable, percé, poncé ou démoli."
+  },
+  {
+    question: "Où peut-on en trouver dans un bâtiment?",
+    answer:
+      "On peut en retrouver dans certains isolants, calorifuges, flocages, plâtres, composés à joints, carreaux, revêtements, colles, mastics, panneaux, conduits, toitures ou autres matériaux installés avant les interdictions modernes."
+  },
+  {
+    question: "Que faire avant des rénovations ou une démolition?",
+    answer:
+      "Avant de couper, percer, retirer ou ouvrir un matériau suspect, il faut faire vérifier la situation. L’échantillonnage et le repérage permettent de confirmer le risque et de choisir la bonne méthode d’intervention avant les travaux."
+  },
+  {
+    question: "Quels sont les vrais risques pour la santé?",
+    answer:
+      "Les fibres d’amiante peuvent contribuer à des maladies pulmonaires graves, dont l’amiantose, le cancer du poumon et le mésothéliome. Le danger est surtout lié à l’inhalation de fibres libérées lors de la détérioration ou de travaux mal contrôlés."
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Amiante' }
+]);
+---
+
+<Layout
+  title="Amiante au Québec | D’où ça vient, à partir de quand et pourquoi c’est dangereux"
+  description="Guide ressource sur l’amiante au Québec: périodes à risque, matériaux où on peut en trouver, dangers pour la santé et bons réflexes avant des travaux."
+  canonicalPath="/amiante/"
+  frPath="/amiante/"
+  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+>
+  <Header />
+
+  <main>
+    <section class="resource-hero">
+      <div class="container">
+        <p class="eyebrow">Ressource</p>
+        <h1>L’amiante au Québec: un risque encore bien présent dans les bâtiments existants</h1>
+        <p>
+          L’amiante a longtemps été utilisé pour ses qualités d’<strong>isolation</strong>, de
+          <strong>résistance au feu</strong> et de <strong>durabilité</strong>. Même si sa vente,
+          son importation et son utilisation sont interdites au Canada depuis le
+          <strong>30 décembre 2018</strong>, on peut encore en retrouver dans de nombreux bâtiments
+          plus anciens au Québec.
+        </p>
+      </div>
+    </section>
+
+    <section class="resource-body">
+      <div class="container resource-layout">
+        <div class="resource-main">
+          <section class="content-card">
+            <h2>C’est quoi exactement, l’amiante?</h2>
+            <p>
+              L’amiante est un groupe de fibres minérales qui a été incorporé pendant des décennies
+              à différents produits de construction. Son usage a été large dans le bâtiment parce
+              qu’il offrait une bonne résistance à la chaleur, au feu, au bruit et à l’usure.
+            </p>
+            <p>
+              Le problème n’est pas son nom sur papier, mais le fait que des <strong>fibres très
+              fines</strong> peuvent se libérer dans l’air lorsqu’un matériau est coupé, percé,
+              brisé, poncé, arraché ou détérioré.
+            </p>
+          </section>
+
+          <section class="content-card alt">
+            <h2>À partir de quelle année faut-il se méfier au Québec?</h2>
+            <ul>
+              <li>De façon pratique, les bâtiments <strong>construits ou rénovés avant 1990</strong> méritent une vigilance accrue.</li>
+              <li>Au Québec, le repérage vise notamment les <strong>flocages</strong> dans les bâtiments construits avant le <strong>15 février 1990</strong>.</li>
+              <li>Il vise aussi les <strong>calorifuges</strong> dans les bâtiments construits avant le <strong>20 mai 1999</strong>.</li>
+              <li>Au Canada, l’interdiction générale de vente, d’importation et d’utilisation date du <strong>30 décembre 2018</strong>, mais cela ne retire pas l’amiante déjà présent dans les bâtiments existants.</li>
+            </ul>
+          </section>
+
+          <section class="content-card">
+            <h2>Où peut-on en trouver?</h2>
+            <p class="section-copy">
+              L’amiante peut être présent dans plusieurs matériaux installés avant les règles
+              modernes. La liste exacte dépend de l’époque, du bâtiment et des travaux déjà faits.
+            </p>
+            <div class="info-grid">
+              <article class="info-card">
+                <h3>Isolation et protection</h3>
+                <p>Flocages, calorifuges, isolants, protections coupe-feu, conduits et systèmes mécaniques.</p>
+              </article>
+              <article class="info-card">
+                <h3>Finitions intérieures</h3>
+                <p>Plâtres, composés à joints, carreaux de plafond, carreaux de plancher, colles, mastics et certains panneaux.</p>
+              </article>
+              <article class="info-card">
+                <h3>Enveloppe et extérieur</h3>
+                <p>Revêtements, soffites, toitures, produits de fibrociment et certains éléments d’étanchéité.</p>
+              </article>
+              <article class="info-card">
+                <h3>Éléments techniques</h3>
+                <p>Chaudières, systèmes de chauffage, tuyauterie, joints et autres composants plus techniques selon le bâtiment.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-card alt">
+            <h2>Le risque n’est pas le même selon le type de matériau</h2>
+            <div class="info-grid">
+              <article class="info-card">
+                <h3>Amiante friable</h3>
+                <p>
+                  Les matériaux friables peuvent relâcher des fibres plus facilement sous l’effet
+                  des vibrations, du mouvement d’air ou d’une intervention. C’est le cas de certains
+                  flocages, calorifuges et isolants plus fragiles.
+                </p>
+              </article>
+              <article class="info-card">
+                <h3>Amiante non friable</h3>
+                <p>
+                  Les matériaux non friables sont souvent plus stables lorsqu’ils sont en bon état,
+                  mais ils deviennent problématiques dès qu’on les coupe, perce, retire, sable ou
+                  démolit sans méthode adaptée.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-card alt warning-card">
+            <h2>Pourquoi c’est dangereux?</h2>
+            <p>
+              Le danger vient de l’<strong>inhalation des fibres</strong>. Une fois en suspension
+              dans l’air, elles peuvent pénétrer profondément dans les poumons. L’exposition à
+              l’amiante est associée à des maladies graves, dont l’<strong>amiantose</strong>,
+              le <strong>cancer du poumon</strong> et le <strong>mésothéliome</strong>.
+            </p>
+            <p>
+              Il n’est pas nécessaire qu’un matériau soit visiblement dramatique pour poser un
+              problème. Un simple chantier de rénovation mal préparé peut suffire à contaminer une
+              zone de travail ou une habitation.
+            </p>
+          </section>
+
+          <section class="content-card">
+            <h2>Les principaux risques reliés à l’amiante</h2>
+            <ul>
+              <li><strong>Inhalation de fibres invisibles</strong> pendant des travaux, un dégât ou une manipulation.</li>
+              <li><strong>Contamination de l’air intérieur</strong> si un matériau est endommagé, friable ou mal retiré.</li>
+              <li><strong>Exposition des occupants</strong> lors de rénovations improvisées ou d’un chantier non contrôlé.</li>
+              <li><strong>Exposition des travailleurs</strong> si les méthodes, EPI et mesures de confinement ne sont pas adaptés.</li>
+              <li><strong>Contamination croisée</strong> de zones voisines, poussières, outils, vêtements et matériaux adjacents.</li>
+            </ul>
+          </section>
+
+          <section class="content-card alt">
+            <h2>Risques pour la santé</h2>
+            <p class="section-copy">
+              L’amiante est associé à des maladies sérieuses. Les effets peuvent apparaître plusieurs
+              années après l’exposition.
+            </p>
+            <div class="info-grid">
+              <article class="info-card">
+                <h3>Amiantose</h3>
+                <p>Une fibrose pulmonaire liée à l’inhalation de fibres, pouvant entraîner essoufflement et diminution de la capacité respiratoire.</p>
+              </article>
+              <article class="info-card">
+                <h3>Cancer du poumon</h3>
+                <p>Le risque augmente avec l’exposition et peut être aggravé par d’autres facteurs comme le tabagisme.</p>
+              </article>
+              <article class="info-card">
+                <h3>Mésothéliome</h3>
+                <p>Une maladie rare mais grave, souvent associée à l’exposition à l’amiante, qui touche la plèvre.</p>
+              </article>
+              <article class="info-card">
+                <h3>Latence longue</h3>
+                <p>Le danger n’est pas toujours immédiat. Les conséquences peuvent se déclarer longtemps après les travaux ou l’exposition.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-card">
+            <h2>Quand le risque augmente vraiment</h2>
+            <ul>
+              <li>Lorsqu’un matériau est <strong>percé, scié, cassé, sablé ou démoli</strong>.</li>
+              <li>Quand un isolant, un flocage ou un calorifuge est <strong>friable, usé ou endommagé</strong>.</li>
+              <li>Lors d’un <strong>dégât d’eau</strong>, d’une infiltration ou d’un chantier après sinistre.</li>
+              <li>Quand les matériaux sont déplacés sans confinement, sans aspiration adaptée ou sans procédure claire.</li>
+              <li>Quand on suppose qu’un matériau est “probablement correct” sans l’avoir fait vérifier.</li>
+            </ul>
+          </section>
+
+          <section class="content-card">
+            <h2>Le bon réflexe avant des travaux</h2>
+            <ol>
+              <li>Identifier si le bâtiment ou le matériau entre dans une période à risque.</li>
+              <li>Éviter de percer, couper, casser ou ouvrir le matériau suspect.</li>
+              <li>Faire confirmer la situation par un <strong>échantillonnage</strong> ou un repérage adapté.</li>
+              <li>Choisir ensuite la bonne séquence: confinement, retrait, décontamination ou travaux ciblés.</li>
+            </ol>
+          </section>
+
+          <section class="content-card alt">
+            <h2>Ce qu’il vaut mieux éviter</h2>
+            <ul>
+              <li>Retirer soi-même un matériau suspect sans confirmation préalable.</li>
+              <li>Percer des murs, plafonds ou conduits anciens “pour voir ce qu’il y a derrière”.</li>
+              <li>Balayer à sec, souffler ou aspirer avec un équipement non adapté.</li>
+              <li>Continuer un chantier de rénovation alors qu’un matériau douteux a été découvert.</li>
+              <li>Supposer qu’un matériau est sans danger simplement parce qu’il semble stable à l’œil.</li>
+            </ul>
+          </section>
+
+          <section class="content-card faq-section">
+            <h2>Questions fréquentes sur l’amiante</h2>
+            <div class="faq-list">
+              {faqs.map((item) => (
+                <details class="faq-item">
+                  <summary>
+                    <h3>{item.question}</h3>
+                  </summary>
+                  <div class="accordion-content">
+                    <p>{item.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <aside class="resource-side">
+          <div class="cta-card">
+            <h2>Vous avez un matériau suspect?</h2>
+            <p>
+              Avant des rénovations, une démolition ou l’ouverture d’un mur, il vaut mieux confirmer
+              la situation. Nous pouvons vous orienter vers la bonne prochaine étape.
+            </p>
+            <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
+            <a class="contact-link" href="/contact/">Demander une soumission</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .resource-hero {
+    padding: 4.5rem 0 3.8rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .resource-hero h1 {
+    color: white;
+    margin-bottom: 0.85rem;
+    max-width: 20ch;
+  }
+
+  .resource-hero p:last-child {
+    margin: 0;
+    max-width: 64ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .resource-body {
+    padding: 4rem 0;
+    background: #f3f5f8;
+  }
+
+  .resource-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .resource-main,
+  .resource-side {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .content-card,
+  .cta-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.75rem;
+    box-shadow: 0 16px 34px rgba(24, 40, 61, 0.08);
+  }
+
+  .content-card.alt {
+    background: linear-gradient(180deg, #f8fbf5 0%, #ffffff 100%);
+  }
+
+  .content-card h2,
+  .cta-card h2 {
+    margin-bottom: 1rem;
+  }
+
+  .content-card p,
+  .content-card li,
+  .section-copy,
+  .accordion-content p {
+    color: var(--brand-muted);
+  }
+
+  .content-card ul,
+  .content-card ol {
+    display: grid;
+    gap: 0.85rem;
+    padding-left: 1.15rem;
+  }
+
+  .content-card li::marker {
+    color: var(--brand-green);
+    font-weight: 700;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .info-card {
+    background: var(--brand-surface);
+    border-radius: 18px;
+    padding: 1.15rem;
+  }
+
+  .info-card h3 {
+    margin-bottom: 0.45rem;
+  }
+
+  .warning-card {
+    border: 1px solid rgba(242, 210, 27, 0.35);
+    background: linear-gradient(180deg, #fffdf0 0%, #ffffff 100%);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(31, 58, 95, 0.08);
+  }
+
+  .faq-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .accordion-content {
+    padding-top: 1rem;
+  }
+
+  .cta-card {
+    position: sticky;
+    top: 7rem;
+    background: var(--brand-navy-dark);
+    color: white;
+  }
+
+  .cta-card h2 {
+    color: white;
+  }
+
+  .cta-card p {
+    color: #dbe4ee;
+  }
+
+  .phone-button,
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .phone-button {
+    margin: 0.4rem 0 0.8rem;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+  }
+
+  .phone-button:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .contact-link {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+  }
+
+  .contact-link:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 920px) {
+    .resource-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-card {
+      position: static;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .resource-hero {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 0 3rem;
+    }
+
+    .resource-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .content-card,
+    .cta-card {
+      border-radius: 18px;
+      padding: 1.3rem;
+    }
+
+    .info-grid,
+    .resource-main,
+    .resource-side,
+    .faq-list {
+      gap: 1rem;
+    }
+  }
+</style>
