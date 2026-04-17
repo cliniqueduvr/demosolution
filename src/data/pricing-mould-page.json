@@ -1,12 +1,12 @@
 {
   "metaTitle": "Tarifs moisissure | Demo Solution",
-  "metaDescription": "Tarifs indicatifs pour la décontamination de moisissure à Gatineau, Ottawa et Québec, avec facteurs de prix, inclusions et prochaines étapes.",
+  "metaDescription": "Information utile sur les coûts de décontamination de moisissure à Gatineau, Ottawa et Québec, avec facteurs de prix, inclusions et prochaines étapes.",
   "breadcrumbs": {
     "home": "Accueil",
     "current": "Tarifs moisissure"
   },
   "hero": {
-    "eyebrow": "Prix indicatifs",
+    "eyebrow": "Information utile",
     "title": "Tarifs de décontamination de moisissure",
     "body": "Nous n’affichons pas de prix fixes pour la moisissure, parce qu’un dossier peut changer rapidement selon la surface touchée, la cause du problème, l’accès et le niveau de confinement nécessaire."
   },
@@ -15,40 +15,37 @@
     "body": "Une décontamination de moisissure ne se limite pas à enlever une tache visible. Le coût dépend souvent de ce qui se passe derrière les matériaux, de l’humidité encore présente, du type de surfaces à retirer et du niveau de protection requis pour éviter la propagation."
   },
   "pricing": {
-    "title": "Comment nous cadrons le budget",
-    "intro": "Pour la moisissure, nous travaillons avec des estimations sur évaluation plutôt qu’avec des prix affichés publiquement. Une petite zone visible, une contamination derrière les murs ou un dossier après dégât d’eau ne demandent pas du tout le même niveau d’intervention.",
+    "title": "Comment nous cadrons le coût",
+    "intro": "Pour la moisissure, nous ne publions pas de tarifs affichés. Le coût dépend de ce qui doit vraiment être retiré, protégé, nettoyé et remis en état.",
     "cards": [
       {
-        "title": "Intervention ciblée sur petite zone",
-        "price": "Sur évaluation",
+        "title": "Lecture réelle du problème",
         "details": [
-          "Petite zone localisée",
-          "Confinement léger ou modéré selon le cas",
-          "Retrait ciblé et assainissement de base"
+          "Identifier les zones touchées visibles et cachées",
+          "Comprendre la source d’humidité derrière le problème",
+          "Évaluer la portée réelle avant intervention"
         ]
       },
       {
-        "title": "Zone moyenne avec retrait de matériaux",
-        "price": "Sur évaluation",
+        "title": "Type d’intervention nécessaire",
         "details": [
-          "Plusieurs matériaux ou surfaces touchés",
-          "Confinement plus structuré",
-          "Préparation à la remise en état"
+          "Retrait ciblé de matériaux ou décontamination plus large",
+          "Confinement adapté selon la contamination",
+          "Nettoyage et assainissement selon le contexte"
         ]
       },
       {
-        "title": "Dossier plus lourd ou propagation étendue",
-        "price": "Sur soumission",
+        "title": "Conditions du chantier",
         "details": [
-          "Propagation dans plusieurs pièces ou cavités",
-          "Accès difficile ou contamination importante",
-          "Portée à confirmer après inspection"
+          "Accès, occupation des lieux et contraintes de circulation",
+          "Nombre de zones à traiter",
+          "Préparation avant remise en état"
         ]
       }
     ],
     "notes": [
-      "Le budget final varie selon le nombre de zones touchées, l’humidité résiduelle, les matériaux à retirer et la logistique du chantier.",
-      "Des photos, une visite ou un échantillonnage peuvent être nécessaires pour confirmer la bonne approche avant de chiffrer le dossier."
+      "Des photos, une visite ou un échantillonnage peuvent être nécessaires pour confirmer la bonne approche.",
+      "Une soumission permet ensuite de cadrer clairement la portée et les étapes du chantier."
     ]
   },
   "factors": {

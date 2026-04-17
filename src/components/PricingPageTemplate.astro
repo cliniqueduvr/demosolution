@@ -3,7 +3,7 @@ import siteSettings from '../data/site-settings.json';
 
 interface PricingCard {
   title: string;
-  price: string;
+  price?: string;
   details: string[];
 }
 
@@ -85,7 +85,7 @@ const contactHref = isEnglish ? '/en/contact/' : '/contact/';
           {data.pricing.cards.map((item) => (
             <article class="price-item">
               <p class="price-item-title">{item.title}</p>
-              <p class="price-item-value">{item.price}</p>
+              {item.price && <p class="price-item-value">{item.price}</p>}
               <ul class="price-item-list">
                 {item.details.map((detail) => (
                   <li>{detail}</li>
