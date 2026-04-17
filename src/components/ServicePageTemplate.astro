@@ -63,73 +63,6 @@ const serviceAreas = isEnglish
         </section>
       )}
 
-      {service.pricing && service.pricing.layout === 'split' && (
-        <section class="content-card pricing-card pricing-card-full">
-          <h2>{service.pricing.title}</h2>
-          {service.pricing.intro && <p class="section-copy">{service.pricing.intro}</p>}
-          <div class="pricing-split-grid">
-            <div class="pricing-split-panel pricing-split-left">
-              <div class="pricing-grid pricing-grid-stack">
-                {service.pricing.cards.map((item) => (
-                  <article class="price-item price-item-centered">
-                    <p class="price-item-value">{item.price}</p>
-                    <p class="price-item-summary">{item.title}</p>
-                  </article>
-                ))}
-              </div>
-              {service.pricing.notes && service.pricing.notes.length > 0 && (
-                <div class="pricing-notes">
-                  {service.pricing.notes.map((note) => (
-                    <p>{note}</p>
-                  ))}
-                </div>
-              )}
-              {service.pricing.ctaLabel && (
-                <a class="pricing-cta" href={siteSettings.squareBookingUrl} target="_blank" rel="noopener">
-                  {service.pricing.ctaLabel}
-                </a>
-              )}
-            </div>
-            <div class="pricing-split-panel pricing-split-right">
-              {service.pricing.rightTitle && <h3>{service.pricing.rightTitle}</h3>}
-              {service.pricing.rightIntro && <p class="section-copy">{service.pricing.rightIntro}</p>}
-              {service.pricing.rightItems && service.pricing.rightItems.length > 0 && (
-                <ul class="pricing-benefit-list">
-                  {service.pricing.rightItems.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
-              <div class="pricing-split-panel pricing-split-third">
-                {service.pricing.thirdTitle && <h3>{service.pricing.thirdTitle}</h3>}
-                {service.pricing.thirdIntro && <p class="section-copy">{service.pricing.thirdIntro}</p>}
-                {service.pricing.thirdItems && service.pricing.thirdItems.length > 0 && (
-                  <ol class="pricing-third-list">
-                    {service.pricing.thirdItems.map((item) => (
-                      <li>{item}</li>
-                    ))}
-                  </ol>
-                )}
-                {service.pricing.thirdLinkLabel && service.pricing.thirdLinkHref && (
-                  <a class="pricing-third-link" href={service.pricing.thirdLinkHref} target="_blank" rel="noopener">
-                    {service.pricing.thirdLinkLabel}
-                  </a>
-                )}
-                {service.pricing.thirdNotes && service.pricing.thirdNotes.length > 0 && (
-                  <div class="pricing-third-notes">
-                    {service.pricing.thirdNotes.map((note) => (
-                      <p>{note}</p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
       <article class="service-main">
         <section class="content-card">
           <h2>{service.includedTitle}</h2>
@@ -169,6 +102,73 @@ const serviceAreas = isEnglish
                 <li>{item}</li>
               ))}
             </ul>
+          </section>
+        )}
+
+        {service.pricing && service.pricing.layout === 'split' && (
+          <section class="content-card pricing-card pricing-card-full">
+            <h2>{service.pricing.title}</h2>
+            {service.pricing.intro && <p class="section-copy">{service.pricing.intro}</p>}
+            <div class="pricing-split-grid">
+              <div class="pricing-split-panel pricing-split-left">
+                <div class="pricing-grid pricing-grid-stack">
+                  {service.pricing.cards.map((item) => (
+                    <article class="price-item price-item-centered">
+                      <p class="price-item-value">{item.price}</p>
+                      <p class="price-item-summary">{item.title}</p>
+                    </article>
+                  ))}
+                </div>
+                {service.pricing.notes && service.pricing.notes.length > 0 && (
+                  <div class="pricing-notes">
+                    {service.pricing.notes.map((note) => (
+                      <p>{note}</p>
+                    ))}
+                  </div>
+                )}
+                {service.pricing.ctaLabel && (
+                  <a class="pricing-cta" href={siteSettings.squareBookingUrl} target="_blank" rel="noopener">
+                    {service.pricing.ctaLabel}
+                  </a>
+                )}
+              </div>
+              <div class="pricing-split-panel pricing-split-right">
+                {service.pricing.rightTitle && <h3>{service.pricing.rightTitle}</h3>}
+                {service.pricing.rightIntro && <p class="section-copy">{service.pricing.rightIntro}</p>}
+                {service.pricing.rightItems && service.pricing.rightItems.length > 0 && (
+                  <ul class="pricing-benefit-list">
+                    {service.pricing.rightItems.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
+                <div class="pricing-split-panel pricing-split-third">
+                  {service.pricing.thirdTitle && <h3>{service.pricing.thirdTitle}</h3>}
+                  {service.pricing.thirdIntro && <p class="section-copy">{service.pricing.thirdIntro}</p>}
+                  {service.pricing.thirdItems && service.pricing.thirdItems.length > 0 && (
+                    <ol class="pricing-third-list">
+                      {service.pricing.thirdItems.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ol>
+                  )}
+                  {service.pricing.thirdLinkLabel && service.pricing.thirdLinkHref && (
+                    <a class="pricing-third-link" href={service.pricing.thirdLinkHref} target="_blank" rel="noopener">
+                      {service.pricing.thirdLinkLabel}
+                    </a>
+                  )}
+                  {service.pricing.thirdNotes && service.pricing.thirdNotes.length > 0 && (
+                    <div class="pricing-third-notes">
+                      {service.pricing.thirdNotes.map((note) => (
+                        <p>{note}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
           </section>
         )}
 
