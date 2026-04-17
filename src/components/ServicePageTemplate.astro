@@ -60,7 +60,6 @@ const serviceAreas = isEnglish
             <h2>{service.warningTitle}</h2>
             <p>{service.warningBody}</p>
           </div>
-          <a class="warning-button" href={contactHref}>{service.warningCtaLabel ?? (isEnglish ? 'Request a quote' : 'Demander une soumission')}</a>
         </section>
       )}
 
@@ -380,17 +379,32 @@ const serviceAreas = isEnglish
   }
 
   .warning-band {
+    position: relative;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     grid-column: 1 / -1;
     gap: 1.25rem;
     align-items: center;
-    padding: 1.75rem;
+    padding: 2.15rem 1.9rem 1.85rem;
     border-radius: 24px;
-    background:
-      linear-gradient(180deg, rgba(247, 250, 253, 0.96) 0%, rgba(233, 239, 247, 0.96) 100%);
+    background: linear-gradient(180deg, #fff8bf 0%, #fff2a3 100%);
     box-shadow: 0 18px 34px rgba(24, 40, 61, 0.08);
-    border: 1px solid rgba(31, 58, 95, 0.1);
+    border: 2px solid rgba(16, 24, 32, 0.14);
+    overflow: hidden;
+  }
+
+  .warning-band::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 16px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #101820 0 18px,
+      #101820 18px 24px,
+      #ffd200 24px 42px,
+      #ffd200 42px 48px
+    );
   }
 
   .warning-icon {
@@ -400,38 +414,21 @@ const serviceAreas = isEnglish
     align-items: center;
     justify-content: center;
     border-radius: 18px;
-    background: var(--brand-gold);
-    color: var(--brand-navy-dark);
+    background: #101820;
+    color: #ffd200;
     font-size: 1.5rem;
     box-shadow: 0 10px 20px rgba(21, 38, 58, 0.12);
+    margin-top: 0.25rem;
   }
 
   .warning-copy h2 {
     margin-bottom: 0.75rem;
+    color: #101820;
   }
 
   .warning-copy p {
     margin: 0;
-    color: var(--brand-muted);
-  }
-
-  .warning-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 0.9rem 1.4rem;
-    border-radius: 999px;
-    background: var(--brand-navy-dark);
-    color: white;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .warning-button:hover {
-    text-decoration: none;
-    background: var(--brand-navy);
+    color: rgba(16, 24, 32, 0.88);
   }
 
   .link-card {
