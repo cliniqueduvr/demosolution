@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www.cliniqueduvr.ca/',
+  site: 'https://demosolution.ca/',
   integrations: [],
   output: 'static',
   vite: {
