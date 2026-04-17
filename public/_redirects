@@ -1,4 +1,6 @@
 https://www.demosolution.ca/* https://demosolution.ca/:splat 301!
+/merci.html /merci/index.html 200
+/en/thank-you.html /en/thank-you/index.html 200
 /merci /merci/ 301
 /en/thank-you /en/thank-you/ 301
 /merci/ /merci/index.html 200
