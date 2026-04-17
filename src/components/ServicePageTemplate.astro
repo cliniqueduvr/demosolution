@@ -121,7 +121,7 @@ const serviceAreas = isEnglish
                     ))}
                   </div>
                   {service.pricing.notes && service.pricing.notes.length > 0 && (
-                    <div class="pricing-notes pricing-notes-card">
+                    <div class="pricing-notes">
                       {service.pricing.notes.map((note) => (
                         <p>{note}</p>
                       ))}
@@ -540,20 +540,6 @@ const serviceAreas = isEnglish
     font-size: 0.97rem;
   }
 
-  .pricing-notes-card {
-    margin-top: 1rem;
-    padding: 1.15rem;
-    border-top: none;
-    border-radius: 18px;
-    background: var(--brand-surface);
-    text-align: center;
-  }
-
-  .pricing-notes-card p {
-    color: var(--brand-navy-dark);
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
 
   .pricing-split-grid {
     display: grid;

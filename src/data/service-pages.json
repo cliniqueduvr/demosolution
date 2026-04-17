@@ -452,11 +452,14 @@
               "Tarif distinct selon la méthode analytique requise",
               "Utilisé lorsque le dossier demande une analyse plus spécifique"
             ]
+          },
+          {
+            "title": "Vermiculite",
+            "price": "399 $",
+            "details": []
           }
         ],
-        "notes": [
-          "399$ Vermiculite"
-        ]
+        "notes": []
       },
       "timing": {
         "title": "Nos délais",
