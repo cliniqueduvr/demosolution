@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSeoPageContent from '../components/LocalSeoPageContent.astro';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../lib/seo';
+
+const faqs = [
+  {
+    question: 'Quand faut-il soupçonner de l’amiante à Gatineau?',
+    answer: 'Dès qu’un bâtiment ancien doit être ouvert, rénové ou démoli et que les matériaux n’ont pas été confirmés. C’est fréquent dans les plâtres, composés à joints, isolants, carreaux, colles et certains produits techniques.'
+  },
+  {
+    question: 'Faut-il faire un échantillonnage avant des travaux?',
+    answer: 'Oui, dès qu’un matériau suspect doit être percé, coupé, retiré ou ouvert. Cela permet de confirmer le risque avant de démarrer le chantier et d’éviter une mauvaise séquence de travaux.'
+  },
+  {
+    question: 'Intervenez-vous seulement pour un retrait complet?',
+    answer: 'Non. Le besoin peut aller d’un simple échantillonnage ou repérage jusqu’à une décontamination plus large selon l’état du matériau et la portée des travaux.'
+  }
+];
+
+const sections = [
+  {
+    title: 'Situations fréquentes à Gatineau',
+    cards: [
+      {
+        title: 'Maison ou plex plus ancien',
+        body: 'Rénovation de salle de bain, ouverture de plafond, retrait de plancher ou modification de cloison dans un bâtiment datant d’avant les pratiques modernes.'
+      },
+      {
+        title: 'Travaux pressés',
+        body: 'Le chantier doit avancer vite, mais un doute sur un plâtre, un isolant ou un matériau collé peut tout arrêter si rien n’est confirmé avant l’ouverture.'
+      },
+      {
+        title: 'Matériau découvert en cours de route',
+        body: 'Une fois la démolition commencée, un matériau douteux peut forcer un arrêt. Le bon réflexe est alors de recadrer vite, pas de continuer au hasard.'
+      }
+    ]
+  },
+  {
+    title: 'Ce que cette page aide à clarifier',
+    alt: true,
+    list: [
+      'Quels matériaux anciens peuvent demander plus de prudence à Gatineau.',
+      'Quand un échantillonnage est le bon point de départ.',
+      'Pourquoi il faut cadrer le risque avant rénovation ou démolition.',
+      'Comment éviter un arrêt de chantier causé par un matériau mal lu.'
+    ]
+  },
+  {
+    title: 'Pourquoi cette page locale est utile',
+    body: 'Une recherche comme “amiante Gatineau” ne veut pas seulement dire “trouver un entrepreneur”. Elle veut souvent dire: maison ancienne, matériau suspect, ouverture de mur ou plafond, besoin d’aller vite et peur de faire la mauvaise chose. Cette page répond à cette intention réelle.'
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Amiante Gatineau' }
+]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildServiceSchema({
+    name: 'Amiante à Gatineau',
+    serviceType: 'Échantillonnage, lecture du risque et décontamination amiante à Gatineau',
+    description: 'Page locale sur l’amiante à Gatineau, les matériaux suspects, l’échantillonnage avant travaux et la bonne séquence d’intervention.',
+    lang: 'fr-CA'
+  })
+];
+---
+
+<Layout
+  title="Amiante à Gatineau | Matériaux suspects, échantillonnage et décontamination"
+  description="Amiante à Gatineau: quand soupçonner un matériau à risque, quand faire un échantillonnage et comment cadrer la bonne intervention avant travaux."
+  canonicalPath="/amiante-gatineau/"
+  frPath="/amiante-gatineau/"
+  schemas={schemas}
+>
+  <Header />
+  <main>
+    <LocalSeoPageContent
+      title="Amiante à Gatineau: quoi faire avant d’ouvrir un matériau suspect"
+      intro="À Gatineau, une recherche sur l’amiante arrive souvent juste avant des travaux. Le vrai enjeu n’est pas seulement de savoir si un matériau est ancien, mais de confirmer le risque avant de percer, couper, retirer ou démolir."
+      heroCardTitle="À surveiller en priorité"
+      heroCardItems={[
+        'Plâtres, joints, isolants et matériaux plus anciens.',
+        'Rénovation, démolition ou ouverture de zones cachées.',
+        'Échantillonnage avant de lancer les travaux.'
+      ]}
+      sections={sections}
+      faqs={faqs}
+      ctaTitle="Projet lié à l’amiante à Gatineau?"
+      ctaBody="Si vous avez découvert un matériau suspect ou si des travaux approchent, on peut vous aider à cadrer la bonne première étape."
+      serviceLabel="l’amiante à Gatineau"
+    />
+  </main>
+  <Footer />
+</Layout>

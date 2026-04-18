@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { buildLocalBusinessSchema, buildWebSiteSchema } from '../lib/seo';
 import siteSettings from '../data/site-settings.json';
 import homePage from '../data/home-page.json';
+import projectsData from '../data/projects.json';
 
 const isFormConfigured = Boolean(siteSettings.email?.trim());
 const successUrl = '/merci.html?sent=1';
@@ -31,6 +32,47 @@ const heroLinks = [
   { label: 'Moisissure', href: '/moisissure/' },
   { label: 'Mérule pleureuse', href: '/moisissure/' }
 ];
+const heroHighlights = [
+  'Soumission gratuite en 24h',
+  'RBQ 5824-9764-01',
+  'Assurance pollution',
+  'Depuis 2013'
+];
+const heroActions = [
+  { label: 'Obtenir ma soumission gratuite', href: '/soumission/', className: 'primary' },
+  { label: 'Appeler maintenant', href: `tel:${siteSettings.phone.href}`, className: 'secondary' }
+];
+const proofGallery = (projectsData.items as Array<{ title: string; location: string; category: string; beforeImage: string; beforeAlt: string; }>)
+  .slice(0, 4)
+  .map((project) => ({
+    title: project.title,
+    location: project.location,
+    category: project.category,
+    image: project.beforeImage,
+    alt: project.beforeAlt
+  }));
+const localSeoLinks = [
+  {
+    title: 'Amiante à Gatineau',
+    href: '/amiante-gatineau/',
+    body: 'Bâtiment ancien, matériau suspect, ouverture de mur ou plafond avant travaux.'
+  },
+  {
+    title: 'Amiante à Ottawa',
+    href: '/amiante-ottawa/',
+    body: 'Dossier ontarien, air amiante et lecture Type 1, 2 ou 3 avant intervention.'
+  },
+  {
+    title: 'Moisissure à Gatineau',
+    href: '/moisissure-gatineau/',
+    body: 'Infiltration, sous-sol humide, odeur persistante, spores et contamination fongique.'
+  },
+  {
+    title: 'Vermiculite à Gatineau',
+    href: '/vermiculite-gatineau/',
+    body: 'Entretoit, zonolite, rénovation et doute sur un isolant à confirmer.'
+  }
+];
 ---
 
 <Layout title={meta.title} description={meta.description} canonicalPath="/" frPath="/" enPath="/en/" schemas={schemas}>
@@ -49,6 +91,20 @@ const heroLinks = [
             </>
           ))}
         </p>
+        <p class="hero-lead">
+          <strong>Décontamination d’amiante, vermiculite et moisissure</strong> à Gatineau, Ottawa et Québec,
+          avec une approche <strong>rapide, sécuritaire et conforme</strong> avant rénovation, démolition ou réouverture d’une zone.
+        </p>
+        <div class="hero-actions">
+          {heroActions.map((action) => (
+            <a href={action.href} class:list={['hero-action', action.className]}>{action.label}</a>
+          ))}
+        </div>
+        <div class="hero-highlights" aria-label="Points de confiance">
+          {heroHighlights.map((item) => (
+            <span class="hero-highlight">{item}</span>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -83,6 +139,29 @@ const heroLinks = [
       </div>
     </section>
 
+    <section class="proof-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Preuve visuelle de terrain</h2>
+          <p>Quelques exemples de chantiers réels, zones à ouvrir ou matériaux à traiter avant la suite des travaux.</p>
+        </div>
+        <div class="proof-grid">
+          {proofGallery.map((project) => (
+            <article class="proof-card">
+              <img src={project.image} alt={project.alt} loading="lazy" />
+              <div class="proof-card-body">
+                <p class="proof-kicker">{project.category} • {project.location}</p>
+                <h3>{project.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="proof-footer">
+          <a href="/realisations/" class="proof-link">Voir l’album photo complet</a>
+        </div>
+      </div>
+    </section>
+
     <section class="seo-copy">
       <div class="container seo-grid">
         {homePage.seoSections.map((section) => (
@@ -91,6 +170,24 @@ const heroLinks = [
             <p set:html={section.body} />
           </div>
         ))}
+      </div>
+    </section>
+
+    <section class="local-seo-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Pages locales utiles avant travaux</h2>
+          <p>Des pages plus ciblées pour répondre à des recherches précises à Gatineau et Ottawa.</p>
+        </div>
+        <div class="local-seo-grid">
+          {localSeoLinks.map((item) => (
+            <a href={item.href} class="local-seo-card">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              <span>Lire la page</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -235,6 +332,83 @@ const heroLinks = [
     color: rgba(255, 255, 255, 0.85);
   }
 
+  .hero-lead {
+    max-width: 48rem;
+    margin: 1.2rem auto 0;
+    color: #eef3f7;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.35rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .hero-action.primary {
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    border-color: var(--brand-gold);
+  }
+
+  .hero-action.secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .hero-action:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+
+  .hero-action.primary:hover {
+    color: var(--brand-navy-dark);
+    background: #e1c317;
+    border-color: #e1c317;
+  }
+
+  .hero-action.secondary:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  .hero-highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.35rem;
+  }
+
+  .hero-highlight {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #eef3f7;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
   .hero-content h1 {
     color: white;
     max-width: 26ch;
@@ -279,6 +453,97 @@ const heroLinks = [
   .seo-copy {
     padding: 4rem 0;
     background: white;
+  }
+
+  .proof-section,
+  .local-seo-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .proof-section {
+    background: #f4f6f8;
+  }
+
+  .section-heading {
+    margin-bottom: 1.6rem;
+  }
+
+  .section-heading p {
+    margin-top: 0.6rem;
+    color: var(--brand-muted);
+    max-width: 58ch;
+  }
+
+  .proof-grid,
+  .local-seo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .proof-card,
+  .local-seo-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 30px rgba(21, 38, 58, 0.08);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .proof-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .proof-card-body,
+  .local-seo-card {
+    padding: 1.1rem 1.15rem 1.2rem;
+  }
+
+  .proof-kicker {
+    margin: 0 0 0.45rem;
+    color: var(--brand-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .proof-card h3,
+  .local-seo-card h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .local-seo-card {
+    display: block;
+    border: 1px solid rgba(242, 210, 27, 0.35);
+    background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+  }
+
+  .local-seo-card p {
+    color: var(--brand-muted);
+  }
+
+  .local-seo-card span,
+  .proof-link {
+    display: inline-flex;
+    margin-top: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+  }
+
+  .proof-footer {
+    margin-top: 1rem;
+  }
+
+  .proof-link:hover,
+  .local-seo-card:hover span {
+    color: var(--brand-gold-dark);
+    text-decoration: none;
   }
 
   .seo-grid {
@@ -485,11 +750,39 @@ const heroLinks = [
       display: none;
     }
 
+    .hero-lead {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin-top: 1rem;
+    }
+
+    .hero-actions {
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+
+    .hero-action {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .hero-highlights {
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .hero-highlight {
+      font-size: 0.74rem;
+      padding: 0.42rem 0.7rem;
+    }
+
     .intro-section,
     .services-overview,
     .seo-copy,
     .contact-section,
-    .reviews-section {
+    .reviews-section,
+    .proof-section,
+    .local-seo-section {
       padding: 2.6rem 0;
     }
 
@@ -534,6 +827,12 @@ const heroLinks = [
     .contact-grid {
       grid-template-columns: 1fr;
       gap: 1.35rem;
+    }
+
+    .proof-grid,
+    .local-seo-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .contact-form-wrapper h2,

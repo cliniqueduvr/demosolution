@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSeoPageContent from '../components/LocalSeoPageContent.astro';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../lib/seo';
+
+const faqs = [
+  {
+    question: 'Quand la vermiculite devient-elle un vrai enjeu à Gatineau?',
+    answer: 'Dès qu’un entretoit, une cavité ou un isolant suspect doit être touché avant rénovation, ouverture ou amélioration du bâtiment. Le problème n’est pas seulement sa présence, mais le fait qu’elle puisse être perturbée.'
+  },
+  {
+    question: 'La vermiculite contient-elle toujours de l’amiante?',
+    answer: 'Pas automatiquement, mais le doute est assez fréquent pour justifier une lecture prudente. Il faut confirmer la situation avant d’ouvrir, déplacer ou retirer un isolant suspect.'
+  },
+  {
+    question: 'Peut-on juste la déplacer pour continuer les travaux?',
+    answer: 'Ce n’est pas le bon réflexe. Avant toute manipulation, il faut clarifier le risque et choisir la bonne séquence de travail pour protéger le bâtiment et les occupants.'
+  }
+];
+
+const sections = [
+  {
+    title: 'Situations fréquentes à Gatineau',
+    cards: [
+      {
+        title: 'Entretoit à ouvrir',
+        body: 'Travaux de toiture, ventilation, isolation, électricité ou rénovation qui obligent à toucher un isolant suspect.'
+      },
+      {
+        title: 'Zonolite ou isolant douteux',
+        body: 'Matériau granulaire ancien qui soulève un doute sur la présence d’amiante et bloque la suite du projet.'
+      },
+      {
+        title: 'Projet à démarrer rapidement',
+        body: 'Le client veut aller vite, mais une vermiculite non clarifiée peut arrêter ou compliquer tout le chantier ensuite.'
+      }
+    ]
+  },
+  {
+    title: 'Ce que les clients veulent surtout éviter',
+    alt: true,
+    list: [
+      'Ouvrir un entretoit sans savoir ce qui s’y trouve.',
+      'Déplacer un isolant douteux pour laisser passer un autre corps de métier.',
+      'Lancer des travaux de rénovation avec une vermiculite non clarifiée.',
+      'Créer un arrêt de chantier après avoir déjà commencé le travail.'
+    ]
+  },
+  {
+    title: 'Pourquoi cette page locale est utile',
+    body: 'Une requête comme “vermiculite Gatineau” traduit souvent un besoin très concret: entretoit à ouvrir, rénovations à lancer, zonolite à confirmer, travaux qui ne peuvent pas attendre. Cette page est là pour cadrer cette situation réelle.'
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Vermiculite Gatineau' }
+]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildServiceSchema({
+    name: 'Vermiculite à Gatineau',
+    serviceType: 'Vermiculite, zonolite et échantillonnage avant travaux à Gatineau',
+    description: 'Page locale sur la vermiculite à Gatineau, les entretoits, la zonolite, l’amiante possible et la bonne séquence avant travaux.',
+    lang: 'fr-CA'
+  })
+];
+---
+
+<Layout
+  title="Vermiculite à Gatineau | Entretoit, zonolite et risque avant travaux"
+  description="Vermiculite à Gatineau: entretoit, zonolite, doute sur l’amiante et bonne séquence d’intervention avant rénovation ou ouverture."
+  canonicalPath="/vermiculite-gatineau/"
+  frPath="/vermiculite-gatineau/"
+  schemas={schemas}
+>
+  <Header />
+  <main>
+    <LocalSeoPageContent
+      title="Vermiculite à Gatineau: clarifier le risque avant d’ouvrir l’entretoit"
+      intro="À Gatineau, la vermiculite devient surtout un problème quand un entretoit doit être ouvert ou qu’un isolant granulaire ancien bloque la suite des travaux. Le bon réflexe n’est pas d’improviser, mais de confirmer le risque avant de toucher au matériau."
+      heroCardTitle="Points à valider rapidement"
+      heroCardItems={[
+        'Entretoit ou cavité à ouvrir avant rénovation.',
+        'Zonolite ou isolant granulaire plus ancien.',
+        'Échantillonnage ou lecture prudente avant de manipuler.'
+      ]}
+      sections={sections}
+      faqs={faqs}
+      ctaTitle="Projet de vermiculite à Gatineau?"
+      ctaBody="Si un entretoit ou un isolant douteux bloque vos travaux, on peut vous aider à cadrer la bonne prochaine étape."
+      serviceLabel="la vermiculite à Gatineau"
+    />
+  </main>
+  <Footer />
+</Layout>

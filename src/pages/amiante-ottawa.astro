@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSeoPageContent from '../components/LocalSeoPageContent.astro';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../lib/seo';
+
+const faqs = [
+  {
+    question: 'Pourquoi une page amiante Ottawa séparée?',
+    answer: 'Parce qu’à Ottawa, les dossiers d’amiante doivent être lus dans le cadre ontarien. La logique de travail et les catégories Type 1, 2 et 3 changent la façon de cadrer l’intervention.'
+  },
+  {
+    question: 'Quand parle-t-on de Type 1, 2 ou 3?',
+    answer: 'En Ontario, ces catégories servent à classer les opérations liées à l’amiante selon le matériau, l’ampleur de la perturbation et le niveau de contrôle requis. Il faut les confirmer avant les travaux, pas après.'
+  },
+  {
+    question: 'Faites-vous aussi l’air amiante à Ottawa?',
+    answer: 'Oui. Selon le dossier, nous pouvons accompagner l’échantillonnage de matériaux et la lecture de l’air amiante avant, pendant ou après les travaux.'
+  }
+];
+
+const sections = [
+  {
+    title: 'Ce qui change vraiment à Ottawa',
+    cards: [
+      {
+        title: 'Lecture Ontario',
+        body: 'Un dossier amiante à Ottawa ne se traite pas comme un simple chantier standard. Il doit être cadré selon la logique ontarienne applicable au travail prévu.'
+      },
+      {
+        title: 'Types 1, 2 et 3',
+        body: 'Le classement dépend du matériau, de son état et du niveau de perturbation prévu. Une mauvaise lecture crée vite un arrêt ou une erreur de méthode.'
+      },
+      {
+        title: 'Air amiante et matériaux',
+        body: 'Selon le contexte, il peut être utile de confirmer non seulement le matériau, mais aussi la situation de l’air avant, pendant ou après les travaux.'
+      }
+    ]
+  },
+  {
+    title: 'Ce que les clients veulent surtout éviter',
+    alt: true,
+    list: [
+      'Démarrer un chantier sans la bonne catégorie de travail.',
+      'Confondre un simple doute sur matériau et un dossier Ontario plus strict.',
+      'Créer un retard parce que rien n’a été confirmé avant l’ouverture.',
+      'Continuer des travaux alors que l’air ou un matériau n’est pas clarifié.'
+    ]
+  },
+  {
+    title: 'Pourquoi cette page locale est utile',
+    body: 'Une requête comme “amiante Ottawa” traduit souvent un besoin plus précis: lire le bon cadre, éviter une erreur Type 1, 2 ou 3, confirmer un matériau ou valider l’air amiante. Cette page sert à répondre à cette réalité de chantier.'
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Amiante Ottawa' }
+]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildServiceSchema({
+    name: 'Amiante à Ottawa',
+    serviceType: 'Amiante, air amiante et échantillonnage à Ottawa selon le cadre Ontario',
+    description: 'Page locale sur l’amiante à Ottawa, les catégories Type 1, 2 et 3, l’air amiante et le cadrage avant travaux.',
+    lang: 'fr-CA'
+  })
+];
+---
+
+<Layout
+  title="Amiante à Ottawa | Type 1, 2, 3, air amiante et matériaux suspects"
+  description="Amiante à Ottawa: lecture du risque selon le cadre Ontario, catégories Type 1, 2 et 3, air amiante et échantillonnage avant travaux."
+  canonicalPath="/amiante-ottawa/"
+  frPath="/amiante-ottawa/"
+  schemas={schemas}
+>
+  <Header />
+  <main>
+    <LocalSeoPageContent
+      title="Amiante à Ottawa: confirmer le bon cadre avant les travaux"
+      intro="À Ottawa, la vraie difficulté n’est pas seulement de reconnaître un matériau suspect. Il faut aussi confirmer la bonne logique d’intervention selon le cadre ontarien, les catégories Type 1, 2 ou 3 et, au besoin, la lecture de l’air amiante."
+      heroCardTitle="Points à valider d’abord"
+      heroCardItems={[
+        'Matériau suspect et portée réelle du chantier.',
+        'Catégorie Type 1, 2 ou 3 selon le travail prévu.',
+        'Air amiante et échantillonnage si le contexte l’exige.'
+      ]}
+      sections={sections}
+      faqs={faqs}
+      ctaTitle="Projet amiante à Ottawa?"
+      ctaBody="Si le dossier touche l’amiante, les catégories Type 1, 2 ou 3 ou l’air amiante, on peut vous aider à cadrer la bonne suite."
+      serviceLabel="l’amiante à Ottawa"
+    />
+  </main>
+  <Footer />
+</Layout>

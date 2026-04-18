@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LocalSeoPageContent from '../components/LocalSeoPageContent.astro';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../lib/seo';
+
+const faqs = [
+  {
+    question: 'Quand faut-il agir vite pour de la moisissure à Gatineau?',
+    answer: 'Quand il y a odeur persistante, infiltration récente, sous-sol humide, matériau noirci, contamination derrière une finition ou doute sur une contamination plus large.'
+  },
+  {
+    question: 'Faites-vous aussi l’échantillonnage ou les spores?',
+    answer: 'Oui. Selon le dossier, il peut être utile de confirmer la situation avec de l’échantillonnage de matériaux ou une lecture liée aux spores et à l’air intérieur.'
+  },
+  {
+    question: 'Est-ce seulement pour de grosses contaminations?',
+    answer: 'Non. Plusieurs demandes commencent avec une zone localisée, une odeur ou un doute après infiltration. L’objectif est d’intervenir avant que la situation s’étende.'
+  }
+];
+
+const sections = [
+  {
+    title: 'Situations fréquentes à Gatineau',
+    cards: [
+      {
+        title: 'Sous-sol ou vide sanitaire',
+        body: 'Humidité chronique, matériaux détériorés, odeur persistante ou zones qui restent froides et humides.'
+      },
+      {
+        title: 'Après infiltration',
+        body: 'Dégât d’eau, fuite, condensation ou assèchement incomplet qui laisse un doute sur les matériaux cachés.'
+      },
+      {
+        title: 'Mérule ou maison de cannabis',
+        body: 'Quand le problème semble plus grave qu’une simple tache, il faut cadrer la contamination et la prochaine étape de manière plus rigoureuse.'
+      }
+    ]
+  },
+  {
+    title: 'Ce que les clients veulent surtout éviter',
+    alt: true,
+    list: [
+      'Refermer une zone humide sans avoir traité la contamination.',
+      'Rénover trop vite alors qu’une odeur ou une moisissure reste active.',
+      'Retirer seulement une petite partie alors que le problème est plus large.',
+      'Perdre du temps sur le chantier faute d’avoir clarifié l’état réel des matériaux.'
+    ]
+  },
+  {
+    title: 'Pourquoi cette page locale est utile',
+    body: 'Une recherche comme “moisissure Gatineau” signifie souvent: infiltration, doute sur la portée, odeur persistante ou besoin d’aller vite avant travaux. Cette page sert à répondre à cette intention concrète, pas seulement à décrire un service.'
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Moisissure Gatineau' }
+]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildServiceSchema({
+    name: 'Moisissure à Gatineau',
+    serviceType: 'Moisissure, spores, mérule et échantillonnage à Gatineau',
+    description: 'Page locale sur la moisissure à Gatineau, les infiltrations, les spores, la mérule et l’intervention avant travaux.',
+    lang: 'fr-CA'
+  })
+];
+---
+
+<Layout
+  title="Moisissure à Gatineau | Infiltration, spores, mérule et intervention"
+  description="Moisissure à Gatineau: infiltration, spores, mérule pleureuse, odeur persistante et contamination à clarifier avant travaux."
+  canonicalPath="/moisissure-gatineau/"
+  frPath="/moisissure-gatineau/"
+  schemas={schemas}
+>
+  <Header />
+  <main>
+    <LocalSeoPageContent
+      title="Moisissure à Gatineau: agir avant que le problème prenne de l’ampleur"
+      intro="À Gatineau, les demandes liées à la moisissure commencent souvent après une infiltration, une odeur persistante ou la découverte d’une zone humide pendant des travaux. Le vrai enjeu est de lire correctement la portée du problème avant de refermer, rénover ou démolir."
+      heroCardTitle="Signaux à surveiller"
+      heroCardItems={[
+        'Odeur persistante, humidité, taches ou matériaux noircis.',
+        'Sous-sol, salle de bain, entretoit ou cloison après infiltration.',
+        'Doute sur spores, mérule ou contamination plus large.'
+      ]}
+      sections={sections}
+      faqs={faqs}
+      ctaTitle="Problème de moisissure à Gatineau?"
+      ctaBody="Si le dossier touche l’humidité, les spores, la mérule ou une zone contaminée avant travaux, on peut vous aider à cadrer la bonne intervention."
+      serviceLabel="la moisissure à Gatineau"
+    />
+  </main>
+  <Footer />
+</Layout>
