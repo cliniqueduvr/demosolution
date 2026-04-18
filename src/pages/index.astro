@@ -91,6 +91,11 @@ const localSeoLinks = [
             </>
           ))}
         </p>
+        <div class="hero-highlights" aria-label="Points de confiance">
+          {heroHighlights.map((item) => (
+            <span class="hero-highlight">{item}</span>
+          ))}
+        </div>
         <p class="hero-lead">
           <strong>Décontamination d’amiante, vermiculite et moisissure</strong> à Gatineau, Ottawa et Québec,
           avec une approche <strong>rapide, sécuritaire et conforme</strong> avant rénovation, démolition ou réouverture d’une zone.
@@ -98,11 +103,6 @@ const localSeoLinks = [
         <div class="hero-actions">
           {heroActions.map((action) => (
             <a href={action.href} class:list={['hero-action', action.className]}>{action.label}</a>
-          ))}
-        </div>
-        <div class="hero-highlights" aria-label="Points de confiance">
-          {heroHighlights.map((item) => (
-            <span class="hero-highlight">{item}</span>
           ))}
         </div>
       </div>
