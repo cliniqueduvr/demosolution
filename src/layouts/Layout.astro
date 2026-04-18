@@ -72,7 +72,7 @@ const hasGoogleAds = googleAdsId.length > 0;
     {hasGoogleAds && (
       <script is:inline define:vars={{ googleAdsId, googleAdsConversions }}>
         (() => {
-          const storageKey = 'cliniqueduvr-cookie-consent';
+          const storageKey = 'demo-solution-cookie-consent';
           let hasConsent = false;
 
           window.dataLayer = window.dataLayer || [];
@@ -117,9 +117,9 @@ const hasGoogleAds = googleAdsId.length > 0;
           }
 
           function installTracking() {
-            if (window.__cliniqueduvrAdsTrackingInstalled) return;
-            window.__cliniqueduvrAdsTrackingInstalled = true;
-            window.cliniqueTrackConversion = trackConversion;
+            if (window.__demoSolutionAdsTrackingInstalled) return;
+            window.__demoSolutionAdsTrackingInstalled = true;
+            window.demoSolutionTrackConversion = trackConversion;
 
             document.addEventListener('click', (event) => {
               const target = event.target;
@@ -169,13 +169,13 @@ const hasGoogleAds = googleAdsId.length > 0;
               grantConsent();
               installTracking();
             } else {
-              window.addEventListener('cliniqueduvr:cookie-consent-accepted', () => {
+              window.addEventListener('demo-solution:cookie-consent-accepted', () => {
                 grantConsent();
                 installTracking();
               }, { once: true });
             }
           } catch {
-            window.addEventListener('cliniqueduvr:cookie-consent-accepted', () => {
+            window.addEventListener('demo-solution:cookie-consent-accepted', () => {
               grantConsent();
               installTracking();
             }, { once: true });

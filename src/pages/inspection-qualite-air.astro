@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import siteSettings from '../data/site-settings.json';
-import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../lib/seo';
 
 const serviceLinks = [
   { href: '/services/echantillonnage/', label: 'Échantillonnage', icon: 'fas fa-microscope' },
@@ -47,6 +47,16 @@ const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Accueil', path: '/' },
   { name: "Inspection qualité de l'air" }
 ]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildServiceSchema({
+    name: 'Inspection qualité de l’air à Gatineau, Ottawa et en Outaouais',
+    serviceType: "Inspection qualité de l’air, air amiante, spores et contamination fongique",
+    description: "Inspection qualité de l’air, air amiante avant, pendant et après travaux, spores et moisissure à Gatineau, Ottawa et en Outaouais.",
+    lang: 'fr-CA'
+  })
+];
 ---
 
 <Layout
@@ -54,7 +64,7 @@ const breadcrumbs = buildBreadcrumbSchema([
   description="Inspection qualité de l’air à Gatineau, en Outaouais et à Ottawa: air amiante avant, pendant et après travaux, spores, moisissure et vérifications ciblées."
   canonicalPath="/inspection-qualite-air/"
   frPath="/inspection-qualite-air/"
-  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+  schemas={schemas}
 >
   <Header />
 
@@ -154,7 +164,7 @@ const breadcrumbs = buildBreadcrumbSchema([
               travaux, on peut vous orienter vers la bonne prochaine étape.
             </p>
             <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-            <a class="contact-link" href="/contact/">Demander une soumission</a>
+            <a class="contact-link" href="/soumission/">Demander une soumission</a>
           </div>
 
           <div class="side-card">
@@ -172,7 +182,7 @@ const breadcrumbs = buildBreadcrumbSchema([
           <div class="side-card">
             <h3>Zones desservies</h3>
             <p class="side-copy">
-              Ce service est offert à partir de Gatineau et peut aussi inclure l’Outaouais et Ottawa.
+              Cette ressource couvre surtout Gatineau, l’Outaouais et Ottawa pour les dossiers d’air amiante, spores et moisissure.
             </p>
             <div class="service-area-side-list">
               {serviceAreas.map((area) => (

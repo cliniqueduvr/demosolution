@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import siteSettings from '../data/site-settings.json';
-import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+import { buildBreadcrumbSchema, buildFAQSchema, buildLocalBusinessSchema, buildServiceSchema } from '../lib/seo';
 
 const serviceLinks = [
   { href: '/services/moisissure/', label: 'Moisissures', icon: 'fas fa-shield-virus' },
@@ -87,6 +87,21 @@ const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Accueil', path: '/' },
   { name: 'Ville de Québec' }
 ]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildLocalBusinessSchema({
+    telephone: siteSettings.phone.href,
+    email: siteSettings.email,
+    lang: 'fr-CA'
+  }),
+  buildServiceSchema({
+    name: 'Décontamination, amiante, vermiculite et échantillonnage à Québec',
+    serviceType: 'Décontamination, amiante, vermiculite, moisissure et échantillonnage à Québec',
+    description: 'Services de décontamination, amiante, vermiculite, moisissure et échantillonnage dans la ville de Québec et sa périphérie.',
+    lang: 'fr-CA'
+  })
+];
 ---
 
 <Layout
@@ -94,7 +109,7 @@ const breadcrumbs = buildBreadcrumbSchema([
   description="Services de décontamination, amiante, vermiculite, moisissures et échantillonnage dans la ville de Québec et en périphérie: Sainte-Foy, Beauport, Charlesbourg, Lévis et secteurs voisins."
   canonicalPath="/ville-de-quebec/"
   frPath="/ville-de-quebec/"
-  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+  schemas={schemas}
 >
   <Header />
 
@@ -200,7 +215,7 @@ const breadcrumbs = buildBreadcrumbSchema([
               bonne voie, nous pouvons vous orienter vers la bonne prochaine étape.
             </p>
             <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-            <a class="contact-link" href="/contact/">Demander une soumission</a>
+            <a class="contact-link" href="/soumission/">Demander une soumission</a>
           </div>
 
           <div class="side-card">
@@ -218,7 +233,7 @@ const breadcrumbs = buildBreadcrumbSchema([
           <div class="side-card">
             <h3>Zones desservies</h3>
             <p class="side-copy">
-              Ce service est offert à partir de Gatineau et peut aussi inclure Ottawa et Québec.
+              Cette page vise la ville de Québec et sa périphérie, avec des liens vers les autres zones locales quand le dossier l’exige.
             </p>
             <div class="service-area-side-list">
               {serviceAreas.map((area) => (

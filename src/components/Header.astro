@@ -22,12 +22,20 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
     '/choisir-service/': '/en/choose-service/',
     '/contact/': '/en/contact/',
     '/soumission/': '/en/contact/',
+    '/amiante/': '/en/services/vermiculite-removal/',
+    '/moisissure/': '/en/services/mould-removal/',
+    '/inspection-qualite-air/': '/en/services/sampling/',
+    '/gatineau/': '/en/services/',
+    '/outaouais/': '/en/services/',
+    '/ottawa/': '/en/services/',
+    '/ville-de-quebec/': '/en/services/',
     '/faq/': '/en/faq/',
     '/plan-du-site/': '/en/site-map/',
     '/privacy/': '/en/privacy/',
     '/tarifs-moisissure/': '/en/mould-pricing/',
     '/tarifs-vermiculite/': '/en/vermiculite-pricing/',
     '/merci/': '/en/thank-you/',
+    '/merci.html/': '/en/thank-you.html/',
     '/realisations/': '/en/realisations/',
     '/services/': '/en/services/'
   };
@@ -43,6 +51,7 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
     '/en/mould-pricing/': '/tarifs-moisissure/',
     '/en/vermiculite-pricing/': '/tarifs-vermiculite/',
     '/en/thank-you/': '/merci/',
+    '/en/thank-you.html/': '/merci.html/',
     '/en/realisations/': '/realisations/',
     '/en/services/': '/services/'
   };
@@ -89,9 +98,9 @@ const serviceMenuItems = (isEnglish ? servicePagesEn.items : servicePagesFr.item
   }));
 const resourceMenuItems = isEnglish
   ? [
-      { label: 'Asbestos Guide', href: '/amiante/', active: currentPath === '/amiante/' },
-      { label: 'Mould Guide', href: '/moisissure/', active: currentPath === '/moisissure/' },
-      { label: 'Air Quality', href: '/inspection-qualite-air/', active: currentPath === '/inspection-qualite-air/' },
+      { label: 'Sampling', href: '/en/services/sampling/', active: currentPath === '/en/services/sampling/' },
+      { label: 'Mould Remediation', href: '/en/services/mould-removal/', active: currentPath === '/en/services/mould-removal/' },
+      { label: 'Vermiculite Removal', href: '/en/services/vermiculite-removal/', active: currentPath === '/en/services/vermiculite-removal/' },
       { label: 'FAQ', href: '/en/faq/', active: currentPath === '/en/faq/' }
     ]
   : [
@@ -105,7 +114,7 @@ const navItems = isEnglish
       { label: 'Home', href: '/en/' },
       { label: 'About', href: '/en/about/' },
       { label: 'Services', href: '/en/services/' },
-      { label: 'Resources', href: '/inspection-qualite-air/' },
+      { label: 'Resources', href: '/en/faq/' },
       { label: 'Quote', href: '/en/contact/' },
     ]
   : [
@@ -170,7 +179,11 @@ const navItems = isEnglish
                     <button
                       class="submenu-toggle"
                       type="button"
-                      aria-label={isEnglish ? 'Show services' : 'Afficher les services'}
+                      aria-label={
+                        item.href === (isEnglish ? '/en/services/' : '/services/')
+                          ? (isEnglish ? 'Show services' : 'Afficher les services')
+                          : (isEnglish ? 'Show resources' : 'Afficher les ressources')
+                      }
                       aria-expanded="false"
                       data-submenu-toggle
                     >

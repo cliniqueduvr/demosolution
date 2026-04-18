@@ -11,8 +11,8 @@ interface Props {
 const { service, allServices, lang = 'fr' } = Astro.props as Props;
 const otherServices = allServices;
 const isEnglish = lang === 'en';
-const contactHref = isEnglish ? '/en/contact/' : '/contact/';
-const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
+const contactHref = isEnglish ? '/en/contact/' : '/soumission/';
+const quoteHref = isEnglish ? '/en/contact/' : '/soumission/';
 const serviceHref = (slug: string) => isEnglish ? `/en/services/${slug}/` : `/services/${slug}/`;
 const serviceAreas = isEnglish
   ? ['Gatineau', 'Outaouais', 'Ottawa', 'Quebec City']

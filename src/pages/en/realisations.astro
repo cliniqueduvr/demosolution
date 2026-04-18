@@ -2,81 +2,272 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
 import projectsData from '../../data/projects-en.json';
 import { buildBreadcrumbSchema } from '../../lib/seo';
+
+const [project1, project2, project3, project4, project5, project6] = projectsData.items;
+
+const albums = [
+  {
+    id: 'asbestos',
+    title: 'Asbestos',
+    intro: 'Photo views related to older materials, risk verification and areas prepared cleanly before the next phase of work.',
+    photos: [
+      { src: project1.beforeImage, alt: project1.beforeAlt, title: 'Suspicious material before intervention', location: project1.location },
+      { src: project1.afterImage, alt: project1.afterAlt, title: 'Area prepared after intervention', location: project1.location },
+      { src: project6.beforeImage, alt: project6.beforeAlt, title: 'On-site risk review', location: project6.location },
+      { src: project6.afterImage, alt: project6.afterAlt, title: 'Area clarified for next steps', location: project6.location }
+    ]
+  },
+  {
+    id: 'mould',
+    title: 'Mould',
+    intro: 'Examples related to humidity, affected materials and cleanup before proper correction and rebuilding.',
+    photos: [
+      { src: project2.beforeImage, alt: project2.beforeAlt, title: 'Area affected by humidity', location: project2.location },
+      { src: project2.afterImage, alt: project2.afterAlt, title: 'Area cleaned and prepared', location: project2.location }
+    ]
+  },
+  {
+    id: 'vermiculite',
+    title: 'Vermiculite',
+    intro: 'Photos of areas where vermiculite had to be removed cleanly before reinsulation or the next stage of work.',
+    photos: [
+      { src: project5.beforeImage, alt: project5.beforeAlt, title: 'Visible vermiculite before work', location: project5.location },
+      { src: project5.afterImage, alt: project5.afterAlt, title: 'Area cleaned after removal', location: project5.location }
+    ]
+  },
+  {
+    id: 'other',
+    title: 'Other interventions',
+    intro: 'A broader album that groups sampling before work and selected zones prepared for controlled demolition.',
+    photos: [
+      { src: project3.beforeImage, alt: project3.beforeAlt, title: 'Materials to verify before work', location: project3.location },
+      { src: project3.afterImage, alt: project3.afterAlt, title: 'Report and file review', location: project3.location },
+      { src: project4.beforeImage, alt: project4.beforeAlt, title: 'Area to open in a controlled way', location: project4.location },
+      { src: project4.afterImage, alt: project4.afterAlt, title: 'Area ready for the next step', location: project4.location }
+    ]
+  }
+];
+
 const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Home', path: '/en/' },
   { name: 'Projects' }
 ]);
 ---
 
-<Layout title="Demo Solution projects | Decontamination case studies" description="Demo Solution projects in decontamination, vermiculite removal, sampling and selective demolition in Gatineau, Ottawa and Quebec City." lang="en-CA" canonicalPath="/en/realisations/" frPath="/realisations/" enPath="/en/realisations/" schemas={[breadcrumbs]}>
+<Layout
+  title="Demo Solution projects | Photo gallery"
+  description="Photo gallery of Demo Solution interventions for asbestos, mould, vermiculite and other preparatory work in Gatineau, Ottawa and Quebec City."
+  lang="en-CA"
+  canonicalPath="/en/realisations/"
+  frPath="/realisations/"
+  enPath="/en/realisations/"
+  schemas={[breadcrumbs]}
+>
   <Header lang="en" />
 
   <main>
     <section class="page-header">
       <div class="container">
-        <p class="eyebrow">Complete interventions</p>
-        <h1>Our Projects</h1>
-        <p>Examples of real decontamination and preparatory interventions</p>
+        <p class="eyebrow">Gallery</p>
+        <h1>Projects</h1>
+        <p>A simple photo gallery showing the types of interventions we handle on site.</p>
       </div>
     </section>
 
-    <section class="realisations-section">
+    <section class="gallery-section">
       <div class="container">
         <div class="section-intro">
-          <h2>Before and after and real interventions</h2>
-          <p>These projects show examples of work carried out on residential and commercial buildings: decontamination, mould remediation, vermiculite removal, sampling and selective demolition. This section reinforces proof of work and helps place your own project in context.</p>
+          <h2>Photo albums by type of project</h2>
+          <p>This gallery shows site views and treated areas related to asbestos, mould, vermiculite and other useful interventions before the next phase of work.</p>
         </div>
-        <div class="projects-grid">
-          {projectsData.items.map((project) => (
-            <ProjectCard
-              id={project.id}
-              title={project.title}
-              location={project.location}
-              category={project.category}
-              beforeImage={project.beforeImage}
-              afterImage={project.afterImage}
-              beforeAlt={project.beforeAlt}
-              afterAlt={project.afterAlt}
-              description={project.description}
-              lang="en"
-            />
+
+        <nav class="album-nav" aria-label="Photo albums">
+          {albums.map((album) => (
+            <a href={`#${album.id}`}>{album.title}</a>
+          ))}
+        </nav>
+
+        <div class="album-list">
+          {albums.map((album, index) => (
+            <section id={album.id} class:list={['album-card', index % 2 === 1 && 'album-card--alt']}>
+              <div class="album-header">
+                <h2>{album.title}</h2>
+                <p>{album.intro}</p>
+              </div>
+              <div class="photo-grid">
+                {album.photos.map((photo) => (
+                  <article class="photo-card">
+                    <img src={photo.src} alt={photo.alt} loading="lazy" />
+                    <div class="photo-copy">
+                      <h3>{photo.title}</h3>
+                      <p>{photo.location}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       </div>
     </section>
-
-    <section class="seo-copy">
-      <div class="container seo-columns">
-        <div>
-          <h2>Why these projects matter</h2>
-          <p>A before-and-after helps explain the type of problem treated, the nature of the materials involved and the level of intervention required depending on the building. It is also a good way to show the difference between sampling, decontamination and preparatory demolition.</p>
-        </div>
-        <div>
-          <h2>Frequent work in the workshop</h2>
-          <p>Among the most common requests are asbestos, vermiculite, mould, suspicious materials and sections that must be removed cleanly before the next phase of work. If your situation resembles one of these cases, we can direct you to the right service.</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <Footer lang="en" />
 </Layout>
 
 <style>
-  .page-header { background: radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%), linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%); color: white; padding: 4.5rem 0 3.8rem; }
-  .eyebrow { display: inline-flex; margin-bottom: 1rem; padding: 0.45rem 0.85rem; border-radius: 999px; background: rgba(255,255,255,0.12); color: var(--brand-gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-  .page-header h1 { color: white; margin-bottom: 0.75rem; font-size: 3rem; }
-  .page-header p:last-child { margin: 0; max-width: 55ch; font-size: 1.08rem; color: #e7edf4; }
-  .realisations-section { padding: 4rem 0; background: white; }
-  .section-intro { max-width: 850px; margin-bottom: 2rem; }
-  .section-intro p { margin-top: 0.75rem; color: var(--brand-muted); }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-  .seo-copy { padding: 0 0 4rem; background: white; }
-  .seo-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-  .seo-columns p { margin-top: 0.75rem; color: var(--brand-muted); }
-  @media (max-width: 768px) { .page-header { background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%); padding: 3.6rem 1.5rem 3rem; } .page-header h1 { font-size: 2rem; } .page-header p { font-size: 1rem; } .realisations-section { padding: 2rem 0; } .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+  .page-header {
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+    padding: 4.5rem 0 3.8rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .page-header p:last-child {
+    margin: 0;
+    max-width: 55ch;
+    font-size: 1.08rem;
+    color: #e7edf4;
+  }
+
+  .gallery-section {
+    padding: 4rem 0;
+    background: #f4f6f8;
+  }
+
+  .section-intro {
+    max-width: 840px;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-intro p {
+    margin-top: 0.75rem;
+    color: var(--brand-muted);
+  }
+
+  .album-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .album-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    background: white;
+    border: 1px solid rgba(31, 58, 95, 0.12);
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .album-nav a:hover {
+    text-decoration: none;
+    color: var(--brand-navy-dark);
+    border-color: rgba(242, 210, 27, 0.6);
+    background: #fff9e8;
+  }
+
+  .album-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .album-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 34px rgba(21, 38, 58, 0.08);
+  }
+
+  .album-card--alt {
+    background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+  }
+
+  .album-header {
+    max-width: 760px;
+    margin-bottom: 1.25rem;
+  }
+
+  .album-header p {
+    margin-top: 0.65rem;
+    color: var(--brand-muted);
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .photo-card {
+    overflow: hidden;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid rgba(21, 38, 58, 0.08);
+    box-shadow: 0 10px 24px rgba(21, 38, 58, 0.06);
+  }
+
+  .photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .photo-copy {
+    padding: 0.95rem 1rem 1.05rem;
+  }
+
+  .photo-copy h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    color: var(--brand-navy);
+  }
+
+  .photo-copy p {
+    margin: 0;
+    color: var(--brand-muted);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      background: linear-gradient(180deg, var(--brand-navy-dark) 0%, #1f476d 100%);
+      padding: 3.6rem 1.5rem 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .gallery-section {
+      padding: 2rem 0;
+    }
+  }
 </style>

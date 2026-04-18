@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import siteSettings from '../data/site-settings.json';
-import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+import { buildBreadcrumbSchema, buildFAQSchema, buildLocalBusinessSchema, buildServiceSchema } from '../lib/seo';
 
 const serviceLinks = [
   { href: '/services/decontamination/', label: 'Décontamination', icon: 'fas fa-biohazard' },
@@ -51,6 +51,21 @@ const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Accueil', path: '/' },
   { name: 'Outaouais' }
 ]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildLocalBusinessSchema({
+    telephone: siteSettings.phone.href,
+    email: siteSettings.email,
+    lang: 'fr-CA'
+  }),
+  buildServiceSchema({
+    name: 'Décontamination, vermiculite et échantillonnage en Outaouais',
+    serviceType: 'Décontamination, vermiculite, moisissure, air amiante et échantillonnage en Outaouais',
+    description: 'Services de décontamination, vermiculite, moisissure, inspection qualité de l’air et échantillonnage en Outaouais.',
+    lang: 'fr-CA'
+  })
+];
 ---
 
 <Layout
@@ -58,7 +73,7 @@ const breadcrumbs = buildBreadcrumbSchema([
   description="Services de décontamination, vermiculite, moisissure, inspection qualité de l’air et échantillonnage en Outaouais: Gatineau, Hull, Aylmer et secteurs voisins."
   canonicalPath="/outaouais/"
   frPath="/outaouais/"
-  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+  schemas={schemas}
 >
   <Header />
 
@@ -168,7 +183,7 @@ const breadcrumbs = buildBreadcrumbSchema([
               voisins, nous pouvons vous orienter vers la bonne suite rapidement.
             </p>
             <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-            <a class="contact-link" href="/contact/">Demander une soumission</a>
+            <a class="contact-link" href="/soumission/">Demander une soumission</a>
           </div>
 
           <div class="side-card">

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import siteSettings from '../data/site-settings.json';
-import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+import { buildBreadcrumbSchema, buildFAQSchema, buildServiceSchema } from '../lib/seo';
 
 const serviceLinks = [
   { href: '/services/moisissure/', label: 'Moisissures', icon: 'fas fa-shield-virus' },
@@ -53,6 +53,16 @@ const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Accueil', path: '/' },
   { name: 'Amiante' }
 ]);
+const schemas = [
+  breadcrumbs,
+  buildFAQSchema(faqs),
+  buildServiceSchema({
+    name: 'Guide amiante au Québec',
+    serviceType: 'Information sur l’amiante, repérage et échantillonnage avant travaux',
+    description: 'Guide sur l’amiante au Québec, les périodes à risque, les matériaux touchés et les bons réflexes avant rénovation ou démolition.',
+    lang: 'fr-CA'
+  })
+];
 ---
 
 <Layout
@@ -60,7 +70,7 @@ const breadcrumbs = buildBreadcrumbSchema([
   description="Guide ressource sur l’amiante au Québec: périodes à risque, matériaux où on peut en trouver, dangers pour la santé et bons réflexes avant des travaux."
   canonicalPath="/amiante/"
   frPath="/amiante/"
-  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+  schemas={schemas}
 >
   <Header />
 
@@ -263,7 +273,7 @@ const breadcrumbs = buildBreadcrumbSchema([
               la situation. Nous pouvons vous orienter vers la bonne prochaine étape.
             </p>
             <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-            <a class="contact-link" href="/contact/">Demander une soumission</a>
+            <a class="contact-link" href="/soumission/">Demander une soumission</a>
           </div>
 
           <div class="side-card">
@@ -281,7 +291,7 @@ const breadcrumbs = buildBreadcrumbSchema([
           <div class="side-card">
             <h3>Zones desservies</h3>
             <p class="side-copy">
-              Ce service est offert à partir de Gatineau et peut aussi inclure Ottawa et Québec.
+              Cette ressource est utile pour Gatineau, Ottawa et Québec quand un matériau ancien soulève un risque avant des travaux.
             </p>
             <div class="service-area-side-list">
               {serviceAreas.map((area) => (

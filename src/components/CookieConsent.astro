@@ -42,7 +42,7 @@ const privacyHref = isEnglish ? '/en/privacy/' : '/privacy/';
 
 <script is:inline>
   (() => {
-    const storageKey = 'cliniqueduvr-cookie-consent';
+    const storageKey = 'demo-solution-cookie-consent';
     const banner = document.getElementById('cookie-consent');
     if (!banner) return;
 
@@ -60,7 +60,7 @@ const privacyHref = isEnglish ? '/en/privacy/' : '/privacy/';
       try {
         window.localStorage.setItem(storageKey, 'accepted');
       } catch {}
-      window.dispatchEvent(new CustomEvent('cliniqueduvr:cookie-consent-accepted'));
+      window.dispatchEvent(new CustomEvent('demo-solution:cookie-consent-accepted'));
       banner.dataset.visible = 'false';
     });
   })();

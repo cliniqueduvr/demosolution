@@ -12,6 +12,44 @@ const pathname = Astro.url.pathname;
 const shouldShowCta = pathname !== '/contact/' && pathname !== '/en/contact/';
 const facebookUrl = siteSettings.facebookUrl?.trim();
 const tiktokUrl = siteSettings.tiktokUrl?.trim();
+const cityLinks = isEnglish
+  ? [
+      { label: 'Gatineau' },
+      { label: 'Ottawa' },
+      { label: 'Outaouais' },
+      { label: 'Quebec City' },
+      { label: 'Lévis' },
+      { label: 'Portneuf' }
+    ]
+  : [
+      { label: 'Gatineau', href: '/gatineau/' },
+      { label: 'Ottawa', href: '/ottawa/' },
+      { label: 'Outaouais', href: '/outaouais/' },
+      { label: 'Ville de Québec', href: '/ville-de-quebec/' },
+      { label: 'Lévis', href: '/ville-de-quebec/' },
+      { label: 'Portneuf', href: '/ville-de-quebec/' }
+    ];
+const resourceLinks = isEnglish
+  ? [
+      { label: 'FAQ', href: '/en/faq/' },
+      { label: 'Sampling', href: '/en/services/sampling/' },
+      { label: 'Mould Pricing', href: '/en/mould-pricing/' },
+      { label: 'Vermiculite Pricing', href: '/en/vermiculite-pricing/' },
+      { label: 'Projects', href: '/en/realisations/' },
+      { label: 'Privacy Policy', href: '/en/privacy/' },
+      { label: 'Site Map', href: '/en/site-map/' }
+    ]
+  : [
+      { label: 'Guide amiante', href: '/amiante/' },
+      { label: 'Guide moisissure', href: '/moisissure/' },
+      { label: "Inspection qualité de l'air", href: '/inspection-qualite-air/' },
+      { label: 'FAQ', href: '/faq/' },
+      { label: 'Réalisations', href: '/realisations/' },
+      { label: 'Tarifs moisissure', href: '/tarifs-moisissure/' },
+      { label: 'Tarifs vermiculite', href: '/tarifs-vermiculite/' },
+      { label: 'Politique de confidentialité', href: '/privacy/' },
+      { label: 'Plan du site', href: '/plan-du-site/' }
+    ];
 ---
 
 {shouldShowCta && <CTABanner lang={isEnglish ? 'en' : 'fr'} />}
@@ -43,25 +81,19 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
     <div class="footer-col">
       <h4>{isEnglish ? 'Cities Served' : 'Villes desservies'}</h4>
       <ul>
-        <li><a href="/gatineau/">Gatineau</a></li>
-        <li><a href="/ottawa/">Ottawa</a></li>
-        <li><a href="/outaouais/">{isEnglish ? 'Outaouais (FR)' : 'Outaouais'}</a></li>
-        <li><a href="/ville-de-quebec/">{isEnglish ? 'Quebec City (FR)' : 'Ville de Québec'}</a></li>
-        <li><a href="/ville-de-quebec/">Lévis</a></li>
-        <li><a href="/ville-de-quebec/">Portneuf</a></li>
+        {cityLinks.map((item) => (
+          <li>
+            {item.href ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}
+          </li>
+        ))}
       </ul>
     </div>
     <div class="footer-col">
       <h4>{isEnglish ? 'Resources' : 'Ressources'}</h4>
       <ul class="footer-link-list">
-        <li><a href="/amiante/">{isEnglish ? 'Asbestos Guide' : 'Guide amiante'}</a></li>
-        <li><a href="/moisissure/">{isEnglish ? 'Mould Guide (FR)' : 'Guide moisissure'}</a></li>
-        <li><a href="/inspection-qualite-air/">{isEnglish ? 'Air Quality Guide (FR)' : "Inspection qualité de l'air"}</a></li>
-        <li><a href={isEnglish ? '/en/faq/' : '/faq/'}>FAQ</a></li>
-        <li><a href={isEnglish ? '/en/mould-pricing/' : '/tarifs-moisissure/'}>{isEnglish ? 'Mould Pricing' : 'Tarifs moisissure'}</a></li>
-        <li><a href={isEnglish ? '/en/vermiculite-pricing/' : '/tarifs-vermiculite/'}>{isEnglish ? 'Vermiculite Pricing' : 'Tarifs vermiculite'}</a></li>
-        <li><a href={isEnglish ? '/en/privacy/' : '/privacy/'}>{isEnglish ? 'Privacy Policy' : 'Politique de confidentialité'}</a></li>
-        <li><a href={isEnglish ? '/en/site-map/' : '/plan-du-site/'}>{isEnglish ? 'Site Map' : 'Plan du site'}</a></li>
+        {resourceLinks.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
       </ul>
     </div>
   </div>
@@ -129,6 +161,11 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
   .footer-col a {
     color: white;
     transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-col span {
+    color: white;
     display: inline-block;
   }
 

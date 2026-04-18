@@ -2,64 +2,115 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import projectsData from '../data/projects.json';
 import { buildBreadcrumbSchema } from '../lib/seo';
+
+const [project1, project2, project3, project4, project5, project6] = projectsData.items;
+
+const albums = [
+  {
+    id: 'amiante',
+    title: 'Amiante',
+    intro: 'Vues de chantier liées à des matériaux anciens, à des vérifications de risque et à des zones préparées proprement avant la suite des travaux.',
+    photos: [
+      { src: project1.beforeImage, alt: project1.beforeAlt, title: 'Matériau suspect avant intervention', location: project1.location },
+      { src: project1.afterImage, alt: project1.afterAlt, title: 'Zone préparée après intervention', location: project1.location },
+      { src: project6.beforeImage, alt: project6.beforeAlt, title: 'Lecture du risque sur place', location: project6.location },
+      { src: project6.afterImage, alt: project6.afterAlt, title: 'Zone clarifiée pour la suite', location: project6.location }
+    ]
+  },
+  {
+    id: 'moisissure',
+    title: 'Moisissure',
+    intro: 'Exemples visuels liés à l’humidité, aux matériaux touchés et à la remise au propre d’une zone avant correction et reprise.',
+    photos: [
+      { src: project2.beforeImage, alt: project2.beforeAlt, title: 'Zone affectée par l’humidité', location: project2.location },
+      { src: project2.afterImage, alt: project2.afterAlt, title: 'Zone assainie et préparée', location: project2.location }
+    ]
+  },
+  {
+    id: 'vermiculite',
+    title: 'Vermiculite',
+    intro: 'Photos de zones où la vermiculite devait être retirée proprement avant réisolation ou avant la poursuite du chantier.',
+    photos: [
+      { src: project5.beforeImage, alt: project5.beforeAlt, title: 'Vermiculite visible avant travaux', location: project5.location },
+      { src: project5.afterImage, alt: project5.afterAlt, title: 'Zone nettoyée après retrait', location: project5.location }
+    ]
+  },
+  {
+    id: 'autres',
+    title: 'Autres interventions',
+    intro: 'Album plus large regroupant l’échantillonnage avant travaux et certaines zones préparées pour la démolition sélective.',
+    photos: [
+      { src: project3.beforeImage, alt: project3.beforeAlt, title: 'Matériaux à vérifier avant chantier', location: project3.location },
+      { src: project3.afterImage, alt: project3.afterAlt, title: 'Rapport et lecture du dossier', location: project3.location },
+      { src: project4.beforeImage, alt: project4.beforeAlt, title: 'Zone à ouvrir de façon ciblée', location: project4.location },
+      { src: project4.afterImage, alt: project4.afterAlt, title: 'Zone prête pour la suite', location: project4.location }
+    ]
+  }
+];
+
 const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Accueil', path: '/' },
   { name: 'Réalisations' }
 ]);
 ---
 
-<Layout title="Réalisations Demo Solution | Avant-après en décontamination" description="Réalisations Demo Solution en décontamination, vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa et Québec." canonicalPath="/realisations/" frPath="/realisations/" enPath="/en/realisations/" schemas={[breadcrumbs]}>
+<Layout
+  title="Réalisations Demo Solution | Album photo de nos interventions"
+  description="Album photo des interventions Demo Solution en amiante, moisissure, vermiculite et autres travaux préparatoires à Gatineau, Ottawa et Québec."
+  canonicalPath="/realisations/"
+  frPath="/realisations/"
+  enPath="/en/realisations/"
+  schemas={[breadcrumbs]}
+>
   <Header />
 
   <main>
     <section class="page-header">
       <div class="container">
-        <p class="eyebrow">Interventions complètes</p>
-        <h1>Nos Réalisations</h1>
-        <p>Exemples d’interventions réelles en décontamination et travaux préparatoires</p>
+        <p class="eyebrow">Galerie</p>
+        <h1>Réalisations</h1>
+        <p>Un album photo simple pour voir le type d’interventions que nous prenons en charge sur le terrain.</p>
       </div>
     </section>
 
-    <section class="realisations-section">
+    <section class="gallery-section">
       <div class="container">
         <div class="section-intro">
-          <h2>Avant-après et interventions réelles</h2>
-          <p>Ces réalisations montrent des exemples de travaux effectués sur des bâtiments résidentiels et commerciaux: décontamination, moisissures, enlèvement de vermiculite, échantillonnage et démolition sélective. Cette section renforce la preuve de travail et aide à situer le type d’intervention possible selon votre dossier.</p>
+          <h2>Albums photo par type de dossier</h2>
+          <p>Cette page montre des vues de chantiers et de zones traitées en amiante, moisissure, vermiculite et autres interventions utiles avant la suite des travaux.</p>
         </div>
-        <div class="projects-grid">
-          {projectsData.items.map((project) => (
-            <ProjectCard
-              id={project.id}
-              title={project.title}
-              location={project.location}
-              category={project.category}
-              beforeImage={project.beforeImage}
-              afterImage={project.afterImage}
-              beforeAlt={project.beforeAlt}
-              afterAlt={project.afterAlt}
-              description={project.description}
-            />
+
+        <nav class="album-nav" aria-label="Albums photo">
+          {albums.map((album) => (
+            <a href={`#${album.id}`}>{album.title}</a>
+          ))}
+        </nav>
+
+        <div class="album-list">
+          {albums.map((album, index) => (
+            <section id={album.id} class:list={['album-card', index % 2 === 1 && 'album-card--alt']}>
+              <div class="album-header">
+                <h2>{album.title}</h2>
+                <p>{album.intro}</p>
+              </div>
+              <div class="photo-grid">
+                {album.photos.map((photo) => (
+                  <article class="photo-card">
+                    <img src={photo.src} alt={photo.alt} loading="lazy" />
+                    <div class="photo-copy">
+                      <h3>{photo.title}</h3>
+                      <p>{photo.location}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       </div>
     </section>
-
-    <section class="seo-copy">
-      <div class="container seo-columns">
-        <div>
-          <h2>Pourquoi ces projets comptent</h2>
-          <p>Un avant-après aide à comprendre le type de problème traité, la nature des matériaux touchés et le niveau d’intervention requis selon le bâtiment. C’est aussi une bonne façon de voir la différence entre échantillonnage, décontamination et démolition préparatoire.</p>
-        </div>
-        <div>
-          <h2>Travaux fréquents en atelier</h2>
-          <p>Parmi les demandes les plus courantes, on retrouve l’amiante, la vermiculite, les moisissures, les matériaux suspects et les sections à retirer proprement avant la suite des travaux. Si votre situation ressemble à l’un de ces cas, nous pouvons vous orienter vers le bon service.</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <Footer />
@@ -100,14 +151,14 @@ const breadcrumbs = buildBreadcrumbSchema([
     color: #e7edf4;
   }
 
-  .realisations-section {
+  .gallery-section {
     padding: 4rem 0;
-    background: white;
+    background: #f4f6f8;
   }
 
   .section-intro {
-    max-width: 850px;
-    margin-bottom: 2rem;
+    max-width: 840px;
+    margin-bottom: 1.5rem;
   }
 
   .section-intro p {
@@ -115,26 +166,93 @@ const breadcrumbs = buildBreadcrumbSchema([
     color: var(--brand-muted);
   }
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+  .album-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
   }
 
-  .seo-copy {
-    padding: 0 0 4rem;
+  .album-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
     background: white;
+    border: 1px solid rgba(31, 58, 95, 0.12);
+    color: var(--brand-navy);
+    font-weight: 700;
   }
 
-  .seo-columns {
+  .album-nav a:hover {
+    text-decoration: none;
+    color: var(--brand-navy-dark);
+    border-color: rgba(242, 210, 27, 0.6);
+    background: #fff9e8;
+  }
+
+  .album-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .seo-columns p {
-    margin-top: 0.75rem;
+  .album-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 34px rgba(21, 38, 58, 0.08);
+  }
+
+  .album-card--alt {
+    background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+  }
+
+  .album-header {
+    max-width: 760px;
+    margin-bottom: 1.25rem;
+  }
+
+  .album-header p {
+    margin-top: 0.65rem;
     color: var(--brand-muted);
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .photo-card {
+    overflow: hidden;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid rgba(21, 38, 58, 0.08);
+    box-shadow: 0 10px 24px rgba(21, 38, 58, 0.06);
+  }
+
+  .photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .photo-copy {
+    padding: 0.95rem 1rem 1.05rem;
+  }
+
+  .photo-copy h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    color: var(--brand-navy);
+  }
+
+  .photo-copy p {
+    margin: 0;
+    color: var(--brand-muted);
+    font-size: 0.95rem;
   }
 
   @media (max-width: 768px) {
@@ -147,17 +265,8 @@ const breadcrumbs = buildBreadcrumbSchema([
       font-size: 2rem;
     }
 
-    .page-header p {
-      font-size: 1rem;
-    }
-
-    .realisations-section {
+    .gallery-section {
       padding: 2rem 0;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
     }
   }
 </style>
