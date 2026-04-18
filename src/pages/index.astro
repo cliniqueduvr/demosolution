@@ -24,6 +24,13 @@ const meta = {
   title: homePage.metaTitle,
   description: homePage.metaDescription
 };
+
+const heroLinks = [
+  { label: 'Amiante', href: '/amiante/' },
+  { label: 'Vermiculite', href: '/services/enlevement-vermiculite/' },
+  { label: 'Moisissure', href: '/moisissure/' },
+  { label: 'Mérule pleureuse', href: '/moisissure/' }
+];
 ---
 
 <Layout title={meta.title} description={meta.description} canonicalPath="/" frPath="/" enPath="/en/" schemas={schemas}>
@@ -34,7 +41,14 @@ const meta = {
       <div class="hero-content">
         <img class="hero-logo" src={siteSettings.brandImage} alt={homePage.hero.logoAlt} />
         <h1>{homePage.hero.title}</h1>
-        <p class="hero-tagline" set:html={homePage.hero.tagline} />
+        <p class="hero-tagline" aria-label="Accès rapides">
+          {heroLinks.map((item, index) => (
+            <>
+              <a href={item.href} class="hero-tagline-link">{item.label}</a>
+              {index < heroLinks.length - 1 && <span class="hero-tagline-separator">|</span>}
+            </>
+          ))}
+        </p>
       </div>
     </section>
 
@@ -200,6 +214,25 @@ const meta = {
     letter-spacing: 2px;
     margin-top: 1rem;
     line-height: 1.5;
+  }
+
+  .hero-tagline-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .hero-tagline-link:hover {
+    color: var(--brand-gold);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .hero-tagline-separator {
+    display: inline-block;
+    margin: 0 0.45rem;
+    color: rgba(255, 255, 255, 0.85);
   }
 
   .hero-content h1 {
