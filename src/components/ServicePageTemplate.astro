@@ -149,38 +149,6 @@ const serviceAreas = isEnglish
         </div>
       </aside>
 
-      {service.pricing && service.pricing.layout === 'split' && service.slug === 'echantillonnage' && (
-        <section class="content-card pricing-card-compact">
-          {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
-            <div class="pricing-self-panel">
-              <div class="pricing-split-panel pricing-split-third pricing-split-third-only">
-                {service.pricing.thirdTitle && <h3>{service.pricing.thirdTitle}</h3>}
-                {service.pricing.thirdIntro && <p class="section-copy">{service.pricing.thirdIntro}</p>}
-                {service.pricing.thirdItems && service.pricing.thirdItems.length > 0 && (
-                  <ol class="pricing-third-list">
-                    {service.pricing.thirdItems.map((item) => (
-                      <li>{item}</li>
-                    ))}
-                  </ol>
-                )}
-                {service.pricing.thirdLinkLabel && service.pricing.thirdLinkHref && (
-                  <a class="pricing-third-link" href={service.pricing.thirdLinkHref} target="_blank" rel="noopener">
-                    {service.pricing.thirdLinkLabel}
-                  </a>
-                )}
-                {service.pricing.thirdNotes && service.pricing.thirdNotes.length > 0 && (
-                  <div class="pricing-third-notes">
-                    {service.pricing.thirdNotes.map((note) => (
-                      <p>{note}</p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-        </section>
-      )}
-
       <article class="service-main">
 
         {service.pricing && service.pricing.layout !== 'split' && (
