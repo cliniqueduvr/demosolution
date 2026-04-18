@@ -41,14 +41,19 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
       </ul>
     </div>
     <div class="footer-col">
+      <h4>{isEnglish ? 'Cities Served' : 'Villes desservies'}</h4>
+      <ul>
+        <li><a href="/gatineau/">Gatineau</a></li>
+        <li><a href="/outaouais/">{isEnglish ? 'Outaouais (FR)' : 'Outaouais'}</a></li>
+        <li><a href="/ville-de-quebec/">{isEnglish ? 'Quebec City (FR)' : 'Ville de Québec'}</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
       <h4>{isEnglish ? 'Resources' : 'Ressources'}</h4>
       <ul class="footer-link-list">
         <li><a href="/amiante/">{isEnglish ? 'Asbestos Guide' : 'Guide amiante'}</a></li>
         <li><a href="/moisissure/">{isEnglish ? 'Mould Guide (FR)' : 'Guide moisissure'}</a></li>
         <li><a href="/inspection-qualite-air/">{isEnglish ? 'Air Quality Guide (FR)' : "Inspection qualité de l'air"}</a></li>
-        <li><a href="/outaouais/">{isEnglish ? 'Outaouais page (FR)' : 'Outaouais'}</a></li>
-        <li><a href="/gatineau/">{isEnglish ? 'Gatineau page (FR)' : 'Gatineau'}</a></li>
-        <li><a href="/ville-de-quebec/">{isEnglish ? 'Quebec City page (FR)' : 'Ville de Québec'}</a></li>
         <li><a href={isEnglish ? '/en/faq/' : '/faq/'}>FAQ</a></li>
         <li><a href={isEnglish ? '/en/mould-pricing/' : '/tarifs-moisissure/'}>{isEnglish ? 'Mould Pricing' : 'Tarifs moisissure'}</a></li>
         <li><a href={isEnglish ? '/en/vermiculite-pricing/' : '/tarifs-vermiculite/'}>{isEnglish ? 'Vermiculite Pricing' : 'Tarifs vermiculite'}</a></li>
