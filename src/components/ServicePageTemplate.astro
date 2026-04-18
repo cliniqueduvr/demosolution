@@ -203,9 +203,7 @@ const serviceAreaHref = (area: string) => {
           <a class="side-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
           <a class="side-link" href={quoteHref}>{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
         </div>
-      </aside>
 
-      <section class="service-support-grid">
         <div class="side-card">
           <h3>{isEnglish ? 'Other services' : 'Autres services'}</h3>
           <nav class="service-nav" aria-label={isEnglish ? 'Other services' : 'Autres services'}>
@@ -238,7 +236,7 @@ const serviceAreaHref = (area: string) => {
             ))}
           </div>
         </div>
-      </section>
+      </aside>
 
     </div>
   </section>
@@ -403,14 +401,6 @@ const serviceAreaHref = (area: string) => {
   .service-side {
     display: grid;
     gap: 1.5rem;
-  }
-
-  .service-support-grid {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 1.5rem;
-    align-items: start;
   }
 
   .content-card,
@@ -896,10 +886,6 @@ const serviceAreaHref = (area: string) => {
     .hero-grid,
     .body-grid,
     .warning-band {
-      grid-template-columns: 1fr;
-    }
-
-    .service-support-grid {
       grid-template-columns: 1fr;
     }
 
