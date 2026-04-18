@@ -86,18 +86,31 @@ const serviceMenuItems = (isEnglish ? servicePagesEn.items : servicePagesFr.item
     href: isEnglish ? `/en/services/${service.slug}/` : `/services/${service.slug}/`,
     active: currentPath === (isEnglish ? `/en/services/${service.slug}/` : `/services/${service.slug}/`)
   }));
+const resourceMenuItems = isEnglish
+  ? [
+      { label: 'Asbestos Guide', href: '/amiante/', active: currentPath === '/amiante/' },
+      { label: 'Mould Guide', href: '/moisissure/', active: currentPath === '/moisissure/' },
+      { label: 'Air Quality', href: '/inspection-qualite-air/', active: currentPath === '/inspection-qualite-air/' },
+      { label: 'FAQ', href: '/en/faq/', active: currentPath === '/en/faq/' }
+    ]
+  : [
+      { label: 'Amiante', href: '/amiante/', active: currentPath === '/amiante/' },
+      { label: 'Moisissure', href: '/moisissure/', active: currentPath === '/moisissure/' },
+      { label: "Qualité de l’air", href: '/inspection-qualite-air/', active: currentPath === '/inspection-qualite-air/' },
+      { label: 'FAQ', href: '/faq/', active: currentPath === '/faq/' }
+    ];
 const navItems = isEnglish
   ? [
       { label: 'Home', href: '/en/' },
       { label: 'Services', href: '/en/services/' },
-      { label: 'FAQ', href: '/en/faq/' },
+      { label: 'Resources', href: '/inspection-qualite-air/' },
       { label: 'Quote', href: '/en/contact/' },
       { label: 'About', href: '/en/about/' }
     ]
   : [
       { label: 'Accueil', href: '/' },
       { label: 'Services', href: '/services/' },
-      { label: 'FAQ', href: '/faq/' },
+      { label: 'Ressources', href: '/inspection-qualite-air/' },
       { label: 'Soumission', href: '/contact/' },
       { label: 'À Propos', href: '/about/' }
     ];
@@ -142,7 +155,7 @@ const navItems = isEnglish
       <div class="nav-panel" id="site-nav" data-nav-panel>
         <ul class="nav-menu">
           {navItems.map(item => (
-            item.href === (isEnglish ? '/en/services/' : '/services/')
+            item.href === (isEnglish ? '/en/services/' : '/services/') || item.label === (isEnglish ? 'Resources' : 'Ressources')
               ? (
                 <li class="nav-item-with-children">
                   <div class="nav-link-row">
@@ -164,7 +177,7 @@ const navItems = isEnglish
                     </button>
                   </div>
                   <ul class="submenu" data-submenu>
-                    {serviceMenuItems.map((serviceItem) => (
+                    {(item.href === (isEnglish ? '/en/services/' : '/services/') ? serviceMenuItems : resourceMenuItems).map((serviceItem) => (
                       <li>
                         <a
                           href={serviceItem.href}
