@@ -914,7 +914,8 @@ const serviceAreaHref = (area: string) => {
     }
 
     .lead {
-      font-size: 1.05rem;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .intro {
@@ -930,24 +931,24 @@ const serviceAreaHref = (area: string) => {
     .side-card,
     .hero-card {
       border-radius: 18px;
-      padding: 1.15rem;
+      padding: 1rem;
     }
 
     .service-main,
     .service-side {
-      gap: 1rem;
+      gap: 0.85rem;
     }
 
     .hero-badges {
       gap: 0.55rem;
-      margin-top: 1.2rem;
+      margin-top: 1rem;
     }
 
     .hero-badges span {
-      min-height: 40px;
-      padding: 0.6rem 0.8rem;
+      min-height: 36px;
+      padding: 0.5rem 0.72rem;
       border-radius: 12px;
-      font-size: 0.92rem;
+      font-size: 0.86rem;
     }
 
     .service-nav {
@@ -968,6 +969,14 @@ const serviceAreaHref = (area: string) => {
       gap: 0.75rem;
     }
 
+    .why-card,
+    .link-card,
+    .service-area-side-card,
+    .price-item {
+      border-radius: 14px;
+      padding: 0.9rem;
+    }
+
     .pricing-split-grid,
     .pricing-grid,
     .link-card-grid {
@@ -985,6 +994,10 @@ const serviceAreaHref = (area: string) => {
       border-radius: 18px;
     }
 
+    .warning-band::before {
+      height: 12px;
+    }
+
     .warning-icon {
       width: 3.2rem;
       height: 3.2rem;
@@ -994,6 +1007,12 @@ const serviceAreaHref = (area: string) => {
 
     .price-item-value {
       font-size: 1.5rem;
+    }
+
+    .content-card h2,
+    .side-card h3,
+    .faq-item h3 {
+      line-height: 1.1;
     }
   }
 </style>

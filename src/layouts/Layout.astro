@@ -273,30 +273,33 @@ const hasGoogleAds = googleAdsId.length > 0;
 
       @media (max-width: 768px) {
         body {
-          padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+          padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px));
         }
 
         .mobile-action-bar {
           position: fixed;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          left: 0.75rem;
+          right: 0.75rem;
+          bottom: 0.75rem;
           z-index: 120;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          background: rgba(255, 255, 255, 0.96);
+          background: rgba(255, 255, 255, 0.92);
           backdrop-filter: blur(10px);
           box-shadow: 0 -12px 30px rgba(18, 39, 61, 0.18);
-          padding-bottom: env(safe-area-inset-bottom, 0px);
+          padding: 0.35rem;
+          padding-bottom: calc(0.35rem + env(safe-area-inset-bottom, 0px));
+          border-radius: 18px;
         }
 
         .mobile-action {
-          min-height: 60px;
+          min-height: 52px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
-          font-size: 1.2rem;
+          font-size: 1.05rem;
+          border-radius: 14px;
         }
 
         .mobile-action:hover {
@@ -304,11 +307,11 @@ const hasGoogleAds = googleAdsId.length > 0;
         }
 
         .mobile-action-email {
-          background: #cb5a46;
+          background: var(--brand-navy-dark);
         }
 
         .mobile-action-phone {
-          background: #5fcf83;
+          background: var(--brand-green);
         }
       }
     </style>
