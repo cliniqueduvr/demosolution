@@ -105,51 +105,6 @@ const serviceAreas = isEnglish
             </ul>
           </section>
         )}
-      </article>
-
-      <aside class="service-side">
-        <div class="side-card sticky">
-          <h3>{isEnglish ? 'Need a quick opinion?' : "Besoin d'un avis rapide?"}</h3>
-          <p>{isEnglish ? 'We can point you toward the right intervention based on the actual condition of the property.' : "On peut vous orienter vers la bonne intervention selon l'état réel de la propriété."}</p>
-          <a class="side-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-          <a class="side-link" href={quoteHref}>{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
-        </div>
-
-        <div class="side-card">
-          <h3>{isEnglish ? 'Other services' : 'Autres services'}</h3>
-          <nav class="service-nav" aria-label={isEnglish ? 'Other services' : 'Autres services'}>
-            {otherServices.map((item) => (
-              <a href={serviceHref(item.slug)}>
-                <i class={item.icon}></i>
-                <span>{item.navLabel}</span>
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        <div class="side-card">
-          <h3>{isEnglish ? 'Areas served' : 'Zones desservies'}</h3>
-          <p class="side-copy">
-            {isEnglish
-              ? 'This service is offered from Gatineau and may also extend to Ottawa and Quebec City.'
-              : 'Ce service est offert à partir de Gatineau et peut aussi inclure Ottawa et Québec.'}
-          </p>
-          <div class="service-area-side-list">
-            {serviceAreas.map((area) => (
-              <article class="service-area-side-card">
-                <h4>{area}</h4>
-                <p>
-                  {isEnglish
-                    ? `Support available for ${service.navLabel.toLowerCase()} requests in and around ${area}.`
-                    : `Accompagnement offert pour les demandes de ${service.navLabel.toLowerCase()} à ${area} et dans les environs.`}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </aside>
-
-      <article class="service-main">
 
         {service.pricing && service.pricing.layout !== 'split' && (
           <section class="content-card pricing-card">
@@ -227,6 +182,48 @@ const serviceAreas = isEnglish
           </div>
         </section>
       </article>
+
+      <aside class="service-side">
+        <div class="side-card sticky">
+          <h3>{isEnglish ? 'Need a quick opinion?' : "Besoin d'un avis rapide?"}</h3>
+          <p>{isEnglish ? 'We can point you toward the right intervention based on the actual condition of the property.' : "On peut vous orienter vers la bonne intervention selon l'état réel de la propriété."}</p>
+          <a class="side-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
+          <a class="side-link" href={quoteHref}>{isEnglish ? 'Request a quote' : 'Demander une soumission'}</a>
+        </div>
+
+        <div class="side-card">
+          <h3>{isEnglish ? 'Other services' : 'Autres services'}</h3>
+          <nav class="service-nav" aria-label={isEnglish ? 'Other services' : 'Autres services'}>
+            {otherServices.map((item) => (
+              <a href={serviceHref(item.slug)}>
+                <i class={item.icon}></i>
+                <span>{item.navLabel}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <div class="side-card">
+          <h3>{isEnglish ? 'Areas served' : 'Zones desservies'}</h3>
+          <p class="side-copy">
+            {isEnglish
+              ? 'This service is offered from Gatineau and may also extend to Ottawa and Quebec City.'
+              : 'Ce service est offert à partir de Gatineau et peut aussi inclure Ottawa et Québec.'}
+          </p>
+          <div class="service-area-side-list">
+            {serviceAreas.map((area) => (
+              <article class="service-area-side-card">
+                <h4>{area}</h4>
+                <p>
+                  {isEnglish
+                    ? `Support available for ${service.navLabel.toLowerCase()} requests in and around ${area}.`
+                    : `Accompagnement offert pour les demandes de ${service.navLabel.toLowerCase()} à ${area} et dans les environs.`}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </aside>
 
     </div>
   </section>
