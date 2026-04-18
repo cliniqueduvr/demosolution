@@ -73,7 +73,7 @@ const breadcrumbs = buildBreadcrumbSchema([
                 <a class="service-card" href={`/en/services/${service.slug}/`}>
                   <p class="card-eyebrow">{service.eyebrow}</p>
                   <h2 class="card-title">{service.navLabel}</h2>
-                  <p class="card-copy">{service.lead}</p>
+                  <p class="card-copy" set:html={service.lead}></p>
                   <span>View service</span>
                 </a>
               ))}
