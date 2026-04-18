@@ -274,6 +274,14 @@ const breadcrumbs = buildBreadcrumbSchema([
     margin-bottom: 0.85rem;
   }
 
+  .hero-card ul {
+    padding-left: 1.25rem;
+  }
+
+  .hero-card li {
+    margin: 0.45rem 0;
+  }
+
   .local-body {
     padding: 0 0 4.5rem;
   }
@@ -313,8 +321,18 @@ const breadcrumbs = buildBreadcrumbSchema([
   }
 
   .cta-card {
-    background: linear-gradient(180deg, #24456c 0%, #1d395d 100%);
+    position: sticky;
+    top: 7rem;
+    background: var(--brand-navy-dark);
     color: white;
+  }
+
+  .cta-card h2 {
+    color: white;
+  }
+
+  .cta-card p {
+    color: #dbe4ee;
   }
 
   .phone-button,
@@ -328,14 +346,26 @@ const breadcrumbs = buildBreadcrumbSchema([
   }
 
   .phone-button {
-    margin: 1rem 0 0.75rem;
+    margin: 0.4rem 0 0.8rem;
     background: var(--brand-gold);
     color: var(--brand-navy-dark);
+    border: 2px solid var(--brand-gold);
+  }
+
+  .phone-button:hover {
+    text-decoration: none;
+    background: #e1c317;
+    border-color: #e1c317;
   }
 
   .contact-link {
-    background: rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.12);
     color: white;
+  }
+
+  .contact-link:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
   }
 
   .service-nav,
@@ -394,6 +424,10 @@ const breadcrumbs = buildBreadcrumbSchema([
     .local-layout,
     .info-grid {
       grid-template-columns: 1fr;
+    }
+
+    .cta-card {
+      position: static;
     }
   }
 </style>
