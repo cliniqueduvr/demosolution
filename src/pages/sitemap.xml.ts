@@ -37,6 +37,7 @@ const staticEntries: UrlEntry[] = [
   { path: '/about/', lastmod: defaultLastmod, alternatePaths: ['/en/about/'] },
   { path: '/services/', lastmod: defaultLastmod, alternatePaths: ['/en/services/'] },
   { path: '/contact/', lastmod: defaultLastmod, alternatePaths: ['/en/contact/'] },
+  { path: '/soumission/', lastmod: defaultLastmod, alternatePaths: ['/en/contact/'] },
   { path: '/amiante/', lastmod: defaultLastmod },
   { path: '/moisissure/', lastmod: defaultLastmod },
   { path: '/inspection-qualite-air/', lastmod: defaultLastmod },

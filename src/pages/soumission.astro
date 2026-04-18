@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactMap from '../components/ContactMap.astro';
+import { buildBreadcrumbSchema, buildContactPageSchema, buildWebSiteSchema } from '../lib/seo';
+import siteSettings from '../data/site-settings.json';
+import contactPage from '../data/contact-page.json';
+
+const isFormConfigured = Boolean(siteSettings.email?.trim());
+const successUrl = '/merci.html?sent=1';
+const formName = 'contact-fr-v2';
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Soumission' }
+]);
+const schemas = [
+  buildWebSiteSchema(),
+  buildContactPageSchema({
+    name: 'Soumission Demo Solution',
+    description: "Demandez une soumission pour un projet d'amiante, de vermiculite, de moisissure, d'échantillonnage ou de décontamination à Gatineau, Ottawa et Québec.",
+    path: '/soumission/'
+  }),
+  breadcrumbs
+];
+---
+
+<Layout
+  title="Soumission Demo Solution | Amiante, vermiculite et moisissure"
+  description="Demandez une soumission pour un projet d'amiante, de vermiculite, de moisissure, d'échantillonnage ou de décontamination à Gatineau, Ottawa et Québec."
+  canonicalPath="/soumission/"
+  frPath="/soumission/"
+  enPath="/en/contact/"
+  schemas={schemas}
+>
+  <Header />
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="eyebrow">Soumission</p>
+        <h1>Demandez une soumission claire avant les travaux</h1>
+        <p>
+          Décrivez votre situation et nous pourrons mieux orienter la suite:
+          <strong> amiante</strong>, <strong>vermiculite</strong>,
+          <strong> moisissure</strong>, <strong>échantillonnage</strong>,
+          <strong> air amiante</strong> ou <strong>décontamination ciblée</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="reassurance-band">
+      <div class="container reassurance-grid">
+        <article class="reassurance-card">
+          <h2>Évaluation rapide</h2>
+          <p>On vous aide à cadrer la bonne prochaine étape avant d’ouvrir, retirer ou démolir.</p>
+        </article>
+        <article class="reassurance-card">
+          <h2>Service local</h2>
+          <p>Gatineau, Ottawa, Outaouais et Québec selon le type de dossier et la portée réelle.</p>
+        </article>
+        <article class="reassurance-card">
+          <h2>Intervention conforme</h2>
+          <p>Lecture du risque, séquence claire et approche adaptée au chantier.</p>
+        </article>
+        <article class="reassurance-card">
+          <h2>Assurance pollution</h2>
+          <p>Entreprise assurée pour les dossiers de contamination et de retrait.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-container">
+      <div class="container contact-layout">
+        <div class="contact-form-section">
+          {!isFormConfigured && (
+            <p class="intro-copy">{contactPage.formSection.unconfiguredNote}</p>
+          )}
+          <form name={formName} action={isFormConfigured ? successUrl : undefined} method="POST" enctype="multipart/form-data" netlify data-netlify="true" netlify-honeypot="bot-field" data-netlify-form>
+            <input type="hidden" name="form-name" value={formName} />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="Page" value="Soumission FR" />
+            <input type="hidden" name="Services demandés" data-services-output />
+            <input type="hidden" name="Type d’intervention" data-worktype-output />
+            <div class="form-group">
+              <label for="name">{contactPage.formSection.fields.name}</label>
+              <input type="text" id="name" name="Nom complet" required />
+            </div>
+            <div class="form-group">
+              <label for="email">{contactPage.formSection.fields.email}</label>
+              <input type="email" id="email" name="Courriel" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">{contactPage.formSection.fields.phone}</label>
+              <input type="tel" id="phone" name="Téléphone" />
+            </div>
+            <fieldset class="form-group form-fieldset">
+              <legend>{contactPage.formSection.fields.services}</legend>
+              <div class="checkbox-grid">
+                {contactPage.formSection.fields.serviceOptions.map((option, index) => (
+                  <label class="check-option" for={`service-${index}`}>
+                    <input type="checkbox" id={`service-${index}`} value={option} data-service-option />
+                    <span>{option}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <fieldset class="form-group form-fieldset">
+              <legend>{contactPage.formSection.fields.workType}</legend>
+              <div class="checkbox-grid checkbox-grid--two">
+                <label class="check-option" for="workshop">
+                  <input type="radio" id="workshop" name="workTypeChoiceQuoteFr" value={contactPage.formSection.fields.workshopOption} data-worktype-option />
+                  <span>{contactPage.formSection.fields.workshopOption}</span>
+                </label>
+                <label class="check-option" for="mobile">
+                  <input type="radio" id="mobile" name="workTypeChoiceQuoteFr" value={contactPage.formSection.fields.mobileOption} data-worktype-option />
+                  <span>{contactPage.formSection.fields.mobileOption}</span>
+                </label>
+              </div>
+            </fieldset>
+            <div class="form-group">
+              <label for="work-address">{contactPage.formSection.fields.workAddress}</label>
+              <input type="text" id="work-address" name="Adresse des travaux" />
+            </div>
+            <div class="form-group">
+              <label for="vehicle-info">{contactPage.formSection.fields.vehicleInfo}</label>
+              <input type="text" id="vehicle-info" name="Type de bâtiment ou de projet" />
+            </div>
+            <div class="form-group">
+              <label for="serial-number">{contactPage.formSection.fields.serialNumber}</label>
+              <input type="text" id="serial-number" name="Détails complémentaires" />
+            </div>
+            <div class="form-group">
+              <label for="attachments">{contactPage.formSection.fields.attachments}</label>
+              <input type="file" id="attachments" name="Pièce jointe" multiple accept="image/*,.pdf,.doc,.docx" />
+            </div>
+            <div class="form-group">
+              <label for="message">{contactPage.formSection.fields.message}</label>
+              <textarea id="message" name="Message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn" disabled={!isFormConfigured}>Envoyer la demande</button>
+          </form>
+        </div>
+
+        <div class="contact-info-section">
+          <h2>Ce qui aide à accélérer l’évaluation</h2>
+          <div class="info-block">
+            <h3>Photos ou rapport</h3>
+            <p>Si vous avez des photos, un rapport de laboratoire, une note d’inspection ou des détails de chantier, joignez-les.</p>
+          </div>
+          <div class="info-block">
+            <h3>Contexte du projet</h3>
+            <p>Indiquez si c’est avant rénovation, avant démolition, après infiltration, ou pour un doute sur l’air, la vermiculite ou la moisissure.</p>
+          </div>
+          <div class="info-block">
+            <h3>Zones desservies</h3>
+            <p>Gatineau, Ottawa, Outaouais et Québec selon la portée du mandat et la logistique du chantier.</p>
+          </div>
+          <div class="info-block cta">
+            <p><strong>Téléphone:</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a><br /><strong>Courriel:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <ContactMap title={contactPage.mapTitle} />
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.querySelector('form[data-netlify-form][name="contact-fr-v2"]');
+
+  if (form instanceof HTMLFormElement) {
+    const syncFields = () => {
+      const servicesOutput = form.querySelector('[data-services-output]');
+      const workTypeOutput = form.querySelector('[data-worktype-output]');
+      const selectedServices = Array.from(form.querySelectorAll('[data-service-option]:checked'))
+        .map((input) => input instanceof HTMLInputElement ? input.value : '')
+        .filter(Boolean);
+      const selectedWorkType = form.querySelector('[data-worktype-option]:checked');
+
+      if (servicesOutput instanceof HTMLInputElement) {
+        servicesOutput.value = selectedServices.join(', ');
+      }
+
+      if (workTypeOutput instanceof HTMLInputElement && selectedWorkType instanceof HTMLInputElement) {
+        workTypeOutput.value = selectedWorkType.value;
+      }
+    };
+
+    form.addEventListener('change', syncFields);
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      syncFields();
+
+      const submitter = form.querySelector('button[type="submit"]');
+      if (submitter instanceof HTMLButtonElement) {
+        submitter.disabled = true;
+      }
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form) as any).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error(`Submission failed with ${response.status}`);
+        }
+
+        window.location.href = '/merci.html?sent=1';
+      } catch (error) {
+        console.error(error);
+        form.submit();
+      } finally {
+        if (submitter instanceof HTMLButtonElement) {
+          submitter.disabled = false;
+        }
+      }
+    });
+  }
+</script>
+
+<style>
+  .page-header {
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+    color: white;
+    padding: 4.5rem 0 3.8rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    max-width: 14ch;
+  }
+
+  .page-header p:last-child {
+    max-width: 66ch;
+    color: #e7edf4;
+  }
+
+  .reassurance-band {
+    padding: 3rem 0 0;
+    background: white;
+  }
+
+  .reassurance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .reassurance-card {
+    background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.35);
+    border-radius: 20px;
+    padding: 1.25rem;
+    box-shadow: 0 14px 28px rgba(20, 36, 55, 0.06);
+  }
+
+  .reassurance-card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .reassurance-card p {
+    color: var(--brand-muted);
+    margin: 0;
+  }
+
+  .contact-container {
+    padding: 3rem 0 4rem;
+    background: white;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .contact-form-section,
+  .contact-info-section {
+    background: #f7f9fb;
+    border-radius: 22px;
+    padding: 1.75rem;
+    box-shadow: 0 16px 34px rgba(24, 40, 61, 0.08);
+  }
+
+  .contact-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .checkbox-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .check-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    background: white;
+  }
+
+  .contact-form-section input,
+  .contact-form-section textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    background: white;
+  }
+
+  .btn {
+    margin-top: 0.5rem;
+  }
+
+  .info-block {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(18, 52, 86, 0.08);
+  }
+
+  .info-block:first-of-type {
+    padding-top: 0;
+  }
+
+  .info-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .info-block p {
+    color: var(--brand-muted);
+  }
+
+  .info-block.cta a {
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .reassurance-grid,
+    .contact-layout,
+    .checkbox-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+      font-size: 2.25rem;
+      max-width: none;
+    }
+  }
+</style>

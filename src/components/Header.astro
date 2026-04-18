@@ -21,6 +21,7 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
     '/about/': '/en/about/',
     '/choisir-service/': '/en/choose-service/',
     '/contact/': '/en/contact/',
+    '/soumission/': '/en/contact/',
     '/faq/': '/en/faq/',
     '/plan-du-site/': '/en/site-map/',
     '/privacy/': '/en/privacy/',
@@ -66,7 +67,7 @@ function getAlternatePath(pathname: string, targetLang: 'fr' | 'en') {
 const homeHref = isEnglish ? '/en/' : '/';
 const frHref = getAlternatePath(currentPath, 'fr');
 const enHref = getAlternatePath(currentPath, 'en');
-const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
+const quoteHref = isEnglish ? '/en/contact/' : '/soumission/';
 const smsHref = `sms:${siteSettings.phone.href}`;
 const facebookUrl = siteSettings.facebookUrl?.trim();
 const tiktokUrl = siteSettings.tiktokUrl?.trim();
@@ -112,7 +113,7 @@ const navItems = isEnglish
       { label: 'À Propos', href: '/about/' },
       { label: 'Services', href: '/services/' },
       { label: 'Ressources', href: '/inspection-qualite-air/' },
-      { label: 'Soumission', href: '/contact/' },
+      { label: 'Soumission', href: '/soumission/' },
     ];
 ---
 

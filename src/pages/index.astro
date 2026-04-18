@@ -53,6 +53,29 @@ const meta = {
       </div>
     </section>
 
+    <section class="decision-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Trois points d’entrée clairs pour commencer</h2>
+          <p>Si vous cherchez surtout à savoir quoi faire ensuite, commencez ici.</p>
+        </div>
+        <div class="decision-grid">
+          <a href="/services/enlevement-vermiculite/" class="decision-card">
+            <h3>Amiante et vermiculite</h3>
+            <p>Matériaux anciens, isolants suspects, entretoit, ouverture avant travaux et risque à confirmer.</p>
+          </a>
+          <a href="/services/moisissure/" class="decision-card">
+            <h3>Moisissure et qualité de l’air</h3>
+            <p>Humidité, spores, mérule, odeur persistante, air à vérifier et contamination fongique.</p>
+          </a>
+          <a href="/services/echantillonnage/" class="decision-card">
+            <h3>Échantillonnage avant travaux</h3>
+            <p>Air amiante, matériaux, surfaces ou lecture du risque avant rénovation, retrait ou démolition.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- SERVICES OVERVIEW -->
     <section class="services-overview">
       <div class="container">
@@ -65,6 +88,54 @@ const meta = {
               {'subLabel' in item && item.subLabel && <small class="service-sub-label">{item.subLabel}</small>}
             </a>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip">
+      <div class="container proof-grid">
+        <article class="proof-card">
+          <h3>Service local</h3>
+          <p>Gatineau, Ottawa, Outaouais et Québec selon le projet.</p>
+        </article>
+        <article class="proof-card">
+          <h3>Assurance pollution</h3>
+          <p>Approche assurée pour les dossiers de contamination et de retrait.</p>
+        </article>
+        <article class="proof-card">
+          <h3>Avant travaux</h3>
+          <p>Lecture claire du risque avant rénovation, démolition ou réouverture d’une zone.</p>
+        </article>
+        <article class="proof-card">
+          <h3>Depuis {siteSettings.sinceYear}</h3>
+          <p>Interventions structurées pour résidentiel et commercial.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="local-links-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pages locales utiles</h2>
+          <p>Pour mieux cadrer un projet selon la ville et le contexte réel du chantier.</p>
+        </div>
+        <div class="local-links-grid">
+          <a href="/gatineau/" class="local-link-card">
+            <h3>Gatineau</h3>
+            <p>Amiante, moisissure, vermiculite et échantillonnage à Gatineau et en périphérie.</p>
+          </a>
+          <a href="/ottawa/" class="local-link-card">
+            <h3>Ottawa</h3>
+            <p>Cadre Ontario, air amiante, catégories Type 1, 2 et 3 et lecture locale du risque.</p>
+          </a>
+          <a href="/outaouais/" class="local-link-card">
+            <h3>Outaouais</h3>
+            <p>Couverture régionale plus large pour les municipalités autour de Gatineau.</p>
+          </a>
+          <a href="/ville-de-quebec/" class="local-link-card">
+            <h3>Ville de Québec</h3>
+            <p>Décontamination, échantillonnage et préparation avant travaux dans la région de Québec.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -237,6 +308,60 @@ const meta = {
   .services-overview {
     padding: 4rem 0;
     background: var(--brand-surface);
+  }
+
+  .decision-section,
+  .proof-strip,
+  .local-links-section {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .proof-strip {
+    background: #f4f6f8;
+  }
+
+  .section-head {
+    margin-bottom: 1.35rem;
+  }
+
+  .section-head p {
+    color: var(--brand-muted);
+    margin-top: 0.45rem;
+  }
+
+  .decision-grid,
+  .proof-grid,
+  .local-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .decision-card,
+  .proof-card,
+  .local-link-card {
+    display: block;
+    background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.35);
+    border-radius: 20px;
+    padding: 1.35rem;
+    box-shadow: 0 14px 28px rgba(20, 36, 55, 0.06);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .decision-card h3,
+  .proof-card h3,
+  .local-link-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .decision-card p,
+  .proof-card p,
+  .local-link-card p {
+    color: var(--brand-muted);
+    margin: 0;
   }
 
   .seo-copy {
@@ -441,7 +566,10 @@ const meta = {
     }
 
     .intro-section,
+    .decision-section,
     .services-overview,
+    .proof-strip,
+    .local-links-section,
     .seo-copy,
     .contact-section,
     .reviews-section {
