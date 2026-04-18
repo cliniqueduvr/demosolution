@@ -128,6 +128,14 @@ const tiktokUrl = siteSettings.tiktokUrl?.trim();
 
   .footer-col a {
     color: white;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-col a:hover {
+    color: var(--brand-gold);
+    text-decoration: none;
+    transform: translateX(2px);
   }
 
   .footer-legal {
