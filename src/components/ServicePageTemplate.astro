@@ -15,17 +15,19 @@ const contactHref = isEnglish ? '/en/contact/' : '/contact/';
 const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
 const serviceHref = (slug: string) => isEnglish ? `/en/services/${slug}/` : `/services/${slug}/`;
 const serviceAreas = isEnglish
-  ? ['Gatineau', 'Ottawa', 'Quebec City']
-  : ['Gatineau', 'Ottawa', 'Québec'];
+  ? ['Gatineau', 'Outaouais', 'Ottawa', 'Quebec City']
+  : ['Gatineau', 'Outaouais', 'Ottawa', 'Québec'];
 const serviceAreaHref = (area: string) => {
   if (isEnglish) {
     if (area === 'Gatineau') return '/gatineau/';
+    if (area === 'Outaouais') return '/outaouais/';
     if (area === 'Ottawa') return '/ottawa/';
     if (area === 'Quebec City') return '/ville-de-quebec/';
     return '/contact/';
   }
 
   if (area === 'Gatineau') return '/gatineau/';
+  if (area === 'Outaouais') return '/outaouais/';
   if (area === 'Ottawa') return '/ottawa/';
   if (area === 'Québec') return '/ville-de-quebec/';
   return '/contact/';

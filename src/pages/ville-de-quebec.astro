@@ -12,9 +12,10 @@ const serviceLinks = [
   { href: '/services/echantillonnage/', label: 'Échantillonnage', icon: 'fas fa-microscope' }
 ];
 
-const serviceAreas = ['Gatineau', 'Ottawa', 'Québec'];
+const serviceAreas = ['Gatineau', 'Outaouais', 'Ottawa', 'Québec'];
 const serviceAreaHref = (area: string) => {
   if (area === 'Gatineau') return '/gatineau/';
+  if (area === 'Outaouais') return '/outaouais/';
   if (area === 'Ottawa') return '/ottawa/';
   if (area === 'Québec') return '/ville-de-quebec/';
   return '/contact/';
@@ -386,6 +387,8 @@ const breadcrumbs = buildBreadcrumbSchema([
   }
 
   .local-side {
+    display: grid;
+    gap: 1.5rem;
     position: sticky;
     top: 1.5rem;
   }
