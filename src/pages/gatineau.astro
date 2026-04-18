@@ -13,6 +13,12 @@ const serviceLinks = [
 ];
 
 const serviceAreas = ['Gatineau', 'Ottawa', 'Québec'];
+const serviceAreaHref = (area: string) => {
+  if (area === 'Gatineau') return '/gatineau/';
+  if (area === 'Ottawa') return '/outaouais/';
+  if (area === 'Québec') return '/ville-de-quebec/';
+  return '/contact/';
+};
 
 const nearbyAreas = [
   'Hull',
@@ -214,10 +220,10 @@ const breadcrumbs = buildBreadcrumbSchema([
             </p>
             <div class="service-area-side-list">
               {serviceAreas.map((area) => (
-                <article class="service-area-side-card">
+                <a href={serviceAreaHref(area)} class="service-area-side-card">
                   <h4>{area}</h4>
                   <p>Accompagnement offert pour les demandes locales à {area} et dans les environs.</p>
-                </article>
+                </a>
               ))}
             </div>
           </div>
@@ -458,6 +464,8 @@ const breadcrumbs = buildBreadcrumbSchema([
     padding: 1rem;
     border-radius: 16px;
     background: rgba(18, 52, 86, 0.04);
+    display: block;
+    text-decoration: none;
   }
 
   .service-area-side-card h4 {
@@ -468,6 +476,11 @@ const breadcrumbs = buildBreadcrumbSchema([
   .service-area-side-card p {
     margin: 0;
     color: var(--brand-muted);
+  }
+
+  .service-area-side-card:hover {
+    text-decoration: none;
+    background: #fff4b1;
   }
 
   @media (max-width: 900px) {
