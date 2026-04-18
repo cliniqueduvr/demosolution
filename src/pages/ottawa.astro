@@ -6,17 +6,18 @@ import siteSettings from '../data/site-settings.json';
 import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
 
 const serviceLinks = [
-  { href: '/services/decontamination/', label: 'Décontamination', icon: 'fas fa-biohazard' },
   { href: '/services/moisissure/', label: 'Moisissures', icon: 'fas fa-shield-virus' },
+  { href: '/services/demolition-selective/', label: 'Démolition', icon: 'fas fa-house-damage' },
   { href: '/services/enlevement-vermiculite/', label: 'Vermiculite', icon: 'fas fa-exclamation-triangle' },
   { href: '/services/echantillonnage/', label: 'Échantillonnage', icon: 'fas fa-microscope' }
 ];
 
-const serviceAreas = ['Ottawa', 'Gatineau', 'Outaouais'];
+const serviceAreas = ['Gatineau', 'Outaouais', 'Ottawa', 'Québec'];
 const serviceAreaHref = (area: string) => {
-  if (area === 'Ottawa') return '/ottawa/';
   if (area === 'Gatineau') return '/gatineau/';
   if (area === 'Outaouais') return '/outaouais/';
+  if (area === 'Ottawa') return '/ottawa/';
+  if (area === 'Québec') return '/ville-de-quebec/';
   return '/contact/';
 };
 
