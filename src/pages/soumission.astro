@@ -157,7 +157,11 @@ const schemas = [
             <p>Gatineau, Ottawa, Outaouais et Québec selon la portée du mandat et la logistique du chantier.</p>
           </div>
           <div class="info-block cta">
-            <p><strong>Téléphone:</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a><br /><strong>Courriel:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a></p>
+            <p>
+              <strong>Téléphone:</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a><br />
+              <strong>Courriel:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a><br />
+              <strong>RBQ:</strong> 5824-9764-01
+            </p>
           </div>
         </div>
       </div>
@@ -309,6 +313,10 @@ const schemas = [
     box-shadow: 0 16px 34px rgba(24, 40, 61, 0.08);
   }
 
+  .contact-form-section {
+    border: 1px solid rgba(242, 210, 27, 0.22);
+  }
+
   .contact-form-section form {
     display: flex;
     flex-direction: column;
@@ -338,19 +346,40 @@ const schemas = [
     padding: 0.9rem 1rem;
     border-radius: 16px;
     background: white;
+    border: 1px solid rgba(18, 52, 86, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
   }
 
   .contact-form-section input,
   .contact-form-section textarea {
     padding: 12px;
-    border: none;
+    border: 1px solid rgba(18, 52, 86, 0.08);
     border-radius: 10px;
     font-family: inherit;
     background: white;
+    box-shadow: inset 0 1px 2px rgba(18, 52, 86, 0.04);
+  }
+
+  .form-fieldset {
+    padding: 0.9rem;
+    border-radius: 18px;
+    border: 1px solid rgba(242, 210, 27, 0.25);
+    background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+  }
+
+  .form-fieldset legend {
+    padding: 0 0.45rem;
+    font-weight: 700;
+    color: var(--brand-navy);
   }
 
   .btn {
     margin-top: 0.5rem;
+  }
+
+  .contact-info-section {
+    background: linear-gradient(180deg, #fff9ec 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.3);
   }
 
   .info-block {
@@ -369,6 +398,18 @@ const schemas = [
 
   .info-block p {
     color: var(--brand-muted);
+  }
+
+  .info-block.cta {
+    background: rgba(18, 52, 86, 0.04);
+    border-radius: 16px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .info-block.cta p {
+    margin: 0;
+    color: var(--brand-navy);
   }
 
   .info-block.cta a {
