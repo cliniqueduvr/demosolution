@@ -43,9 +43,9 @@ const serviceAreaHref = (area: string) => {
           (service.slug === 'decontamination' || service.slug === 'demolition-selective' || service.slug === 'selective-demolition') && 'hero-title-wide',
           service.slug === 'decontamination' && 'hero-title-wider'
         ]}>{service.h1}</h1>
-        <p class="opening">{service.opening}</p>
-        <p class="lead">{service.lead}</p>
-        <p class="intro">{service.intro}</p>
+        <p class="opening" set:html={service.opening}></p>
+        <p class="lead" set:html={service.lead}></p>
+        <p class="intro" set:html={service.intro}></p>
 
         <div class="hero-badges">
           {service.highlights.map((item) => (
@@ -82,7 +82,7 @@ const serviceAreaHref = (area: string) => {
       <article class="service-main">
         <section class="content-card">
           <h2>{service.includedTitle}</h2>
-          <p class="section-copy">{service.detailIntro}</p>
+          <p class="section-copy" set:html={service.detailIntro}></p>
           <ul>
             {service.included.map((item) => (
               <li>{item}</li>
@@ -101,7 +101,7 @@ const serviceAreaHref = (area: string) => {
 
         <section class="content-card">
           <h2>{isEnglish ? 'How we work' : 'Notre façon de travailler'}</h2>
-          <p class="section-copy">{service.processIntro}</p>
+          <p class="section-copy" set:html={service.processIntro}></p>
           <ol>
             {service.process.map((item) => (
               <li>{item}</li>
@@ -112,7 +112,7 @@ const serviceAreaHref = (area: string) => {
         {service.commonMaterials && (
           <section class="content-card">
             <h2>{service.commonMaterials.title}</h2>
-            {service.commonMaterials.intro && <p class="section-copy">{service.commonMaterials.intro}</p>}
+            {service.commonMaterials.intro && <p class="section-copy" set:html={service.commonMaterials.intro}></p>}
             <ul>
               {service.commonMaterials.items.map((item) => (
                 <li>{item}</li>
@@ -124,7 +124,7 @@ const serviceAreaHref = (area: string) => {
         {service.pricing && service.pricing.layout !== 'split' && (
           <section class="content-card pricing-card">
             <h2>{service.pricing.title}</h2>
-            {service.pricing.intro && <p class="section-copy">{service.pricing.intro}</p>}
+            {service.pricing.intro && <p class="section-copy" set:html={service.pricing.intro}></p>}
             <div class="pricing-grid">
               {service.pricing.cards.map((item) => (
                 <article class="price-item">
@@ -151,7 +151,7 @@ const serviceAreaHref = (area: string) => {
         {service.timing && (
           <section class="content-card alt">
             <h2>{service.timing.title}</h2>
-            {service.timing.intro && <p class="section-copy">{service.timing.intro}</p>}
+            {service.timing.intro && <p class="section-copy" set:html={service.timing.intro}></p>}
             <ul>
               {service.timing.items.map((item) => (
                 <li>{item}</li>
@@ -163,14 +163,14 @@ const serviceAreaHref = (area: string) => {
         {service.pricingPageTitle && service.pricingPageBody && service.pricingPageHref && service.pricingPageLabel && (
           <section class="content-card alt pricing-link-card">
             <h2>{service.pricingPageTitle}</h2>
-            <p class="section-copy">{service.pricingPageBody}</p>
+            <p class="section-copy" set:html={service.pricingPageBody}></p>
             <a class="pricing-page-link" href={service.pricingPageHref}>{service.pricingPageLabel}</a>
           </section>
         )}
 
         <section class="content-card alt">
           <h2>{service.whyChooseTitle}</h2>
-          <p class="section-copy">{service.whyChooseIntro}</p>
+          <p class="section-copy" set:html={service.whyChooseIntro}></p>
           <div class="why-choose-grid">
             {service.whyChoose.map((item) => (
               <article class="why-card">

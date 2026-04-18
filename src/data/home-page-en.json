@@ -1,15 +1,15 @@
 {
-  "metaTitle": "Demo Solution | Decontamination and hazardous materials in Gatineau, Ottawa and Quebec City",
-  "metaDescription": "Demo Solution provides decontamination, hazardous material removal, asbestos removal, vermiculite removal and sampling services in Gatineau, Ottawa and Quebec City.",
+  "metaTitle": "Demo Solution | Decontamination, asbestos, vermiculite and mould in Gatineau, Ottawa and Quebec City",
+  "metaDescription": "Demo Solution provides decontamination, asbestos removal, vermiculite removal, mould remediation, air sampling and material sampling services in Gatineau, Ottawa and Quebec City.",
   "hero": {
     "logoAlt": "Demo Solution logo",
-    "title": "Specialists in decontamination and hazardous material removal",
+    "title": "Specialists in decontamination, asbestos, vermiculite and mould",
     "tagline": "Asbestos | Vermiculite | Mold | Dry rot"
   },
   "introCard": {
     "icon": "",
     "heading": "Why choose Demo Solution?",
-    "body": "<strong>Fast, safe and disciplined execution</strong> for <strong>decontamination</strong>, <strong>asbestos removal</strong> and <strong>vermiculite removal</strong>. We also handle <strong>sampling</strong>, <strong>selective demolition</strong> and odour control when the file requires it."
+      "body": "<strong>Fast, safe and disciplined execution</strong> for <strong>decontamination</strong>, <strong>asbestos removal</strong>, <strong>vermiculite removal</strong> and <strong>mould-related work</strong>. We also handle <strong><a href=\"/en/services/sampling/\">sampling</a></strong>, <strong>selective demolition</strong> and practical pre-work guidance across <strong>Gatineau</strong>, <strong>Ottawa</strong> and <strong>Quebec City</strong>."
   },
   "servicesOverview": {
     "title": "Our Services",
@@ -22,12 +22,12 @@
   },
   "seoSections": [
     {
-      "heading": "Decontamination, asbestos and vermiculite in Gatineau, Ottawa and Quebec City",
-      "body": "Demo Solution supports property owners, managers and contractors with decontamination, asbestos removal and hazardous material work. We regularly intervene for asbestos, vermiculite, mold and other contaminated materials in residential and commercial projects across Gatineau, Ottawa and Quebec City."
+      "heading": "Decontamination, asbestos, vermiculite and mould in Gatineau, Ottawa and Quebec City",
+      "body": "Demo Solution supports property owners, managers and contractors with <strong>decontamination</strong>, <strong>asbestos removal</strong>, <strong>vermiculite removal</strong> and <strong>mould-related work</strong>. We regularly intervene on residential, rental and commercial projects across <strong>Gatineau</strong>, <strong>Ottawa</strong> and <strong>Quebec City</strong>."
     },
     {
       "heading": "A clear approach before work begins",
-      "body": "When a building contains asbestos, vermiculite, mold or other suspect materials, the priority is to assess the situation properly and choose the right intervention sequence. Sampling then helps confirm the scope before work starts."
+      "body": "When a building contains <strong>asbestos</strong>, <strong>vermiculite</strong>, <strong>mould</strong> or another suspect material, the priority is to assess the situation properly and choose the right intervention sequence. <strong><a href=\"/en/services/sampling/\">Sampling</a></strong> then helps confirm the scope before work starts, especially before renovation, demolition or restoration."
     }
   ],
   "cta": {

@@ -88,7 +88,7 @@ const heroLinks = [
         {homePage.seoSections.map((section) => (
           <div>
             <h2>{section.heading}</h2>
-            <p>{section.body}</p>
+            <p set:html={section.body} />
           </div>
         ))}
       </div>
