@@ -9,6 +9,10 @@ import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
 
 const servicePages = servicePagesData.items as ServicePage[];
 const visibleServicePages = servicePages;
+const simplifyCardCopy = (html: string) =>
+  html
+    .replace(/<a\b[^>]*>/g, '')
+    .replace(/<\/a>/g, '');
 const serviceAreas = [
   {
     name: 'Gatineau',
@@ -72,7 +76,7 @@ const breadcrumbs = buildBreadcrumbSchema([
                 <a class="service-card" href={`/services/${service.slug}/`}>
                   <p class="card-eyebrow">{service.eyebrow}</p>
                   <h2 class="card-title">{service.navLabel}</h2>
-                  <p class="card-copy" set:html={service.lead}></p>
+                  <p class="card-copy" set:html={simplifyCardCopy(service.lead)}></p>
                   <span>Voir le service</span>
                 </a>
               ))}
