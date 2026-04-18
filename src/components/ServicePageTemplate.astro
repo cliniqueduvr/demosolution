@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { service, allServices, lang = 'fr' } = Astro.props as Props;
-const otherServices = allServices.filter((item) => item.slug !== service.slug);
+const otherServices = allServices;
 const isEnglish = lang === 'en';
 const contactHref = isEnglish ? '/en/contact/' : '/contact/';
 const quoteHref = isEnglish ? '/en/contact/' : '/contact/';
@@ -17,6 +17,19 @@ const serviceHref = (slug: string) => isEnglish ? `/en/services/${slug}/` : `/se
 const serviceAreas = isEnglish
   ? ['Gatineau', 'Ottawa', 'Quebec City']
   : ['Gatineau', 'Ottawa', 'Québec'];
+const serviceAreaHref = (area: string) => {
+  if (isEnglish) {
+    if (area === 'Gatineau') return '/gatineau/';
+    if (area === 'Ottawa') return '/outaouais/';
+    if (area === 'Quebec City') return '/ville-de-quebec/';
+    return '/contact/';
+  }
+
+  if (area === 'Gatineau') return '/gatineau/';
+  if (area === 'Ottawa') return '/outaouais/';
+  if (area === 'Québec') return '/ville-de-quebec/';
+  return '/contact/';
+};
 ---
 
 <main>
@@ -197,7 +210,7 @@ const serviceAreas = isEnglish
           <h3>{isEnglish ? 'Other services' : 'Autres services'}</h3>
           <nav class="service-nav" aria-label={isEnglish ? 'Other services' : 'Autres services'}>
             {otherServices.map((item) => (
-              <a href={serviceHref(item.slug)}>
+              <a href={serviceHref(item.slug)} class:list={[item.slug === service.slug && 'active-service-link']}>
                 <i class={item.icon}></i>
                 <span>{item.navLabel}</span>
               </a>
@@ -214,14 +227,14 @@ const serviceAreas = isEnglish
           </p>
           <div class="service-area-side-list">
             {serviceAreas.map((area) => (
-              <article class="service-area-side-card">
+              <a href={serviceAreaHref(area)} class="service-area-side-card">
                 <h4>{area}</h4>
                 <p>
                   {isEnglish
                     ? `Support available for ${service.navLabel.toLowerCase()} requests in and around ${area}.`
                     : `Accompagnement offert pour les demandes de ${service.navLabel.toLowerCase()} à ${area} et dans les environs.`}
                 </p>
-              </article>
+              </a>
             ))}
           </div>
         </div>
@@ -840,6 +853,11 @@ const serviceAreas = isEnglish
     background: #fff4b1;
   }
 
+  .service-nav a.active-service-link {
+    background: linear-gradient(180deg, #fff9e2 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.42);
+  }
+
   .service-nav i {
     color: var(--brand-gold);
   }
@@ -853,6 +871,8 @@ const serviceAreas = isEnglish
     background: var(--brand-surface);
     border-radius: 16px;
     padding: 1rem;
+    display: block;
+    text-decoration: none;
   }
 
 
@@ -865,6 +885,11 @@ const serviceAreas = isEnglish
   .service-area-side-card p {
     margin: 0;
     color: var(--brand-muted);
+  }
+
+  .service-area-side-card:hover {
+    text-decoration: none;
+    background: #fff4b1;
   }
 
   @media (max-width: 920px) {
