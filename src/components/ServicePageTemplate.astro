@@ -150,9 +150,7 @@ const serviceAreas = isEnglish
       </aside>
 
       {service.pricing && service.pricing.layout === 'split' && service.slug === 'echantillonnage' && (
-        <section class="content-card pricing-card pricing-card-full">
-          <h2>{service.pricing.title}</h2>
-          {service.pricing.intro && <p class="section-copy">{service.pricing.intro}</p>}
+        <section class="content-card pricing-card-compact">
           {(service.pricing.thirdTitle || service.pricing.thirdItems || service.pricing.thirdNotes) && (
             <div class="pricing-self-panel">
               <div class="pricing-split-panel pricing-split-third pricing-split-third-only">
@@ -477,6 +475,10 @@ const serviceAreas = isEnglish
     grid-column: 1 / -1;
   }
 
+  .pricing-card-compact {
+    width: min(100%, 560px);
+  }
+
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -670,6 +672,11 @@ const serviceAreas = isEnglish
     padding: 1rem;
   }
 
+  .why-card:nth-child(even) {
+    background: linear-gradient(180deg, #fff9e2 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.38);
+  }
+
   .warning-band {
     position: relative;
     display: grid;
@@ -727,6 +734,11 @@ const serviceAreas = isEnglish
     background: var(--brand-surface);
     border-radius: 16px;
     padding: 1rem;
+  }
+
+  .link-card:nth-child(even) {
+    background: linear-gradient(180deg, #fff9e2 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.38);
   }
 
   .why-card h3,
@@ -855,6 +867,11 @@ const serviceAreas = isEnglish
     font-weight: 700;
   }
 
+  .service-nav a:nth-child(even) {
+    background: linear-gradient(180deg, #fff9e2 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.38);
+  }
+
   .service-nav a:hover {
     text-decoration: none;
     background: #fff4b1;
@@ -873,6 +890,11 @@ const serviceAreas = isEnglish
     background: var(--brand-surface);
     border-radius: 16px;
     padding: 1rem;
+  }
+
+  .service-area-side-card:nth-child(even) {
+    background: linear-gradient(180deg, #fff9e2 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.38);
   }
 
   .service-area-side-card h4 {
