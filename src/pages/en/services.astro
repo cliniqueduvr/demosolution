@@ -13,18 +13,18 @@ const visibleServicePagesEn = servicePagesEn.filter((service) => allowedServiceS
 const serviceAreas = [
   {
     name: 'Gatineau',
-    href: '/en/contact/',
-    body: 'Decontamination, sampling, vermiculite removal and selective demolition projects.'
+    href: '/gatineau/',
+    body: 'Decontamination, asbestos, vermiculite, mould and sampling support in Gatineau and nearby sectors.'
   },
   {
     name: 'Ottawa',
-    href: '/en/contact/',
-    body: 'Targeted interventions for residential and commercial buildings based on scope.'
+    href: '/ottawa/',
+    body: 'Asbestos, air sampling, vermiculite and project framing with Ottawa-specific context when needed.'
   },
   {
     name: 'Quebec City',
-    href: '/en/contact/',
-    body: 'Service coverage based on project type, hazardous materials and scheduling needs.'
+    href: '/ville-de-quebec/',
+    body: 'Decontamination, sampling and pre-work guidance in Quebec City and nearby sectors.'
   }
 ];
 const serviceFaqs = [
@@ -42,9 +42,9 @@ const serviceFaqs = [
   }
 ];
 const quickSteps = [
-  'Start with the service category that most closely matches the materials or symptoms you are dealing with.',
-  'Open only the service that matches your immediate need on site.',
-  'If you are unsure, contact us and we will help you decide whether sampling, decontamination or demolition is the right first step.'
+  'Start with the service that best matches the material, symptom or risk you are dealing with.',
+  'Open only the page that fits your immediate need: asbestos, vermiculite, mould, sampling or demolition.',
+  'If the file is still unclear, contact us and we will help you decide whether sampling, decontamination or demolition is the right first step.'
 ];
 const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Home', path: '/en/' },
@@ -52,7 +52,7 @@ const breadcrumbs = buildBreadcrumbSchema([
 ]);
 ---
 
-<Layout title="Demo Solution Services | Decontamination, sampling and demolition" description="Decontamination, vermiculite removal, sampling, mould remediation and selective demolition in Gatineau, Ottawa and Quebec City." lang="en-CA" canonicalPath="/en/services/" frPath="/services/" enPath="/en/services/" schemas={[breadcrumbs, buildFAQSchema(serviceFaqs)]}>
+<Layout title="Demo Solution Services | Decontamination, asbestos, vermiculite, mould and sampling" description="Decontamination, asbestos-related work, vermiculite removal, sampling, mould remediation and selective demolition in Gatineau, Ottawa and Quebec City." lang="en-CA" canonicalPath="/en/services/" frPath="/services/" enPath="/en/services/" schemas={[breadcrumbs, buildFAQSchema(serviceFaqs)]}>
   <Header lang="en" />
 
   <main>
@@ -60,7 +60,7 @@ const breadcrumbs = buildBreadcrumbSchema([
       <div class="container">
         <p class="eyebrow">For hazardous materials and building conditions</p>
         <h1>Our Services</h1>
-        <p>Decontamination, vermiculite removal, sampling, mould remediation and selective demolition based on the real condition of the site.</p>
+        <p>Decontamination, asbestos-related work, vermiculite removal, mould remediation, sampling and selective demolition based on the real condition of the site.</p>
       </div>
     </section>
 
@@ -74,7 +74,7 @@ const breadcrumbs = buildBreadcrumbSchema([
                   <p class="card-eyebrow">{service.eyebrow}</p>
                   <h2 class="card-title">{service.navLabel}</h2>
                   <p class="card-copy">{service.lead}</p>
-                  <span>Learn more</span>
+                  <span>View service</span>
                 </a>
               ))}
             </div>
@@ -95,11 +95,11 @@ const breadcrumbs = buildBreadcrumbSchema([
             <div class="seo-columns">
               <div class="info-card">
                 <h2>A service adapted to your situation</h2>
-                <p>Whether you are in the evaluation phase or preparing work on a contaminated or suspicious area, we can direct you toward the right first intervention for the property.</p>
+                <p>Whether you are in the evaluation phase or preparing work on a contaminated or suspicious area, we can direct you toward the right first intervention based on the actual risk, material and next step on site.</p>
               </div>
               <div class="info-card">
                 <h2>What we cover</h2>
-                <p>Asbestos, vermiculite, mould, hazardous materials, sampling and selective demolition for residential and commercial files.</p>
+                <p>Asbestos, vermiculite, mould, hazardous materials, asbestos-related air sampling, material sampling and selective demolition for residential and commercial files.</p>
               </div>
             </div>
           </section>

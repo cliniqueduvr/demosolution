@@ -12,18 +12,18 @@ const visibleServicePages = servicePages;
 const serviceAreas = [
   {
     name: 'Gatineau',
-    href: '/contact/',
-    body: "Projets de décontamination, échantillonnage, enlèvement de vermiculite et démolition sélective."
+    href: '/gatineau/',
+    body: "Décontamination, amiante, vermiculite, moisissure et échantillonnage à Gatineau et en périphérie."
   },
   {
     name: 'Ottawa',
-    href: '/contact/',
-    body: "Interventions ciblées pour projets résidentiels et commerciaux selon la portée des travaux."
+    href: '/ottawa/',
+    body: "Interventions liées à l’amiante, à l’air amiante, à la vermiculite et aux chantiers cadrés selon le contexte Ottawa."
   },
   {
     name: 'Québec',
-    href: '/contact/',
-    body: "Accompagnement pour des projets à Québec selon le type de chantier."
+    href: '/ville-de-quebec/',
+    body: "Décontamination, échantillonnage et préparation avant travaux dans la ville de Québec et les secteurs voisins."
   }
 ];
 const serviceFaqs = [
@@ -41,9 +41,9 @@ const serviceFaqs = [
   }
 ];
 const quickSteps = [
-  "Choisissez d'abord la catégorie qui ressemble le plus à votre situation.",
-  'Ouvrez ensuite seulement le service qui correspond à votre besoin immédiat.',
-  'Si vous hésitez, utilisez la page contact pour obtenir une orientation rapide.'
+  "Commencez par le service qui ressemble le plus au matériau, au symptôme ou au risque observé.",
+  'Ouvrez ensuite seulement la page qui correspond à votre besoin immédiat: amiante, vermiculite, moisissure, échantillonnage ou démolition.',
+  'Si le dossier reste flou, utilisez la page soumission pour obtenir une orientation rapide avant les travaux.'
 ];
 const breadcrumbs = buildBreadcrumbSchema([
   { name: 'Accueil', path: '/' },
@@ -51,7 +51,7 @@ const breadcrumbs = buildBreadcrumbSchema([
 ]);
 ---
 
-<Layout title="Services Demo Solution | Décontamination, moisissures et échantillonnage" description="Services de décontamination, moisissures, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa et Québec." canonicalPath="/services/" frPath="/services/" enPath="/en/services/" schemas={[breadcrumbs, buildFAQSchema(serviceFaqs)]}>
+  <Layout title="Services Demo Solution | Décontamination, amiante, vermiculite, moisissure et échantillonnage" description="Services de décontamination, amiante, moisissure, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa et Québec." canonicalPath="/services/" frPath="/services/" enPath="/en/services/" schemas={[breadcrumbs, buildFAQSchema(serviceFaqs)]}>
   <Header />
 
   <main>
@@ -59,7 +59,7 @@ const breadcrumbs = buildBreadcrumbSchema([
       <div class="container">
         <p class="eyebrow">Pour chaque besoin de votre bâtiment</p>
         <h1>Nos Services</h1>
-        <p>Décontamination, enlèvement de vermiculite, échantillonnage et démolition sélective selon la réalité du chantier.</p>
+        <p>Décontamination, amiante, vermiculite, moisissure, échantillonnage et démolition sélective selon la réalité du chantier.</p>
       </div>
     </section>
 
@@ -73,7 +73,7 @@ const breadcrumbs = buildBreadcrumbSchema([
                   <p class="card-eyebrow">{service.eyebrow}</p>
                   <h2 class="card-title">{service.navLabel}</h2>
                   <p class="card-copy">{service.lead}</p>
-                  <span>En savoir plus</span>
+                  <span>Voir le service</span>
                 </a>
               ))}
             </div>
@@ -94,11 +94,11 @@ const breadcrumbs = buildBreadcrumbSchema([
             <div class="seo-columns">
               <div class="info-card">
                 <h2>Un service adapté à votre situation</h2>
-                <p>Que vous soyez en début d’évaluation, avant des travaux ou en pleine remise en état, nous vous orientons vers la bonne intervention selon la situation réelle du chantier.</p>
+                <p>Que vous soyez en début d’évaluation, avant des travaux ou en pleine remise en état, nous vous orientons vers la bonne intervention selon la situation réelle du chantier, le matériau visé et la prochaine étape utile.</p>
               </div>
               <div class="info-card">
                 <h2>Ce que nous couvrons</h2>
-                <p>Amiante, vermiculite, moisissures, matériaux contaminés, échantillonnage et démolition sélective.</p>
+                <p>Amiante, vermiculite, moisissures, matériaux contaminés, air amiante, échantillonnage avant travaux et démolition sélective.</p>
               </div>
             </div>
           </section>
@@ -143,14 +143,14 @@ const breadcrumbs = buildBreadcrumbSchema([
             </div>
             <h2>Besoin d’un échantillonnage avant d’aller plus loin?</h2>
             <p>On peut vous aider à valider des matériaux suspects, à choisir le bon type d’échantillonnage et à décider de la prochaine étape utile pour votre propriété.</p>
-            <a class="support-link" href="/contact/">Parler d’échantillonnage</a>
+            <a class="support-link" href="/soumission/">Parler d’échantillonnage</a>
           </div>
 
           <div class="support-card support-card-dark">
             <h2>Besoin d’un avis rapide?</h2>
             <p>On peut vous orienter vers la bonne intervention selon l’état réel de la propriété.</p>
             <a class="support-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
-            <a class="support-button secondary" href="/contact/">Demander une soumission</a>
+            <a class="support-button secondary" href="/soumission/">Demander une soumission</a>
           </div>
         </aside>
       </div>
