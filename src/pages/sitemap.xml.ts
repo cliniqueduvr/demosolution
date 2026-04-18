@@ -40,6 +40,7 @@ const staticEntries: UrlEntry[] = [
   { path: '/amiante/', lastmod: defaultLastmod },
   { path: '/moisissure/', lastmod: defaultLastmod },
   { path: '/inspection-qualite-air/', lastmod: defaultLastmod },
+  { path: '/ottawa/', lastmod: defaultLastmod },
   { path: '/outaouais/', lastmod: defaultLastmod },
   { path: '/gatineau/', lastmod: defaultLastmod },
   { path: '/ville-de-quebec/', lastmod: defaultLastmod },

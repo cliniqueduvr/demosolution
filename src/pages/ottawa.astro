@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteSettings from '../data/site-settings.json';
+import { buildBreadcrumbSchema, buildFAQSchema } from '../lib/seo';
+
+const serviceLinks = [
+  { href: '/services/decontamination/', label: 'Décontamination', icon: 'fas fa-biohazard' },
+  { href: '/services/moisissure/', label: 'Moisissures', icon: 'fas fa-shield-virus' },
+  { href: '/services/enlevement-vermiculite/', label: 'Vermiculite', icon: 'fas fa-exclamation-triangle' },
+  { href: '/services/echantillonnage/', label: 'Échantillonnage', icon: 'fas fa-microscope' }
+];
+
+const serviceAreas = ['Ottawa', 'Gatineau', 'Outaouais'];
+const serviceAreaHref = (area: string) => {
+  if (area === 'Ottawa') return '/ottawa/';
+  if (area === 'Gatineau') return '/gatineau/';
+  if (area === 'Outaouais') return '/outaouais/';
+  return '/contact/';
+};
+
+const ottawaSectors = [
+  'Nepean',
+  'Kanata',
+  'Orléans',
+  'Barrhaven',
+  'Gloucester',
+  'Vanier',
+  'Alta Vista',
+  'Beacon Hill'
+];
+
+const operationTypes = [
+  {
+    title: 'Type 1',
+    body: "Interventions à plus faible exposition potentielle, sur des matériaux ou opérations limitées. Le bon classement dépend du matériau, de son état et de la méthode prévue."
+  },
+  {
+    title: 'Type 2',
+    body: "Travaux avec niveau de contrôle intermédiaire lorsque le risque et la perturbation sont plus élevés. Le chantier doit alors être préparé avec une méthode adaptée."
+  },
+  {
+    title: 'Type 3',
+    body: "Travaux plus lourds ou à fort risque potentiel, avec procédures, confinement et séquence beaucoup plus stricts. C’est là que l’erreur de cadrage coûte le plus cher."
+  }
+];
+
+const faqs = [
+  {
+    question: 'Pourquoi une page Ottawa séparée de l’Outaouais?',
+    answer:
+      "Parce qu’Ottawa relève du cadre ontarien. Pour les dossiers liés à l’amiante, la logique de travail, la documentation et le niveau d’intervention doivent être lus selon les pratiques applicables en Ontario."
+  },
+  {
+    question: 'À quoi correspondent les types 1, 2 et 3 à Ottawa?',
+    answer:
+      "En Ontario, les opérations liées à l’amiante sont classées en Type 1, Type 2 ou Type 3 selon le matériau, l’ampleur de la perturbation et le niveau de contrôle requis. Le bon réflexe n’est pas de deviner, mais de confirmer la bonne catégorie avant les travaux."
+  },
+  {
+    question: 'Offrez-vous aussi l’échantillonnage et l’air amiante à Ottawa?',
+    answer:
+      "Oui. Nous pouvons accompagner des dossiers d’échantillonnage de matériaux, de vérification de l’air amiante et de lecture du risque avant, pendant ou après des travaux, selon le contexte."
+  }
+];
+
+const breadcrumbs = buildBreadcrumbSchema([
+  { name: 'Accueil', path: '/' },
+  { name: 'Ottawa' }
+]);
+---
+
+<Layout
+  title="Décontamination, amiante et échantillonnage à Ottawa"
+  description="Services de décontamination, amiante, vermiculite, moisissure et échantillonnage à Ottawa, avec une approche adaptée au cadre ontarien et aux opérations de type 1, 2 et 3."
+  canonicalPath="/ottawa/"
+  frPath="/ottawa/"
+  schemas={[breadcrumbs, buildFAQSchema(faqs)]}
+>
+  <Header />
+
+  <main>
+    <section class="local-hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Secteur local</p>
+          <h1>Décontamination, amiante et échantillonnage à Ottawa</h1>
+          <p>
+            Demo Solution peut accompagner des projets à <strong>Ottawa</strong> pour la
+            <strong> décontamination</strong>, l’<strong>échantillonnage</strong>, la
+            <strong> vermiculite</strong>, la <strong>moisissure</strong> et les situations
+            liées à l’<strong>air amiante</strong>. La différence importante ici, c’est que les
+            dossiers doivent être lus dans le cadre <strong>ontarien</strong>, avec une attention
+            particulière aux catégories <strong>Type 1, Type 2 et Type 3</strong>.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h2>Secteurs courants à Ottawa</h2>
+          <ul>
+            {ottawaSectors.map((area) => <li>{area}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="local-body">
+      <div class="container local-layout">
+        <div class="local-main">
+          <section class="content-card">
+            <h2>Pourquoi Ottawa demande un cadrage différent</h2>
+            <p class="section-copy">
+              À Ottawa, on ne parle pas seulement de matériaux suspects ou de contamination visible.
+              Il faut aussi cadrer le chantier selon la logique ontarienne applicable aux opérations
+              sur l’amiante, afin d’éviter de sous-estimer le niveau réel d’intervention.
+            </p>
+            <div class="info-grid">
+              {operationTypes.map((item) => (
+                <article class="info-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section class="content-card alt">
+            <h2>Ce que les clients veulent surtout éviter à Ottawa</h2>
+            <ul>
+              <li>Démarrer des travaux en supposant le mauvais niveau d’intervention.</li>
+              <li>Traiter un dossier ontarien comme un dossier standard sans lecture du bon cadre.</li>
+              <li>Ouvrir un matériau suspect avant d’avoir confirmé le risque ou la catégorie de travail.</li>
+              <li>Créer un arrêt de chantier parce que le dossier n’a pas été bien séquencé dès le départ.</li>
+            </ul>
+          </section>
+
+          <section class="content-card">
+            <h2>Services utiles à Ottawa</h2>
+            <div class="info-grid">
+              <article class="info-card">
+                <h3>Échantillonnage de matériaux</h3>
+                <p>Pour confirmer un doute avant rénovation, ouverture, retrait ou démolition d’un matériau plus ancien.</p>
+              </article>
+              <article class="info-card">
+                <h3>Air amiante</h3>
+                <p>Lecture avant, pendant ou après travaux lorsque la qualité de l’air doit être confirmée dans un dossier sensible.</p>
+              </article>
+              <article class="info-card">
+                <h3>Vermiculite et isolants</h3>
+                <p>Vérification d’entretoit, cavité ou matériau isolant lorsque la présence d’amiante ne peut pas être écartée.</p>
+              </article>
+              <article class="info-card">
+                <h3>Moisissure et contamination fongique</h3>
+                <p>Évaluation ciblée lorsque l’humidité, les spores ou un historique de contamination demandent une lecture plus claire.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-card alt faq-section">
+            <h2>Questions fréquentes pour Ottawa</h2>
+            <div class="faq-list">
+              {faqs.map((item) => (
+                <details class="faq-item">
+                  <summary>
+                    <h3>{item.question}</h3>
+                  </summary>
+                  <div class="accordion-content">
+                    <p>{item.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <aside class="local-side">
+          <div class="cta-card">
+            <h2>Projet à Ottawa?</h2>
+            <p>
+              Si le dossier touche l’amiante, la vermiculite, l’air ou un matériau suspect,
+              nous pouvons aider à cadrer la bonne prochaine étape avant les travaux.
+            </p>
+            <a class="phone-button" href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a>
+            <a class="contact-link" href="/contact/">Demander une soumission</a>
+          </div>
+
+          <div class="side-card">
+            <h3>Autres services</h3>
+            <nav class="service-nav" aria-label="Autres services">
+              {serviceLinks.map((item) => (
+                <a href={item.href}>
+                  <i class={item.icon}></i>
+                  <span>{item.label}</span>
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div class="side-card">
+            <h3>Zones desservies</h3>
+            <p class="side-copy">
+              Cette page couvre Ottawa dans une logique Ontario, avec des liens vers les autres zones locales utiles.
+            </p>
+            <div class="service-area-side-list">
+              {serviceAreas.map((area) => (
+                <a href={serviceAreaHref(area)} class="service-area-side-card">
+                  <h4>{area}</h4>
+                  <p>Accompagnement offert pour les demandes locales à {area} et dans les environs.</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .local-hero {
+    padding: 4.5rem 0 3.8rem;
+    background:
+      radial-gradient(circle at top left, rgba(242, 210, 27, 0.18), transparent 25%),
+      linear-gradient(135deg, var(--brand-navy-dark) 0%, #1f476d 58%, #eef3f7 58%, #eef3f7 100%);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .local-hero h1 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+  }
+
+  .local-hero p:not(.eyebrow) {
+    color: #e7edf4;
+    max-width: 58ch;
+    font-size: 1.06rem;
+  }
+
+  .hero-card,
+  .content-card,
+  .side-card,
+  .cta-card {
+    background: white;
+    border-radius: 22px;
+    padding: 1.5rem;
+    box-shadow: 0 16px 30px rgba(18, 35, 54, 0.08);
+  }
+
+  .hero-card h2,
+  .content-card h2,
+  .cta-card h2,
+  .side-card h3 {
+    margin-bottom: 0.85rem;
+  }
+
+  .local-body {
+    padding: 0 0 4.5rem;
+  }
+
+  .local-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.85fr);
+    gap: 1.8rem;
+    align-items: start;
+  }
+
+  .local-main,
+  .local-side {
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .section-copy {
+    margin-bottom: 1rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .info-card {
+    border-radius: 18px;
+    background: #f7f8fa;
+    padding: 1.15rem;
+  }
+
+  .alt {
+    background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+    border: 1px solid rgba(242, 210, 27, 0.35);
+  }
+
+  .cta-card {
+    background: linear-gradient(180deg, #24456c 0%, #1d395d 100%);
+    color: white;
+  }
+
+  .phone-button,
+  .contact-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.9rem 1rem;
+    font-weight: 700;
+  }
+
+  .phone-button {
+    margin: 1rem 0 0.75rem;
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+  }
+
+  .contact-link {
+    background: rgba(255,255,255,0.12);
+    color: white;
+  }
+
+  .service-nav,
+  .service-area-side-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .service-nav a,
+  .service-area-side-card {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem 1.05rem;
+    border-radius: 16px;
+    background: #f7f8fa;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .service-area-side-card {
+    display: block;
+  }
+
+  .service-area-side-card:hover {
+    text-decoration: none;
+    background: #fff4b1;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .faq-item {
+    border-radius: 16px;
+    background: #f7f8fa;
+    padding: 0.25rem 1rem;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-content {
+    padding: 0 0 0.85rem;
+  }
+
+  @media (max-width: 980px) {
+    .hero-grid,
+    .local-layout,
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
