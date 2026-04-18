@@ -143,25 +143,39 @@ const schemas = [
         </div>
 
         <div class="contact-info-section">
-          <h2>Ce qui aide à accélérer l’évaluation</h2>
-          <div class="info-block">
-            <h3>Photos ou rapport</h3>
-            <p>Si vous avez des photos, un rapport de laboratoire, une note d’inspection ou des détails de chantier, joignez-les.</p>
+          <div class="info-copy">
+            <h2>Localisation</h2>
+            <p>{siteSettings.address.fr}</p>
+            <p><strong>Service:</strong> {siteSettings.serviceArea.fr}</p>
           </div>
-          <div class="info-block">
-            <h3>Contexte du projet</h3>
-            <p>Indiquez si c’est avant rénovation, avant démolition, après infiltration, ou pour un doute sur l’air, la vermiculite ou la moisissure.</p>
+
+          <div class="info-copy">
+            <h2>Identité d’entreprise</h2>
+            <p><strong>Assurance:</strong> Pollution et civile 2 millions</p>
+            <p><strong>RBQ:</strong> 5824-9764-01</p>
+            <p><strong>Professionnels depuis {siteSettings.sinceYear}</strong></p>
           </div>
-          <div class="info-block">
-            <h3>Zones desservies</h3>
-            <p>Gatineau, Ottawa, Outaouais et Québec selon la portée du mandat et la logistique du chantier.</p>
+
+          <div class="info-copy">
+            <h2>Valeurs clés</h2>
+            <p>Rapidité • Sécurité • Conformité • Rigueur d’exécution</p>
           </div>
-          <div class="info-block cta">
-            <p>
-              <strong>Téléphone:</strong> <a href={`tel:${siteSettings.phone.href}`}>{siteSettings.phone.display}</a><br />
-              <strong>Courriel:</strong> <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a><br />
-              <strong>RBQ:</strong> 5824-9764-01
-            </p>
+
+          <div class="info-cta">
+            <div class="cta-actions">
+              <a href={`tel:${siteSettings.phone.href}`} class="cta-button primary">
+                <i class="fas fa-phone"></i> {siteSettings.phone.display}
+              </a>
+              <a href={`sms:${siteSettings.phone.href}`} class="cta-button secondary">
+                <i class="fas fa-comment-dots"></i> Message texte
+              </a>
+              <a href="/soumission/" class="cta-button primary full">
+                <i class="fas fa-calendar-check"></i> Demander une soumission
+              </a>
+            </div>
+            <div class="cta-note">
+              Demandez votre <strong>soumission gratuite</strong> par téléphone, courriel ou formulaire.
+            </div>
           </div>
         </div>
       </div>
@@ -378,43 +392,84 @@ const schemas = [
   }
 
   .contact-info-section {
-    background: linear-gradient(180deg, #fff9ec 0%, #ffffff 100%);
-    border: 1px solid rgba(242, 210, 27, 0.3);
+    background: linear-gradient(180deg, #f2f7fb 0%, #eef3f7 100%);
+    border: 1px solid rgba(18, 52, 86, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.65rem;
   }
 
-  .info-block {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(18, 52, 86, 0.08);
+  .info-copy h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.85rem;
   }
 
-  .info-block:first-of-type {
-    padding-top: 0;
-  }
-
-  .info-block:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .info-block p {
-    color: var(--brand-muted);
-  }
-
-  .info-block.cta {
-    background: rgba(18, 52, 86, 0.04);
-    border-radius: 16px;
-    padding: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  .info-block.cta p {
-    margin: 0;
+  .info-copy p {
+    margin: 0 0 0.35rem;
     color: var(--brand-navy);
   }
 
-  .info-block.cta a {
-    color: var(--brand-navy);
+  .info-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .cta-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 58px;
+    padding: 0.95rem 1.1rem;
+    border-radius: 999px;
     font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .cta-button:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .cta-button.primary {
+    background: var(--brand-gold);
+    color: var(--brand-navy-dark);
+    box-shadow: 0 10px 20px rgba(242, 210, 27, 0.2);
+  }
+
+  .cta-button.primary:hover {
+    background: #ebc912;
+  }
+
+  .cta-button.secondary {
+    background: var(--brand-navy-dark);
+    color: white;
+    box-shadow: 0 10px 20px rgba(18, 52, 86, 0.18);
+  }
+
+  .cta-button.secondary:hover {
+    background: #173753;
+  }
+
+  .cta-button.full {
+    grid-column: 1 / -1;
+  }
+
+  .cta-note {
+    padding: 1rem 1.15rem;
+    border-left: 4px solid var(--brand-green);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--brand-navy);
   }
 
   @media (max-width: 900px) {
@@ -427,6 +482,14 @@ const schemas = [
     .page-header h1 {
       font-size: 2.25rem;
       max-width: none;
+    }
+
+    .cta-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-button.full {
+      grid-column: auto;
     }
   }
 </style>
