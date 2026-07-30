@@ -78,16 +78,15 @@ export function buildLocalBusinessSchema({
     '@id': `${SITE_URL}/#demo-solution`,
     name: 'Demo Solution',
     description: isEnglish
-      ? 'Decontamination, hazardous material removal, asbestos removal, vermiculite removal, sampling and demolition in Gatineau, Ottawa and Quebec City'
-      : 'Décontamination, enlèvement de matières dangereuses, désamiantage, enlèvement de vermiculite, échantillonnage et démolition à Gatineau, Ottawa et Québec',
+      ? 'Decontamination, hazardous material removal, asbestos removal, vermiculite removal, sampling and demolition in Gatineau and Ottawa'
+      : 'Décontamination, enlèvement de matières dangereuses, désamiantage, enlèvement de vermiculite, échantillonnage et démolition à Gatineau et Ottawa',
     telephone,
     email,
     url: SITE_URL,
     inLanguage: ['fr-CA', 'en-CA'],
     areaServed: [
       { '@type': 'City', name: 'Gatineau' },
-      { '@type': 'City', name: 'Ottawa' },
-      { '@type': 'City', name: isEnglish ? 'Quebec City' : 'Québec' }
+      { '@type': 'City', name: 'Ottawa' }
     ],
     priceRange: '$$',
     image: BRAND_IMAGE,
@@ -194,8 +193,7 @@ export function buildServiceSchema({
     provider: { '@id': `${SITE_URL}/#demo-solution` },
     areaServed: [
       { '@type': 'City', name: 'Gatineau' },
-      { '@type': 'City', name: 'Ottawa' },
-      { '@type': 'City', name: isEnglish ? 'Quebec City' : 'Québec' }
+      { '@type': 'City', name: 'Ottawa' }
     ],
     serviceType,
     description,

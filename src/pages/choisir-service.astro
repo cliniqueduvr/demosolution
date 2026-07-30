@@ -45,8 +45,7 @@ const symptomCards = [
 
 const serviceAreas = [
   { name: 'Gatineau', href: '/contact/' },
-  { name: 'Ottawa', href: '/contact/' },
-  { name: 'Québec', href: '/contact/' }
+  { name: 'Ottawa', href: '/contact/' }
 ];
 const faqs = [
   {
@@ -110,7 +109,7 @@ const breadcrumbs = buildBreadcrumbSchema([
     <section class="areas-section">
       <div class="container">
         <h2>Zones desservies</h2>
-        <p class="section-copy">Nous recevons des demandes provenant de Gatineau, d’Ottawa et de Québec selon le type de besoin et la situation du chantier.</p>
+        <p class="section-copy">Nous recevons des demandes provenant de Gatineau et d’Ottawa selon le type de besoin et la situation du chantier.</p>
         <div class="card-grid areas-grid">
           {serviceAreas.map((area) => (
             <a class="info-card choice-card" href={area.href}>

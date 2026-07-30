@@ -12,7 +12,7 @@ const serviceLinks = [
   { href: '/services/echantillonnage/', label: 'Échantillonnage', icon: 'fas fa-microscope' }
 ];
 
-const serviceAreas = ['Gatineau', 'Outaouais', 'Ottawa', 'Québec'];
+const serviceAreas = ['Gatineau', 'Ottawa'];
 const serviceAreaHref = (area: string) => {
   if (area === 'Gatineau') return '/gatineau/';
   if (area === 'Outaouais') return '/outaouais/';
@@ -291,7 +291,7 @@ const schemas = [
           <div class="side-card">
             <h3>Zones desservies</h3>
             <p class="side-copy">
-              Cette ressource est utile pour Gatineau, Ottawa et Québec quand un matériau ancien soulève un risque avant des travaux.
+              Cette ressource est utile pour Gatineau et Ottawa quand un matériau ancien soulève un risque avant des travaux.
             </p>
             <div class="service-area-side-list">
               {serviceAreas.map((area) => (

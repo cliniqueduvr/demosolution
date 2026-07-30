@@ -1,6 +1,6 @@
 # Demo Solution
 
-> Décontamination, désamiantage, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau, Ottawa et Québec.
+> Décontamination, désamiantage, enlèvement de vermiculite, échantillonnage et démolition sélective à Gatineau et Ottawa.
 
 ## Services
 - [Décontamination](https://demosolution.ca/services/decontamination/)
@@ -17,7 +17,7 @@
 ## Contact
 - Téléphone: (581) 337-3366
 - Email: info@demosolution.ca
-- Région: Gatineau, Ottawa et Québec
+- Région: Gatineau et Ottawa
 - RBQ: 5824-9764-01
 
 ## About

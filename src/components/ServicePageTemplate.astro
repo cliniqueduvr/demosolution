@@ -15,8 +15,8 @@ const contactHref = isEnglish ? '/en/contact/' : '/soumission/';
 const quoteHref = isEnglish ? '/en/contact/' : '/soumission/';
 const serviceHref = (slug: string) => isEnglish ? `/en/services/${slug}/` : `/services/${slug}/`;
 const serviceAreas = isEnglish
-  ? ['Gatineau', 'Outaouais', 'Ottawa', 'Quebec City']
-  : ['Gatineau', 'Outaouais', 'Ottawa', 'Québec'];
+  ? ['Gatineau', 'Ottawa']
+  : ['Gatineau', 'Ottawa'];
 const serviceAreaHref = (area: string) => {
   if (isEnglish) {
     if (area === 'Gatineau') return '/gatineau/';
@@ -222,8 +222,8 @@ const serviceAreaHref = (area: string) => {
           <h3>{isEnglish ? 'Areas served' : 'Zones desservies'}</h3>
           <p class="side-copy">
             {isEnglish
-              ? 'This service is offered from Gatineau and may also extend to Ottawa and Quebec City.'
-              : 'Ce service est offert à partir de Gatineau et peut aussi inclure Ottawa et Québec.'}
+              ? 'This service is offered in Gatineau and Ottawa.'
+              : 'Ce service est offert à Gatineau et Ottawa.'}
           </p>
           <div class="service-area-side-list">
             {serviceAreas.map((area) => (

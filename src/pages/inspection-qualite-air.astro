@@ -12,7 +12,7 @@ const serviceLinks = [
   { href: '/services/enlevement-vermiculite/', label: 'Vermiculite', icon: 'fas fa-exclamation-triangle' }
 ];
 
-const serviceAreas = ['Gatineau', 'Outaouais', 'Ottawa'];
+const serviceAreas = ['Gatineau', 'Ottawa'];
 const serviceAreaHref = (area: string) => {
   if (area === 'Gatineau') return '/gatineau/';
   if (area === 'Outaouais') return '/outaouais/';
@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "Travaillez-vous seulement à Gatineau?",
     answer:
-      "Non. Nous couvrons Gatineau, l’Outaouais et Ottawa selon le type de projet et le besoin réel sur le terrain."
+      "Non. Nous couvrons Gatineau et Ottawa selon le type de projet et le besoin réel sur le terrain."
   }
 ];
 
@@ -51,9 +51,9 @@ const schemas = [
   breadcrumbs,
   buildFAQSchema(faqs),
   buildServiceSchema({
-    name: 'Inspection qualité de l’air à Gatineau, Ottawa et en Outaouais',
+    name: 'Inspection qualité de l’air à Gatineau et Ottawa',
     serviceType: "Inspection qualité de l’air, air amiante, spores et contamination fongique",
-    description: "Inspection qualité de l’air, air amiante avant, pendant et après travaux, spores et moisissure à Gatineau, Ottawa et en Outaouais.",
+    description: "Inspection qualité de l’air, air amiante avant, pendant et après travaux, spores et moisissure à Gatineau et Ottawa.",
     lang: 'fr-CA'
   })
 ];
@@ -61,7 +61,7 @@ const schemas = [
 
 <Layout
   title="Inspection qualité de l’air à Gatineau | Amiante, moisissure et spores"
-  description="Inspection qualité de l’air à Gatineau, en Outaouais et à Ottawa: air amiante avant, pendant et après travaux, spores, moisissure et vérifications ciblées."
+  description="Inspection qualité de l’air à Gatineau et Ottawa: air amiante avant, pendant et après travaux, spores, moisissure et vérifications ciblées."
   canonicalPath="/inspection-qualite-air/"
   frPath="/inspection-qualite-air/"
   schemas={schemas}
@@ -72,7 +72,7 @@ const schemas = [
     <section class="resource-hero">
       <div class="container">
         <p class="eyebrow">Ressource locale</p>
-        <h1>Inspection qualité de l’air à Gatineau, en Outaouais et à Ottawa</h1>
+        <h1>Inspection qualité de l’air à Gatineau et Ottawa</h1>
         <p>
           Lorsqu’un bâtiment présente un doute lié à l’<strong>amiante dans l’air</strong>, aux
           <strong>spores</strong>, à la <strong>moisissure</strong> ou à une contamination fongique,
@@ -182,7 +182,7 @@ const schemas = [
           <div class="side-card">
             <h3>Zones desservies</h3>
             <p class="side-copy">
-              Cette ressource couvre surtout Gatineau, l’Outaouais et Ottawa pour les dossiers d’air amiante, spores et moisissure.
+              Cette ressource couvre surtout Gatineau et Ottawa pour les dossiers d’air amiante, spores et moisissure.
             </p>
             <div class="service-area-side-list">
               {serviceAreas.map((area) => (
