@@ -38,7 +38,7 @@
     "phoneTitle": "Phone",
     "squareLabel": "Request a quote",
     "emailTitle": "Email",
-    "locationTitle": "Location",
+    "locationTitle": "Service area",
     "identityTitle": "Business identity",
     "identityBody": "<strong>Insurance:</strong> $2M garage and liability<br><strong>Professionals since 2013</strong>",
     "valuesTitle": "Key values",
@@ -55,5 +55,5 @@
       "body": "If you have photos, lab reports, suspicious material descriptions or notes about affected areas, include them in your message. That helps guide the request more quickly toward sampling, decontamination or the right next step."
     }
   ],
-  "mapTitle": "Demo Solution - 11 rue de Granby, Unit 18, Gatineau, QC"
+  "mapTitle": "Demo Solution - Service area"
 }

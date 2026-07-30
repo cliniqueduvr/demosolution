@@ -7,12 +7,12 @@ interface Props {
 }
 
 const { title, lang = 'fr' } = Astro.props as Props;
-const latitude = 45.5073101;
-const longitude = -75.5497803;
+const latitude = 45.4765;
+const longitude = -75.7013;
 const popupLabel =
   lang === 'en'
-    ? `Demo Solution<br>${siteSettings.address.en}`
-    : `Demo Solution<br>${siteSettings.address.fr}`;
+    ? `Demo Solution<br>Service area: ${siteSettings.serviceArea.en}`
+    : `Demo Solution<br>Zone de service: ${siteSettings.serviceArea.fr}`;
 ---
 
 <link

@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ContactMap from '../components/ContactMap.astro';
 import { buildBreadcrumbSchema, buildContactPageSchema, buildWebSiteSchema } from '../lib/seo';
 import siteSettings from '../data/site-settings.json';
 import contactPage from '../data/contact-page.json';
@@ -127,7 +126,7 @@ const schemas = [
 
           <div class="info-block">
             <h3>{contactPage.infoSection.locationTitle}</h3>
-            <p>{siteSettings.address.fr}<br>Service: {siteSettings.serviceArea.fr}</p>
+            <p>Service: {siteSettings.serviceArea.fr}</p>
           </div>
 
           <div class="info-block">
@@ -158,9 +157,6 @@ const schemas = [
       </div>
     </section>
 
-    <section class="map-section">
-      <ContactMap title={contactPage.mapTitle} />
-    </section>
   </main>
 
   <Footer />

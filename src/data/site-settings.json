@@ -16,11 +16,6 @@
   "squareBookingUrl": "/soumission/",
   "facebookUrl": "",
   "tiktokUrl": "",
-  "address": {
-    "fr": "11 rue de Granby, Unité 18, Gatineau, QC",
-    "en": "11 Granby Street, Unit 18, Gatineau, QC",
-    "mapQuery": "Demo Solution, 11 rue de Granby, Unite 18, Gatineau, Quebec"
-  },
   "serviceArea": {
     "fr": "Gatineau, Ottawa et Québec",
     "en": "Gatineau, Ottawa and Quebec City"

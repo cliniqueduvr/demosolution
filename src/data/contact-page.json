@@ -38,7 +38,7 @@
     "phoneTitle": "Téléphone",
     "squareLabel": "Demander une soumission",
     "emailTitle": "Courriel",
-    "locationTitle": "Localisation",
+    "locationTitle": "Zone de service",
     "identityTitle": "Identité d'entreprise",
     "identityBody": "<strong>Assurance:</strong> Garage et civile 2 millions<br><strong>Professionnels depuis 2013</strong>",
     "valuesTitle": "Valeurs clés",
@@ -55,5 +55,5 @@
       "body": "Si vous avez des photos, un rapport, une description du sinistre ou une idée des matériaux touchés, ajoutez ces détails à votre message. Cela nous aide à orienter plus rapidement l’évaluation."
     }
   ],
-  "mapTitle": "Demo Solution - 11 rue de Granby, Unité 18, Gatineau, QC"
+  "mapTitle": "Demo Solution - Zone de service"
 }
